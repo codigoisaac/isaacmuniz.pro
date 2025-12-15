@@ -11,8 +11,8 @@ const ThemeSwitcher: React.FC = () => {
           <input
             type="checkbox"
             className="theme-controller hidden"
-            value={themes.dark}
-            checked={theme === themes.dark}
+            value={themes.dim}
+            checked={theme === themes.dim}
             onChange={toggleTheme}
             suppressHydrationWarning
           />
