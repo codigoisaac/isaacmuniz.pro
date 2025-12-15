@@ -1,5 +1,7 @@
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui" {
+  themes: dim --prefersdark, autumn --default;
+}
 
 :root {
   --background: #161616;
