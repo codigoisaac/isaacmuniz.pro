@@ -38,24 +38,6 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-lg px-5 transition-colors md:w-39.5 bg-f text-b hover:bg-f1 hover:text-b border-2 border-b hover:border-f1"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Deploy Now
-          </a>
-
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-lg px-5 transition-colors md:w-39.5 bg-b1 text-f hover:bg-b1 hover:text-f border border-transparent hover:border-f"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-
           <button className="btn">Button</button>
         </div>
       </main>
