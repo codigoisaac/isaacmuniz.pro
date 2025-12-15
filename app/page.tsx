@@ -55,6 +55,8 @@ export default function Home() {
           >
             Documentation
           </a>
+
+          <button className="btn">Button</button>
         </div>
       </main>
     </div>
