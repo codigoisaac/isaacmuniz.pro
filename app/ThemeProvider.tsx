@@ -8,39 +8,34 @@ type Props = {
 };
 
 const ThemeProvider: React.FC<Props> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>(themes.system);
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === "undefined") return "dim";
 
-  useEffect(() => console.log(`theme: ${theme}`), [theme]);
+    const savedTheme = localStorage.getItem("theme") as Theme;
+
+    if (savedTheme) return savedTheme;
+
+    const doesSystemPrefersDark =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    return doesSystemPrefersDark ? themes.dim : themes.silk;
+  });
 
   const toggleTheme = (): void => {
     const newTheme = theme == themes.dim ? themes.silk : themes.dim;
     setTheme(newTheme);
-    console.log(`setting data-theme and localStorage to: ${newTheme}`);
-    document.documentElement.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme);
   };
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   const contextValue = {
     theme: theme,
     toggleTheme: toggleTheme,
   };
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") as Theme;
-    const systemTheme =
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? themes.dim
-        : themes.silk;
-
-    const themeToUse: Theme = savedTheme ?? systemTheme;
-
-    document.documentElement.setAttribute("data-theme", themeToUse);
-
-    localStorage.setItem("theme", themeToUse);
-
-    setTheme(themeToUse);
-  }, []);
 
   return (
     <ThemeContext.Provider value={contextValue}>

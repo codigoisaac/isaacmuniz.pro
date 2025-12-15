@@ -17,7 +17,7 @@ export const ThemeContext = React.createContext<ThemeContextInterface>({
   toggleTheme: () => {},
 });
 
-export const useTheme: Function = () => {
+export const useTheme = (): Theme => {
   const context = useContext(ThemeContext);
   if (!context) {
     throw new Error("useTheme must be used inside a ThemeContext.Provider");

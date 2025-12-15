@@ -14,6 +14,7 @@ const ThemeSwitcher: React.FC = () => {
             value={themes.dark}
             checked={theme === themes.dark}
             onChange={toggleTheme}
+            suppressHydrationWarning
           />
 
           {/* sun icon */}
