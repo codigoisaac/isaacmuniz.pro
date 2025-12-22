@@ -3,8 +3,6 @@
   themes: all;
 }
 
-@custom-variant dark (&:where([data-theme="dim"], [data-theme="dim"] *));
-
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);

@@ -1,11 +1,12 @@
 import React, { ChangeEventHandler, useContext } from "react";
 
-export type Theme = "silk" | "dim" | "system";
+export const themes = {
+  system: "system",
+  light: "light",
+  dark: "black",
+} as const;
 
-export const themes: { [key: string]: Theme } = {
-  silk: "silk",
-  dim: "dim",
-};
+export type Theme = (typeof themes)[keyof typeof themes];
 
 interface ThemeContextInterface {
   theme: Theme;
@@ -19,8 +20,10 @@ export const ThemeContext = React.createContext<ThemeContextInterface>({
 
 export const useTheme = (): Theme => {
   const context = useContext(ThemeContext);
+
   if (!context) {
     throw new Error("useTheme must be used inside a ThemeContext.Provider");
   }
+
   return context.theme;
 };

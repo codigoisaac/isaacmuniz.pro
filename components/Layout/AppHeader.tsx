@@ -8,7 +8,7 @@ import Link from "next/link";
 import Image from "next/image";
 import headerNavLinks from "@/data/headerNavLinks";
 import siteMetadata from "@/data/siteMetadata.js";
-import { useTheme } from "@/app/theme-context";
+import { useTheme, themes } from "@/app/theme-context";
 import dynamic from "next/dynamic";
 
 const MobileNav = dynamic(() => import("@/components/MobileNav"), {
@@ -17,7 +17,7 @@ const MobileNav = dynamic(() => import("@/components/MobileNav"), {
 
 const AppHeader: React.FC = () => {
   const theme = useTheme();
-  const isLightTheme = theme === "silk";
+  const isLightTheme = theme === themes.light;
 
   return (
     <header className="sticky top-0 z-50 flex w-full items-center justify-between py-10">

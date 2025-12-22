@@ -1,4 +1,5 @@
 "use client";
+
 import { ThemeContext, themes } from "@/app/theme-context";
 import React from "react";
 
@@ -11,8 +12,8 @@ const ThemeSwitcher: React.FC = () => {
           <input
             type="checkbox"
             className="theme-controller hidden"
-            value={themes.dim}
-            checked={theme === themes.dim}
+            value={themes.dark}
+            checked={theme === themes.dark}
             onChange={toggleTheme}
             suppressHydrationWarning
           />
