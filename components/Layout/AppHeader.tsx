@@ -33,7 +33,7 @@ const AppHeader: React.FC = () => {
           </div>
 
           {typeof siteMetadata.headerTitle === "string" ? (
-            <div className="font-ext hidden h-6 text-2xl sm:block">
+            <div className="font-trex hidden h-6 text-2xl sm:block">
               {siteMetadata.headerTitle}
             </div>
           ) : (
