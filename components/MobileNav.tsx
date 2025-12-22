@@ -41,7 +41,7 @@ const MobileNav = () => {
       <button
         aria-label="Toggle Menu"
         onClick={onToggleNav}
-        className="sm:hidden cursor-pointer"
+        className="md:hidden cursor-pointer"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +69,7 @@ const MobileNav = () => {
             leaveTo="translate-x-full opacity-0"
             unmount={false}
           >
-            <DialogPanel className="fixed top-0 left-0 z-70 h-full w-full duration-300 bg-base-300">
+            <DialogPanel className="font-tr fixed top-0 left-0 z-70 h-full w-full duration-300 bg-base-300">
               <nav
                 ref={navRef}
                 className="mt-8 flex h-full basis-0 flex-col items-start overflow-y-auto pt-2 pl-12 text-left"
