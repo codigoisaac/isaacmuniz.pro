@@ -1,13 +1,14 @@
 import { Client as NotionClient } from "@notionhq/client";
 import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import { NotionConverter } from "notion-to-md";
 
 const apiKey = process.env.NOTION_API_KEY;
 const dataSourceId = process.env.NOTION_DATA_SOURCE_ID as string;
 
-const notion = new NotionClient({ auth: apiKey });
+const notionClient = new NotionClient({ auth: apiKey });
 
 export async function getAllPublished() {
-  const response = await notion.dataSources.query({
+  const response = await notionClient.dataSources.query({
     data_source_id: dataSourceId,
     filter: {
       property: "Published",
@@ -70,4 +71,18 @@ function formatPostData(post: PageObjectResponse) {
 
     return `${year}, ${month}, ${day}`;
   }
+}
+
+export async function getSinglePost() {
+  const pageId = "223f5bb8-06ed-80bd-8b95-fbcfd0f56aa2";
+
+  const notionConverter = new NotionConverter(notionClient);
+
+  const response = await notionConverter.convert(pageId);
+
+  console.log("--- Markdown Output ---");
+  console.log(response.content);
+
+  console.log("--- Conversion Result Object ---");
+  console.log(response);
 }

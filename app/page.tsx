@@ -1,10 +1,8 @@
-import { getAllPublished } from "@/lib/notion";
+import { getAllPublished, getSinglePost } from "@/lib/notion";
 
 export default async function Home() {
-  const posts = await getAllPublished();
-
-  console.log("posts:", posts);
-  console.log("----------------------------\npost[0]:", posts[0]);
+  // const posts = await getAllPublished();
+  const post = await getSinglePost();
 
   return (
     <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
