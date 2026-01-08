@@ -1,4 +1,7 @@
+import { notFound } from "next/navigation";
 import { getBlogPostBySlug } from "@/lib/api";
+import markdownToHtml from "@/lib/markdownToHtml";
+import markdownStyles from "./markdown.module.css";
 
 type PageProps = {
   params: Promise<{
@@ -10,7 +13,11 @@ export default async function BlogPostPage(props: PageProps) {
   const params = await props.params;
   const post = getBlogPostBySlug(params.slug);
 
-  console.log(params, post);
+  if (!post) {
+    return notFound();
+  }
+
+  const content = await markdownToHtml(post.content || "");
 
   return (
     <>
@@ -18,7 +25,10 @@ export default async function BlogPostPage(props: PageProps) {
 
       <div className="mb-5">{post.title}</div>
 
-      <div>{post.content}</div>
+      <div
+        className={markdownStyles["markdown"]}
+        dangerouslySetInnerHTML={{ __html: content }}
+      />
     </>
   );
 }
