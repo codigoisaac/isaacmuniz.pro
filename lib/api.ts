@@ -15,6 +15,8 @@ export function getBlogPostBySlug(slug: string) {
   const fileContents = fs.readFileSync(fullBlogPostPath, "utf8");
   const { data, content } = grayMatter(fileContents);
 
+  data.date = formatDate(data.date);
+
   return { ...data, slug: cleanSlug, content } as BlogPost;
 }
 
@@ -26,4 +28,18 @@ export function getAllBlogPosts(): BlogPost[] {
     .sort((blogPost1, blogPost2) => (blogPost1.date > blogPost2.date ? -1 : 1));
 
   return blogPosts;
+}
+
+function formatDate(dateObj: Date): string {
+  const date = dateObj;
+
+  const monthName = new Intl.DateTimeFormat("en-US", { month: "long" }).format(
+    date
+  );
+
+  const year = date.getFullYear();
+
+  const result = `${year} - ${monthName}`;
+
+  return result;
 }
