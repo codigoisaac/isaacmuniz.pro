@@ -6,13 +6,13 @@ export default function BlogPage() {
 
   return (
     <>
-      <div className="mb-7">Blog Page</div>
+      <div className="mb-14 text-center">/blog</div>
 
       {allBlogPosts.map((post) => (
         <Link
           key={post.slug}
           href={`blog/${post.slug}`}
-          className="flex flex-col gap-1 py-4"
+          className="flex flex-col gap-1 mb-10"
         >
           {/* Date */}
           <div className="text-sm text-gray-400">{post.date.toString()}</div>

@@ -15,9 +15,12 @@ export function getBlogPostBySlug(slug: string) {
   const fileContents = fs.readFileSync(fullBlogPostPath, "utf8");
   const { data, content } = grayMatter(fileContents);
 
-  data.date = formatDate(data.date);
-
-  return { ...data, slug: cleanSlug, content } as BlogPost;
+  return {
+    ...data,
+    date: formatDate(data.date),
+    slug: cleanSlug,
+    content,
+  } as BlogPost;
 }
 
 export function getAllBlogPosts(): BlogPost[] {
