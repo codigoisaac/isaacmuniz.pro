@@ -1,9 +1,8 @@
 "use client";
 
 import { ThemeContext, themes } from "@/app/theme-context";
-import React from "react";
 
-const ThemeSwitcher: React.FC = () => {
+export default function ThemeSwitcher() {
   return (
     <ThemeContext.Consumer>
       {({ theme, toggleTheme }) => (
@@ -39,6 +38,4 @@ const ThemeSwitcher: React.FC = () => {
       )}
     </ThemeContext.Consumer>
   );
-};
-
-export default ThemeSwitcher;
+}

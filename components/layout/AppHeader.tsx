@@ -11,11 +11,11 @@ import siteMetadata from "@/data/siteMetadata.js";
 import { useTheme, themes } from "@/app/theme-context";
 import dynamic from "next/dynamic";
 
-const MobileNav = dynamic(() => import("@/components/MobileNav"), {
+const MobileNav = dynamic(() => import("@/components/layout/MobileNav"), {
   ssr: false,
 });
 
-const AppHeader: React.FC = () => {
+export default function AppHeader() {
   const theme = useTheme();
   const isLightTheme = theme === themes.light;
 
@@ -67,6 +67,4 @@ const AppHeader: React.FC = () => {
       </div>
     </header>
   );
-};
-
-export default AppHeader;
+}

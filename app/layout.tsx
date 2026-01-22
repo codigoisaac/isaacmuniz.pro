@@ -1,5 +1,5 @@
 import "./globals.css";
-import AppHeader from "@/components/Layout/AppHeader";
+import AppHeader from "@/components/layout/AppHeader";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import ThemeProvider from "./ThemeProvider";
@@ -23,7 +23,7 @@ export default function RootLayout({
         <body
           className={clsx(
             inter.className,
-            "mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"
+            "mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0",
           )}
         >
           <AppHeader />
