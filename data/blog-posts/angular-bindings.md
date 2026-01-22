@@ -1,5 +1,5 @@
 ---
-title: "Angular: property, event, bidirectional binding"
+title: "Angular: property binding, event binding, and bidirectional binding"
 excerpt: Data binding in Angular, explained in a way you'll understand!
 date: 2025-07-01T50:23:08.187Z
 tags: [Programming, Web dev, Angular, Frontend]

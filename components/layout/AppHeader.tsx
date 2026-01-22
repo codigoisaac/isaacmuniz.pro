@@ -20,7 +20,7 @@ export default function AppHeader() {
   const isLightTheme = theme === themes.light;
 
   return (
-    <header className="font-tr sticky top-0 z-50 flex w-full items-center justify-between py-10">
+    <header className="font-transducer sticky top-0 z-50 flex w-full items-center justify-between py-10">
       {/* Logo and title */}
       <Link href="/" aria-label={siteMetadata.headerTitle}>
         <div className="flex items-center justify-between">
@@ -34,7 +34,7 @@ export default function AppHeader() {
           </div>
 
           {typeof siteMetadata.headerTitle === "string" ? (
-            <div className="font-trex hidden h-6 text-2xl sm:block">
+            <div className="font-transducer-entended hidden h-6 text-2xl sm:block">
               {siteMetadata.headerTitle}
             </div>
           ) : (
