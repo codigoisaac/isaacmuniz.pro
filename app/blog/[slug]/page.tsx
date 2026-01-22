@@ -18,7 +18,11 @@ export default async function BlogPostPage(props: PageProps) {
 
   return (
     <>
-      <div className="mb-7">Blog Post Page</div>
+      <div className="badge badge-sm badge-primary">/blog/{params.slug}</div>
+
+      <div className="mb-5 mt-1.5 text-4xl md:text-5xl text-primary leading-14">
+        {post.title}
+      </div>
 
       <BlogPost post={post} />
     </>

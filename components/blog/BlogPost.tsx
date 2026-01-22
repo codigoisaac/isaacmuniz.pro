@@ -22,8 +22,6 @@ type Props = {
 export default function BlogPost({ post }: Props) {
   return (
     <>
-      <div className="mb-5">{post.title}</div>
-
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{

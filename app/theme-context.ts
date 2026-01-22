@@ -2,8 +2,8 @@ import React, { ChangeEventHandler, useContext } from "react";
 
 export const themes = {
   system: "system",
-  light: "light",
-  dark: "black",
+  light: "winter",
+  dark: "sunset",
 } as const;
 
 export type Theme = (typeof themes)[keyof typeof themes];
