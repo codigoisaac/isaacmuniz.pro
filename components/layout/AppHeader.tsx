@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import ThemeSwitcher from "./ThemeSwitcher";
 import LogoLight from "@/public/images/logo-light.png";
 import LogoDark from "@/public/images/logo-dark.png";
@@ -8,7 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import headerNavLinks from "@/data/headerNavLinks";
 import siteMetadata from "@/data/siteMetadata.js";
-import { useTheme, themes } from "@/app/theme-context";
+import { useTheme, themes } from "@/context/theme-context";
 import dynamic from "next/dynamic";
 
 const MobileNav = dynamic(() => import("@/components/layout/MobileNav"), {
@@ -16,7 +15,7 @@ const MobileNav = dynamic(() => import("@/components/layout/MobileNav"), {
 });
 
 export default function AppHeader() {
-  const theme = useTheme();
+  const { theme } = useTheme();
   const isLightTheme = theme === themes.light;
 
   return (
