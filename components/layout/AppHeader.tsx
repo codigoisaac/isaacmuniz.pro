@@ -1,35 +1,35 @@
 "use client";
 
-import ThemeSwitcher from "./ThemeSwitcher";
-import LogoLight from "@/public/images/logo-light.png";
-import LogoDark from "@/public/images/logo-dark.png";
 import Link from "next/link";
-import Image from "next/image";
 import headerNavLinks from "@/data/headerNavLinks";
 import siteMetadata from "@/data/siteMetadata.js";
-import { useTheme, themes } from "@/context/theme-context";
 import dynamic from "next/dynamic";
+
+const Logo = dynamic(() => import("@/components/layout/Logo"), {
+  ssr: false,
+  loading: () => <div style={{ width: 50, height: 50 }} />,
+});
 
 const MobileNav = dynamic(() => import("@/components/layout/MobileNav"), {
   ssr: false,
 });
 
-export default function AppHeader() {
-  const { theme } = useTheme();
-  const isLightTheme = theme === themes.light;
+const ThemeSwitcher = dynamic(
+  () => import("@/components/layout/ThemeSwitcher"),
+  {
+    ssr: false,
+    loading: () => <div className="h-8 w-8" />,
+  },
+);
 
+export default function AppHeader() {
   return (
     <header className="font-transducer sticky top-0 z-50 flex w-full items-center justify-between py-10">
       {/* Logo and title */}
       <Link href="/" aria-label={siteMetadata.headerTitle}>
         <div className="flex items-center justify-between">
           <div className="mr-6">
-            <Image
-              alt="logo"
-              src={isLightTheme ? LogoDark : LogoLight}
-              width={50}
-              height={50}
-            />
+            <Logo />
           </div>
 
           {typeof siteMetadata.headerTitle === "string" ? (
