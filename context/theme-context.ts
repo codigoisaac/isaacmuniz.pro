@@ -1,8 +1,8 @@
 import { createContext, useContext } from "react";
 
 export const themes = {
-  light: "winter",
-  dark: "sunset",
+  light: "levitation",
+  dark: "nightflight",
 } as const;
 
 export type ThemeName = (typeof themes)[keyof typeof themes];

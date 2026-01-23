@@ -24,7 +24,7 @@ const ThemeSwitcher = dynamic(
 
 export default function AppHeader() {
   return (
-    <header className="font-transducer sticky top-0 z-50 flex w-full items-center justify-between py-10">
+    <header className="font-transducer sticky top-0 z-50 flex w-full items-center justify-between pb-10 pt-7">
       {/* Logo and title */}
       <Link href="/" aria-label={siteMetadata.headerTitle}>
         <div className="flex items-center justify-between">
