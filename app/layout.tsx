@@ -14,7 +14,7 @@ const transducer = localFont({
 
 const transducerExtended = localFont({
   src: "../public/fonts/transducer/transducer-extendedregular.otf",
-  variable: "--font-transducer-extended",
+  variable: "--font-transducerExtended",
   display: "swap",
 });
 

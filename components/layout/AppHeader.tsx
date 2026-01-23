@@ -33,7 +33,7 @@ export default function AppHeader() {
           </div>
 
           {typeof siteMetadata.headerTitle === "string" ? (
-            <div className="font-transducer-extended hidden h-6 text-2xl sm:block">
+            <div className="font-transducerExtended hidden h-6 text-2xl sm:block">
               {siteMetadata.headerTitle}
             </div>
           ) : (
@@ -43,7 +43,7 @@ export default function AppHeader() {
       </Link>
 
       {/* Links */}
-      <div className="font-transducer flex items-center space-x-4 leading-5 md:-mr-6 md:space-x-6 mt-2">
+      <div className="font-geistMono flex items-center space-x-4 leading-5 md:-mr-6 md:space-x-6 mt-2">
         <div className="no-scrollbar hidden max-w-40 items-center gap-x-4 overflow-x-auto md:flex md:max-w-72 lg:max-w-96">
           {headerNavLinks
             .filter((link) => link.href !== "/")
