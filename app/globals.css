@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: all;
 }
 
 @plugin "daisyui/theme" {
@@ -74,10 +73,10 @@
 }
 
 @theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-transducer: "Transducer", sans-serif;
-  --font-transducer-entended: "TransducerExtended", sans-serif;
+  --font-transducer: var(--font-transducer);
+  --font-transducer-extended: var(--font-transducer-extended);
+  --font-saira: var(--font-saira);
+  --font-geistMono: var(--font-geistMono);
 
   --color-*: initial;
 
@@ -117,14 +116,4 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-}
-
-@font-face {
-  font-family: Transducer;
-  /* src: url("/static/fonts/transducer/transducer-regular.otf"); */
-  src: url("/fonts/transducer/transducer-regular.otf");
-}
-@font-face {
-  font-family: TransducerExtended;
-  src: url("/fonts/transducer/transducer-extendedregular.otf");
 }

@@ -15,14 +15,18 @@ export default function BlogPage() {
           className="flex flex-col gap-1 mb-10"
         >
           {/* Date */}
-          <div className="text-sm text-gray-400">{post.date.toString()}</div>
+          <div className="text-xs text-gray-400">{post.date.toString()}</div>
 
           <div className="flex flex-col gap-2">
             {/* Title */}
-            <div className="text-xl font-bold text-pretty">{post.title}</div>
+            <div className="font-saira text-2xl font-medium text-pretty text-primary">
+              {post.title}
+            </div>
 
             {/* Excerpt */}
-            <div className="text-pretty text-gray-400">{post.excerpt}</div>
+            <div className="text-pretty tracking-wide text-gray-400">
+              {post.excerpt}
+            </div>
           </div>
         </Link>
       ))}
