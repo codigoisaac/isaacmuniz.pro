@@ -6,7 +6,7 @@ export default function BlogPage() {
 
   return (
     <>
-      <div className="font-geistMono font-bold mb-14 text-center">/blog</div>
+      <div className="font-geist-mono font-bold mb-14 text-center">/blog</div>
 
       {allBlogPosts.map((post) => (
         <Link
@@ -15,7 +15,7 @@ export default function BlogPage() {
           className="flex flex-col gap-1 mb-10 group"
         >
           {/* Date */}
-          <div className="font-geistMono text-xs tracking-wider text-gray-400">
+          <div className="font-geist-mono text-xs tracking-wider text-gray-400">
             {post.date.toString()}
           </div>
 

@@ -18,7 +18,7 @@ export default async function BlogPostPage(props: PageProps) {
 
   return (
     <>
-      <div className="font-geistMono badge badge-sm badge-secondary">
+      <div className="font-geist-mono badge badge-sm badge-secondary">
         /blog/{params.slug}
       </div>
 
