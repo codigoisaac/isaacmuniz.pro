@@ -2,19 +2,26 @@
 @plugin "daisyui" {
 }
 
+:root {
+  --color-light-base: oklch(0.89 0.0224 54.31);
+  --color-dark-base: oklch(0.21 0.0037 48.54);
+  --color-1: oklch(0.5 0.0853 203.39);
+  --color-1-content: oklch(94% 0.028 342.258);
+  --color-2: oklch(0.74 0.1671 47.75);
+  --color-2-content: oklch(0.28 0.0533 50.83);
+}
+
 @plugin "daisyui/theme" {
   name: "levitation";
   default: true;
   prefersdark: false;
   color-scheme: "light";
-  --color-base-100: oklch(0.9 0.0082 36.55);
-  --color-base-200: oklch(0.2188 0.0462 252.75);
-  --color-base-300: oklch(12% 0.042 264.695);
-  --color-base-content: oklch(0.25 0.0072 48.42);
-  --color-primary: oklch(0.5 0.0853 203.39);
-  --color-primary-content: oklch(0.2 0.0743 266.23);
-  --color-secondary: oklch(0.74 0.1671 47.75);
-  --color-secondary-content: oklch(0.28 0.0533 50.83);
+  --color-base-100: var(--color-light-base);
+  --color-base-content: var(--color-dark-base);
+  --color-primary: var(--color-1);
+  --color-primary-content: var(--color-1-content);
+  --color-secondary: var(--color-2);
+  --color-secondary-content: var(--color-2-content);
   --radius-selector: 0.5rem;
   --radius-field: 0.5rem;
   --radius-box: 0.5rem;
@@ -30,14 +37,12 @@
   default: false;
   prefersdark: true;
   color-scheme: "dark";
-  --color-base-100: oklch(0.21 0.0037 48.54);
-  --color-base-200: oklch(0.2188 0.0462 252.75);
-  --color-base-300: oklch(12% 0.042 264.695);
-  --color-base-content: oklch(0.89 0.0224 54.31);
-  --color-primary: oklch(0.74 0.1671 47.75);
-  --color-primary-content: oklch(0.2 0.0743 266.23);
-  --color-secondary: oklch(0.5 0.0853 203.39);
-  --color-secondary-content: oklch(94% 0.028 342.258);
+  --color-base-100: var(--color-dark-base);
+  --color-base-content: var(--color-light-base);
+  --color-primary: var(--color-2);
+  --color-primary-content: var(--color-2-content);
+  --color-secondary: var(--color-1);
+  --color-secondary-content: var(--color-1-content);
   --radius-selector: 0.5rem;
   --radius-field: 0.5rem;
   --radius-box: 0.5rem;
