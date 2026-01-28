@@ -55,7 +55,7 @@
 
 @theme {
   --font-transducer: var(--font-transducer);
-  --font-transducerExtended: var(--font-transducerExtended);
+  --font-transducer-extended: var(--font-transducer-extended);
   --font-saira: var(--font-saira);
   --font-geistMono: var(--font-geistMono);
 

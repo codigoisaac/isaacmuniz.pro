@@ -1,40 +1,9 @@
 import "./globals.css";
 import AppHeader from "@/components/layout/AppHeader";
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import { Saira, Geist, Geist_Mono } from "next/font/google";
 import ThemeProvider from "../context/ThemeProvider";
 import clsx from "clsx";
-
-const transducer = localFont({
-  src: "../public/fonts/transducer/transducer-regular.otf",
-  variable: "--font-transducer",
-  display: "swap",
-});
-
-const transducerExtended = localFont({
-  src: "../public/fonts/transducer/transducer-extendedregular.otf",
-  variable: "--font-transducerExtended",
-  display: "swap",
-});
-
-const saira = Saira({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-saira",
-});
-
-const geist = Geist({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-geist",
-});
-
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-geistMono",
-});
+import { fontVariables } from "./fonts/fonts";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -51,11 +20,7 @@ export default function RootLayout({
       <ThemeProvider>
         <body
           className={clsx(
-            transducer.variable,
-            transducerExtended.variable,
-            saira.variable,
-            geist.className, // default font
-            geistMono.variable,
+            fontVariables,
             "mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0 antialiased",
           )}
         >

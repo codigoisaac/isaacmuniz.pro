@@ -34,7 +34,7 @@ export default function AppHeader() {
             </div>
 
             {typeof siteMetadata.headerTitle === "string" ? (
-              <div className="font-transducerExtended hidden h-6 text-2xl sm:block">
+              <div className="font-transducer-extended hidden h-6 text-2xl sm:block">
                 {siteMetadata.headerTitle}
               </div>
             ) : (
