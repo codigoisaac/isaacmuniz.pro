@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import LogoLight from "@/public/images/logo-light.png";
-import LogoDark from "@/public/images/logo-dark.png";
+import LogoLight from "@/assets/images/logo-light.png";
+import LogoDark from "@/assets/images/logo-dark.png";
 import { useTheme, themes } from "@/context/theme-context";
 
 export default function Logo() {
