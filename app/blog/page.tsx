@@ -22,17 +22,7 @@ export default function BlogPage() {
           <div className="flex flex-col gap-2">
             {/* Title */}
             <div>
-              <span
-                className="
-                  font-saira text-2xl font-medium text-pretty text-primary
-                  inline 
-                  bg-bottom-left bg-no-repeat
-                  transition-[background-size] duration-300 ease-out
-                  bg-size-[0%_2px] 
-                  group-hover:bg-size-[100%_2px]
-                  bg-linear-to-r from-primary to-primary
-                "
-              >
+              <span className="font-saira text-2xl font-medium text-pretty text-primary inline animated-underline group-animated-underline">
                 {post.title}
               </span>
             </div>

@@ -52,7 +52,7 @@ export default function AppHeader() {
                 <Link
                   key={link.title}
                   href={link.href}
-                  className="m-1 font-medium hover:underline"
+                  className="m-1 font-medium animated-underline"
                 >
                   {link.title}
                 </Link>
