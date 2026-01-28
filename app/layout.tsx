@@ -1,9 +1,9 @@
 import "./globals.css";
 import AppHeader from "@/components/layout/AppHeader";
 import type { Metadata } from "next";
-import ThemeProvider from "../context/ThemeProvider";
+import ThemeProvider from "@/context/ThemeProvider";
 import clsx from "clsx";
-import { fontVariables } from "./fonts/fonts";
+import { fontVariables } from "@/assets/fonts/fonts";
 
 export const metadata: Metadata = {
   title: "Create Next App",
