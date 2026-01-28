@@ -12,7 +12,7 @@ export default function BlogPage() {
         <Link
           key={post.slug}
           href={`blog/${post.slug}`}
-          className="flex flex-col gap-1 mb-10"
+          className="flex flex-col gap-1 mb-10 group"
         >
           {/* Date */}
           <div className="font-geistMono text-xs tracking-wider text-gray-400">
@@ -21,14 +21,24 @@ export default function BlogPage() {
 
           <div className="flex flex-col gap-2">
             {/* Title */}
-            <div className="font-saira text-2xl font-medium text-pretty text-primary">
-              {post.title}
+            <div>
+              <span
+                className="
+                  font-saira text-2xl font-medium text-pretty text-primary
+                  inline 
+                  bg-bottom-left bg-no-repeat
+                  transition-[background-size] duration-300 ease-out
+                  bg-size-[0%_2px] 
+                  group-hover:bg-size-[100%_2px]
+                  bg-linear-to-r from-primary to-primary
+                "
+              >
+                {post.title}
+              </span>
             </div>
 
             {/* Excerpt */}
-            <div className="text-pretty tracking-wide text-gray-400">
-              {post.excerpt}
-            </div>
+            <div className="text-pretty tracking-wide">{post.excerpt}</div>
           </div>
         </Link>
       ))}
