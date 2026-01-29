@@ -5,6 +5,7 @@ import headerNavLinks from "@/data/headerNavLinks";
 import siteMetadata from "@/data/siteMetadata.js";
 import dynamic from "next/dynamic";
 import Logo from "@/components/layout/Logo";
+import ScrambledText from "@/components/ScrambledText";
 
 const MobileNav = dynamic(() => import("@/components/layout/MobileNav"), {
   ssr: false,
@@ -29,13 +30,9 @@ export default function AppHeader() {
               <Logo className="text-base-content w-12.5" />
             </div>
 
-            {typeof siteMetadata.headerTitle === "string" ? (
-              <div className="font-transducer-extended hidden h-6 text-2xl sm:block">
-                {siteMetadata.headerTitle}
-              </div>
-            ) : (
-              siteMetadata.headerTitle
-            )}
+            <div className="font-transducer-extended hidden h-6 text-2xl sm:block">
+              <ScrambledText>{siteMetadata.headerTitle}</ScrambledText>
+            </div>
           </div>
         </Link>
 
