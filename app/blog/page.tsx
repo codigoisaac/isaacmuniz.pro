@@ -1,12 +1,15 @@
 import { getAllBlogPosts } from "@/lib/api";
 import Link from "next/link";
+import DecryptedText from "@/components/DecryptedText";
 
 export default function BlogPage() {
   const allBlogPosts = getAllBlogPosts();
 
   return (
     <>
-      <div className="font-geist-mono font-bold mb-14 text-center">/blog</div>
+      <div className="font-geist-mono font-bold mb-14 text-center">
+        <DecryptedText text="/blog" speed={80} revealDirection="center" />
+      </div>
 
       {allBlogPosts.map((post) => (
         <Link
