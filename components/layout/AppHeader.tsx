@@ -4,11 +4,7 @@ import Link from "next/link";
 import headerNavLinks from "@/data/headerNavLinks";
 import siteMetadata from "@/data/siteMetadata.js";
 import dynamic from "next/dynamic";
-
-const Logo = dynamic(() => import("@/components/layout/Logo"), {
-  ssr: false,
-  loading: () => <div style={{ width: 50, height: 50 }} />,
-});
+import Logo from "@/components/layout/Logo";
 
 const MobileNav = dynamic(() => import("@/components/layout/MobileNav"), {
   ssr: false,
@@ -30,7 +26,7 @@ export default function AppHeader() {
         <Link href="/" aria-label={siteMetadata.headerTitle}>
           <div className="flex items-center justify-between">
             <div className="mr-6">
-              <Logo />
+              <Logo className="text-base-content w-12.5" />
             </div>
 
             {typeof siteMetadata.headerTitle === "string" ? (
