@@ -1,7 +1,7 @@
 export default async function Home() {
   return (
     <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-      <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight">
+      <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-primary">
         To get started, edit the page.tsx file.
       </h1>
 

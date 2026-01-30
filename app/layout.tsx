@@ -1,5 +1,6 @@
 import "./globals.css";
 import AppHeader from "@/components/layout/AppHeader";
+import Footer from "@/components/layout/Footer";
 import type { Metadata } from "next";
 import ThemeProvider from "@/context/ThemeProvider";
 import clsx from "clsx";
@@ -21,12 +22,16 @@ export default function RootLayout({
         <body
           className={clsx(
             fontVariables,
-            "mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0 antialiased",
+            "antialiased flex flex-col min-h-screen",
           )}
         >
           <AppHeader />
 
-          {children}
+          <main className="general-content-margins body-content-paddings w-full grow">
+            {children}
+          </main>
+
+          <Footer />
         </body>
       </ThemeProvider>
     </html>

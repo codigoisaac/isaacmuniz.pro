@@ -7,8 +7,10 @@
   --color-dark-base: oklch(0.21 0.0037 48.54);
   --color-1: oklch(0.5 0.0853 203.39);
   --color-1-content: oklch(94% 0.028 342.258);
+  --color-1-smooth: oklch(49.647% 0.06211 199.806);
   --color-2: oklch(0.74 0.1671 47.75);
   --color-2-content: oklch(0.28 0.0533 50.83);
+  --color-2-smooth: oklch(81.007% 0.07925 51.73);
 }
 
 @plugin "daisyui/theme" {
@@ -22,6 +24,7 @@
   --color-primary-content: var(--color-1-content);
   --color-secondary: var(--color-2);
   --color-secondary-content: var(--color-2-content);
+  --color-neutral: var(--color-1-smooth);
   --radius-selector: 0.5rem;
   --radius-field: 0.5rem;
   --radius-box: 0.5rem;
@@ -43,6 +46,7 @@
   --color-primary-content: var(--color-2-content);
   --color-secondary: var(--color-1);
   --color-secondary-content: var(--color-1-content);
+  --color-neutral: var(--color-2-smooth);
   --radius-selector: 0.5rem;
   --radius-field: 0.5rem;
   --radius-box: 0.5rem;
@@ -99,6 +103,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+a[href^="http"] {
+  color: var(--color-neutral);
+}
+
 @layer components {
   .animated-underline {
     --underline-color: currentColor;
@@ -120,5 +128,25 @@ body {
 
   .group:hover .group-animated-underline {
     background-size: 100% var(--underline-height);
+  }
+
+  .general-content-margins {
+    @apply mx-auto max-w-3xl xl:max-w-5xl;
+  }
+
+  .header-paddings {
+    @apply px-4 sm:px-6 xl:px-0;
+  }
+
+  .footer-paddings {
+    @apply px-0 sm:px-6 xl:px-0;
+  }
+
+  .footer-inside-paddings {
+    @apply px-8 sm:px-6;
+  }
+
+  .body-content-paddings {
+    @apply px-4 sm:px-8 xl:px-4;
   }
 }
