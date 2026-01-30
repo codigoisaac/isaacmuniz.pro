@@ -4,9 +4,10 @@ import {
   GithubLogoIcon,
   LinkedinLogoIcon,
   EnvelopeIcon,
+  WhatsappLogoIcon,
 } from "@phosphor-icons/react";
 
-const icon = { size: 30, weight: "duotone", className: "text-base-content" };
+const icon = { size: 32, weight: "duotone", className: "text-base-content" };
 
 export default function Footer() {
   return (
@@ -33,14 +34,13 @@ export default function Footer() {
             .
           </div>
 
-          <div>im.isaac.muniz@gmail.com</div>
+          <div>im.isaac.muniz@gmail.com | +55 (19) 98195-7816</div>
 
           <div>Your best self is eager to have you around.</div>
         </div>
 
         <div className="flex gap-4">
           <a
-            className="unstiled-link"
             href="https://github.com/codigoisaac"
             target="_blank"
             rel="noopener noreferrer"
@@ -53,7 +53,6 @@ export default function Footer() {
           </a>
 
           <a
-            className="unstiled-link"
             href="https://linkedin.com/in/isaac-muniz"
             target="_blank"
             rel="noopener noreferrer"
@@ -66,12 +65,23 @@ export default function Footer() {
           </a>
 
           <a
-            className="unstiled-link"
             href="mailto:im.isaac.muniz@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
           >
             <EnvelopeIcon
+              size={icon.size}
+              weight={icon.weight}
+              className={icon.className}
+            />
+          </a>
+
+          <a
+            href="https://wa.me/5519981957816"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <WhatsappLogoIcon
               size={icon.size}
               weight={icon.weight}
               className={icon.className}
