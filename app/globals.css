@@ -4,7 +4,11 @@
 
 :root {
   --color-light-base: oklch(84.907% 0.01557 54.691);
+  --color-light-base-2: oklch(78.616% 0.0409 54.649);
+  --color-light-base-3: oklch(79.176% 0.05072 53.887);
   --color-dark-base: oklch(0.21 0.0037 48.54);
+  --color-dark-base-2: oklch(24.573% 0.02647 50.809);
+  --color-dark-base-3: oklch(31.836% 0.03804 52.641);
   --color-1: oklch(0.5 0.0853 203.39);
   --color-1-content: oklch(94% 0.028 342.258);
   --color-1-smooth: oklch(49.647% 0.06211 199.806);
@@ -19,20 +23,15 @@
   prefersdark: false;
   color-scheme: "light";
   --color-base-100: var(--color-light-base);
+  --color-base-200: var(--color-light-base-2);
+  --color-base-300: var(--color-light-base-3);
   --color-base-content: var(--color-dark-base);
   --color-primary: var(--color-1);
   --color-primary-content: var(--color-1-content);
   --color-secondary: var(--color-2);
   --color-secondary-content: var(--color-2-content);
   --color-neutral: var(--color-1-smooth);
-  --radius-selector: 0.5rem;
-  --radius-field: 0.5rem;
-  --radius-box: 0.5rem;
-  --size-selector: 0.25rem;
-  --size-field: 0.25rem;
-  --border: 1px;
-  --depth: 1;
-  --noise: 0;
+  --radius-selector: 0.3rem;
 }
 
 @plugin "daisyui/theme" {
@@ -41,20 +40,25 @@
   prefersdark: true;
   color-scheme: "dark";
   --color-base-100: var(--color-dark-base);
+  --color-base-200: var(--color-dark-base-2);
+  --color-base-300: var(--color-dark-base-3);
   --color-base-content: var(--color-light-base);
   --color-primary: var(--color-2);
   --color-primary-content: var(--color-2-content);
   --color-secondary: var(--color-1);
   --color-secondary-content: var(--color-1-content);
   --color-neutral: var(--color-2-smooth);
-  --radius-selector: 0.5rem;
-  --radius-field: 0.5rem;
-  --radius-box: 0.5rem;
-  --size-selector: 0.25rem;
-  --size-field: 0.25rem;
-  --border: 1px;
-  --depth: 1;
-  --noise: 0;
+  /* --color-neutral-content: var(--color-1-smooth); */
+  /* --color-accent: oklch(42.621% 0.074 224.389); */
+  /* --color-accent-content: oklch(88.524% 0.014 224.389); */
+  --radius-selector: 0.11rem;
+  /* --radius-field: 0.5rem; */
+  /* --radius-box: 0.5rem; */
+  /* --size-selector: 0.25rem; */
+  /* --size-field: 0.25rem; */
+  /* --border: 1px; */
+  /* --depth: 1; */
+  /* --noise: 0; */
 }
 
 @theme {
@@ -105,6 +109,9 @@ body {
 
 a[href^="http"]:not(.unstiled-link) {
   color: var(--color-neutral);
+  text-decoration: underline dotted var(--color-neutral);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
 }
 
 @layer components {

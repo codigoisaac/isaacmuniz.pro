@@ -38,7 +38,10 @@ export default function BlogPost({ post }: Props) {
                 {String(children).replace(/\n$/, "")}
               </SyntaxHighlighter>
             ) : (
-              <code {...props} className={className}>
+              <code
+                {...props}
+                className="font-geist-mono bg-base-300 px-1 rounded-selector"
+              >
                 {children}
               </code>
             );
@@ -61,7 +64,9 @@ export default function BlogPost({ post }: Props) {
             <ol className="list-decimal mb-3 ml-4">{children}</ol>
           ),
           blockquote: ({ children }) => (
-            <blockquote className="my-6 pl-3 border-l-2">{children}</blockquote>
+            <blockquote className="my-6 px-4 pt-3 pb-1 border-l-4 border-secondary rounded-sm bg-base-200">
+              {children}
+            </blockquote>
           ),
           details: ({ children }) => (
             <details className="border p-1 px-3 my-5">{children}</details>
@@ -78,6 +83,8 @@ export default function BlogPost({ post }: Props) {
       >
         {post.content}
       </ReactMarkdown>
+
+      <div className="text-center font-bold tracking-widest">. . . . . .</div>
     </>
   );
 }
