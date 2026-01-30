@@ -33,17 +33,31 @@ export default function Footer() {
         </div>
 
         <div className="flex gap-4">
-          <GithubLogoIcon
-            size={icon.size}
-            weight={icon.weight}
-            className={icon.className}
-          />
+          <a
+            className="unstiled-link"
+            href="https://github.com/codigoisaac"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GithubLogoIcon
+              size={icon.size}
+              weight={icon.weight}
+              className={icon.className}
+            />
+          </a>
 
-          <LinkedinLogoIcon
-            size={icon.size}
-            weight={icon.weight}
-            className={icon.className}
-          />
+          <a
+            className="unstiled-link"
+            href="https://linkedin.com/in/isaac-muniz"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <LinkedinLogoIcon
+              size={icon.size}
+              weight={icon.weight}
+              className={icon.className}
+            />
+          </a>
         </div>
       </div>
     </footer>

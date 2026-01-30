@@ -103,7 +103,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-a[href^="http"] {
+a[href^="http"]:not(.unstiled-link) {
   color: var(--color-neutral);
 }
 
