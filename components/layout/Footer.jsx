@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import {
@@ -39,54 +40,58 @@ export default function Footer() {
           <div>Your best self is eager to have you around.</div>
         </div>
 
-        <div className="flex gap-4">
-          <a
-            href="https://github.com/codigoisaac"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GithubLogoIcon
-              size={icon.size}
-              weight={icon.weight}
-              className={icon.className}
-            />
-          </a>
+        <div className="flex flex-col sm:items-end gap-2">
+          <div className="text-base">Let's create good things together.</div>
 
-          <a
-            href="https://linkedin.com/in/isaac-muniz"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <LinkedinLogoIcon
-              size={icon.size}
-              weight={icon.weight}
-              className={icon.className}
-            />
-          </a>
+          <div className="flex gap-4">
+            <a
+              href="https://github.com/codigoisaac"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GithubLogoIcon
+                size={icon.size}
+                weight={icon.weight}
+                className={icon.className}
+              />
+            </a>
 
-          <a
-            href="mailto:im.isaac.muniz@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <EnvelopeIcon
-              size={icon.size}
-              weight={icon.weight}
-              className={icon.className}
-            />
-          </a>
+            <a
+              href="https://linkedin.com/in/isaac-muniz"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <LinkedinLogoIcon
+                size={icon.size}
+                weight={icon.weight}
+                className={icon.className}
+              />
+            </a>
 
-          <a
-            href="https://wa.me/5519981957816"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <WhatsappLogoIcon
-              size={icon.size}
-              weight={icon.weight}
-              className={icon.className}
-            />
-          </a>
+            <a
+              href="mailto:im.isaac.muniz@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <EnvelopeIcon
+                size={icon.size}
+                weight={icon.weight}
+                className={icon.className}
+              />
+            </a>
+
+            <a
+              href="https://wa.me/5519981957816"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <WhatsappLogoIcon
+                size={icon.size}
+                weight={icon.weight}
+                className={icon.className}
+              />
+            </a>
+          </div>
         </div>
       </div>
     </footer>
