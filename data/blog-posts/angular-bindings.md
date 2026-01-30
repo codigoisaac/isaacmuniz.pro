@@ -1,102 +1,105 @@
 ---
-title: "Angular: property binding, event binding, and bidirectional binding"
-excerpt: Data binding in Angular, explained in a way you'll understand!
-date: 2025-07-01T50:23:08.187Z
-tags: [Programming, Web dev, Angular, Frontend]
+title: "Angular: tipos de data-binding - property, event e two-way"
+excerpt: Vinculações de dados no Angular, explicadas de forma que você vai entender!
+date: 2025-07-01
+tags:
+  - Angular
+  - Desenvolvimento Web
+  - Programação
+  - Frontend
 ---
 
-"Binding," from English, means "linking" or "connection," in the sense of connecting one thing to another.
+“Binding”, do Inglês, significa “vinculação” ou “ligação”, no sentido de conectar uma coisa com a outra.
 
-And we know that in Angular, our components will have three parts: the class, which defines the logic; the template, which defines the content; and finally, the styling of the content.
+E sabemos que no Angular, nossos componentes vão ter três partes: a classe, que define a lógica, a template, que define o conteúdo, e por último a estilização do conteúdo.
 
-But what is relevant to us here and now are only two parts: **the class and the template**.
+Mas o que é relevante para a gente aqui e agora são apenas duas partes: **a classe e a template**.
 
-These two parts of our component handle data, and there are ways to _link_ this data between the two.
+Essas duas partes do nosso componente lidam com dados, e existem formas de _vincular_ esses dados entre as duas.
 
-# The two types of data binding
+# Os dois tipos de vinculação de dados
 
-To begin, there are two types of binding:
+Para começar, há dois tipos de vinculação:
 
-1. **One-way binding** ⇒ when information goes from one part of the component to another. It can be either from the class to the template, or from the template to the class. The information follows only one path, therefore, unidirectional.
+1. **Vinculação unidirecional** ⇒ quando uma informação vai de uma parte do componente para outra. Pode ser tanto da classe para a template, ou da template para a classe. A informação segue um caminho só, portanto, unidirecional.
 
-2. **Two-way binding** ⇒ when information goes both from the class to the template and from the template to the class. It goes back and forth, therefore, bidirectional.
+2. **Vinculação bidirecional** ⇒ quando uma informação vai tanto da classe para a template quanto da template para a classe. Ela vai e volta, logo, bidirecional.
 
-# Unidirectional Binding
+# Vinculação unidirecional
 
-Speaking of unidirectional binding, there are two types:
+Falando sobre vinculação unidirecional, existem dois tipos dela:
 
-1. **Property binding** ⇒ when a property, whose value is defined in the _class_, is bound to the template, so that when this value is changed in the class, the template reflects it, but if it is changed in the template, the change is not reflected in the class. That is, the property goes from the class to the template only.
+1. **Property binding** (vinculação de propriedade) ⇒ quando uma propriedade, que tem seu valor definido na _classe,_ é vinculada à template, fazendo com que quando esse valor é alterado na classe, a template o reflita, mas se ele for alterado na template a alteração não é refletida na classe. Ou seja, a propriedade vai da classe para a template, apenas.
+2. **Event binding** (vinculação de evento) ⇒ quando um evento acontece na _template_ (por exemplo: o usuário digitou em um input), a template envia alguma informação para a classe. Mas nada é enviado da classe para a template. Ou seja, o evento vai somente da template para a classe.
 
-2. **Event binding** ⇒ when an event happens in the _template_ (for example: the user typed in an input), the template sends some information to the class. But nothing is sent from the class to the template. That is, the event goes only from the template to the class.
+Perceba que: no _property binding_ a informação vai da classe para a template, e no _event binding_ é o inverso, a informação vai da template para a classe.
 
-Note that: in _property binding_ the information goes from the class to the template, and in _event binding_ it is the reverse, the information goes from the template to the class. In other words, both are _one-way bindings_.
+Ou seja, ambos são _vinculações unidirecionais_.
 
-## Example of property binding
+## Exemplo de vinculação de propriedade
 
 ```html
 <input [value]="userName" />
 ```
 
-In this example, the value of the input `[value]` will be equal to the value of the property `userName`, which is defined in the class. When the value of the property is changed, the value of the input will reflect it, but when the value of the input is changed, the reverse will not happen.
+Nesse exemplo, o valor do input [value] vai ser igual ao valor da propriedade userName, que está definida na classe. Quando o valor da propriedade for alterado, o valor do input refletirá, mas quando o valor do input for alterado, não acontecerá o inverso.
 
-## Example of event binding
+## Exemplo de vinculação de evento
 
 ```html
 <input (input)="userName = $event.target.value" />
 ```
 
-Here, we have an event binding, where the information will flow from the template to the class: when the user types in the input, the property `userName` will receive the value that is typed in the input, but the input will not receive the value of the property if it is changed elsewhere.
+Já aqui, temos uma vinculação de evento, onde a informação vai fluir da template para a classe: quando o usuário digitar no input, a propriedade userName irá receber o valor que está digitado no input, mas o input não recebe o valor da propriedade caso ela seja alterada em outro lugar.
 
-# Two-Way Binding
+# Vinculação bidirecional
 
-In English, two-way binding is "two-way binding".
+No Inglês, vinculação bidirecional é “two-way binding”.
 
-In practice, two-way binding is the combination of the two methods we discussed above: _property binding_ and _event binding_.
+E a vinculação bidirecional na prática é a união dos dois métodos que falamos acima: _property binding_ e _event binding._
 
-Using both together gives you two-way binding, since one sends data in one direction and the other in the opposite direction.
+Usando os dois juntos você tem uma vinculação bidirecional, já que um manda os dados em uma direção, e o outro, em outra.
 
-The syntax used to create two-way binding is literally the syntax of the two methods above combined: while in _property binding_ we use square brackets `[ ]` and in _event binding_ we use parentheses `( )`, in _two-way binding_ we use both together: `[( )]`.
+Inclusive a sintaxe usada para fazer uma vinculação bidirecional é literalmente a sintaxe das duas acima, unidas: enquanto no _property binding_ nós usamos colchetes `[ ]` e no _event binding_ nós usamos parênteses `( )`, no _two-way binding_ nós usamos ambos juntos: `[( )]`.
 
-## "Dirty" Example of Bidirectional Binding
+## Exemplo “sujo” de vinculação bidirecional
 
-We can create bidirectional binding using property binding and event binding on the same element:
+Podemos fazer uma vinculação bidirecional usando vinculação de propriedade e vinculação de evento no mesmo elemento:
 
 ```html
 <input [value]="userName" (input)="userName = $event.target.value" />
 ```
 
-In the example above, the input value receives the value of the `userName` property, and the `userName` property in turn receives the value that is typed into the input, resulting in bidirectional binding. But this is not the smart way to write it.
+No exemplo acima, o valor do input recebe o valor da propriedade userName, e a propriedade userName por sua vez recebe o valor que é digitado no input, fazendo com que tenhamos uma vinculação bidirecional. Mas essa não é a forma inteligente de escrever uma.
 
-## "Clean" Example of Bidirectional Binding
+## Exemplo “limpo” de vinculação bidirecional
 
-There is a cleaner way to create bidirectional binding:
+Há um jeito mais limpo de fazer a vinculação bidirecional:
 
 ```html
 <input [(ngModel)]="userName" />
 ```
 
-Elegant, isn't it?!
+Elegante, não?!
 
-This syntax, of placing parentheses inside square brackets, is informally called **_banana-in-a-box_** by the Angular community, meaning "banana in a box," and you can see why: `[()]`.
+Essa sintaxe, de colocar os parênteses dentro dos colchetes, é informalmente chamada de **_banana-in-a-box_** pela comunidade Angular, que significa “banana em uma caixa”, e dá para perceber por quê: `[()]`.
 
 ### ngModel
 
-ngModel is an Angular **directive** used to implement bidirectional bindings. It's mainly used in form elements, such as inputs, but with extra customization, it can be used in any element.
+O ngModel é uma **diretiva** do Angular, usada para implementar vinculações bidirecionais. É usada principalmente em elementos de formulário, como inputs, mas pode, com uma customização extra, ser usada em qualquer elemento.
 
-The directive connects the component's class data to input elements. It's part of Angular's **FormsModule**, so to use it you need to import it into the component module, like this:
+A diretiva conecta os dados da classe do componente com elementos de input. Ela é parte do módulo **FormsModule** do Angular, então para usá-la você precisa importá-lo no módulo do componente, dessa forma:
 
 ```tsx
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-
-imports: [FormsModule],
-
-// ...
+  imports: [FormsModule],
+  // ...
 })
 
 ```
 
 ---
 
-I hope you have clearly understood these three types of data binding in Angular.
+Espero que você tenha compreendido com clareza esses três tipos de vinculação de dados no Angular.

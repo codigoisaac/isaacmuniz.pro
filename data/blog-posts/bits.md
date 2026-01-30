@@ -1,30 +1,30 @@
 ---
-title: A brief summary and introduction to how bits work
-excerpt: Bits are the most basic foundation of Computer Science. It's interesting to know how they work. Here I explain how numbers and text are represented by sequences of bits.
-date: 2023-09-29T23:14:50.239Z
-tags: [Programming, Memory, Computer Science]
+title: Um pequeno resumo e introdução sobre como bits funcionam
+excerpt: Bits são a fundação mais básica da Ciência da Computação. É interessante saber como eles funcionam. Aqui eu te explico como números e texto são representados por sequências de bits.
+date: 2023-09-29
+tags: [Programação, Memória, Ciência da Computação]
 ---
 
-Everything we produce with our code is, in the end, bits. We write code in a programming language, but the computer only knows how to read bits. To organize these bits in a way that makes sense to us, we create values ​​in our programming language. In this article we will talk a little about what bits are and how they represent values.
+Tudo que produzimos com nosso código é, no final, bits. Nós escrevemos código em uma linguagem de programação, mas o computador sabe ler apenas bits. Para organizar esses bits de uma forma que faça sentido para nós, nós criamos valores em nossa linguagem de programação. Nesse artigo nós vamos falar um pouco sobre o que são bits e como eles representam valores.
 
 # Bits
 
-Computers are not intelligent, they can only understand two things: zero and one. They don't know what two or three are. And when we write numbers, what our computer understands is the sequence of zeros and ones that represents that number. In this sense, zeros and ones are pieces of information, and we call these zeros and ones bits.
+Computadores não são inteligentes, eles só podem entender duas coisas: zero e um. Ele não sabe o que é dois ou três. E quando escrevemos números, o que nosso computador entende é a sequência de zeros e uns que representa aquele número. Nesse sentido, zeros e uns são pedaços de informação, e nós chamamos esses zeros e uns de bits.
 
-Each 0 (zero) in the computer's memory is a bit, and each 1 (one) is also a bit. Alone, these bits don't mean much, but we can combine them so that a sequence of them signifies some value. For example, the bit sequence equivalent to the number 42 is 101010, for the number 80 the sequence is 1010000, and for 4280 it is 1000010111000.
+Cada 0 (zero) na memória do computador é um bit, e cada 1 (um) também. Sozinhos esses bits não conseguem significar muito, mas podemos juntá-los para que uma sequência deles signifique algum valor. Por exemplo, a sequência de bits que equivale ao número 42 é 101010, para o número 80 a sequência é 1010000 e para 4280 é 1000010111000.
 
-Every bit sequence, whatever it may be, will represent a number to the computer. In a bit sequence, each bit carries a value, and to know what number the sequence represents, simply add these values. The value of each bit increases by a factor of 2 for each position from right to left. So if a bit is in the last position in the sequence, it's worth 1; if it's in the second-to-last position, it's worth 2; if it's one position before that, it's worth 4, then 8, and so on. The bit only carries the value of its position if it is 1 (one). If it is 0 (zero), it does not carry any value.
+Toda sequência de bits, seja ela qual for, vai significar um número para o computador. Em uma sequência de bits, cada bit carrega um valor, e para saber qual número a sequência significa basta somar esses valores. O valor de cada bit aumenta por um fator de 2 a cada posição da direita para a esquerda. Então se um bit está na última posição na sequência, ele vale 1, se ele está na penúltima posição ele vale 2, se ele está uma posição antes dessa ele vale 4, depois 8, e assim por diante. O bit só carrega o valor de sua posição caso ele seja 1 (um). Caso ele for 0 (zero) ele não carrega nenhum valor.
 
-The model below represents the number 25 and makes this clear:
+O modelo abaixo representa o número 25 e deixa isso claro:
 
 ```jsx
   0    0    0    1   1   0   0   1
 128   64   32   16   8   4   2   1
 ```
 
-In the sequence above, we add 16 + 8 + 1 = 25.
+Na sequência acima nós somamos 16 + 8 + 1 = 25.
 
-> 👾 Challenge: calculate what number the following bit sequence represents:
+> 👾 Desafio: calcule qual número significa a sequência de bits abaixo:
 >
 > ```jsx
 >
@@ -32,10 +32,10 @@ In the sequence above, we add 16 + 8 + 1 = 25.
 > 128   64   32   16   8   4   2   1
 > ```
 
-This also happens with text. There is something called the [Unicode standard](https://pt.wikipedia.org/wiki/Unicode) that assigns a number to each letter and emoji. If each letter and emoji means a number to the computer, then we can also represent text through binary code (“binary code” is another name for “bit sequence”). The word “Hi” is represented by the sequence “01001111 01101001”.
+Isso também acontece com texto. Existe algo chamado [padrão Unicode](https://pt.wikipedia.org/wiki/Unicode) que atribui um número para cada letra e emoji. Se cada letra e emoji significa um número para o computador, então também podemos representar texto através de código binário (“código binário” é outro nome para “sequência de bits”). A palavra “Oi” é representada pela sequência “01001111 01101001”.
 
-> 🔥 By the way, to transform text into binary code and vice versa, you can use an app I made, [Binary Shift](https://binaryshift.netlify.app/). (Perhaps in the future number translation will be implemented as well)
+> 🔥 Aliás, para transformar texto em código binário e vice-versa, você pode usar um app que eu fiz, o [Binary Shift](https://binaryshift.netlify.app/). (Talvez no futuro seja implementada tradução de números também)
 
 ---
 
-I hope it's now clearer to you how binary code represents information.
+Espero que agora esteja mais claro para você como código binário representa informação.

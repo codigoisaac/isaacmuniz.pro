@@ -36,13 +36,16 @@ export function getAllBlogPosts(): BlogPost[] {
 function formatDate(dateObj: Date): string {
   const date = dateObj;
 
-  const monthName = new Intl.DateTimeFormat("en-US", { month: "long" }).format(
-    date
-  );
+  const rawMonthName = new Intl.DateTimeFormat("pt-Br", {
+    month: "long",
+  }).format(date);
+
+  const capitalizedMonthName =
+    rawMonthName.charAt(0).toUpperCase() + rawMonthName.slice(1);
 
   const year = date.getFullYear();
 
-  const result = `${year} - ${monthName}`;
+  const result = `${year} - ${capitalizedMonthName}`;
 
   return result;
 }
