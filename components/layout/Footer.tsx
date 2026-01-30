@@ -5,10 +5,15 @@ import {
   LinkedinLogoIcon,
   EnvelopeIcon,
   WhatsappLogoIcon,
+  IconProps,
 } from "@phosphor-icons/react";
 import siteMetadata from "@/data/siteMetadata";
 
-const icon = { size: 28, weight: "duotone", className: "text-base-content" };
+const icon: IconProps = {
+  size: 28,
+  weight: "duotone",
+  className: "text-base-content",
+};
 
 export default function Footer() {
   return (
