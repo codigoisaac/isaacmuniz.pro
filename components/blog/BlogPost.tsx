@@ -3,6 +3,7 @@ import remarkGfm from "remark-gfm";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import { xonokai as codeTheme } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { BlogPost as BlogPostInterface } from "@/interfaces/blog-post";
+import Image from "next/image";
 
 import tsx from "react-syntax-highlighter/dist/esm/languages/prism/tsx";
 import jsx from "react-syntax-highlighter/dist/esm/languages/prism/jsx";
@@ -44,6 +45,22 @@ export default function BlogPost({ post }: Props) {
               >
                 {children}
               </code>
+            );
+          },
+          img: ({ src, alt }) => {
+            if (typeof src !== "string") return null;
+
+            return (
+              <span className="flex justify-center my-8 w-full">
+                <Image
+                  src={src}
+                  alt={alt || "Imagem do blog"}
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  className="rounded-lg shadow-md w-auto h-auto max-w-full max-h-195 block"
+                />
+              </span>
             );
           },
           h1: ({ children }) => (

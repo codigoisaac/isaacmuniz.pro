@@ -32,7 +32,7 @@ E sim, aqui já temos um argumento para responder a pergunta de se ele é “pen
 
 Então menos tempo necessário para ir atrás, escolher e usar ferramentas para fazer coisas específicas que você vai usar, e menos preocupação com suporte da tecnologia que você está usando.
 
-![Folder structure of the super simple application I'm building.](Laravel%20-%20my%20first%20impressions%20about%20the%20frame/image.png)
+![Estrutura de pastas](/images/blogPosts/laravel-primeiras-impressoes/folder-structure.png)
 
 Estrutura de pastas da aplicação super simples que eu estou construindo.
 
@@ -150,7 +150,7 @@ Mas é interessante saber que o framework cuida desses detalhes de linguagem tam
 
 2 - Dá uma olhada no método `abort(404)`. Esse método aborta a execução da aplicação e retorna retorna uma resposta HTTP com o código que você definiu, nesse caso 404, e o framework já tem uma tela pronta para informar isso para o usuário, sem que ele veja nenhuma mensagem de erro:
 
-![image.png](Laravel%20-%20minhas%20primeiras%20impress%C3%B5es%20sobre%20o%20fram/image%201.png)
+![Página padrão de erro 404](/images/blogPosts/laravel-primeiras-impressoes/404-not-found.png)
 
 É claro que em aplicações importantes você vai fazer uma tela de erro mais decente, com uma mensagem mais clara e um link para o usuário retornar para a página inicial do site por exemplo, porém é muito bacana que o framework te dê uma tela pronta para você não precisar se preocupar com isso enquanto desenvolve as primeiras versões da sua aplicação.
 
@@ -188,7 +188,7 @@ Com Blade Templates, esse código:
 
 Vai renderizar isso:
 
-![image.png](Laravel%20-%20my%20first%20impressions%20about%20the%20frame/image%202.png)
+![Exemplo de Blade Templates](/images/blogPosts/laravel-primeiras-impressoes/blade-templates-example.png)
 
 Considerando que estamos usando os dados que vimos lá em cima em app/Models/Job.php, que são retornados junto com a view na rota /jobs que também vimos mais acima no arquivo routes/web.php.
 
