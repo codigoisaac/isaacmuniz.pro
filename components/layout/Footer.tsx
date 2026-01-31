@@ -1,12 +1,10 @@
-"use client";
-
 import {
   GithubLogoIcon,
   LinkedinLogoIcon,
   EnvelopeIcon,
   WhatsappLogoIcon,
-  IconProps,
-} from "@phosphor-icons/react";
+} from "@phosphor-icons/react/dist/ssr";
+import { IconProps } from "@phosphor-icons/react";
 import siteMetadata from "@/data/siteMetadata";
 
 const icon: IconProps = {
