@@ -9,7 +9,7 @@ export function getBlogPostSlugs() {
   return fs.readdirSync(blogPostsDirectory);
 }
 
-export function getBlogPostBySlug(slug: string) {
+export function getBlogPostBySlug(slug: string): BlogPost {
   const cleanSlug = slug.replace(/\.md$/, "");
   const fullBlogPostPath = join(blogPostsDirectory, `${cleanSlug}.md`);
   const fileContents = fs.readFileSync(fullBlogPostPath, "utf8");

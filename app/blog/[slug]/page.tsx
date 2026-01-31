@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { getBlogPostBySlug } from "@/lib/api";
 import BlogPost from "@/components/blog/BlogPost";
-import DecryptedText from "@/components/DecryptedText";
+import BlogPostHeader from "@/components/blog/BlogPostHeader";
 
 type PageProps = {
   params: Promise<{
@@ -13,19 +13,11 @@ export default async function BlogPostPage(props: PageProps) {
   const params = await props.params;
   const post = getBlogPostBySlug(params.slug);
 
-  if (!post) {
-    return notFound();
-  }
+  if (!post) return notFound();
 
   return (
     <>
-      <div className="font-geist-mono badge badge-sm badge-secondary">
-        <DecryptedText text={`/blog/${params.slug}`} speed={40} />
-      </div>
-
-      <div className="font-saira mb-5 mt-1.5 text-4xl md:text-5xl text-primary leading-14">
-        {post.title}
-      </div>
+      <BlogPostHeader post={post} slug={params.slug} />
 
       <BlogPost post={post} />
     </>
