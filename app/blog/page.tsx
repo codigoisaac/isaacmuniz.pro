@@ -1,15 +1,13 @@
+import PageHeader from "@/components/PageHeader";
 import { getAllBlogPosts } from "@/lib/api";
 import Link from "next/link";
-import DecryptedText from "@/components/DecryptedText";
 
 export default function BlogPage() {
   const allBlogPosts = getAllBlogPosts();
 
   return (
     <>
-      <div className="font-geist-mono font-bold mb-14 text-center">
-        <DecryptedText text="/blog" speed={80} revealDirection="center" />
-      </div>
+      <PageHeader text="/blog" />
 
       {allBlogPosts.map((post) => (
         <Link
