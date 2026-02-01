@@ -39,13 +39,14 @@ export default function Footer() {
           </div>
 
           <div>
-            {siteMetadata.emailAddress} | {siteMetadata.phoneNumber}
+            {siteMetadata.socials.emailAddress} |{" "}
+            {siteMetadata.socials.phoneNumber}
           </div>
         </div>
 
         <div className="flex gap-4">
           <a
-            href={siteMetadata.githubLink}
+            href={siteMetadata.socials.githubLink}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -57,7 +58,7 @@ export default function Footer() {
           </a>
 
           <a
-            href={siteMetadata.linkedinLink}
+            href={siteMetadata.socials.linkedinLink}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -69,7 +70,7 @@ export default function Footer() {
           </a>
 
           <a
-            href={siteMetadata.emailLink}
+            href={siteMetadata.socials.emailLink}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -81,7 +82,7 @@ export default function Footer() {
           </a>
 
           <a
-            href={siteMetadata.whatsappLink}
+            href={siteMetadata.socials.whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
           >

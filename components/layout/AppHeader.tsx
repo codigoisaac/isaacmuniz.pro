@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import headerNavLinks from "@/data/headerNavLinks";
-import siteMetadata from "@/data/siteMetadata.js";
+import siteMetadata from "@/data/siteMetadata";
 import dynamic from "next/dynamic";
 import Logo from "@/components/layout/Logo";
 import ScrambledText from "@/components/ScrambledText";
