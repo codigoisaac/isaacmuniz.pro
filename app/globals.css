@@ -158,6 +158,6 @@ a[href^="http"]:not(.unstiled-link) {
   }
 
   .body-content-paddings {
-    @apply px-4 sm:px-8 xl:px-4;
+    @apply px-6 sm:px-12 xl:px-4;
   }
 }
