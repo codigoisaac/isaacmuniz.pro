@@ -7,6 +7,8 @@ import imgDesgruda from "@/assets/images/portfolio/desgruda.png";
 import imgMyOldSite from "@/assets/images/portfolio/myOldSite.png";
 import imgBinaryShift from "@/assets/images/portfolio/binaryShift.png";
 
+type Tag = "Web App" | "Website" | "Extensão p/ VSCode";
+
 export interface Project {
   name: string;
   excerpt: string;
@@ -14,6 +16,7 @@ export interface Project {
   link: string;
   description: string[];
   tech: TechID[];
+  tags: Tag[];
   date: string;
 }
 
@@ -27,6 +30,7 @@ const portfolio: Project[] = [
       "Nisi do voluptate aliquip fugiat aliqua fugiat ut qui ex non enim minim.",
     ],
     tech: ["nextjs", "react", "tailwindcss", "daisyui", "ts"],
+    tags: ["Website"],
     date: "2026",
   },
 
@@ -40,6 +44,7 @@ const portfolio: Project[] = [
       "Nisi do voluptate aliquip fugiat aliqua fugiat ut qui ex non enim minim.",
     ],
     tech: ["ts", "vscode"],
+    tags: ["Extensão p/ VSCode"],
     date: "2026",
   },
 
@@ -53,6 +58,7 @@ const portfolio: Project[] = [
       "Nisi do voluptate aliquip fugiat aliqua fugiat ut qui ex non enim minim.",
     ],
     tech: ["nextjs", "react", "tailwindcss", "ts"],
+    tags: ["Website"],
     date: "2023",
   },
 
@@ -68,6 +74,7 @@ const portfolio: Project[] = [
       "Resolvi ambos os problemas fazendo um simples web app - BinaryShift.",
     ],
     tech: ["js", "react", "redux", "tailwindcss"],
+    tags: ["Web App"],
     date: "2022",
   },
 ];

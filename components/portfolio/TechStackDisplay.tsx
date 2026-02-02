@@ -17,7 +17,7 @@ export default function TechStackDisplay({ project }: Props) {
         return (
           <div
             key={id}
-            className="flex items-center justify-center tooltip tooltip-secondary"
+            className="tooltip tooltip-secondary"
             data-tip={tech.name}
           >
             <Image

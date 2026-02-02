@@ -1,6 +1,7 @@
 import BlurImage from "@/components/BlurImage";
 import { Project } from "@/data/portfolio";
 import TechStackDisplay from "./TechStackDisplay";
+import TagsDisplay from "./TagsDisplay";
 
 type Props = {
   project: Project;
@@ -17,7 +18,11 @@ export default function ProjectCard({ project }: Props) {
 
       <div className="text-sm mb-5 text-pretty grow">{project.excerpt}</div>
 
-      <TechStackDisplay project={project} />
+      <div className="flex items-end gap-2 justify-between">
+        <TagsDisplay tags={project.tags} />
+
+        <TechStackDisplay project={project} />
+      </div>
     </div>
   );
 }
