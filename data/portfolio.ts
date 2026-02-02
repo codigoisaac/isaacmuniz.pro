@@ -7,7 +7,7 @@ import imgDesgruda from "@/assets/images/portfolio/desgruda.png";
 import imgMyOldSite from "@/assets/images/portfolio/myOldSite.png";
 import imgBinaryShift from "@/assets/images/portfolio/binaryShift.png";
 
-type Tag = "Web App" | "Website" | "Extensão p/ VSCode";
+type Tag = "Web App" | "Website" | "Extensão p/ VSCode" | "Open Source";
 
 export interface Project {
   name: string;
@@ -30,7 +30,7 @@ const portfolio: Project[] = [
       "Nisi do voluptate aliquip fugiat aliqua fugiat ut qui ex non enim minim.",
     ],
     tech: ["nextjs", "react", "tailwindcss", "daisyui", "ts"],
-    tags: ["Website"],
+    tags: ["Website", "Open Source"],
     date: "2026",
   },
 
@@ -44,7 +44,7 @@ const portfolio: Project[] = [
       "Nisi do voluptate aliquip fugiat aliqua fugiat ut qui ex non enim minim.",
     ],
     tech: ["ts", "vscode"],
-    tags: ["Extensão p/ VSCode"],
+    tags: ["Extensão p/ VSCode", "Open Source"],
     date: "2026",
   },
 
