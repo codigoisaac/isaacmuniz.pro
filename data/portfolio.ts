@@ -3,6 +3,7 @@ import { TechID } from "./techStack";
 
 // Project images
 import imgMySite from "@/assets/images/portfolio/mySite.png";
+import imgDesgruda from "@/assets/images/portfolio/desgruda.png";
 import imgMyOldSite from "@/assets/images/portfolio/myOldSite.png";
 import imgBinaryShift from "@/assets/images/portfolio/binaryShift.png";
 
@@ -26,6 +27,19 @@ const portfolio: Project[] = [
       "Nisi do voluptate aliquip fugiat aliqua fugiat ut qui ex non enim minim.",
     ],
     tech: ["nextjs", "react", "tailwindcss", "daisyui", "ts"],
+    date: "2026",
+  },
+
+  {
+    name: "Desgruda",
+    excerpt:
+      "Nostrud excepteur qui id ipsum aliqua irure pariatur nisi veniam.",
+    image: imgDesgruda,
+    link: "https://marketplace.visualstudio.com/items?itemName=IsaacMuniz.desgruda",
+    description: [
+      "Nisi do voluptate aliquip fugiat aliqua fugiat ut qui ex non enim minim.",
+    ],
+    tech: ["ts", "vscode"],
     date: "2026",
   },
 
@@ -54,7 +68,7 @@ const portfolio: Project[] = [
       "Resolvi ambos os problemas fazendo um simples web app - BinaryShift.",
     ],
     tech: ["js", "react", "redux", "tailwindcss"],
-    date: "Mar/2022",
+    date: "2022",
   },
 ];
 

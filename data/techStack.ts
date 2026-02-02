@@ -16,6 +16,7 @@ import sequelize from "@/assets/images/techStack/sequelize.webp";
 import tailwindcss from "@/assets/images/techStack/tailwindcss.webp";
 import ts from "@/assets/images/techStack/ts.webp";
 import daisyui from "@/assets/images/techStack/daisyui.png";
+import vscode from "@/assets/images/techStack/vscode.png";
 
 export type TechID =
   | "js"
@@ -32,7 +33,8 @@ export type TechID =
   | "mysql"
   | "sequelize"
   | "bootstrap"
-  | "daisyui";
+  | "daisyui"
+  | "vscode";
 
 export interface TechItem {
   name: string;
@@ -99,6 +101,10 @@ const techStack: Record<TechID, TechItem> = {
   daisyui: {
     name: "daisyUI",
     image: daisyui,
+  },
+  vscode: {
+    name: "VSCode",
+    image: vscode,
   },
 };
 
