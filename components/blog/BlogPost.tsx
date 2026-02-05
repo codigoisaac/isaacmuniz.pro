@@ -1,14 +1,13 @@
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
-import { xonokai as codeTheme } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { BlogPost as BlogPostInterface } from "@/interfaces/blog-post";
 import Image from "next/image";
-
-import tsx from "react-syntax-highlighter/dist/esm/languages/prism/tsx";
+import ReactMarkdown from "react-markdown";
+import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
+import { xonokai as codeTheme } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import jsx from "react-syntax-highlighter/dist/esm/languages/prism/jsx";
 import markup from "react-syntax-highlighter/dist/esm/languages/prism/markup";
 import php from "react-syntax-highlighter/dist/esm/languages/prism/php";
+import remarkGfm from "remark-gfm";
+import tsx from "react-syntax-highlighter/dist/esm/languages/prism/tsx";
 
 // Register only used languages, to reduce bundle size
 SyntaxHighlighter.registerLanguage("tsx", tsx);
@@ -81,7 +80,7 @@ export default function BlogPost({ post }: Props) {
             <ol className="list-decimal mb-3 ml-4">{children}</ol>
           ),
           blockquote: ({ children }) => (
-            <blockquote className="my-6 px-4 pt-3 pb-1 border-l-4 border-secondary rounded-sm bg-base-200">
+            <blockquote className="my-6 px-4 pt-3 pb-1 border-l-4 border-primary rounded-sm bg-base-200">
               {children}
             </blockquote>
           ),

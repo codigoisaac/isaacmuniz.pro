@@ -3,13 +3,13 @@
 }
 
 :root {
-  --color-light-base: oklch(84.907% 0.01557 54.691);
-  --color-light-base-2: oklch(78.616% 0.0409 54.649);
-  --color-light-base-3: oklch(72.338% 0.06557 53.842);
-  --color-light-smooth-content: oklch(54.048% 0.08546 52.206);
+  --color-light-base: oklch(85.508% 0.00858 55.929);
+  --color-light-base-2: oklch(80.999% 0.01843 53.753);
+  --color-light-base-3: oklch(76.885% 0.04387 54.181);
+  --color-light-smooth-content: oklch(52.344% 0.07665 52.321);
   --color-dark-base: oklch(0.21 0.0037 48.54);
-  --color-dark-base-2: oklch(24.573% 0.02647 50.809);
-  --color-dark-base-3: oklch(31.836% 0.03804 52.641);
+  --color-dark-base-2: oklch(23.148% 0.02074 39.169);
+  --color-dark-base-3: oklch(31.538% 0.03091 47.675);
   --color-dark-smooth-content: oklch(58.801% 0.04326 52.838);
   --color-1: oklch(0.5 0.0853 203.39);
   --color-1-content: oklch(94% 0.028 342.258);
