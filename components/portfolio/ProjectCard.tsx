@@ -1,7 +1,7 @@
 import BlurImage from "@/components/BlurImage";
 import { Project } from "@/data/portfolio";
-import TechStackDisplay from "./TechStackDisplay";
 import TagsDisplay from "./TagsDisplay";
+import TechStackDisplay from "./TechStackDisplay";
 
 type Props = {
   project: Project;
@@ -9,7 +9,7 @@ type Props = {
 
 export default function ProjectCard({ project }: Props) {
   return (
-    <div className="flex flex-col justify-between bg-base-200 p-2 rounded-selector border-3 border-base-300">
+    <div className="flex flex-col justify-between bg-base-200 p-4 rounded-xl border-3 border-base-300 h-full relative z-20 cursor-pointer">
       <BlurImage src={project.image} alt={`Capa do projeto ${project.name}`} />
 
       <div className="text-xl font-geist-mono font-medium mb-1 mt-5">
@@ -20,7 +20,6 @@ export default function ProjectCard({ project }: Props) {
 
       <div className="flex items-end gap-2 justify-between">
         <TagsDisplay tags={project.tags} />
-
         <TechStackDisplay project={project} />
       </div>
     </div>
