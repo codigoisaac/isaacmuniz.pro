@@ -1,17 +1,18 @@
 import { StaticImageData } from "next/image";
 import { TechID } from "./techStack";
-
 // Project images
-import imgMySite from "@/assets/images/portfolio/mySite.png";
+import imgBinaryShift from "@/assets/images/portfolio/binaryShift.png";
 import imgDesgruda from "@/assets/images/portfolio/desgruda.png";
 import imgMyOldSite from "@/assets/images/portfolio/myOldSite.png";
-import imgBinaryShift from "@/assets/images/portfolio/binaryShift.png";
+import imgMySite from "@/assets/images/portfolio/mySite.png";
 
 type Tag = "Web App" | "Website" | "Extensão p/ VSCode" | "Open Source";
 
 export interface Project {
-  name: string;
+  title: string;
+  subtitle?: string;
   excerpt: string;
+  slug: string;
   image: StaticImageData;
   link: string;
   description: string[];
@@ -22,8 +23,9 @@ export interface Project {
 
 const portfolio: Project[] = [
   {
-    name: "Meu Site",
+    title: "Meu Site",
     excerpt: "Officia sit ex eu excepteur sunt magna tempor cillum ex culpa.",
+    slug: "meu-site",
     image: imgMySite,
     link: "https://isaacmuniz.vercel.app",
     description: [
@@ -35,9 +37,10 @@ const portfolio: Project[] = [
   },
 
   {
-    name: "Desgruda",
+    title: "Desgruda",
     excerpt:
       "Nostrud excepteur qui id ipsum aliqua irure pariatur nisi veniam.",
+    slug: "desgruda",
     image: imgDesgruda,
     link: "https://marketplace.visualstudio.com/items?itemName=IsaacMuniz.desgruda",
     description: [
@@ -49,9 +52,11 @@ const portfolio: Project[] = [
   },
 
   {
-    name: "Meu Site Antigo",
+    title: "Meu Site Antigo",
     excerpt:
       "Elit eu enim id nostrud magna voluptate minim nulla duis culpa Lorem ad consectetur proident.",
+
+    slug: "meu-site-antigo",
     image: imgMyOldSite,
     link: "https://isaacmuniz.vercel.app",
     description: [
@@ -63,9 +68,10 @@ const portfolio: Project[] = [
   },
 
   {
-    name: "BinaryShift",
+    title: "BinaryShift",
     excerpt:
       "Um app que traduz código binário em texto, e texto em código binário.",
+    slug: "binary-shift",
     image: imgBinaryShift,
     link: "https://binaryshift.netlify.app/",
     description: [

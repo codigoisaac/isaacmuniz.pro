@@ -8,9 +8,6 @@ export default function PortfolioPage() {
     <>
       <PageHeader text="/portfolio" />
 
-      {/* We map the components into an array and let 
-          HoverEffect handle the grid and animations 
-      */}
       <HoverEffect
         items={portfolio.map((project, index) => (
           <ProjectCard key={index} project={project} />
