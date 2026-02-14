@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import headerNavLinks from "@/data/headerNavLinks";
-import siteMetadata from "@/data/siteMetadata";
-import dynamic from "next/dynamic";
 import Logo from "@/components/layout/Logo";
 import ScrambledText from "@/components/ScrambledText";
+import dynamic from "next/dynamic";
+import headerNavLinks from "@/data/headerNavLinks";
+import siteMetadata from "@/data/siteMetadata";
 
 const MobileNav = dynamic(() => import("@/components/layout/MobileNav"), {
   ssr: false,
@@ -21,8 +21,8 @@ const ThemeSwitcher = dynamic(
 
 export default function AppHeader() {
   return (
-    <header className="sticky top-0 z-50 mb-10 w-full bg-base-100/93">
-      <div className="general-content-margins header-paddings flex items-center justify-between pt-7 pb-4">
+    <header className="sticky top-0 z-50 mb-10 w-full bg-base-100/70 backdrop-blur-xs">
+      <div className="general-content-margins header-paddings flex items-center justify-between pt-4 pb-2 md:pt-7 md:pb-4">
         {/* Logo and title */}
         <Link href="/" aria-label={siteMetadata.headerTitle}>
           <div className="flex items-center justify-between">
