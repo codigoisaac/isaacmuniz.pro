@@ -1,7 +1,7 @@
-import { notFound } from "next/navigation";
-import { getBlogPostBySlug } from "@/lib/api";
 import BlogPost from "@/components/blog/BlogPost";
 import BlogPostHeader from "@/components/blog/BlogPostHeader";
+import { getBlogPostBySlug } from "@/lib/api";
+import { notFound } from "next/navigation";
 
 type PageProps = {
   params: Promise<{
@@ -17,7 +17,7 @@ export default async function BlogPostPage(props: PageProps) {
 
   return (
     <>
-      <BlogPostHeader post={post} slug={params.slug} />
+      <BlogPostHeader post={post} />
 
       <BlogPost post={post} />
     </>

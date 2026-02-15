@@ -1,25 +1,9 @@
-import { StaticImageData } from "next/image";
-import { TechID } from "./techStack";
+import { Project } from "@/interfaces/portfolio";
 // Project images
 import imgBinaryShift from "@/assets/images/portfolio/binaryShift.png";
 import imgDesgruda from "@/assets/images/portfolio/desgruda.png";
 import imgMyOldSite from "@/assets/images/portfolio/myOldSite.png";
 import imgMySite from "@/assets/images/portfolio/mySite.png";
-
-type Tag = "Web App" | "Website" | "Extensão p/ VSCode" | "Open Source";
-
-export interface Project {
-  title: string;
-  subtitle?: string;
-  excerpt: string;
-  slug: string;
-  image: StaticImageData;
-  link: string;
-  description: string[];
-  tech: TechID[];
-  tags: Tag[];
-  date: string;
-}
 
 const portfolio: Project[] = [
   {

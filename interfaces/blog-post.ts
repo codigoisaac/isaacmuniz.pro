@@ -1,4 +1,4 @@
-export type BlogPost = {
+export interface BlogPost {
   title: string;
   excerpt: string;
   date: string;
@@ -7,4 +7,4 @@ export type BlogPost = {
   slug: string;
   content: string;
   isDraft: boolean;
-};
+}

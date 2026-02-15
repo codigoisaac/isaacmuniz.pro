@@ -1,8 +1,9 @@
-import { StaticImageData } from "next/image";
+import { TechID, TechItem } from "@/interfaces/portfolio";
 
 // Tech icons
 import bootstrap from "@/assets/images/techStack/bootstrap.webp";
 import css from "@/assets/images/techStack/css.webp";
+import daisyui from "@/assets/images/techStack/daisyui.png";
 import docker from "@/assets/images/techStack/docker.webp";
 import express from "@/assets/images/techStack/express.webp";
 import html from "@/assets/images/techStack/html.webp";
@@ -15,31 +16,7 @@ import redux from "@/assets/images/techStack/redux.webp";
 import sequelize from "@/assets/images/techStack/sequelize.webp";
 import tailwindcss from "@/assets/images/techStack/tailwindcss.webp";
 import ts from "@/assets/images/techStack/ts.webp";
-import daisyui from "@/assets/images/techStack/daisyui.png";
 import vscode from "@/assets/images/techStack/vscode.png";
-
-export type TechID =
-  | "js"
-  | "react"
-  | "nextjs"
-  | "redux"
-  | "tailwindcss"
-  | "html"
-  | "css"
-  | "ts"
-  | "node"
-  | "docker"
-  | "express"
-  | "mysql"
-  | "sequelize"
-  | "bootstrap"
-  | "daisyui"
-  | "vscode";
-
-export interface TechItem {
-  name: string;
-  image: StaticImageData;
-}
 
 const techStack: Record<TechID, TechItem> = {
   js: {
