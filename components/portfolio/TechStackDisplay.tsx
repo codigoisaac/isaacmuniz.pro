@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Project } from "@/data/portfolio";
+import { Project } from "@/interfaces/portfolio";
 import clsx from "clsx";
 import techStack from "@/data/techStack";
 

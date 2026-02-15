@@ -1,6 +1,6 @@
 import BlurImage from "@/components/BlurImage";
 import Link from "next/link";
-import { Project } from "@/data/portfolio";
+import { Project } from "@/interfaces/portfolio";
 import TagsDisplay from "./TagsDisplay";
 import TechStackDisplay from "./TechStackDisplay";
 

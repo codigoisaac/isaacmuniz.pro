@@ -2,7 +2,7 @@ import { ArrowBendUpLeftIcon } from "@phosphor-icons/react/ssr";
 import { BlogPost } from "@/interfaces/blog-post";
 import DecryptedText from "./DecryptedText";
 import Link from "next/link";
-import { Project } from "@/data/portfolio";
+import { Project } from "@/interfaces/portfolio";
 
 interface Props {
   item: BlogPost | Project;

@@ -1,5 +1,5 @@
 import { BlogPost } from "@/interfaces/blog-post";
-import { Project } from "@/data/portfolio";
+import { Project } from "@/interfaces/portfolio";
 
 interface Props {
   item: BlogPost | Project;
