@@ -1,3 +1,4 @@
+import Button from "@/components/Button";
 import ProjectBody from "@/components/portfolio/ProjectBody";
 import ProjectHeader from "@/components/portfolio/ProjectHeader";
 import { notFound } from "next/navigation";
@@ -20,6 +21,10 @@ export default async function ProjectPage(props: PageProps) {
       <ProjectHeader project={project} />
 
       <ProjectBody project={project} />
+
+      <div className="flex justify-center w-full mt-14 -mb-8">
+        <Button text="Visitar projeto" link={project.link} />
+      </div>
     </>
   );
 }

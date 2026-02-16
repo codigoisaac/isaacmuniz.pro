@@ -3,18 +3,26 @@ import { Project } from "@/interfaces/portfolio";
 
 interface Props {
   item: BlogPost | Project;
+  shouldShowExcerpt?: boolean;
 }
 
-export default function ItemHeadlines({ item }: Props) {
+export default function ItemHeadlines({
+  item,
+  shouldShowExcerpt = true,
+}: Props) {
   return (
     <>
       {/* Item Title */}
-      <div className="font-saira mt-2.5 mb-5 text-5xl text-primary leading-14">
+      <div className="font-saira my-4 text-5xl text-primary leading-14">
         {item.title}
       </div>
 
       {/* Item Excerpt */}
-      <div className="font-transducer mb-5">{item.excerpt}</div>
+      {shouldShowExcerpt ? (
+        <div className="font-transducer mb-5">{item.excerpt}</div>
+      ) : (
+        <></>
+      )}
     </>
   );
 }
