@@ -20,7 +20,9 @@ export default function ProjectCard({ project }: Props) {
         {project.title}
       </div>
 
-      <div className="text-sm mb-5 text-pretty grow">{project.excerpt}</div>
+      <div className="text-sm mb-5 text-pretty grow text-neutral-content">
+        {project.excerpt}
+      </div>
 
       <div className="flex items-end gap-2 justify-between">
         <TagsDisplay tags={project.tags} />
