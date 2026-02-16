@@ -16,7 +16,13 @@ export type TechID =
   | "sequelize"
   | "bootstrap"
   | "daisyui"
-  | "vscode";
+  | "vscode"
+  | "bun"
+  | "gsap"
+  | "motion"
+  | "markdown"
+  | "notion"
+  | "babel";
 
 type Tag = "Web App" | "Website" | "Extensão p/ VSCode" | "Open Source";
 
