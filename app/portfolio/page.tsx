@@ -1,4 +1,4 @@
-import { HoverEffect } from "@/components/portfolio/CardHoverEffect";
+import { HoverEffect } from "@/components/portfolio/HoverEffect";
 import PageHeader from "@/components/PageHeader";
 import ProjectCard from "@/components/portfolio/ProjectCard";
 import portfolio from "@/data/portfolio";

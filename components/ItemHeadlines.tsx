@@ -18,10 +18,8 @@ export default function ItemHeadlines({
       </div>
 
       {/* Item Excerpt */}
-      {shouldShowExcerpt ? (
+      {shouldShowExcerpt && (
         <div className="font-transducer mb-5">{item.excerpt}</div>
-      ) : (
-        <></>
       )}
     </>
   );

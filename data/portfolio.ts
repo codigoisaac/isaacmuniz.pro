@@ -53,14 +53,14 @@ const portfolio: Project[] = [
   },
 
   {
-    title: "Meu Portfolio V1",
+    title: "Meu Antigo Site",
     excerpt:
       "A primeira versão do meu portfolio autoral, desenvolvida para fundir design experimental com tecnologias modernas de desenvolvimento.",
     slug: "portfolio-v1",
     image: imgMyOldSite,
     link: "https://isaacmuniz.vercel.app",
     description: [
-      "O Portfolio V1 foi concebido como um manifesto de design e engenharia, onde a estética retro-futurista de TVs analógicas e efeitos de glitch se fundem a uma arquitetura moderna e performática.",
+      "A V1 do meu site foi concebida como um manifesto de design e engenharia, onde a estética retro-futurista de TVs analógicas e efeitos de glitch se fundem a uma arquitetura moderna e performática.",
       "Busquei equilibrar o minimalismo funcional com uma pegada brutalista, utilizando Next.js e TypeScript para construir uma interface altamente interativa que foge dos padrões convencionais de portfólios genéricos.",
       "Um dos pilares técnicos foi a integração com o Notion via API, transformando-o em um Headless CMS para gerenciar o conteúdo de forma dinâmica, sem sacrificar a liberdade artística do front-end customizado.",
       "Este projeto reflete minha crença de que o código é uma extensão da expressão criativa, demonstrando um rigoroso cuidado com a qualidade do software aliado a um senso estético refinado e autoral.",

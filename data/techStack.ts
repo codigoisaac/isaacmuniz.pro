@@ -40,12 +40,12 @@ const techStack: Record<TechID, TechItem> = {
   sequelize: { name: "Sequelize", image: sequelize },
   bootstrap: { name: "Bootstrap", image: bootstrap },
   daisyui: { name: "daisyUI", image: daisyui },
-  vscode: { name: "VSCode", image: vscode },
+  vscode: { name: "VSCode API", image: vscode },
   bun: { name: "Bun", image: bun },
   gsap: { name: "GSAP", image: gsap },
   motion: { name: "Motion", image: motion },
   markdown: { name: "Markdown", image: markdown },
-  notion: { name: "Notion", image: notion },
+  notion: { name: "Notion API", image: notion },
   babel: { name: "Babel", image: babel },
 };
 

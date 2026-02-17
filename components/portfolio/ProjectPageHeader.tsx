@@ -8,7 +8,7 @@ type Props = {
   project: Project;
 };
 
-export default function ProjectHeader({ project }: Props) {
+export default function ProjectPageHeader({ project }: Props) {
   return (
     <div className="mb-8 pb-7 border-b border-neutral-content">
       <CustomBadge item={project} itemPageSlug="portfolio" />

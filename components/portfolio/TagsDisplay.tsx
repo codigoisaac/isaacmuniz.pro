@@ -5,7 +5,7 @@ type Props = {
   className?: string;
 };
 
-export default function TechStackDisplay({ tags, className }: Props) {
+export default function TagsDisplay({ tags, className }: Props) {
   return (
     <div
       className={clsx(

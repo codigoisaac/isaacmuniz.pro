@@ -21,7 +21,7 @@ export default function Button({
       <button className="btn btn-accent btn-xs sm:btn-sm md:btn-md flex items-center gap-2">
         <div>{text}</div>
 
-        {shouldShowExternalLinkIcon ? <ArrowSquareOutIcon size={15} /> : <></>}
+        {shouldShowExternalLinkIcon && <ArrowSquareOutIcon size={15} />}
       </button>
     </a>
   );

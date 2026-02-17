@@ -5,7 +5,7 @@ interface Props {
   project: Project;
 }
 
-export default function ProjectBody({ project }: Props) {
+export default function ProjectPageBody({ project }: Props) {
   return (
     <>
       <section className="block">

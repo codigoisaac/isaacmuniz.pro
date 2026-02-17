@@ -1,6 +1,5 @@
 @import "tailwindcss";
-@plugin "daisyui" {
-}
+@plugin "daisyui";
 
 :root {
   --color-light-base: oklch(85.508% 0.00858 55.929);

@@ -23,11 +23,7 @@ export default function TechStackDisplay({
         },
       )}
     >
-      {shouldDisplayTitle ? (
-        <div className="mr-1 text-sm">Feito com:</div>
-      ) : (
-        <></>
-      )}
+      {shouldDisplayTitle && <div className="mr-1 text-sm">Feito com:</div>}
 
       {project.tech.map((id) => {
         const tech = techStack[id];

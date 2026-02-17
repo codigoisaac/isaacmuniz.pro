@@ -11,7 +11,7 @@ type Props = {
 export default function ProjectCard({ project }: Props) {
   return (
     <Link
-      className="flex flex-col justify-between bg-base-200 p-4 rounded-xl border-3 border-base-300 h-full relative z-20 cursor-pointer"
+      className="flex flex-col justify-between bg-base-200 p-4 rounded-xl border-3 border-base-300 h-full relative cursor-pointer"
       href={`/portfolio/${project.slug}`}
     >
       <BlurImage src={project.image} alt={`Capa do projeto ${project.title}`} />
