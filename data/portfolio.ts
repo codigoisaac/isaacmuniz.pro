@@ -13,6 +13,7 @@ const portfolio: Project[] = [
     slug: "meu-site",
     image: imgMySite,
     link: "https://isaacmuniz.pro",
+    repoLink: "https://github.com/codigoisaac/my-app",
     description: [
       "Este projeto utiliza tecnologias de ponta como Next.js 16, React 19 e Tailwind CSS 4 em uma arquitetura pensada para longevidade, alta performance e uma experiência de usuário impecável.",
       "A gestão de conteúdo é feita através de arquivos locais em Markdown e FrontMatter, uma escolha estratégica para eliminar a latência de APIs externas e garantir a resiliência de imagens e textos, evitando a expiração de imagens que ocorria no meu site anterior devido às URLs temporárias da API do Notion.",
@@ -42,6 +43,7 @@ const portfolio: Project[] = [
     slug: "desgruda",
     image: imgDesgruda,
     link: "https://marketplace.visualstudio.com/items?itemName=IsaacMuniz.desgruda",
+    repoLink: "https://github.com/codigoisaac/desgruda",
     description: [
       "O Desgruda é uma ferramenta de Developer Experience (DX) projetada para resolver o amontoamento visual em arquivos React, automatizando a separação de componentes com linhas em branco.",
       "A solução utiliza o @babel/parser para percorrer a Abstract Syntax Tree (AST) do código, identificando com precisão os elementos JSX irmãos e calculando as posições de inserção sem corromper a estrutura do arquivo.",

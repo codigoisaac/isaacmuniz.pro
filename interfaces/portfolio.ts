@@ -33,6 +33,7 @@ export interface Project {
   slug: string;
   image: StaticImageData;
   link: string;
+  repoLink?: string;
   description: string[];
   tech: TechID[];
   tags: Tag[];

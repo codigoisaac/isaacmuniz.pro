@@ -1,7 +1,7 @@
-import Button from "../Button";
 import CustomBadge from "../CustomBadge";
 import ItemHeadlines from "../ItemHeadlines";
 import { Project } from "@/interfaces/portfolio";
+import ProjectButtons from "./ProjectButtons";
 import TechStackDisplay from "./TechStackDisplay";
 
 type Props = {
@@ -37,7 +37,7 @@ export default function ProjectPageHeader({ project }: Props) {
           <TechStackDisplay project={project} shouldDisplayTitle />
         </div>
 
-        <Button text="Visitar projeto" link={project.link} />
+        <ProjectButtons project={project} />
       </div>
     </div>
   );
