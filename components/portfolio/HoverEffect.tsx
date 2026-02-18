@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import { ReactNode, useState } from "react";
 
-import clsx from "clsx";
+import { cn } from "@/lib/utils";
 
 export const HoverEffect = ({
   items,
@@ -15,7 +15,7 @@ export const HoverEffect = ({
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <div className={clsx("grid grid-cols-1 sm:grid-cols-2 py-10", className)}>
+    <div className={cn("grid grid-cols-1 sm:grid-cols-2 py-10", className)}>
       {items.map((item, idx) => (
         <div
           key={idx}

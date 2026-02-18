@@ -5,7 +5,7 @@ import imgDesgruda from "@/assets/images/portfolio/desgruda.png";
 import imgMyOldSite from "@/assets/images/portfolio/myOldSite.png";
 import imgMySite from "@/assets/images/portfolio/mySite.png";
 
-const portfolio: Project[] = [
+export const portfolioAuthorial: Project[] = [
   {
     title: "Meu Site",
     excerpt:
@@ -90,4 +90,57 @@ const portfolio: Project[] = [
   },
 ];
 
-export default portfolio;
+export const portfolioColab: Project[] = [
+  {
+    title: "Meu Site",
+    excerpt:
+      "Minha casa digital, que centraliza meus escritos técnicos e portfólio, priorizando uma estética refinada e uma experiência de leitura impecável.",
+    slug: "meu-site",
+    image: imgMySite,
+    link: "https://isaacmuniz.pro",
+    repoLink: "https://github.com/codigoisaac/my-app",
+    description: [
+      "Este projeto utiliza tecnologias de ponta como Next.js 16, React 19 e Tailwind CSS 4 em uma arquitetura pensada para longevidade, alta performance e uma experiência de usuário impecável.",
+      "A gestão de conteúdo é feita através de arquivos locais em Markdown e FrontMatter, uma escolha estratégica para eliminar a latência de APIs externas e garantir a resiliência de imagens e textos, evitando a expiração de imagens que ocorria no meu site anterior devido às URLs temporárias da API do Notion.",
+      "A interface utiliza DaisyUI para um sistema de temas consistente e ágil, complementada por animações sutis via GSAP e Motion, mantendo o equilíbrio entre o minimalismo profissional e a identidade de programador.",
+      "O fluxo de desenvolvimento foi otimizado com o runtime Bun, permitindo um ambiente veloz e moderno para um site que serve como meu cartão de visitas definitivo e hub de conhecimento técnico.",
+      "Para mim, este site é a materialização da minha identidade profissional: um manifesto de que o software pode ser belo, funcional e tecnicamente impecável. Ele representa o centro gravitacional da minha carreira.",
+    ],
+    tech: [
+      "nextjs",
+      "react",
+      "tailwindcss",
+      "daisyui",
+      "ts",
+      "bun",
+      "gsap",
+      "motion",
+      "markdown",
+    ],
+    tags: ["Website", "Open Source"],
+    date: "2026",
+  },
+
+  {
+    title: "Desgruda",
+    excerpt:
+      "Extensão para VS Code que automatiza a organização visual de arquivos JSX/TSX, inserindo espaçamentos inteligentes entre elementos irmãos.",
+    slug: "desgruda",
+    image: imgDesgruda,
+    link: "https://marketplace.visualstudio.com/items?itemName=IsaacMuniz.desgruda",
+    repoLink: "https://github.com/codigoisaac/desgruda",
+    description: [
+      "O Desgruda é uma ferramenta de Developer Experience (DX) projetada para resolver o amontoamento visual em arquivos React, automatizando a separação de componentes com linhas em branco.",
+      "A solução utiliza o @babel/parser para percorrer a Abstract Syntax Tree (AST) do código, identificando com precisão os elementos JSX irmãos e calculando as posições de inserção sem corromper a estrutura do arquivo.",
+      "Para garantir edições performáticas e seguras, implementei a biblioteca MagicString, permitindo a manipulação inteligente de strings e a preservação da indentação original do desenvolvedor.",
+    ],
+    tech: ["ts", "vscode", "babel"],
+    tags: ["Extensão p/ VSCode", "Open Source"],
+    date: "2026",
+  },
+];
+
+export const allProjects: Project[] = [
+  ...portfolioAuthorial,
+  ...portfolioColab,
+];
