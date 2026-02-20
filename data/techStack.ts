@@ -17,12 +17,16 @@ import mysql from "@/assets/images/techStack/mysql.webp";
 import nextjs from "@/assets/images/techStack/nextjs.webp";
 import node from "@/assets/images/techStack/node.webp";
 import notion from "@/assets/images/techStack/notion.png";
+import npmpackages from "@/assets/images/techStack/npm-packages.png";
 import react from "@/assets/images/techStack/react.webp";
+import reacthookform from "@/assets/images/techStack/react-hook-form.png";
 import redux from "@/assets/images/techStack/redux.webp";
 import sequelize from "@/assets/images/techStack/sequelize.webp";
 import tailwindcss from "@/assets/images/techStack/tailwindcss.webp";
 import ts from "@/assets/images/techStack/ts.webp";
 import vscode from "@/assets/images/techStack/vscode.png";
+import zod from "@/assets/images/techStack/zod.png";
+import zustand from "@/assets/images/techStack/zustand.png";
 
 const techStack: Record<TechID, TechItem> = {
   js: { name: "JavaScript", image: js },
@@ -47,6 +51,10 @@ const techStack: Record<TechID, TechItem> = {
   markdown: { name: "Markdown", image: markdown },
   notion: { name: "Notion API", image: notion },
   babel: { name: "Babel", image: babel },
+  zustand: { name: "Zustand", image: zustand },
+  zod: { name: "Zod", image: zod },
+  reacthookform: { name: "React Hook Form", image: reacthookform },
+  npmpackages: { name: "NPM Packages", image: npmpackages },
 };
 
 export default techStack;

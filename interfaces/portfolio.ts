@@ -22,9 +22,18 @@ export type TechID =
   | "motion"
   | "markdown"
   | "notion"
-  | "babel";
+  | "babel"
+  | "zustand"
+  | "zod"
+  | "reacthookform"
+  | "npmpackages";
 
-type Tag = "Web App" | "Website" | "Extensão p/ VSCode" | "Open Source";
+type Tag =
+  | "Web App"
+  | "Website"
+  | "Extensão p/ VSCode"
+  | "Open Source"
+  | "Colaboração";
 
 export interface Project {
   title: string;

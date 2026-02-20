@@ -1,5 +1,5 @@
 import { Project } from "@/interfaces/portfolio";
-// Project images
+import imgBettha from "@/assets/images/portfolio/bettha.png";
 import imgBinaryShift from "@/assets/images/portfolio/binaryShift.png";
 import imgDesgruda from "@/assets/images/portfolio/desgruda.png";
 import imgMyOldSite from "@/assets/images/portfolio/myOldSite.png";
@@ -28,8 +28,6 @@ export const portfolioAuthorial: Project[] = [
       "daisyui",
       "ts",
       "bun",
-      "gsap",
-      "motion",
       "markdown",
     ],
     tags: ["Website", "Open Source"],
@@ -92,51 +90,31 @@ export const portfolioAuthorial: Project[] = [
 
 export const portfolioColab: Project[] = [
   {
-    title: "Meu Site",
+    title: "Bettha.com",
     excerpt:
-      "Minha casa digital, que centraliza meus escritos técnicos e portfólio, priorizando uma estética refinada e uma experiência de leitura impecável.",
-    slug: "meu-site",
-    image: imgMySite,
-    link: "https://isaacmuniz.pro",
-    repoLink: "https://github.com/codigoisaac/my-app",
+      "Engenharia de frontend para um ecossistema de recrutamento em larga escala, abrangendo plataformas B2B/B2C e jogos de avaliação via pacotes NPM.",
+    slug: "bettha",
+    image: imgBettha,
+    link: "https://www.bettha.com",
     description: [
-      "Este projeto utiliza tecnologias de ponta como Next.js 16, React 19 e Tailwind CSS 4 em uma arquitetura pensada para longevidade, alta performance e uma experiência de usuário impecável.",
-      "A gestão de conteúdo é feita através de arquivos locais em Markdown e FrontMatter, uma escolha estratégica para eliminar a latência de APIs externas e garantir a resiliência de imagens e textos, evitando a expiração de imagens que ocorria no meu site anterior devido às URLs temporárias da API do Notion.",
-      "A interface utiliza DaisyUI para um sistema de temas consistente e ágil, complementada por animações sutis via GSAP e Motion, mantendo o equilíbrio entre o minimalismo profissional e a identidade de programador.",
-      "O fluxo de desenvolvimento foi otimizado com o runtime Bun, permitindo um ambiente veloz e moderno para um site que serve como meu cartão de visitas definitivo e hub de conhecimento técnico.",
-      "Para mim, este site é a materialização da minha identidade profissional: um manifesto de que o software pode ser belo, funcional e tecnicamente impecável. Ele representa o centro gravitacional da minha carreira.",
+      "Atuei como um dos engenheiros de frontend no desenvolvimento do Portal do Candidato e da Plataforma de Gestão Empresarial (ATS). O foco nessas plataformas foi a construção de interfaces escaláveis integradas a uma arquitetura de microsserviços no backend, utilizando um Design System centralizado com Tailwind CSS para garantir a consistência entre os produtos.",
+      "Para a parceira Cia de Talentos, desenvolvi Jogos de Avaliação (Assessments) baseados em navegador, utilizando Next.js e Zustand para o gerenciamento de estados complexos em tempo real, priorizando alta performance e baixa latência.",
+      "Liderei a modularização exclusiva desses jogos em pacotes NPM privados, o que viabilizou a distribuição e integração das ferramentas em sistemas web legados da parceira, mantendo um controle rigoroso de versionamento e portabilidade.",
+      "A qualidade técnica foi pautada no uso de TypeScript, Zod e React Hook Form para validação estrita de dados, aplicando os princípios de SOLID e Clean Code para assegurar a manutenibilidade das aplicações.",
+      "Além da implementação técnica, contribuí para a maturidade operacional da equipe ao reestruturar fluxos de trabalho no Kanban e implementar o rastreamento de Pull Requests, otimizando a transparência e a previsibilidade das entregas de engenharia.",
     ],
     tech: [
       "nextjs",
       "react",
-      "tailwindcss",
-      "daisyui",
       "ts",
-      "bun",
-      "gsap",
-      "motion",
-      "markdown",
+      "tailwindcss",
+      "zustand",
+      "zod",
+      "reacthookform",
+      "npmpackages",
     ],
-    tags: ["Website", "Open Source"],
-    date: "2026",
-  },
-
-  {
-    title: "Desgruda",
-    excerpt:
-      "Extensão para VS Code que automatiza a organização visual de arquivos JSX/TSX, inserindo espaçamentos inteligentes entre elementos irmãos.",
-    slug: "desgruda",
-    image: imgDesgruda,
-    link: "https://marketplace.visualstudio.com/items?itemName=IsaacMuniz.desgruda",
-    repoLink: "https://github.com/codigoisaac/desgruda",
-    description: [
-      "O Desgruda é uma ferramenta de Developer Experience (DX) projetada para resolver o amontoamento visual em arquivos React, automatizando a separação de componentes com linhas em branco.",
-      "A solução utiliza o @babel/parser para percorrer a Abstract Syntax Tree (AST) do código, identificando com precisão os elementos JSX irmãos e calculando as posições de inserção sem corromper a estrutura do arquivo.",
-      "Para garantir edições performáticas e seguras, implementei a biblioteca MagicString, permitindo a manipulação inteligente de strings e a preservação da indentação original do desenvolvedor.",
-    ],
-    tech: ["ts", "vscode", "babel"],
-    tags: ["Extensão p/ VSCode", "Open Source"],
-    date: "2026",
+    tags: ["Web App", "Colaboração"],
+    date: "2023 - 2024",
   },
 ];
 
