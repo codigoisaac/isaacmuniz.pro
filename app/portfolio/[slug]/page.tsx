@@ -1,7 +1,7 @@
 import ProjectButtons from "@/components/portfolio/ProjectButtons";
-import ProjectImages from "@/components/portfolio/ProjectImages";
 import ProjectPageBody from "@/components/portfolio/ProjectPageBody";
 import ProjectPageHeader from "@/components/portfolio/ProjectPageHeader";
+import ProjectSubjects from "@/components/portfolio/ProjectSubjects";
 import { allProjects } from "@/data/portfolio";
 import { notFound } from "next/navigation";
 
@@ -23,7 +23,7 @@ export default async function ProjectPage(props: PageProps) {
 
       <ProjectPageBody project={project} />
 
-      {project.subjects && <ProjectImages project={project} />}
+      {project.subjects && <ProjectSubjects project={project} />}
 
       <div className="flex justify-center w-full mt-14 -mb-8">
         <ProjectButtons project={project} />
