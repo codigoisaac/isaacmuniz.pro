@@ -35,12 +35,19 @@ type Tag =
   | "Open Source"
   | "Colaboração";
 
+type ExtraImageInfo = {
+  internalProject: string;
+  title: string;
+  imgAddress: StaticImageData;
+};
+
 export interface Project {
   title: string;
   subtitle?: string;
   excerpt: string;
   slug: string;
   image: StaticImageData;
+  extraImages?: ExtraImageInfo[];
   link: string;
   repoLink?: string;
   description: string[];

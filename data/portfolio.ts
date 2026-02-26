@@ -1,5 +1,14 @@
 import { Project } from "@/interfaces/portfolio";
-import imgBettha from "@/assets/images/portfolio/bettha.png";
+import imgBettha from "@/assets/images/portfolio/bettha/main.png";
+import imgBetthaCandidates1 from "@/assets/images/portfolio/bettha/candidates/1.png";
+import imgBetthaCandidates2 from "@/assets/images/portfolio/bettha/candidates/2.png";
+import imgBetthaCandidates3 from "@/assets/images/portfolio/bettha/candidates/3.png";
+import imgBetthaCandidates4 from "@/assets/images/portfolio/bettha/candidates/4.png";
+import imgBetthaCompanies1 from "@/assets/images/portfolio/bettha/companies/1.png";
+import imgBetthaCompanies2 from "@/assets/images/portfolio/bettha/companies/2.png";
+import imgBetthaCompanies3 from "@/assets/images/portfolio/bettha/companies/3.png";
+import imgBetthaCompanies4 from "@/assets/images/portfolio/bettha/companies/4.png";
+import imgBetthaCompanies5 from "@/assets/images/portfolio/bettha/companies/5.png";
 import imgBinaryShift from "@/assets/images/portfolio/binaryShift.png";
 import imgDesgruda from "@/assets/images/portfolio/desgruda.png";
 import imgMyOldSite from "@/assets/images/portfolio/myOldSite.png";
@@ -95,6 +104,55 @@ export const portfolioColab: Project[] = [
       "Engenharia de frontend para um ecossistema de recrutamento em larga escala, abrangendo plataformas B2B/B2C e jogos de avaliação via pacotes NPM.",
     slug: "bettha",
     image: imgBettha,
+    extraImages: [
+      // Candidates
+      {
+        internalProject: "Plataforma para Candidatos",
+        title: "Dash Desktop - Home",
+        imgAddress: imgBetthaCandidates1,
+      },
+      {
+        internalProject: "Plataforma para Candidatos",
+        title: "Programas",
+        imgAddress: imgBetthaCandidates2,
+      },
+      {
+        internalProject: "Plataforma para Candidatos",
+        title: "Empresas",
+        imgAddress: imgBetthaCandidates3,
+      },
+      {
+        internalProject: "Plataforma para Candidatos",
+        title: "Página da Empresa",
+        imgAddress: imgBetthaCandidates4,
+      },
+      // Companies
+      {
+        internalProject: "Plataforma para Empresas",
+        title: "Acompanhamento da Vaga",
+        imgAddress: imgBetthaCompanies1,
+      },
+      {
+        internalProject: "Plataforma para Empresas",
+        title: "Gestão de Gestores e Testes",
+        imgAddress: imgBetthaCompanies2,
+      },
+      {
+        internalProject: "Plataforma para Empresas",
+        title: "Shortlists de Candidatos",
+        imgAddress: imgBetthaCompanies3,
+      },
+      {
+        internalProject: "Plataforma para Empresas",
+        title: "Uma das telas de criação de vaga",
+        imgAddress: imgBetthaCompanies4,
+      },
+      {
+        internalProject: "Plataforma para Empresas",
+        title: "Outra tela de criação de vaga",
+        imgAddress: imgBetthaCompanies5,
+      },
+    ],
     link: "https://www.bettha.com",
     description: [
       "Atuei como um dos engenheiros de frontend no desenvolvimento do Portal do Candidato e da Plataforma de Gestão Empresarial (ATS). O foco nessas plataformas foi a construção de interfaces escaláveis integradas a uma arquitetura de microsserviços no backend, utilizando um Design System centralizado com Tailwind CSS para garantir a consistência entre os produtos.",

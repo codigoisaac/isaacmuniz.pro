@@ -1,4 +1,5 @@
 import ProjectButtons from "@/components/portfolio/ProjectButtons";
+import ProjectImages from "@/components/portfolio/ProjectImages";
 import ProjectPageBody from "@/components/portfolio/ProjectPageBody";
 import ProjectPageHeader from "@/components/portfolio/ProjectPageHeader";
 import { allProjects } from "@/data/portfolio";
@@ -21,6 +22,8 @@ export default async function ProjectPage(props: PageProps) {
       <ProjectPageHeader project={project} />
 
       <ProjectPageBody project={project} />
+
+      {project.extraImages && <ProjectImages project={project} />}
 
       <div className="flex justify-center w-full mt-14 -mb-8">
         <ProjectButtons project={project} />
