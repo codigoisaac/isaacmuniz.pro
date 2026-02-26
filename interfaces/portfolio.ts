@@ -35,10 +35,15 @@ type Tag =
   | "Open Source"
   | "Colaboração";
 
-type ExtraImageInfo = {
-  internalProject: string;
+export type SubjectItem = {
   title: string;
-  imgAddress: StaticImageData;
+  image: StaticImageData;
+  description?: string;
+};
+
+type Subject = {
+  title: string;
+  items: SubjectItem[];
 };
 
 export interface Project {
@@ -47,7 +52,7 @@ export interface Project {
   excerpt: string;
   slug: string;
   image: StaticImageData;
-  extraImages?: ExtraImageInfo[];
+  subjects?: Subject[];
   link: string;
   repoLink?: string;
   description: string[];

@@ -23,7 +23,7 @@ export default async function ProjectPage(props: PageProps) {
 
       <ProjectPageBody project={project} />
 
-      {project.extraImages && <ProjectImages project={project} />}
+      {project.subjects && <ProjectImages project={project} />}
 
       <div className="flex justify-center w-full mt-14 -mb-8">
         <ProjectButtons project={project} />

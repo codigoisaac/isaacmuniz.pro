@@ -1,38 +1,36 @@
 "use client";
 
+import { Project, SubjectItem } from "@/interfaces/portfolio";
 import { useCallback, useEffect, useState } from "react";
 
 import Image from "next/image";
-import { Project } from "@/interfaces/portfolio";
 
 interface Props {
   project: Project;
 }
 
-type ExtraImage = NonNullable<Project["extraImages"]>[number];
-
 export default function ProjectImages({ project }: Props) {
   const [lightbox, setLightbox] = useState<{
-    images: ExtraImage[];
+    items: SubjectItem[];
     index: number;
   } | null>(null);
 
-  const open = (images: ExtraImage[], index: number) =>
-    setLightbox({ images, index });
+  const open = (items: SubjectItem[], index: number) =>
+    setLightbox({ items, index });
 
   const close = useCallback(() => setLightbox(null), []);
 
   const prev = useCallback(() => {
     setLightbox((lb) =>
       lb
-        ? { ...lb, index: (lb.index - 1 + lb.images.length) % lb.images.length }
+        ? { ...lb, index: (lb.index - 1 + lb.items.length) % lb.items.length }
         : null,
     );
   }, []);
 
   const next = useCallback(() => {
     setLightbox((lb) =>
-      lb ? { ...lb, index: (lb.index + 1) % lb.images.length } : null,
+      lb ? { ...lb, index: (lb.index + 1) % lb.items.length } : null,
     );
   }, []);
 
@@ -47,7 +45,6 @@ export default function ProjectImages({ project }: Props) {
     return () => window.removeEventListener("keydown", onKey);
   }, [lightbox, close, prev, next]);
 
-  // Prevent body scroll while lightbox is open
   useEffect(() => {
     document.body.style.overflow = lightbox ? "hidden" : "";
     return () => {
@@ -55,46 +52,36 @@ export default function ProjectImages({ project }: Props) {
     };
   }, [lightbox]);
 
-  if (!project.extraImages || project.extraImages.length === 0) return null;
+  if (!project.subjects || project.subjects.length === 0) return null;
 
-  const groups = project.extraImages.reduce<Map<string, ExtraImage[]>>(
-    (map, img) => {
-      if (!map.has(img.internalProject)) map.set(img.internalProject, []);
-      map.get(img.internalProject)!.push(img);
-      return map;
-    },
-    new Map(),
-  );
-
-  const currentImage = lightbox?.images[lightbox.index];
+  const currentItem = lightbox?.items[lightbox.index];
 
   return (
     <>
-      {/* ── Image Groups ── */}
+      {/* ── Subjects ── */}
       <section className="mt-16 space-y-16">
-        {Array.from(groups.entries()).map(([groupName, images]) => (
-          <div key={groupName}>
+        {project.subjects.map((subject) => (
+          <div key={subject.title}>
             <div className="mb-8 pb-4 border-b border-base-300">
               <h2 className="font-transducer text-xl font-bold text-primary">
-                {groupName}
+                {subject.title}
               </h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {images.map((img, index) => (
+              {subject.items.map((item, index) => (
                 <figure key={index} className="group flex flex-col gap-3">
                   <button
-                    onClick={() => open(images, index)}
+                    onClick={() => open(subject.items, index)}
                     className="relative overflow-hidden rounded-xl border border-base-300 bg-base-200 cursor-zoom-in focus-visible:outline-2 focus-visible:outline-primary"
-                    aria-label={`Ampliar imagem: ${img.title}`}
+                    aria-label={`Ampliar imagem: ${item.title}`}
                   >
                     <Image
-                      src={img.imgAddress}
-                      alt={img.title}
+                      src={item.image}
+                      alt={item.title}
                       className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.015]"
                       placeholder="blur"
                     />
-                    {/* Hover overlay */}
                     <span className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/25 transition-colors duration-300">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -113,10 +100,15 @@ export default function ProjectImages({ project }: Props) {
                     </span>
                   </button>
 
-                  <figcaption className="px-1">
+                  <figcaption className="px-1 space-y-1">
                     <p className="font-geist-mono text-sm font-semibold text-base-content">
-                      {img.title}
+                      {item.title}
                     </p>
+                    {item.description && (
+                      <p className="font-transducer text-sm text-neutral-content leading-relaxed">
+                        {item.description}
+                      </p>
+                    )}
                   </figcaption>
                 </figure>
               ))}
@@ -126,7 +118,7 @@ export default function ProjectImages({ project }: Props) {
       </section>
 
       {/* ── Lightbox ── */}
-      {lightbox && currentImage && (
+      {lightbox && currentItem && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-[fadeIn_0.15s_ease-out]"
           onClick={close}
@@ -135,7 +127,7 @@ export default function ProjectImages({ project }: Props) {
             className="relative flex flex-col items-center max-w-6xl w-full gap-4"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close button */}
+            {/* Close */}
             <button
               onClick={close}
               aria-label="Fechar"
@@ -160,27 +152,31 @@ export default function ProjectImages({ project }: Props) {
             {/* Image */}
             <div className="relative w-full overflow-hidden rounded-xl shadow-2xl">
               <Image
-                src={currentImage.imgAddress}
-                alt={currentImage.title}
-                className="w-full h-auto object-contain max-h-[80vh]"
+                src={currentItem.image}
+                alt={currentItem.title}
+                className="w-full h-auto object-contain max-h-[75vh]"
                 placeholder="blur"
               />
             </div>
 
-            {/* Caption + nav row */}
-            <div className="flex items-center justify-between w-full px-1 gap-4">
-              <div className="min-w-0">
-                <p className="font-geist-mono text-sm font-semibold text-white truncate">
-                  {currentImage.title}
+            {/* Caption + description + nav */}
+            <div className="flex items-start justify-between w-full px-1 gap-4">
+              <div className="min-w-0 space-y-1">
+                <p className="font-geist-mono text-sm font-semibold text-white">
+                  {currentItem.title}
                 </p>
-                <p className="font-geist-mono text-xs text-white/50 mt-0.5">
-                  {lightbox.index + 1} / {lightbox.images.length}
+                {currentItem.description && (
+                  <p className="font-transducer text-sm text-white/60 leading-relaxed">
+                    {currentItem.description}
+                  </p>
+                )}
+                <p className="font-geist-mono text-xs text-white/40">
+                  {lightbox.index + 1} / {lightbox.items.length}
                 </p>
               </div>
 
-              {/* Prev / Next */}
-              {lightbox.images.length > 1 && (
-                <div className="flex gap-2 shrink-0">
+              {lightbox.items.length > 1 && (
+                <div className="flex gap-2 shrink-0 mt-0.5">
                   <button
                     onClick={prev}
                     aria-label="Imagem anterior"

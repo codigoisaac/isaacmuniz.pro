@@ -9,6 +9,8 @@ import imgBetthaCompanies2 from "@/assets/images/portfolio/bettha/companies/2.pn
 import imgBetthaCompanies3 from "@/assets/images/portfolio/bettha/companies/3.png";
 import imgBetthaCompanies4 from "@/assets/images/portfolio/bettha/companies/4.png";
 import imgBetthaCompanies5 from "@/assets/images/portfolio/bettha/companies/5.png";
+import imgBetthaGames1 from "@/assets/images/portfolio/bettha/games/esg.png";
+import imgBetthaGames2 from "@/assets/images/portfolio/bettha/games/security.png";
 import imgBinaryShift from "@/assets/images/portfolio/binaryShift.png";
 import imgDesgruda from "@/assets/images/portfolio/desgruda.png";
 import imgMyOldSite from "@/assets/images/portfolio/myOldSite.png";
@@ -104,53 +106,70 @@ export const portfolioColab: Project[] = [
       "Engenharia de frontend para um ecossistema de recrutamento em larga escala, abrangendo plataformas B2B/B2C e jogos de avaliação via pacotes NPM.",
     slug: "bettha",
     image: imgBettha,
-    extraImages: [
-      // Candidates
+    subjects: [
       {
-        internalProject: "Plataforma para Candidatos",
-        title: "Dash Desktop - Home",
-        imgAddress: imgBetthaCandidates1,
+        title: "Plataforma de Candidatos",
+        items: [
+          {
+            title: "Dash Desktop - Home",
+            image: imgBetthaCandidates1,
+          },
+          {
+            title: "Programas",
+            image: imgBetthaCandidates2,
+          },
+          {
+            title: "Empresas",
+            image: imgBetthaCandidates3,
+          },
+          {
+            title: "Página da Empresa",
+            image: imgBetthaCandidates4,
+          },
+        ],
       },
       {
-        internalProject: "Plataforma para Candidatos",
-        title: "Programas",
-        imgAddress: imgBetthaCandidates2,
+        title: "Plataforma para Empresas",
+        items: [
+          {
+            title: "Acompanhamento da Vaga",
+            image: imgBetthaCompanies1,
+          },
+          {
+            title: "Gestão de Gestores e Testes",
+            image: imgBetthaCompanies2,
+          },
+          {
+            title: "Shortlists de Candidatos",
+            image: imgBetthaCompanies3,
+          },
+          {
+            title: "Uma das telas de criação de vaga",
+            image: imgBetthaCompanies4,
+          },
+          {
+            title: "Outra tela de criação de vaga",
+            image: imgBetthaCompanies5,
+          },
+        ],
       },
       {
-        internalProject: "Plataforma para Candidatos",
-        title: "Empresas",
-        imgAddress: imgBetthaCandidates3,
-      },
-      {
-        internalProject: "Plataforma para Candidatos",
-        title: "Página da Empresa",
-        imgAddress: imgBetthaCandidates4,
-      },
-      // Companies
-      {
-        internalProject: "Plataforma para Empresas",
-        title: "Acompanhamento da Vaga",
-        imgAddress: imgBetthaCompanies1,
-      },
-      {
-        internalProject: "Plataforma para Empresas",
-        title: "Gestão de Gestores e Testes",
-        imgAddress: imgBetthaCompanies2,
-      },
-      {
-        internalProject: "Plataforma para Empresas",
-        title: "Shortlists de Candidatos",
-        imgAddress: imgBetthaCompanies3,
-      },
-      {
-        internalProject: "Plataforma para Empresas",
-        title: "Uma das telas de criação de vaga",
-        imgAddress: imgBetthaCompanies4,
-      },
-      {
-        internalProject: "Plataforma para Empresas",
-        title: "Outra tela de criação de vaga",
-        imgAddress: imgBetthaCompanies5,
+        title: "Testes Comportamentais em forma de Jogos",
+        items: [
+          {
+            title: "ESG - Um jogo que testa sua memória.",
+            description:
+              "O candidato precisa clicar nos botões na ordem exata da animação, antes do tempo acabar. De quebra, aprende sobre ESG (um conjunto de padrões e boas práticas que define se uma empresa é socialmente consciente, sustentável e corretamente gerenciada).",
+            image: imgBetthaGames1,
+          },
+          {
+            title:
+              "Segurança do Trabalho - Um jogo que testa sua capacidade de priorização",
+            description:
+              "Nesse jogo o candidato precisa avaliar as imagens e símbolos, que representam problemas que podem acontecer em ambientes de trabalho, e organizá-los por ordem de mais emergenciais.",
+            image: imgBetthaGames2,
+          },
+        ],
       },
     ],
     link: "https://www.bettha.com",
