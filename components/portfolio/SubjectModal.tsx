@@ -1,5 +1,8 @@
 "use client";
 
+import { CaretLeftIcon, XIcon } from "@phosphor-icons/react/dist/ssr";
+
+import { CaretRightIcon } from "@phosphor-icons/react";
 import Image from "next/image";
 import { SubjectItem } from "@/interfaces/portfolio";
 import { useEffect } from "react";
@@ -43,37 +46,24 @@ export default function SubjectModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-[fadeIn_0.15s_ease-out]"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-xl p-4 animate-[fadeIn_0.15s_ease-out]"
       onClick={onClose}
     >
       <div
-        className="relative flex flex-col items-center max-w-6xl w-full gap-4"
+        className="relative flex flex-col items-center max-w-6xl w-full shadow-2xl bg-base-200/90 rounded-xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close */}
         <button
           onClick={onClose}
           aria-label="Fechar"
-          className="absolute -top-2 -right-2 z-10 flex items-center justify-center w-9 h-9 rounded-full bg-base-100 text-base-content hover:bg-base-200 transition-colors shadow-lg cursor-pointer"
+          className="absolute -top-5 -right-7 z-10 flex items-center justify-center w-9 h-9 rounded-full bg-base-300 text-base-content hover:bg-neutral-content transition-colors shadow-lg cursor-pointer"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            className="w-4 h-4"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
+          <XIcon weight="bold" />
         </button>
 
         {/* Image */}
-        <div className="relative w-full overflow-hidden rounded-xl shadow-2xl">
+        <div className="relative w-full overflow-hidden">
           <Image
             src={currentItem.image}
             alt={currentItem.title}
@@ -83,26 +73,29 @@ export default function SubjectModal({
         </div>
 
         {/* Caption + nav */}
-        <div className="flex items-start justify-between w-full px-1 gap-4">
-          <div className="min-w-0 space-y-1">
-            <p className="font-geist-mono text-xs text-primary uppercase tracking-widest">
+        <div className="flex items-start justify-between w-full gap-4 p-4">
+          {/* Caption */}
+          <div className="flex flex-col gap-1">
+            <p className="font-geist-mono text-xs text-primary uppercase tracking-widest font-medium">
               {currentItem.subjectTitle}
             </p>
 
-            <p className="font-geist-mono text-sm font-semibold text-white">
+            <p className="font-geist-mono text-sm font-semibold text-white mt-1">
               {currentItem.title}
             </p>
+
             {currentItem.description && (
               <p className="font-transducer text-sm text-white/60 leading-relaxed">
                 {currentItem.description}
               </p>
             )}
 
-            <p className="font-geist-mono text-xs text-white/40">
+            <p className="font-geist-mono text-xs text-white/40 mt-2">
               {index + 1} / {total}
             </p>
           </div>
 
+          {/* Nav */}
           {total > 1 && (
             <div className="flex gap-2 shrink-0 mt-0.5">
               <button
@@ -110,20 +103,7 @@ export default function SubjectModal({
                 aria-label="Imagem anterior"
                 className="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  className="w-4 h-4"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
+                <CaretLeftIcon weight="bold" />
               </button>
 
               <button
@@ -131,20 +111,7 @@ export default function SubjectModal({
                 aria-label="Próxima imagem"
                 className="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  className="w-4 h-4"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
+                <CaretRightIcon weight="bold" />
               </button>
             </div>
           )}

@@ -157,7 +157,7 @@ export const portfolioColab: Project[] = [
         title: "Testes Comportamentais em forma de Jogos",
         items: [
           {
-            title: "ESG - Um jogo que testa sua memória.",
+            title: "ESG - Um jogo que testa sua memória",
             description:
               "O candidato precisa clicar nos botões na ordem exata da animação, antes do tempo acabar. De quebra, aprende sobre ESG (um conjunto de padrões e boas práticas que define se uma empresa é socialmente consciente, sustentável e corretamente gerenciada).",
             image: imgBetthaGames1,
