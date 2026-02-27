@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "isaacmuniz.desgruda",
+    "eliostruyf.vscode-front-matter",
+    "esbenp.prettier-vscode",
+    "nize.oklch-preview",
+    "amatiasq.sort-imports",
+    "bradlc.vscode-tailwindcss",
+    "dbaeumer.vscode-eslint"
+  ]
+}
