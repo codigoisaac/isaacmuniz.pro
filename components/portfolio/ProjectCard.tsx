@@ -12,10 +12,10 @@ type Props = {
 export default function ProjectCard({ project }: Props) {
   return (
     <Link
-      className="block bg-base-300 p-1 rounded-[14px]"
+      className="block bg-base-300 p-1 rounded-[14px] h-full"
       href={`/portfolio/${project.slug}`}
     >
-      <div className="flex flex-col justify-between bg-base-200 p-4 rounded-xl h-full cursor-pointer relative">
+      <div className="flex flex-col justify-between bg-base-200 p-4 rounded-xl cursor-pointer relative h-full">
         {project.isFeaturedProject && <FeaturedProjectTag />}
 
         <BlurImage
