@@ -22,7 +22,7 @@ const ThemeSwitcher = dynamic(
 export default function AppHeader() {
   return (
     <header className="sticky top-0 z-50 mb-10 w-full bg-base-100/70 backdrop-blur-xs">
-      <div className="general-content-margins header-paddings flex items-center justify-between pt-4 pb-2 md:pt-7 md:pb-4">
+      <div className="general-content-margins header-paddings flex items-center justify-between pt-4 pb-2 md:pt-5 md:pb-4">
         {/* Logo and title */}
         <Link href="/" aria-label={siteMetadata.headerTitle}>
           <div className="flex items-center justify-between">

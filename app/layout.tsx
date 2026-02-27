@@ -1,5 +1,6 @@
 import "./globals.css";
-import AppHeader from "@/components/layout/AppHeader";
+
+import AppHeader from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import type { Metadata } from "next";
 import ThemeProvider from "@/context/ThemeProvider";
