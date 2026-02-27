@@ -62,14 +62,25 @@ export default function SubjectModal({
           <XIcon weight="bold" />
         </button>
 
-        {/* Image */}
-        <div className="relative w-full overflow-hidden">
-          <Image
-            src={currentItem.image}
-            alt={currentItem.title}
-            className="w-full h-auto object-contain max-h-[75vh]"
-            placeholder="blur"
-          />
+        {/* Media */}
+        <div className="relative w-full overflow-hidden rounded-t-xl">
+          {currentItem.video ? (
+            <video
+              key={currentItem.video}
+              src={currentItem.video}
+              className="w-full h-auto max-h-[75vh] object-contain"
+              controls
+              autoPlay
+              playsInline
+            />
+          ) : currentItem.image ? (
+            <Image
+              src={currentItem.image}
+              alt={currentItem.title}
+              className="w-full h-auto object-contain max-h-[75vh]"
+              placeholder="blur"
+            />
+          ) : null}
         </div>
 
         {/* Caption + nav */}
@@ -79,17 +90,14 @@ export default function SubjectModal({
             <p className="font-geist-mono text-xs text-primary uppercase tracking-widest font-medium">
               {currentItem.subjectTitle}
             </p>
-
             <p className="font-geist-mono text-sm font-semibold text-white mt-1">
               {currentItem.title}
             </p>
-
             {currentItem.description && (
               <p className="font-transducer text-sm text-white/60 leading-relaxed">
                 {currentItem.description}
               </p>
             )}
-
             <p className="font-geist-mono text-xs text-white/40 mt-2">
               {index + 1} / {total}
             </p>
@@ -100,15 +108,14 @@ export default function SubjectModal({
             <div className="flex gap-2 shrink-0 mt-0.5">
               <button
                 onClick={onPrev}
-                aria-label="Imagem anterior"
+                aria-label="Item anterior"
                 className="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer"
               >
                 <CaretLeftIcon weight="bold" />
               </button>
-
               <button
                 onClick={onNext}
-                aria-label="Próxima imagem"
+                aria-label="Próximo item"
                 className="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer"
               >
                 <CaretRightIcon weight="bold" />

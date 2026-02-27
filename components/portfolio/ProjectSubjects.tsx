@@ -54,36 +54,65 @@ export default function ProjectSubjects({ project }: Props) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {subject.items.map((item, itemIndex) => {
                 const globalIndex = flatIndexMap[subjectIndex][itemIndex];
+                const isVideo = !!item.video;
+
                 return (
                   <figure key={itemIndex} className="group flex flex-col gap-3">
                     <button
                       onClick={() => setModalIndex(globalIndex)}
                       className="relative overflow-hidden rounded-xl border border-base-300 bg-base-200 cursor-zoom-in focus-visible:outline-2 focus-visible:outline-primary"
-                      aria-label={`Ampliar imagem: ${item.title}`}
+                      aria-label={`${isVideo ? "Reproduzir vídeo" : "Ampliar imagem"}: ${item.title}`}
                     >
-                      <Image
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.015]"
-                        placeholder="blur"
-                      />
-
-                      <span className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/25 transition-colors duration-300">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth={1.5}
-                          className="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-lg"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0zM11 8v6M8 11h6"
+                      {isVideo ? (
+                        <>
+                          <video
+                            src={item.video}
+                            className="w-full h-auto object-cover pointer-events-none"
+                            muted
+                            playsInline
+                            preload="metadata"
                           />
-                        </svg>
-                      </span>
+                          {/* Play icon overlay */}
+
+                          <span className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-colors duration-300">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="currentColor"
+                              className="w-14 h-14 text-white drop-shadow-lg transition-transform duration-300 group-hover:scale-110"
+                            >
+                              <path d="M8 5.14v14l11-7-11-7z" />
+                            </svg>
+                          </span>
+                        </>
+                      ) : item.image ? (
+                        <>
+                          <Image
+                            src={item.image}
+                            alt={item.title}
+                            className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.015]"
+                            placeholder="blur"
+                          />
+                          {/* Zoom icon overlay */}
+
+                          <span className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/25 transition-colors duration-300">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth={1.5}
+                              className="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-lg"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0zM11 8v6M8 11h6"
+                              />
+                            </svg>
+                          </span>
+                        </>
+                      ) : null}
                     </button>
 
                     <figcaption className="px-1 space-y-1">

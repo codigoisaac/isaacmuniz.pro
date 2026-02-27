@@ -15,6 +15,8 @@ import imgBinaryShift from "@/assets/images/portfolio/binaryShift.png";
 import imgDesgruda from "@/assets/images/portfolio/desgruda.png";
 import imgMyOldSite from "@/assets/images/portfolio/myOldSite.png";
 import imgMySite from "@/assets/images/portfolio/mySite.png";
+import imgSofista from "@/assets/images/portfolio/sofista/main.png";
+import imgSofista1 from "@/assets/images/portfolio/sofista/home.png";
 
 export const portfolioAuthorial: Project[] = [
   {
@@ -193,6 +195,52 @@ export const portfolioColab: Project[] = [
     ],
     tags: ["Web App", "Colaboração"],
     date: "2023 - 2024",
+    isFeaturedProject: true,
+  },
+
+  {
+    title: "Sofista Learning",
+    excerpt:
+      "Lorem ipsum fugiat do id veniam in in ad. Aliquip aliquip enim do nostrud minim aute labore Lorem. Anim labore est dolor nostrud ut exercitation cillum.",
+    slug: "sofista",
+    image: imgSofista,
+    link: "https://sofista.com.br",
+    description: [
+      "Fugiat anim ad exercitation adipisicing esse culpa nostrud eu amet nulla eu. Commodo proident qui cupidatat minim ad nostrud. Laborum ullamco consequat nostrud et aliqua. Ad occaecat eu nulla minim laborum do fugiat ex.",
+      "Ut non aliqua cupidatat id deserunt ad enim et irure magna eu qui cupidatat. Enim voluptate aliquip officia sint ad. Aliqua minim ea irure elit amet nisi officia consequat aliqua cillum aliqua in incididunt. Labore et minim mollit officia tempor sit ullamco irure mollit. Aute id proident sint incididunt ex ea duis qui excepteur.",
+      "Consectetur veniam ut sint fugiat reprehenderit reprehenderit nisi proident sunt do deserunt ut. Occaecat est mollit aliqua sit adipisicing aliquip et laborum esse nulla. Sit aliqua amet do nostrud proident mollit duis ex aliquip nulla do veniam sit et. Deserunt ullamco irure ad mollit nulla. Lorem eu reprehenderit amet consectetur eu proident. Ut cupidatat adipisicing nostrud nulla anim incididunt minim.",
+      "Ex adipisicing commodo enim et aliqua aliqua mollit. Mollit laborum ut in cillum. Anim consectetur dolore exercitation cupidatat magna incididunt mollit velit sit dolore magna quis.",
+      "Deserunt do deserunt eu ad nostrud. Cupidatat veniam sunt nulla cillum anim consectetur ad fugiat in nulla elit pariatur labore culpa. Enim do aliquip ut id qui ut proident et. Cillum ipsum officia nisi veniam. Ut ea aliquip occaecat nulla pariatur in in dolor fugiat tempor duis et officia Lorem.",
+    ],
+    subjects: [
+      {
+        title: "Um pouco sobre a Plataforma",
+        items: [
+          {
+            title: "Conheça a Sofista",
+            description:
+              "Vídeo de apresentação da plataforma feito no período em que eu era um dos colaboradores do projeto. É muito legal para mim assistir isso e ver várias funcionalidades e interfaces que eu desenvolvi ou ajudei a desenvolver.",
+            video: "/videos/sofista.mp4",
+          },
+          { title: "Home da plataforma", image: imgSofista1 },
+        ],
+      },
+    ],
+    tech: [
+      "react",
+      "js",
+      "redux",
+      "bootstrap",
+      "reacthookform",
+      "node",
+      "express",
+      "css",
+      "mysql",
+      "sequelize",
+      "docker",
+    ],
+    tags: ["Web App", "Colaboração"],
+    date: "2022 - 2023",
     isFeaturedProject: true,
   },
 ];

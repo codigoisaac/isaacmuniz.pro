@@ -37,7 +37,8 @@ type Tag =
 
 export type SubjectItem = {
   title: string;
-  image: StaticImageData;
+  image?: StaticImageData;
+  video?: string;
   description?: string;
 };
 
