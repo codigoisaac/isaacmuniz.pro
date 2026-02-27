@@ -29,7 +29,7 @@ export default function ProjectCardCompact({ project }: Props) {
       {/* Container do Conteúdo */}
       <div className="flex flex-col justify-between grow py-1 min-w-0">
         <div>
-          <div className="text-lg font-geist-mono font-medium leading-tight mb-1 truncate">
+          <div className="text-lg font-geist-mono font-medium tracking-wide leading-tight mb-1 truncate">
             {project.title}
           </div>
 

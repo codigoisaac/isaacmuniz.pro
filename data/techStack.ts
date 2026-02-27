@@ -8,22 +8,30 @@ import css from "@/assets/images/techStack/css.webp";
 import daisyui from "@/assets/images/techStack/daisyui.png";
 import docker from "@/assets/images/techStack/docker.webp";
 import express from "@/assets/images/techStack/express.webp";
+import flutter from "@/assets/images/techStack/flutter.svg";
+import graphql from "@/assets/images/techStack/graphql.svg";
 import gsap from "@/assets/images/techStack/gsap.png";
 import html from "@/assets/images/techStack/html.webp";
 import js from "@/assets/images/techStack/js.webp";
 import markdown from "@/assets/images/techStack/markdown.png";
 import motion from "@/assets/images/techStack/motion.png";
 import mysql from "@/assets/images/techStack/mysql.webp";
+import nest from "@/assets/images/techStack/nest.svg";
 import nextjs from "@/assets/images/techStack/nextjs.webp";
 import node from "@/assets/images/techStack/node.webp";
 import notion from "@/assets/images/techStack/notion.png";
 import npmpackages from "@/assets/images/techStack/npm-packages.png";
+import openapi from "@/assets/images/techStack/openapi.svg";
+import pagarme from "@/assets/images/techStack/pagarme.png";
+import postgresql from "@/assets/images/techStack/postgresql.svg";
 import react from "@/assets/images/techStack/react.webp";
 import reacthookform from "@/assets/images/techStack/react-hook-form.png";
 import redux from "@/assets/images/techStack/redux.webp";
 import sequelize from "@/assets/images/techStack/sequelize.webp";
+import swagger from "@/assets/images/techStack/swagger.svg";
 import tailwindcss from "@/assets/images/techStack/tailwindcss.webp";
 import ts from "@/assets/images/techStack/ts.webp";
+import vindi from "@/assets/images/techStack/vindi.png";
 import vscode from "@/assets/images/techStack/vscode.png";
 import zod from "@/assets/images/techStack/zod.png";
 import zustand from "@/assets/images/techStack/zustand.png";
@@ -55,6 +63,14 @@ const techStack: Record<TechID, TechItem> = {
   zod: { name: "Zod", image: zod },
   reacthookform: { name: "React Hook Form", image: reacthookform },
   npmpackages: { name: "NPM Packages", image: npmpackages },
+  postgresql: { name: "PostgreSQL", image: postgresql },
+  flutter: { name: "Flutter", image: flutter },
+  nest: { name: "NestJS", image: nest },
+  graphql: { name: "GraphQL", image: graphql },
+  pagarme: { name: "Pagar.me", image: pagarme },
+  vindi: { name: "Vindi", image: vindi },
+  openapi: { name: "OpenAPI", image: openapi },
+  swagger: { name: "Swagger", image: swagger },
 };
 
 export default techStack;

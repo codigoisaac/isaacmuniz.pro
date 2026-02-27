@@ -26,10 +26,19 @@ export type TechID =
   | "zustand"
   | "zod"
   | "reacthookform"
-  | "npmpackages";
+  | "npmpackages"
+  | "postgresql"
+  | "flutter"
+  | "nest"
+  | "graphql"
+  | "pagarme"
+  | "vindi"
+  | "openapi"
+  | "swagger";
 
 type Tag =
-  | "Web App"
+  | "Aplicativo Web"
+  | "Aplicativo Mobile"
   | "Website"
   | "Extensão p/ VSCode"
   | "Open Source"
