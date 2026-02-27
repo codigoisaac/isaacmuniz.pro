@@ -11,9 +11,15 @@ type Props = {
 export default function ProjectCardCompact({ project }: Props) {
   return (
     <Link
-      className="flex gap-4 bg-base-200 p-3 rounded-xl w-full hover:border-neutral-content/20 transition-colors group"
+      className="flex gap-4 bg-base-200 p-3 rounded-xl w-full hover:border-neutral-content/20 transition-colors group overflow-hidden"
       href={`/portfolio/${project.slug}`}
     >
+      {project.isFeaturedProject && (
+        <div className="absolute top-0 right-0 flex items-center justify-center rounded-bl-xl rounded-tr-[0.66rem] text-xs font-geist-mono font-bold py-1 px-2 bg-neutral text-base-100 shadow-xl tracking-wider">
+          Projeto em Destaque
+        </div>
+      )}
+
       <div className="shrink-0 w-32 h-32 rounded-lg overflow-hidden bg-base-100 border border-base-300">
         <BlurImage
           src={project.image}

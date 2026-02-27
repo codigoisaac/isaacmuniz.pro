@@ -192,6 +192,7 @@ export const portfolioColab: Project[] = [
     ],
     tags: ["Web App", "Colaboração"],
     date: "2023 - 2024",
+    isFeaturedProject: true,
   },
 ];
 

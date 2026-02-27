@@ -59,6 +59,7 @@ export interface Project {
   tech: TechID[];
   tags: Tag[];
   date: string;
+  isFeaturedProject?: boolean;
 }
 
 export interface TechItem {
