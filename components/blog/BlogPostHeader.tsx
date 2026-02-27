@@ -9,7 +9,7 @@ type Props = {
 export default function BlogPostHeader({ post }: Props) {
   return (
     <div className="mb-8 pb-8 border-b border-neutral-content">
-      <CustomBadge item={post} itemPageSlug="blog" />
+      <CustomBadge item={post} mainPageAddress="/blog" />
 
       <ItemHeadlines item={post} />
 

@@ -2,13 +2,13 @@ import { ArrowSquareOutIcon } from "@phosphor-icons/react/dist/ssr";
 
 interface Props {
   text: string;
-  shouldShowExternalLinkIcon?: boolean;
+  showExternalLinkIcon?: boolean;
   link: string;
 }
 
 export default function Button({
   text,
-  shouldShowExternalLinkIcon = true,
+  showExternalLinkIcon = true,
   link,
 }: Props) {
   return (
@@ -18,10 +18,10 @@ export default function Button({
       href={link}
       className="unstiled-link"
     >
-      <button className="btn btn-accent btn-xs sm:btn-sm md:btn-md flex items-center gap-2">
+      <button className="btn btn-accent btn-xs sm:btn-sm md:btn-md flex items-center gap-2 text-nowrap">
         <div>{text}</div>
 
-        {shouldShowExternalLinkIcon && <ArrowSquareOutIcon size={15} />}
+        {showExternalLinkIcon && <ArrowSquareOutIcon size={15} />}
       </button>
     </a>
   );

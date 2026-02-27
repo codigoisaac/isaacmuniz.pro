@@ -11,7 +11,7 @@ type Props = {
 export default function ProjectPageHeader({ project }: Props) {
   return (
     <div className="mb-8 pb-7 border-b border-neutral-content">
-      <CustomBadge item={project} itemPageSlug="portfolio" />
+      <CustomBadge item={project} mainPageAddress="/portfolio" />
 
       <ItemHeadlines item={project} shouldShowExcerpt={false} />
 

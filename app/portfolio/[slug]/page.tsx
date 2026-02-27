@@ -26,7 +26,7 @@ export default async function ProjectPage(props: PageProps) {
       {project.subjects && <ProjectSubjects project={project} />}
 
       <div className="flex justify-center w-full mt-14 -mb-8">
-        <ProjectButtons project={project} />
+        <ProjectButtons project={project} showBackButton />
       </div>
     </>
   );
