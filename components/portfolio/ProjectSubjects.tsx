@@ -60,20 +60,19 @@ export default function ProjectSubjects({ project }: Props) {
                   <figure key={itemIndex} className="group flex flex-col gap-3">
                     <button
                       onClick={() => setModalIndex(globalIndex)}
-                      className="relative overflow-hidden rounded-xl border border-base-300 bg-base-200 cursor-zoom-in focus-visible:outline-2 focus-visible:outline-primary"
+                      className={`relative overflow-hidden rounded-xl border border-base-300 bg-base-200 cursor-zoom-in focus-visible:outline-2 focus-visible:outline-primary${item.containImageSize ? " max-h-80 w-full" : ""}`}
                       aria-label={`${isVideo ? "Reproduzir vídeo" : "Ampliar imagem"}: ${item.title}`}
                     >
                       {isVideo ? (
                         <>
                           <video
                             src={item.video}
-                            className="w-full h-auto object-cover pointer-events-none"
+                            className={`w-full pointer-events-none ${item.containImageSize ? "h-full object-contain" : "h-auto object-cover"}`}
                             muted
                             playsInline
                             preload="metadata"
                           />
                           {/* Play icon overlay */}
-
                           <span className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-colors duration-300">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -90,11 +89,10 @@ export default function ProjectSubjects({ project }: Props) {
                           <Image
                             src={item.image}
                             alt={item.title}
-                            className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.015]"
+                            className={`w-full transition-transform duration-500 group-hover:scale-[1.015] ${item.containImageSize ? "h-full object-contain" : "h-auto object-cover"}`}
                             placeholder="blur"
                           />
                           {/* Zoom icon overlay */}
-
                           <span className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/25 transition-colors duration-300">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"

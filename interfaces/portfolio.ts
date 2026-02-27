@@ -49,6 +49,7 @@ export type SubjectItem = {
   image?: StaticImageData;
   video?: string;
   description?: string;
+  containImageSize?: boolean;
 };
 
 type Subject = {

@@ -14,6 +14,9 @@ import imgBetthaGames2 from "@/assets/images/portfolio/bettha/games/security.png
 import imgBinaryShift from "@/assets/images/portfolio/binaryShift.png";
 import imgDesgruda from "@/assets/images/portfolio/desgruda.png";
 import imgMimo from "@/assets/images/portfolio/mimo/main.png";
+import imgMimo1 from "@/assets/images/portfolio/mimo/1.png";
+import imgMimo2 from "@/assets/images/portfolio/mimo/2.png";
+import imgMimo3 from "@/assets/images/portfolio/mimo/3.png";
 import imgMyOldSite from "@/assets/images/portfolio/myOldSite.png";
 import imgMySite from "@/assets/images/portfolio/mySite.png";
 import imgSofista from "@/assets/images/portfolio/sofista/main.png";
@@ -27,7 +30,7 @@ export const portfolioAuthorial: Project[] = [
     slug: "meu-site",
     image: imgMySite,
     link: "https://isaacmuniz.pro",
-    repoLink: "https://github.com/codigoisaac/my-app",
+    repoLink: "https://github.com/codigoisaac/my-app/",
     description: [
       "Este projeto utiliza tecnologias de ponta como Next.js 16, React 19 e Tailwind CSS 4 em uma arquitetura pensada para longevidade, alta performance e uma experiência de usuário impecável.",
       "A gestão de conteúdo é feita através de arquivos locais em Markdown e FrontMatter, uma escolha estratégica para eliminar a latência de APIs externas e garantir a resiliência de imagens e textos, evitando a expiração de imagens que ocorria no meu site anterior devido às URLs temporárias da API do Notion.",
@@ -55,7 +58,7 @@ export const portfolioAuthorial: Project[] = [
     slug: "desgruda",
     image: imgDesgruda,
     link: "https://marketplace.visualstudio.com/items?itemName=IsaacMuniz.desgruda",
-    repoLink: "https://github.com/codigoisaac/desgruda",
+    repoLink: "https://github.com/codigoisaac/desgruda/",
     description: [
       "O Desgruda é uma ferramenta de Developer Experience (DX) projetada para resolver o amontoamento visual em arquivos React, automatizando a separação de componentes com linhas em branco.",
       "A solução utiliza o @babel/parser para percorrer a Abstract Syntax Tree (AST) do código, identificando com precisão os elementos JSX irmãos e calculando as posições de inserção sem corromper a estrutura do arquivo.",
@@ -73,7 +76,7 @@ export const portfolioAuthorial: Project[] = [
       "A primeira versão do meu portfolio autoral, desenvolvida para fundir design experimental com tecnologias modernas de desenvolvimento.",
     slug: "portfolio-v1",
     image: imgMyOldSite,
-    link: "https://isaacmuniz.vercel.app",
+    link: "https://isaacmuniz.vercel.app/",
     description: [
       "A V1 do meu site foi concebida como um manifesto de design e engenharia, onde a estética retro-futurista de TVs analógicas e efeitos de glitch se fundem a uma arquitetura moderna e performática.",
       "Busquei equilibrar o minimalismo funcional com uma pegada brutalista, utilizando Next.js e TypeScript para construir uma interface altamente interativa que foge dos padrões convencionais de portfólios genéricos.",
@@ -176,7 +179,7 @@ export const portfolioColab: Project[] = [
         ],
       },
     ],
-    link: "https://www.bettha.com",
+    link: "https://www.bettha.com/",
     description: [
       "Atuei como um dos engenheiros de frontend no desenvolvimento do Portal do Candidato e da Plataforma de Gestão Empresarial (ATS). O foco nessas plataformas foi a construção de interfaces escaláveis integradas a uma arquitetura de microsserviços no backend, utilizando um Design System centralizado com Tailwind CSS para garantir a consistência entre os produtos.",
       "Para a parceira Cia de Talentos, desenvolvi Jogos de Avaliação (Assessments) baseados em navegador, utilizando Next.js e Zustand para o gerenciamento de estados complexos em tempo real, priorizando alta performance e baixa latência.",
@@ -207,7 +210,7 @@ export const portfolioColab: Project[] = [
       "Lorem ipsum fugiat do id veniam in in ad. Aliquip aliquip enim do nostrud minim aute labore Lorem. Anim labore est dolor nostrud ut exercitation cillum.",
     slug: "sofista",
     image: imgSofista,
-    link: "https://sofista.com.br",
+    link: "https://sofista.com.br/",
     description: [
       "Fugiat anim ad exercitation adipisicing esse culpa nostrud eu amet nulla eu. Commodo proident qui cupidatat minim ad nostrud. Laborum ullamco consequat nostrud et aliqua. Ad occaecat eu nulla minim laborum do fugiat ex.",
       "Ut non aliqua cupidatat id deserunt ad enim et irure magna eu qui cupidatat. Enim voluptate aliquip officia sint ad. Aliqua minim ea irure elit amet nisi officia consequat aliqua cillum aliqua in incididunt. Labore et minim mollit officia tempor sit ullamco irure mollit. Aute id proident sint incididunt ex ea duis qui excepteur.",
@@ -253,7 +256,7 @@ export const portfolioColab: Project[] = [
       "Lorem ipsum fugiat do id veniam in in ad. Aliquip aliquip enim do nostrud minim aute labore Lorem. Anim labore est dolor nostrud ut exercitation cillum.",
     slug: "mimo",
     image: imgMimo,
-    link: "https://sofista.com.br",
+    link: "https://mimobeneficios.com/",
     description: [
       "Fugiat anim ad exercitation adipisicing esse culpa nostrud eu amet nulla eu. Commodo proident qui cupidatat minim ad nostrud. Laborum ullamco consequat nostrud et aliqua. Ad occaecat eu nulla minim laborum do fugiat ex.",
       "Ut non aliqua cupidatat id deserunt ad enim et irure magna eu qui cupidatat. Enim voluptate aliquip officia sint ad. Aliqua minim ea irure elit amet nisi officia consequat aliqua cillum aliqua in incididunt. Labore et minim mollit officia tempor sit ullamco irure mollit. Aute id proident sint incididunt ex ea duis qui excepteur.",
@@ -263,15 +266,23 @@ export const portfolioColab: Project[] = [
     ],
     subjects: [
       {
-        title: "Um pouco sobre a Plataforma",
+        title: "Imagens ilustrativas do App",
         items: [
           {
-            title: "Conheça a Sofista",
-            description:
-              "Vídeo de apresentação da plataforma feito no período em que eu era um dos colaboradores do projeto. É muito legal para mim assistir isso e ver várias funcionalidades e interfaces que eu desenvolvi ou ajudei a desenvolver.",
-            video: "/videos/sofista.mp4",
+            title: "Home",
+            image: imgMimo1,
+            containImageSize: true,
           },
-          { title: "Home da plataforma", image: imgSofista1 },
+          {
+            title: "Funcionalidades",
+            image: imgMimo2,
+            containImageSize: true,
+          },
+          {
+            title: "Mimo Fit",
+            image: imgMimo3,
+            containImageSize: true,
+          },
         ],
       },
     ],
