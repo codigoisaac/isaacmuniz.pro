@@ -4,18 +4,26 @@ import Link from "next/link";
 import { Project } from "@/interfaces/portfolio";
 import TagsDisplay from "./TagsDisplay";
 import TechStackDisplay from "./TechStackDisplay";
+import { cn } from "@/lib/utils";
 
 type Props = {
   project: Project;
+  variant?: "compact" | "smallCompact";
 };
 
-export default function ProjectCardCompact({ project }: Props) {
+export default function ProjectCardCompact({
+  project,
+  variant = "compact",
+}: Props) {
   return (
     <Link
-      className="flex gap-4 bg-base-200 p-3 rounded-xl w-full hover:border-neutral-content/20 transition-colors group"
+      className={cn(
+        "relative flex gap-4 bg-base-200 p-3 rounded-xl w-full group h-full items-center",
+        { "pt-8 sm:pt-3": project.isFeaturedProject },
+      )}
       href={`/portfolio/${project.slug}`}
     >
-      {project.isFeaturedProject && <FeaturedProjectTag />}
+      {project.isFeaturedProject && <FeaturedProjectTag showOnCenterOnMobile />}
 
       <div className="shrink-0 w-32 h-32 rounded-lg overflow-hidden">
         <BlurImage
@@ -27,9 +35,17 @@ export default function ProjectCardCompact({ project }: Props) {
       </div>
 
       {/* Container do Conteúdo */}
-      <div className="flex flex-col justify-between grow py-1 min-w-0">
+      <div className="flex flex-col min-h-32 h-full justify-between grow py-1 min-w-0">
         <div>
-          <div className="text-lg font-geist-mono font-medium tracking-wide leading-tight mb-1 truncate">
+          <div
+            className={cn(
+              "text-lg font-geist-mono font-medium tracking-wide leading-tight mb-1",
+              {
+                "mt-3.5":
+                  project.isFeaturedProject && variant === "smallCompact",
+              },
+            )}
+          >
             {project.title}
           </div>
 

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Project } from "@/interfaces/portfolio";
 import TagsDisplay from "./TagsDisplay";
 import TechStackDisplay from "./TechStackDisplay";
+import { cn } from "@/lib/utils";
 
 type Props = {
   project: Project;
@@ -15,8 +16,15 @@ export default function ProjectCard({ project }: Props) {
       className="block bg-base-300 p-1 rounded-[14px] h-full"
       href={`/portfolio/${project.slug}`}
     >
-      <div className="flex flex-col justify-between bg-base-200 p-4 rounded-xl cursor-pointer relative h-full">
-        {project.isFeaturedProject && <FeaturedProjectTag />}
+      <div
+        className={cn(
+          "flex flex-col justify-between bg-base-200 p-4 rounded-xl cursor-pointer relative h-full",
+          { "pt-8": project.isFeaturedProject },
+        )}
+      >
+        {project.isFeaturedProject && (
+          <FeaturedProjectTag showOnCenterOnMobile />
+        )}
 
         <div className="flex justify-center">
           <BlurImage

@@ -41,17 +41,15 @@ export default function PortfolioPage() {
           Projetos com os quais colaborei
         </Text>
 
-        <div className="flex flex-col gap-4">
-          <HoverEffect
-            idPrefix="colab"
-            className="sm:grid-cols-1 py-0"
-            hoveredIndex={globalHoveredIndex}
-            setHoveredIndex={setGlobalHoveredIndex}
-            items={portfolioColab.map((project) => (
-              <ProjectCardCompact key={project.slug} project={project} />
-            ))}
-          />
-        </div>
+        <HoverEffect
+          idPrefix="colab"
+          className="sm:grid-cols-1 py-0"
+          hoveredIndex={globalHoveredIndex}
+          setHoveredIndex={setGlobalHoveredIndex}
+          items={portfolioColab.map((project) => (
+            <ProjectCardCompact key={project.slug} project={project} />
+          ))}
+        />
       </div>
 
       {/* Other Projects */}
@@ -62,17 +60,19 @@ export default function PortfolioPage() {
           Outros projetos
         </Text>
 
-        <div className="flex flex-col gap-4">
-          <HoverEffect
-            idPrefix="others"
-            className="sm:grid-cols-1 py-0"
-            hoveredIndex={globalHoveredIndex}
-            setHoveredIndex={setGlobalHoveredIndex}
-            items={portfolioOthers.map((project) => (
-              <ProjectCardCompact key={project.slug} project={project} />
-            ))}
-          />
-        </div>
+        <HoverEffect
+          idPrefix="others"
+          className="sm:grid-cols-1 xl:grid-cols-2 py-0"
+          hoveredIndex={globalHoveredIndex}
+          setHoveredIndex={setGlobalHoveredIndex}
+          items={portfolioOthers.map((project) => (
+            <ProjectCardCompact
+              key={project.slug}
+              project={project}
+              variant="smallCompact"
+            />
+          ))}
+        />
       </div>
     </>
   );
