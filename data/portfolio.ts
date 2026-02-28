@@ -1,4 +1,5 @@
 import { Project } from "@/interfaces/portfolio";
+import imgAbyss from "@/assets/images/portfolio/abyss.png";
 import imgBettha from "@/assets/images/portfolio/bettha/main.png";
 import imgBetthaCandidates1 from "@/assets/images/portfolio/bettha/candidates/1.png";
 import imgBetthaCandidates2 from "@/assets/images/portfolio/bettha/candidates/2.png";
@@ -326,7 +327,7 @@ export const portfolioOthers: Project[] = [
     excerpt:
       "A primeira versão do meu portfolio autoral, desenvolvida para fundir design experimental com tecnologias modernas de desenvolvimento.",
     slug: "abyss",
-    image: imgMyOldSite,
+    image: imgAbyss,
     link: "https://isaacmuniz.vercel.app/",
     description: [
       "A V1 do meu site foi concebida como um manifesto de design e engenharia, onde a estética retro-futurista de TVs analógicas e efeitos de glitch se fundem a uma arquitetura moderna e performática.",
