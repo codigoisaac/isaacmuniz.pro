@@ -28,17 +28,17 @@ export const portfolioAuthorial: Project[] = [
   {
     title: "Meu Site",
     excerpt:
-      "Minha casa digital, que centraliza meus escritos técnicos e portfólio, priorizando uma estética refinada e uma experiência de leitura impecável.",
+      "Minha casa digital, que centraliza meu portfólio e escritos técnicos, priorizando uma estética refinada e uma experiência de leitura impecável.",
     slug: "meu-site",
     image: imgMySite,
     link: "https://isaacmuniz.pro",
     repoLink: "https://github.com/codigoisaac/my-app/",
     description: [
-      "Este projeto utiliza tecnologias de ponta como Next.js 16, React 19 e Tailwind CSS 4 em uma arquitetura pensada para longevidade, alta performance e uma experiência de usuário impecável.",
-      "A gestão de conteúdo é feita através de arquivos locais em Markdown e FrontMatter, uma escolha estratégica para eliminar a latência de APIs externas e garantir a resiliência de imagens e textos, evitando a expiração de imagens que ocorria no meu site anterior devido às URLs temporárias da API do Notion.",
-      "A interface utiliza DaisyUI para um sistema de temas consistente e ágil, complementada por animações sutis via GSAP e Motion, mantendo o equilíbrio entre o minimalismo profissional e a identidade de programador.",
-      "O fluxo de desenvolvimento foi otimizado com o runtime Bun, permitindo um ambiente veloz e moderno para um site que serve como meu cartão de visitas definitivo e hub de conhecimento técnico.",
-      "Para mim, este site é a materialização da minha identidade profissional: um manifesto de que o software pode ser belo, funcional e tecnicamente impecável. Ele representa o centro gravitacional da minha carreira.",
+      "Este projeto é construído com Next.js 16, React 19, TailwindCSS 4 e DaisyUI 5, utilizando o runtime Bun para um ambiente de desenvolvimento veloz e moderno. A arquitetura foi pensada para longevidade e alta performance, com foco especial na experiência de leitura.",
+      "O blog é alimentado por arquivos Markdown locais processados com gray-matter, remark e remark-gfm, com syntax highlighting otimizado via PrismLight e registro seletivo de linguagens para manter o bundle enxuto. A tipografia e o layout de leitura foram cuidadosamente trabalhados para que o conteúdo técnico seja consumido com conforto e clareza.",
+      "O projeto conta com temas DaisyUI autorais usando tokens de cor em OKLCH. A escolha de tema do usuário persiste no localStorage e o site respeita o prefers-color-scheme do sistema operacional do usuário.",
+      "A experiência visual é complementada por animações construídas com GSAP e Motion, com transições suaves e carregamento progressivo de imagens.",
+      "Para mim, este site é a materialização da minha identidade profissional: um manifesto de que software pode ser belo, funcional e tecnicamente impecável.",
     ],
     tech: [
       "nextjs",
@@ -75,13 +75,16 @@ export const portfolioAuthorial: Project[] = [
   {
     title: "ITVER",
     excerpt:
-      "Do labore minim officia irure. Ad quis aliqua ipsum non mollit consequat esse eiusmod culpa.",
+      "Site institucional para uma empresa industrial brasileira com 30 anos de mercado, desenvolvido com foco em apresentar um catálogo técnico complexo com alta qualidade de UI/UX.",
     slug: "itver",
     image: imgItver,
     link: "https://itver.com.br/",
     description: [
-      "Sint laboris minim nulla in ex culpa esse pariatur non. Tempor reprehenderit incididunt id quis labore est quis incididunt elit incididunt ad consectetur nisi non. Elit velit voluptate sint excepteur cupidatat reprehenderit aute. Irure mollit eu aute in adipisicing. Aliqua labore non quis sint cupidatat laboris ut nulla do sint. Velit officia amet amet veniam sit veniam proident esse tempor quis nulla voluptate. Aute velit aliqua duis occaecat minim voluptate ipsum qui fugiat magna dolor velit irure eiusmod.",
-      "Magna minim cillum non ad dolore aliquip sint deserunt irure culpa laboris tempor. Aliquip nulla et officia commodo sint et ipsum commodo commodo in. Enim et eiusmod consectetur occaecat consectetur. Do id dolor culpa mollit adipisicing adipisicing. Reprehenderit quis quis labore consequat quis ea officia eu velit ut eiusmod dolore.",
+      "A ITVER é uma empresa brasileira com três décadas de atuação no desenvolvimento de soluções de alta performance para manutenção mecânica industrial, atendendo gigantes como Klabin, Suzano, Bracell e Stora Enso. O desafio era claro: substituir um site desatualizado por uma presença digital que estivesse à altura da seriedade técnica da marca.",
+      "O site foi desenvolvido com Next.js 16, React 19 e TailwindCSS 4, priorizando performance, SEO e responsividade total. A arquitetura foi pensada para longevidade — com foco em velocidade de carregamento, especialmente em dispositivos móveis.",
+      "O ponto central do projeto é a seção de produtos: um catálogo técnico com múltiplos produtos distribuídos por categorias, com um sistema de filtragem e modais detalhados para cada item. A navegação foi estruturada em página única para evitar carregamentos desnecessários e maximizar a retenção do usuário, o que é crítico para um público B2B altamente técnico.",
+      "Todo o conteúdo descritivo dos produtos é renderizado via Markdown com react-markdown, permitindo formatação rica — listas, destaques e fórmulas químicas — sem abrir mão da clareza visual. A integração com WhatsApp foi implementada diretamente nos cards e modais dos produtos, reduzindo o atrito entre o interesse do cliente e o contato comercial. O formulário de contato utiliza Resend para envio de e-mails direto do site.",
+      "A identidade visual do site foi construída com foco no equilíbrio entre autoridade industrial e modernidade: tipografia sólida, sistema de dark mode via next-themes, micro-interações sutis e uma paleta que transmite confiabilidade técnica.",
     ],
     tech: ["nextjs", "react", "ts", "tailwindcss", "resend"],
     tags: ["Website"],
@@ -207,16 +210,15 @@ export const portfolioColab: Project[] = [
   {
     title: "Sofista Learning",
     excerpt:
-      "Lorem ipsum fugiat do id veniam in in ad. Aliquip aliquip enim do nostrud minim aute labore Lorem. Anim labore est dolor nostrud ut exercitation cillum.",
+      "Plataforma de ensino online que chegou a ter mais de 10.000 alunos, onde atuei como engenheiro fullstack mantendo e escalando uma arquitetura de microsserviços crítica para o negócio.",
     slug: "sofista",
     image: imgSofista,
     link: "https://sofista.com.br/",
     description: [
-      "Fugiat anim ad exercitation adipisicing esse culpa nostrud eu amet nulla eu. Commodo proident qui cupidatat minim ad nostrud. Laborum ullamco consequat nostrud et aliqua. Ad occaecat eu nulla minim laborum do fugiat ex.",
-      "Ut non aliqua cupidatat id deserunt ad enim et irure magna eu qui cupidatat. Enim voluptate aliquip officia sint ad. Aliqua minim ea irure elit amet nisi officia consequat aliqua cillum aliqua in incididunt. Labore et minim mollit officia tempor sit ullamco irure mollit. Aute id proident sint incididunt ex ea duis qui excepteur.",
-      "Consectetur veniam ut sint fugiat reprehenderit reprehenderit nisi proident sunt do deserunt ut. Occaecat est mollit aliqua sit adipisicing aliquip et laborum esse nulla. Sit aliqua amet do nostrud proident mollit duis ex aliquip nulla do veniam sit et. Deserunt ullamco irure ad mollit nulla. Lorem eu reprehenderit amet consectetur eu proident. Ut cupidatat adipisicing nostrud nulla anim incididunt minim.",
-      "Ex adipisicing commodo enim et aliqua aliqua mollit. Mollit laborum ut in cillum. Anim consectetur dolore exercitation cupidatat magna incididunt mollit velit sit dolore magna quis.",
-      "Deserunt do deserunt eu ad nostrud. Cupidatat veniam sunt nulla cillum anim consectetur ad fugiat in nulla elit pariatur labore culpa. Enim do aliquip ut id qui ut proident et. Cillum ipsum officia nisi veniam. Ut ea aliquip occaecat nulla pariatur in in dolor fugiat tempor duis et officia Lorem.",
+      "A Sofista Learning é uma plataforma de ensino online que, durante minha atuação, contava com mais de 10.000 alunos ativos. O desafio técnico central era manter e evoluir uma arquitetura de microsserviços com 5 serviços independentes em Node.js e Express, garantindo alta disponibilidade para sistemas críticos como processamento de pagamentos via Pagar.me e o motor de questões da plataforma.",
+      "Uma das contribuições mais relevantes foi a otimização do sistema de ranking de usuários, que apresentava gargalos sérios de performance. Ao identificar as limitações do Sequelize para consultas complexas, refatorei a lógica para SQL puro otimizado com estratégias avançadas de indexação e cache, resultando em um aumento de 40% na performance do sistema.",
+      "Além da infraestrutura, modelei um ecossistema completo de notificações, desenhando o schema e as APIs RESTful para gerenciar interações de comunidade de alta frequência e feedback de alunos.",
+      "No frontend, desenvolvi dashboards com uso intensivo de dados utilizando React e Redux, entregando métricas de desempenho em tempo real e análises de simulados para uma experiência de aprendizado interativa e orientada a dados.",
     ],
     subjects: [
       {
@@ -253,16 +255,15 @@ export const portfolioColab: Project[] = [
   {
     title: "Aplicativo Mimo Benefícios",
     excerpt:
-      "Lorem ipsum fugiat do id veniam in in ad. Aliquip aliquip enim do nostrud minim aute labore Lorem. Anim labore est dolor nostrud ut exercitation cillum.",
+      "Aplicativo de saúde e benefícios para Android e iOS, onde atuei como engenheiro fullstack contribuindo com funcionalidades core tanto no app mobile quanto no portal web integrado.",
     slug: "mimo",
     image: imgMimo,
     link: "https://mimobeneficios.com/",
     description: [
-      "Fugiat anim ad exercitation adipisicing esse culpa nostrud eu amet nulla eu. Commodo proident qui cupidatat minim ad nostrud. Laborum ullamco consequat nostrud et aliqua. Ad occaecat eu nulla minim laborum do fugiat ex.",
-      "Ut non aliqua cupidatat id deserunt ad enim et irure magna eu qui cupidatat. Enim voluptate aliquip officia sint ad. Aliqua minim ea irure elit amet nisi officia consequat aliqua cillum aliqua in incididunt. Labore et minim mollit officia tempor sit ullamco irure mollit. Aute id proident sint incididunt ex ea duis qui excepteur.",
-      "Consectetur veniam ut sint fugiat reprehenderit reprehenderit nisi proident sunt do deserunt ut. Occaecat est mollit aliqua sit adipisicing aliquip et laborum esse nulla. Sit aliqua amet do nostrud proident mollit duis ex aliquip nulla do veniam sit et. Deserunt ullamco irure ad mollit nulla. Lorem eu reprehenderit amet consectetur eu proident. Ut cupidatat adipisicing nostrud nulla anim incididunt minim.",
-      "Ex adipisicing commodo enim et aliqua aliqua mollit. Mollit laborum ut in cillum. Anim consectetur dolore exercitation cupidatat magna incididunt mollit velit sit dolore magna quis.",
-      "Deserunt do deserunt eu ad nostrud. Cupidatat veniam sunt nulla cillum anim consectetur ad fugiat in nulla elit pariatur labore culpa. Enim do aliquip ut id qui ut proident et. Cillum ipsum officia nisi veniam. Ut ea aliquip occaecat nulla pariatur in in dolor fugiat tempor duis et officia Lorem.",
+      "O Mimo Benefícios é um aplicativo de saúde para Android e iOS. Atuei como engenheiro fullstack no projeto, com responsabilidades que abrangeram tanto o desenvolvimento mobile quanto o backend e o portal web.",
+      "No mobile, implementei interfaces complexas e módulos de gestão de saúde utilizando Flutter com o padrão BLoC para gerenciamento de estado, priorizando uma experiência de usuário fluida e consistente entre as plataformas Android e iOS.",
+      "No backend, trabalhei com uma API GraphQL construída em NestJS com TypeORM e PostgreSQL, gerenciando resolvers e esquemas para lidar com dados médicos e de saúde dos usuários.",
+      "Colaborei também na integração entre o aplicativo móvel e o portal web em Next.js para viabilizar fluxos unificados de registro de usuários e processamento de pagamentos via Vindi.",
     ],
     subjects: [
       {
@@ -298,7 +299,7 @@ export const portfolioColab: Project[] = [
       "vindi",
     ],
     tags: ["Aplicativo Mobile", "Aplicativo Web", "Colaboração"],
-    date: "2022 - 2023",
+    date: "2024 - 2025",
   },
 ];
 
@@ -325,19 +326,20 @@ export const portfolioOthers: Project[] = [
   {
     title: "Abyss",
     excerpt:
-      "A primeira versão do meu portfolio autoral, desenvolvida para fundir design experimental com tecnologias modernas de desenvolvimento.",
+      "Aplicação de desenho interativo no navegador para criação de arte abstrata, construída com HTML Canvas, JavaScript e CSS.",
     slug: "abyss",
     image: imgAbyss,
-    link: "https://isaacmuniz.vercel.app/",
+    link: "https://codigoisaac.github.io/Abyss/",
+    repoLink: "https://github.com/codigoisaac/abyss",
     description: [
-      "A V1 do meu site foi concebida como um manifesto de design e engenharia, onde a estética retro-futurista de TVs analógicas e efeitos de glitch se fundem a uma arquitetura moderna e performática.",
-      "Busquei equilibrar o minimalismo funcional com uma pegada brutalista, utilizando Next.js e TypeScript para construir uma interface altamente interativa que foge dos padrões convencionais de portfólios genéricos.",
-      "Um dos pilares técnicos foi a integração com o Notion via API, transformando-o em um Headless CMS para gerenciar o conteúdo de forma dinâmica, sem sacrificar a liberdade artística do front-end customizado.",
-      "Este projeto reflete minha crença de que o código é uma extensão da expressão criativa, demonstrando um rigoroso cuidado com a qualidade do software aliado a um senso estético refinado e autoral.",
+      "O Abyss é uma aplicação de desenho criativo que roda inteiramente no navegador, construída com HTML Canvas, JavaScript e CSS puro — sem frameworks ou dependências externas.",
+      "O projeto oferece um conjunto rico de controles para a experiência de desenho: transições automáticas de cor pelo espectro HSL ou ajuste manual de matiz, saturação e luminosidade; largura de linha dinâmica ou fixa; modo de pontos conectados para traçados retos entre cliques; e um efeito de sombra com blend mode multiply para criar profundidade nas sobreposições.",
+      "A interface de controles pode ser ocultada com a barra de espaço, permitindo uma experiência de desenho sem distrações com tela cheia.",
+      "Um detalhe que me deixa feliz: apresentei o app pro meu filho, e de vez em quando ele pede para abrí-lo para desenhar. Ver uma criança se divertir com algo que você construiu do zero é uma das melhores recompensas que um projeto pode dar.",
     ],
-    tech: ["nextjs", "react", "tailwindcss", "ts", "notion"],
-    tags: ["Website"],
-    date: "2023",
+    tech: ["js", "css", "html"],
+    tags: ["Aplicativo Web", "Open Source"],
+    date: "2020",
   },
 ];
 
