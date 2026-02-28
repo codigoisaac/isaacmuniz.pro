@@ -18,10 +18,14 @@ export default function ProjectCard({ project }: Props) {
       <div className="flex flex-col justify-between bg-base-200 p-4 rounded-xl cursor-pointer relative h-full">
         {project.isFeaturedProject && <FeaturedProjectTag />}
 
-        <BlurImage
-          src={project.image}
-          alt={`Capa do projeto ${project.title}`}
-        />
+        <div className="flex justify-center">
+          <BlurImage
+            src={project.image}
+            alt={`Capa do projeto ${project.title}`}
+            className="w-fit"
+            containerClassname="w-fit rounded-lg overflow-hidden"
+          />
+        </div>
 
         <div className="text-xl font-geist-mono font-medium mb-1 mt-5">
           {project.title}

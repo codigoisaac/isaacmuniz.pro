@@ -17,7 +17,7 @@ export default function ProjectCardCompact({ project }: Props) {
     >
       {project.isFeaturedProject && <FeaturedProjectTag />}
 
-      <div className="shrink-0 w-32 h-32 rounded-lg overflow-hidden bg-base-100 border border-base-300">
+      <div className="shrink-0 w-32 h-32 rounded-lg overflow-hidden">
         <BlurImage
           src={project.image}
           alt={`Capa do projeto ${project.title}`}

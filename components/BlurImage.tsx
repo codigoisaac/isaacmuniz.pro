@@ -1,7 +1,8 @@
 "use client";
 
-import clsx from "clsx";
 import Image, { StaticImageData } from "next/image";
+
+import { cn } from "@/lib/utils";
 import { useState } from "react";
 
 interface BlurImageProps {
@@ -21,9 +22,9 @@ export default function BlurImage({
   src,
   alt,
   placeholderSrc = "/favicon.ico",
-  containerClassname = "h-31 flex justify-center",
-  className = "object-scale-down max-h-full",
-  placeholderClassName = "h-full w-fit m-auto",
+  containerClassname,
+  className,
+  placeholderClassName,
   priority = false,
   shouldShowLoadingUI = false,
   load,
@@ -32,7 +33,12 @@ export default function BlurImage({
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <div className={clsx("relative overflow-hidden", containerClassname)}>
+    <div
+      className={cn(
+        "relative overflow-hidden h-31 flex justify-center",
+        containerClassname,
+      )}
+    >
       {/* 1. Placeholder Image */}
       {isLoading && (
         <Image
@@ -40,8 +46,8 @@ export default function BlurImage({
           src={placeholderSrc}
           width={size}
           height={size}
-          className={clsx(
-            "absolute inset-0 z-0 blur-md scale-110",
+          className={cn(
+            "absolute inset-0 z-0 blur-md scale-110 h-full w-fit m-auto",
             placeholderClassName,
           )}
           aria-hidden="true"
@@ -56,8 +62,8 @@ export default function BlurImage({
         height={size}
         priority={priority}
         loading={load}
-        className={clsx(
-          "duration-700 ease-in-out z-10",
+        className={cn(
+          "duration-700 ease-in-out z-10 object-scale-down max-h-full",
           isLoading
             ? "blur-2xl grayscale opacity-0"
             : "blur-0 grayscale-0 opacity-100",

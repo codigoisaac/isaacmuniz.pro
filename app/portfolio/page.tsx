@@ -1,6 +1,10 @@
 "use client";
 
-import { portfolioAuthorial, portfolioColab } from "@/data/portfolio";
+import {
+  portfolioAuthorial,
+  portfolioColab,
+  portfolioOthers,
+} from "@/data/portfolio";
 
 import { HoverEffect } from "@/components/portfolio/HoverEffect";
 import PageHeader from "@/components/PageHeader";
@@ -19,6 +23,7 @@ export default function PortfolioPage() {
     <>
       <PageHeader text="/portfolio" />
 
+      {/* Main Projects */}
       <HoverEffect
         idPrefix="authorial"
         hoveredIndex={globalHoveredIndex}
@@ -28,11 +33,12 @@ export default function PortfolioPage() {
         ))}
       />
 
+      {/* Collaboration Projects */}
       <SeparatorDots />
 
       <div className="mt-12">
         <Text variant="h3" className="text-center mb-4">
-          Outros projetos com os quais colaborei
+          Projetos com os quais colaborei
         </Text>
 
         <div className="flex flex-col gap-4">
@@ -42,6 +48,27 @@ export default function PortfolioPage() {
             hoveredIndex={globalHoveredIndex}
             setHoveredIndex={setGlobalHoveredIndex}
             items={portfolioColab.map((project) => (
+              <ProjectCardCompact key={project.slug} project={project} />
+            ))}
+          />
+        </div>
+      </div>
+
+      {/* Other Projects */}
+      <SeparatorDots />
+
+      <div className="mt-12">
+        <Text variant="h3" className="text-center mb-4">
+          Outros projetos
+        </Text>
+
+        <div className="flex flex-col gap-4">
+          <HoverEffect
+            idPrefix="others"
+            className="sm:grid-cols-1 py-0"
+            hoveredIndex={globalHoveredIndex}
+            setHoveredIndex={setGlobalHoveredIndex}
+            items={portfolioOthers.map((project) => (
               <ProjectCardCompact key={project.slug} project={project} />
             ))}
           />
