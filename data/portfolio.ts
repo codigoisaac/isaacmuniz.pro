@@ -83,7 +83,7 @@ export const portfolioAuthorial: Project[] = [
       "Sint laboris minim nulla in ex culpa esse pariatur non. Tempor reprehenderit incididunt id quis labore est quis incididunt elit incididunt ad consectetur nisi non. Elit velit voluptate sint excepteur cupidatat reprehenderit aute. Irure mollit eu aute in adipisicing. Aliqua labore non quis sint cupidatat laboris ut nulla do sint. Velit officia amet amet veniam sit veniam proident esse tempor quis nulla voluptate. Aute velit aliqua duis occaecat minim voluptate ipsum qui fugiat magna dolor velit irure eiusmod.",
       "Magna minim cillum non ad dolore aliquip sint deserunt irure culpa laboris tempor. Aliquip nulla et officia commodo sint et ipsum commodo commodo in. Enim et eiusmod consectetur occaecat consectetur. Do id dolor culpa mollit adipisicing adipisicing. Reprehenderit quis quis labore consequat quis ea officia eu velit ut eiusmod dolore.",
     ],
-    tech: ["nextjs", "react", "ts", "tailwindcss"],
+    tech: ["nextjs", "react", "ts", "tailwindcss", "resend"],
     tags: ["Website"],
     date: "2026",
   },

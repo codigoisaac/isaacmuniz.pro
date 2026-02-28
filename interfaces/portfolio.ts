@@ -34,7 +34,8 @@ export type TechID =
   | "pagarme"
   | "vindi"
   | "openapi"
-  | "swagger";
+  | "swagger"
+  | "resend";
 
 type Tag =
   | "Aplicativo Web"

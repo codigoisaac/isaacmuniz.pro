@@ -27,6 +27,7 @@ import postgresql from "@/assets/images/techStack/postgresql.svg";
 import react from "@/assets/images/techStack/react.webp";
 import reacthookform from "@/assets/images/techStack/react-hook-form.png";
 import redux from "@/assets/images/techStack/redux.webp";
+import resend from "@/assets/images/techStack/resend.svg";
 import sequelize from "@/assets/images/techStack/sequelize.webp";
 import swagger from "@/assets/images/techStack/swagger.svg";
 import tailwindcss from "@/assets/images/techStack/tailwindcss.webp";
@@ -71,6 +72,7 @@ const techStack: Record<TechID, TechItem> = {
   vindi: { name: "Vindi", image: vindi },
   openapi: { name: "OpenAPI", image: openapi },
   swagger: { name: "Swagger", image: swagger },
+  resend: { name: "Resend", image: resend },
 };
 
 export default techStack;
