@@ -8,6 +8,11 @@ const textStyles = tv({
       h1: "font-transducer-extended text-4xl font-black tracking-tighter sm:text-5xl md:text-6xl uppercase",
       h2: "font-transducer-extended text-3xl font-bold tracking-tight sm:text-4xl",
       h3: "text-xl font-medium font-geist-mono",
+      /**
+       * Variante para títulos de seção que usam font-saira.
+       * Usada nas seções da Home (Hero, Sobre, Projetos, etc.).
+       */
+      display: "font-saira text-3xl font-semibold leading-tight",
       p: "text-base leading-relaxed",
       caps: "font-transducer text-xs font-bold uppercase tracking-widest",
       mono: "font-geist-mono text-sm bg-base-300/50 px-1 rounded",

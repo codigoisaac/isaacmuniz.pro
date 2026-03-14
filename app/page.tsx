@@ -1,27 +1,56 @@
-export default async function Home() {
-  return (
-    <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-      <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-primary">
-        To get started, edit the page.tsx file.
-      </h1>
+import { getAllBlogPosts } from "@/lib/api";
+import { allProjects } from "@/data/portfolio";
+import SeparatorDots from "@/components/SeparatorDots";
+import HomeHero from "@/components/home/HomeHero";
+import HomeAbout from "@/components/home/HomeAbout";
+import HomeProjects from "@/components/home/HomeProjects";
+import HomeBlog from "@/components/home/HomeBlog";
+import HomeContact from "@/components/home/HomeContact";
 
-      <p className="max-w-md text-lg leading-8">
-        Looking for a starting point or more instructions? Head over to{" "}
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="font-medium"
-        >
-          Templates
-        </a>{" "}
-        or the{" "}
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="font-medium"
-        >
-          Learning
-        </a>{" "}
-        center.
-      </p>
-    </div>
+const FEATURED_PROJECT_SLUGS = ["itver", "bettha", "mimo"];
+
+const FEATURED_POST_SLUGS = [
+  "bits",
+  "angular-bindings",
+  "laravel-primeiras-impressoes",
+];
+
+export default function HomePage() {
+  const allPosts = getAllBlogPosts().filter((p) => !p.isDraft);
+
+  const featuredProjects = allProjects
+    .filter((p) => FEATURED_PROJECT_SLUGS.includes(p.slug))
+    .sort(
+      (a, b) =>
+        FEATURED_PROJECT_SLUGS.indexOf(a.slug) -
+        FEATURED_PROJECT_SLUGS.indexOf(b.slug),
+    );
+
+  const featuredPosts = allPosts
+    .filter((p) => FEATURED_POST_SLUGS.includes(p.slug))
+    .sort(
+      (a, b) =>
+        FEATURED_POST_SLUGS.indexOf(a.slug) -
+        FEATURED_POST_SLUGS.indexOf(b.slug),
+    );
+
+  return (
+    <>
+      <HomeHero />
+
+      <HomeAbout />
+
+      <SeparatorDots />
+
+      <HomeProjects projects={featuredProjects} />
+
+      <SeparatorDots />
+
+      <HomeBlog posts={featuredPosts} />
+
+      <SeparatorDots />
+
+      <HomeContact />
+    </>
   );
 }
