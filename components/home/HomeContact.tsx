@@ -11,6 +11,7 @@ import {
 import siteMetadata from "@/data/siteMetadata";
 import Text from "@/components/Text";
 import HeadingLabel from "./HeadingLabel";
+import SocialButtons from "../SocialButtons";
 
 type FormStatus = "idle" | "sending" | "sent" | "error";
 
@@ -83,7 +84,7 @@ export default function HomeContact() {
         className="mb-2"
       >
         <Text as="h2" variant="display" intent="primary">
-          Vamos trabalhar juntos?
+          Vamos trabalhar juntos
         </Text>
       </motion.div>
 
@@ -120,6 +121,7 @@ export default function HomeContact() {
               <Text as="label" variant="caps" intent="muted">
                 Nome
               </Text>
+
               <input
                 type="text"
                 required
@@ -129,10 +131,12 @@ export default function HomeContact() {
                 className="input input-bordered bg-base-200 font-transducer text-sm w-full focus:outline-primary"
               />
             </div>
+
             <div className="flex flex-col gap-1.5">
               <Text as="label" variant="caps" intent="muted">
                 E-mail
               </Text>
+
               <input
                 type="email"
                 required
@@ -149,6 +153,7 @@ export default function HomeContact() {
             <Text as="label" variant="caps" intent="muted">
               Mensagem
             </Text>
+
             <textarea
               required
               rows={5}
@@ -199,20 +204,11 @@ export default function HomeContact() {
             <Text variant="caps" intent="muted" className="mb-3">
               Redes sociais
             </Text>
-            <div className="flex gap-4">
-              {socials.map(({ href, label, Icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="text-base-content hover:text-primary transition-colors"
-                >
-                  <Icon size={24} weight="duotone" />
-                </a>
-              ))}
-            </div>
+
+            <SocialButtons
+              size={26}
+              className="text-primary hover:text-secondary-content"
+            />
           </div>
 
           {/* Direct email */}
@@ -220,6 +216,7 @@ export default function HomeContact() {
             <Text variant="caps" intent="muted" className="mb-1.5">
               E-mail direto
             </Text>
+
             <a
               href={siteMetadata.socials.emailLink}
               className="font-transducer text-sm animated-underline"
@@ -233,6 +230,7 @@ export default function HomeContact() {
             <Text variant="caps" intent="muted" className="mb-1.5">
               WhatsApp
             </Text>
+
             <a
               href={siteMetadata.socials.whatsappLink}
               target="_blank"
@@ -247,6 +245,7 @@ export default function HomeContact() {
           <div className="mt-auto">
             <div className="inline-flex items-center gap-2 px-3 py-2 bg-base-200 border border-base-300 rounded-selector">
               <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
+
               <Text
                 as="span"
                 variant="caps"

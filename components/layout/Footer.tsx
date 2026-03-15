@@ -1,17 +1,5 @@
-import {
-  GithubLogoIcon,
-  LinkedinLogoIcon,
-  EnvelopeIcon,
-  WhatsappLogoIcon,
-} from "@phosphor-icons/react/dist/ssr";
-import { IconProps } from "@phosphor-icons/react";
 import siteMetadata from "@/data/siteMetadata";
-
-const icon: IconProps = {
-  size: 28,
-  weight: "duotone",
-  className: "text-base-content",
-};
+import SocialButtons from "../SocialButtons";
 
 export default function Footer() {
   return (
@@ -57,56 +45,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Social icons */}
-        <div className="flex gap-4">
-          <a
-            href={siteMetadata.socials.githubLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GithubLogoIcon
-              size={icon.size}
-              weight={icon.weight}
-              className={icon.className}
-            />
-          </a>
-
-          <a
-            href={siteMetadata.socials.linkedinLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <LinkedinLogoIcon
-              size={icon.size}
-              weight={icon.weight}
-              className={icon.className}
-            />
-          </a>
-
-          <a
-            href={siteMetadata.socials.emailLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <EnvelopeIcon
-              size={icon.size}
-              weight={icon.weight}
-              className={icon.className}
-            />
-          </a>
-
-          <a
-            href={siteMetadata.socials.whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <WhatsappLogoIcon
-              size={icon.size}
-              weight={icon.weight}
-              className={icon.className}
-            />
-          </a>
-        </div>
+        <SocialButtons />
       </div>
     </footer>
   );
