@@ -132,7 +132,7 @@ export default function HomeAbout() {
         >
           <div className="relative">
             {/* Main photo */}
-            <div className="aspect-[4/5] rounded-xl overflow-hidden bg-base-200">
+            <div className="aspect-4/5 rounded-xl overflow-hidden bg-base-200">
               {/*
                * ⚠️  Substitua o src abaixo pela sua foto.
                * Para usar next/image com URLs externas, adicione o domínio

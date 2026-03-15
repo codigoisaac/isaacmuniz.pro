@@ -117,6 +117,10 @@
   --radius-box: var(--rounded-box, 0.5rem);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a[href^="http"]:not(.unstiled-link) {
   color: var(--color-neutral);
   text-decoration: underline dotted var(--color-neutral);

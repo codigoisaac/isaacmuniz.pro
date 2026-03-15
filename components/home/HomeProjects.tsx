@@ -5,7 +5,6 @@ import { motion } from "motion/react";
 import Link from "next/link";
 import { Project } from "@/interfaces/portfolio";
 import { HoverEffect } from "@/components/portfolio/HoverEffect";
-import ProjectCard from "@/components/portfolio/ProjectCard";
 import Text from "@/components/Text";
 import ProjectCardCompact from "../portfolio/ProjectCardCompact";
 

@@ -46,6 +46,7 @@ export const portfolioAuthorial: Project[] = [
       "tailwindcss",
       "daisyui",
       "ts",
+      "motion",
       "bun",
       "markdown",
     ],

@@ -17,16 +17,6 @@ const ease = [0.22, 1, 0.36, 1] as const;
 export default function HomeHero() {
   return (
     <section className="relative min-h-[78vh] flex flex-col justify-center pt-4 pb-20">
-      {/* Subtle dot-grid background */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.045]"
-        style={{
-          backgroundImage: `radial-gradient(circle, currentColor 1px, transparent 1px)`,
-          backgroundSize: "28px 28px",
-        }}
-      />
-
       {/* ── Terminal prompt label ── */}
       <motion.div
         initial={{ opacity: 0, x: -12 }}
@@ -34,7 +24,8 @@ export default function HomeHero() {
         transition={{ duration: 0.5, ease }}
         className="flex items-center gap-2 mb-7"
       >
-        <span className="text-primary select-none text-sm">▸</span>
+        <span className="text-primary select-none text-sm pb-[.18rem]">▸</span>
+
         <Text variant="caps" intent="muted">
           Desenvolvimento Web &amp; Mobile
         </Text>
@@ -46,11 +37,10 @@ export default function HomeHero() {
           initial={{ y: "110%", opacity: 0 }}
           animate={{ y: "0%", opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.08, ease }}
-          className="font-saira text-5xl sm:text-6xl xl:text-7xl font-semibold text-primary leading-[1.08] max-w-2xl"
+          className="font-saira text-5xl sm:text-6xl xl:text-7xl font-semibold leading-[1.08] max-w-2xl"
         >
-          Transformo ideias em
-          <br />
-          <span className="text-base-content">produtos digitais.</span>
+          <span className="text-primary">Tecnologia bem feita,</span> para você
+          parar de se preocupar com tecnologia.
         </motion.h1>
       </div>
 
@@ -66,9 +56,18 @@ export default function HomeHero() {
           intent="muted"
           className="leading-relaxed font-transducer"
         >
-          Sites, aplicativos e sistemas feitos sob medida para pequenas e médias
-          empresas que querem crescer no digital — com código limpo e resultado
-          real.
+          {/* "5 anos de experiência" com efeito de marca-texto inclinado */}
+          <span className="relative inline-block mr-1">
+            <span
+              aria-hidden
+              className="absolute inset-0 bg-primary/20 rounded-sm scale-x-[1.04] scale-y-[1.1]"
+            />
+            <span className="relative text-primary font-medium">
+              5 anos de experiência
+            </span>
+          </span>{" "}
+          construindo sites, apps e sistemas que resolvem problemas reais e são
+          um prazer de usar.
         </Text>
       </motion.div>
 
@@ -99,20 +98,13 @@ export default function HomeHero() {
         transition={{ duration: 0.5, delay: 0.68, ease }}
         className="flex flex-wrap gap-3"
       >
-        {/* Interno: usa Link do Next.js para client-side navigation */}
-        <Link href="/portfolio">
-          <button className="btn btn-accent btn-sm md:btn-md text-nowrap">
-            Ver Projetos
-          </button>
-        </Link>
+        <Button internal text="Ver Projetos" link="/portfolio" />
 
-        {/* Âncora na mesma página */}
         <Button
+          internal
           text="Falar Comigo"
           link="#contato"
-          target="_self"
-          rel=""
-          showExternalLinkIcon={false}
+          variant="outline"
         />
       </motion.div>
 
@@ -130,6 +122,7 @@ export default function HomeHero() {
         >
           ↓
         </motion.span>
+
         <Text as="span" variant="caps" intent="muted" className="opacity-60">
           scroll
         </Text>

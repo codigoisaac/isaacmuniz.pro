@@ -1,25 +1,61 @@
+import { tv, type VariantProps } from "tailwind-variants";
 import { ArrowSquareOutIcon } from "@phosphor-icons/react/dist/ssr";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
-interface Props {
+const buttonStyles = tv({
+  base: "btn flex items-center gap-2 text-nowrap",
+  variants: {
+    variant: {
+      primary: "btn-primary",
+      secondary: "btn-primary",
+      accent: "btn-accent",
+      ghost: "btn-ghost",
+      outline: "btn-outline btn-primary bg-primary/10",
+      soft: "btn-soft btn-primary",
+    },
+    size: {
+      sm: "btn-xs sm:btn-sm",
+      md: "btn-xs sm:btn-sm md:btn-md",
+      lg: "btn-sm md:btn-md lg:btn-lg",
+    },
+  },
+  defaultVariants: {
+    variant: "accent",
+    size: "md",
+  },
+});
+
+interface ButtonProps extends VariantProps<typeof buttonStyles> {
   text: string;
-  showExternalLinkIcon?: boolean;
   link: string;
-  /** @default "_blank" */
+  showExternalLinkIcon?: boolean;
   target?: "_blank" | "_self" | "_parent" | "_top";
-  /** @default "noopener noreferrer" */
   rel?: string;
+  internal?: boolean;
+  className?: string;
 }
 
 export default function Button({
   text,
-  showExternalLinkIcon = true,
   link,
+  variant,
+  size,
+  showExternalLinkIcon = true,
   target = "_blank",
   rel = "noopener noreferrer",
-}: Props) {
-  return (
+  internal,
+  className,
+}: ButtonProps) {
+  const classes = cn(buttonStyles({ variant, size }), className);
+
+  return internal ? (
+    <Link href={link}>
+      <button className={classes}>{text}</button>
+    </Link>
+  ) : (
     <a target={target} rel={rel} href={link} className="unstiled-link">
-      <button className="btn btn-accent btn-xs sm:btn-sm md:btn-md flex items-center gap-2 text-nowrap">
+      <button className={classes}>
         <div>{text}</div>
         {showExternalLinkIcon && <ArrowSquareOutIcon size={15} />}
       </button>
