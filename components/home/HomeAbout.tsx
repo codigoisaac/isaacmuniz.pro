@@ -60,13 +60,13 @@ export default function HomeAbout() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="relative">
-            <div className="aspect-4/5 rounded-xl overflow-hidden bg-base-200">
+            <div className="aspect-4/5 rounded-xl overflow-hidden">
               <Image src={myImage} alt="Foto de Isaac" />
             </div>
 
             <div
               aria-hidden
-              className="absolute -bottom-3 -right-3 w-full h-full border border-primary/20 rounded-xl -z-10"
+              className="absolute -bottom-3 -right-3 w-full h-full border-2 border-primary/20 rounded-xl -z-10"
             />
 
             <motion.div
@@ -74,7 +74,7 @@ export default function HomeAbout() {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.4 }}
-              className="absolute -bottom-4 -left-4 bg-base-100 border border-base-300 rounded-xl px-4 py-3 shadow-md"
+              className="absolute -bottom-4 -left-4 bg-base-100 border-2 border-base-300 rounded-xl px-4 py-3 shadow-md"
             >
               <div className="font-saira text-2xl font-semibold text-primary leading-none">
                 {siteMetadata.yearsOfExperience}+

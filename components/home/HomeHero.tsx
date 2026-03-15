@@ -55,8 +55,9 @@ export default function HomeHero() {
               {siteMetadata.yearsOfExperience} anos de experiência
             </span>
           </span>{" "}
-          construindo sites, apps e sistemas que resolvem problemas reais e são
-          um prazer de usar.
+          construindo{" "}
+          <span className="text-primary">sites, apps e sistemas</span> que
+          resolvem problemas reais e são um prazer de usar.
         </Text>
       </motion.div>
 
