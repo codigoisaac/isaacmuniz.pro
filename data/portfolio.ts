@@ -120,6 +120,8 @@ export const portfolioColab: Project[] = [
     subjects: [
       {
         title: "Plataforma de Candidatos",
+        showOnHome: true,
+        homeTitle: "Portal de candidatos de recrutamento em larga escala",
         items: [
           {
             title: "Dash Desktop - Home",
@@ -141,6 +143,8 @@ export const portfolioColab: Project[] = [
       },
       {
         title: "Plataforma para Empresas",
+        showOnHome: true,
+        homeTitle: "ATS e plataforma de gestão de vagas para empresas",
         items: [
           {
             title: "Acompanhamento da Vaga",
@@ -224,6 +228,8 @@ export const portfolioColab: Project[] = [
     subjects: [
       {
         title: "Um pouco sobre a Plataforma",
+        showOnHome: true,
+        homeTitle: "Plataforma de treinamento para vestibulares",
         items: [
           {
             title: "Conheça a Sofista",
@@ -269,6 +275,8 @@ export const portfolioColab: Project[] = [
     subjects: [
       {
         title: "Imagens ilustrativas do App",
+        showOnHome: true,
+        homeTitle: "App mobile de saúde e benefícios para Android e iOS",
         items: [
           {
             title: "Home",
@@ -289,12 +297,12 @@ export const portfolioColab: Project[] = [
       },
     ],
     tech: [
+      "flutter",
       "nextjs",
       "react",
       "ts",
       "nest",
       "node",
-      "flutter",
       "postgresql",
       "graphql",
       "vindi",

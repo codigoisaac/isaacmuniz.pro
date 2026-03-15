@@ -92,7 +92,7 @@ export default function HomeHero() {
 
         <Button
           internal
-          text="Falar Comigo"
+          text="Falar Comigo →"
           link="#contato"
           variant="outline"
         />

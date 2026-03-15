@@ -6,6 +6,7 @@ import HomeAbout from "@/components/home/HomeAbout";
 import HomeProjects from "@/components/home/HomeProjects";
 import HomeBlog from "@/components/home/HomeBlog";
 import HomeContact from "@/components/home/HomeContact";
+import HomeShowcase from "@/components/home/HomeShowcase";
 
 const FEATURED_PROJECT_SLUGS = ["itver", "bettha", "mimo"];
 
@@ -37,6 +38,8 @@ export default function HomePage() {
   return (
     <>
       <HomeHero />
+
+      <HomeShowcase />
 
       <HomeAbout />
 

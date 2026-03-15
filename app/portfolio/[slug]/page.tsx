@@ -1,3 +1,4 @@
+import ScrollToTop from "@/components/layout/ScrollToTop";
 import ProjectButtons from "@/components/portfolio/ProjectButtons";
 import ProjectPageBody from "@/components/portfolio/ProjectPageBody";
 import ProjectPageHeader from "@/components/portfolio/ProjectPageHeader";
@@ -28,6 +29,8 @@ export default async function ProjectPage(props: PageProps) {
       <div className="flex justify-center w-full mt-14 -mb-8">
         <ProjectButtons project={project} showBackButton />
       </div>
+
+      <ScrollToTop />
     </>
   );
 }

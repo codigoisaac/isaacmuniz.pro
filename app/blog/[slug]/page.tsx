@@ -1,5 +1,6 @@
 import BlogPost from "@/components/blog/BlogPost";
 import BlogPostHeader from "@/components/blog/BlogPostHeader";
+import ScrollToTop from "@/components/layout/ScrollToTop";
 import { getBlogPostBySlug } from "@/lib/api";
 import { notFound } from "next/navigation";
 
@@ -20,6 +21,8 @@ export default async function BlogPostPage(props: PageProps) {
       <BlogPostHeader post={post} />
 
       <BlogPost post={post} />
+
+      <ScrollToTop />
     </>
   );
 }

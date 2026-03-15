@@ -8,11 +8,11 @@ const buttonStyles = tv({
   variants: {
     variant: {
       primary: "btn-primary",
-      secondary: "btn-primary",
+      secondary: "btn-secondary",
       accent: "btn-accent",
-      ghost: "btn-ghost",
+      ghost: "btn-ghost text-neutral",
       outline: "btn-outline btn-primary bg-primary/10",
-      soft: "btn-soft btn-primary",
+      soft: "btn-outline btn-primary bg-primary/10 border-none hover:text-neutral",
     },
     size: {
       sm: "btn-xs sm:btn-sm",
