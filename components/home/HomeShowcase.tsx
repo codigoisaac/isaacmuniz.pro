@@ -4,7 +4,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
 import Image from "next/image";
-import Link from "next/link";
 import { Project, SubjectItem } from "@/interfaces/portfolio";
 import TagsDisplay from "@/components/portfolio/TagsDisplay";
 import TechStackDisplay from "@/components/portfolio/TechStackDisplay";

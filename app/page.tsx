@@ -11,8 +11,8 @@ import HomeShowcase from "@/components/home/HomeShowcase";
 const FEATURED_PROJECT_SLUGS = ["itver", "bettha", "mimo"];
 
 const FEATURED_POST_SLUGS = [
-  "bits",
   "angular-bindings",
+  "bits",
   "laravel-primeiras-impressoes",
 ];
 
