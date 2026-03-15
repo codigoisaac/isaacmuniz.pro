@@ -5,6 +5,7 @@ import { Project } from "@/interfaces/portfolio";
 import TagsDisplay from "./TagsDisplay";
 import TechStackDisplay from "./TechStackDisplay";
 import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 type Props = {
   project: Project;
@@ -15,6 +16,9 @@ export default function ProjectCardCompact({
   project,
   variant = "compact",
 }: Props) {
+  const pathname = usePathname();
+  const isOnHome = pathname === "/";
+
   return (
     <Link
       className={cn(
@@ -23,7 +27,9 @@ export default function ProjectCardCompact({
       )}
       href={`/portfolio/${project.slug}`}
     >
-      {project.isFeaturedProject && <FeaturedProjectTag showOnCenterOnMobile />}
+      {project.isFeaturedProject && !isOnHome && (
+        <FeaturedProjectTag showOnCenterOnMobile />
+      )}
 
       <div className="shrink-0 w-32 h-32 rounded-lg overflow-hidden">
         <BlurImage

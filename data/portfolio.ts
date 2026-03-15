@@ -49,6 +49,7 @@ export const portfolioAuthorial: Project[] = [
       "motion",
       "bun",
       "markdown",
+      "resend",
     ],
     tags: ["Website", "Open Source"],
     date: "2026",
