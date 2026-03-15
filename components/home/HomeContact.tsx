@@ -2,12 +2,6 @@
 
 import { useState } from "react";
 import { motion } from "motion/react";
-import {
-  GithubLogoIcon,
-  LinkedinLogoIcon,
-  EnvelopeIcon,
-  WhatsappLogoIcon,
-} from "@phosphor-icons/react/dist/ssr";
 import siteMetadata from "@/data/siteMetadata";
 import Text from "@/components/Text";
 import HeadingLabel from "./HeadingLabel";
@@ -47,29 +41,6 @@ export default function HomeContact() {
       setStatus("error");
     }
   };
-
-  const socials = [
-    {
-      href: siteMetadata.socials.githubLink,
-      label: "GitHub",
-      Icon: GithubLogoIcon,
-    },
-    {
-      href: siteMetadata.socials.linkedinLink,
-      label: "LinkedIn",
-      Icon: LinkedinLogoIcon,
-    },
-    {
-      href: siteMetadata.socials.emailLink,
-      label: "E-mail",
-      Icon: EnvelopeIcon,
-    },
-    {
-      href: siteMetadata.socials.whatsappLink,
-      label: "WhatsApp",
-      Icon: WhatsappLogoIcon,
-    },
-  ];
 
   return (
     <section id="contato" className="py-16">
@@ -219,7 +190,9 @@ export default function HomeContact() {
 
             <a
               href={siteMetadata.socials.emailLink}
-              className="font-transducer text-sm animated-underline"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-transducer text-sm animated-underline unstiled-link text-neutral pb-1"
             >
               {siteMetadata.socials.emailAddress}
             </a>
@@ -235,7 +208,7 @@ export default function HomeContact() {
               href={siteMetadata.socials.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-transducer text-sm animated-underline"
+              className="font-transducer text-sm animated-underline unstiled-link text-neutral pb-1"
             >
               {siteMetadata.socials.phoneNumber}
             </a>
@@ -244,7 +217,7 @@ export default function HomeContact() {
           {/* Availability badge */}
           <div className="mt-auto">
             <div className="inline-flex items-center gap-2 px-3 py-2 bg-base-200 border border-base-300 rounded-selector">
-              <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
 
               <Text
                 as="span"

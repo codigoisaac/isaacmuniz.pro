@@ -121,11 +121,13 @@ html {
   scroll-behavior: smooth;
 }
 
-a[href^="http"]:not(.unstiled-link) {
+a[href^="http"]:not(.unstiled-link),
+a[href^="mailto"]:not(.unstiled-link) {
   color: var(--color-neutral);
   text-decoration: underline dotted var(--color-neutral);
   text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
+  text-underline-offset: 3px;
+  @apply pb-1;
 }
 
 @layer components {

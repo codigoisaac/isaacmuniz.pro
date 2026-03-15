@@ -28,6 +28,7 @@ export default function SocialButtons({
           target="_blank"
           rel="noopener noreferrer"
           aria-label={label}
+          className="unstiled-link"
         >
           <Icon
             size={size}
