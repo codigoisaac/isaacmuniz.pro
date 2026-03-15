@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "motion/react";
-import Link from "next/link";
 import Button from "@/components/Button";
 import Text from "@/components/Text";
+import siteMetadata from "@/data/siteMetadata";
+import HeadingLabel from "./HeadingLabel";
 
 const services = [
   "Sites & Landing Pages",
@@ -17,19 +18,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 export default function HomeHero() {
   return (
     <section className="relative min-h-[78vh] flex flex-col justify-center pt-4 pb-20">
-      {/* ── Terminal prompt label ── */}
-      <motion.div
-        initial={{ opacity: 0, x: -12 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5, ease }}
-        className="flex items-center gap-2 mb-7"
-      >
-        <span className="text-primary select-none text-sm pb-[.18rem]">▸</span>
-
-        <Text variant="caps" intent="muted">
-          Desenvolvimento Web &amp; Mobile
-        </Text>
-      </motion.div>
+      <HeadingLabel text="Desenvolvimento Web &amp; Mobile" />
 
       {/* ── Main headline ── */}
       <div className="overflow-hidden mb-5">
@@ -63,7 +52,7 @@ export default function HomeHero() {
               className="absolute inset-0 bg-primary/20 rounded-sm scale-x-[1.04] scale-y-[1.1]"
             />
             <span className="relative text-primary font-medium">
-              5 anos de experiência
+              {siteMetadata.yearsOfExperience} anos de experiência
             </span>
           </span>{" "}
           construindo sites, apps e sistemas que resolvem problemas reais e são
