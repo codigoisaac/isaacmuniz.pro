@@ -10,6 +10,7 @@ import TechStackDisplay from "@/components/portfolio/TechStackDisplay";
 import Text from "@/components/Text";
 import { allProjects } from "@/data/portfolio";
 import Button from "../Button";
+import HeadingLabel from "./HeadingLabel";
 
 // ─── Build the slide list from flagged subjects ────────────────────────────────
 
@@ -156,12 +157,7 @@ export default function HomeShowcase() {
     >
       {/* ── Header bar ───────────────────────────────────────────────────────── */}
       <div className="px-6 sm:px-8 pt-5 pb-4 flex items-center justify-between border-b border-base-300">
-        <div className="flex items-center gap-2">
-          <span className="text-primary text-sm select-none">▸</span>
-          <Text variant="caps" intent="muted">
-            Trabalhos
-          </Text>
-        </div>
+        <HeadingLabel text="Trabalhos" className="mb-0" />
 
         <div className="flex items-center gap-3">
           <NavArrow direction="up" onClick={() => navigate(-1)} />

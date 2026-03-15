@@ -7,6 +7,7 @@ import { Project } from "@/interfaces/portfolio";
 import { HoverEffect } from "@/components/portfolio/HoverEffect";
 import Text from "@/components/Text";
 import ProjectCardCompact from "../portfolio/ProjectCardCompact";
+import HeadingLabel from "./HeadingLabel";
 
 interface Props {
   projects: Project[];
@@ -20,18 +21,7 @@ export default function HomeProjects({ projects }: Props) {
       {/* Header */}
       <div className="flex items-end justify-between mb-2">
         <div>
-          <motion.div
-            initial={{ opacity: 0, x: -10 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-            className="flex items-center gap-2 mb-2"
-          >
-            <span className="text-primary select-none text-sm">▸</span>
-            <Text variant="caps" intent="muted">
-              Portfólio
-            </Text>
-          </motion.div>
+          <HeadingLabel text="Portfólio" />
 
           <motion.div
             initial={{ opacity: 0, y: 8 }}

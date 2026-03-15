@@ -10,6 +10,7 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import siteMetadata from "@/data/siteMetadata";
 import Text from "@/components/Text";
+import HeadingLabel from "./HeadingLabel";
 
 type FormStatus = "idle" | "sending" | "sent" | "error";
 
@@ -72,18 +73,7 @@ export default function HomeContact() {
   return (
     <section id="contato" className="py-16">
       {/* Section header */}
-      <motion.div
-        initial={{ opacity: 0, x: -10 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.4 }}
-        className="flex items-center gap-2 mb-2"
-      >
-        <span className="text-primary select-none text-sm">▸</span>
-        <Text variant="caps" intent="muted">
-          Contato
-        </Text>
-      </motion.div>
+      <HeadingLabel text="Contato" />
 
       <motion.div
         initial={{ opacity: 0, y: 8 }}
