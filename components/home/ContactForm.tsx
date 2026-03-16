@@ -12,6 +12,9 @@ type FormState = {
   message: string;
 };
 
+const labelClass =
+  "font-transducer text-xs font-bold uppercase tracking-widest text-neutral-content";
+
 export default function ContactForm() {
   const [form, setForm] = useState<FormState>({
     name: "",
@@ -20,6 +23,13 @@ export default function ContactForm() {
   });
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -44,30 +54,32 @@ export default function ContactForm() {
       {/* Name + Email row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="flex flex-col gap-1.5">
-          <Text as="label" variant="caps" intent="muted">
+          <label htmlFor="name" className={labelClass}>
             Nome
-          </Text>
-
+          </label>
           <input
+            id="name"
+            name="name"
             type="text"
             required
             value={form.name}
-            onChange={(e) => setForm({ ...form, name: e.target.value })}
+            onChange={handleChange}
             placeholder="Seu nome"
             className="input input-bordered bg-base-200 font-transducer text-sm w-full focus:outline-primary"
           />
         </div>
 
         <div className="flex flex-col gap-1.5">
-          <Text as="label" variant="caps" intent="muted">
+          <label htmlFor="email" className={labelClass}>
             E-mail
-          </Text>
-
+          </label>
           <input
+            id="email"
+            name="email"
             type="email"
             required
             value={form.email}
-            onChange={(e) => setForm({ ...form, email: e.target.value })}
+            onChange={handleChange}
             placeholder="seu@email.com"
             className="input input-bordered bg-base-200 font-transducer text-sm w-full focus:outline-primary"
           />
@@ -76,16 +88,17 @@ export default function ContactForm() {
 
       {/* Message */}
       <div className="flex flex-col gap-1.5">
-        <Text as="label" variant="caps" intent="muted">
+        <label htmlFor="message" className={labelClass}>
           Mensagem
-        </Text>
-
+        </label>
         <textarea
+          id="message"
+          name="message"
           required
           rows={5}
           value={form.message}
-          onChange={(e) => setForm({ ...form, message: e.target.value })}
-          placeholder="Conte-me como eu posso ajudar..."
+          onChange={handleChange}
+          placeholder="Conte-me sobre o seu projeto..."
           className="textarea textarea-bordered bg-base-200 font-transducer text-sm w-full resize-none focus:outline-primary"
         />
       </div>
