@@ -7,7 +7,7 @@ const siteMetadata = {
     githubLink: "https://github.com/codigoisaac",
     linkedinLink: "https://linkedin.com/in/isaac-muniz",
     phoneNumber: "+55 (19) 98195-7816",
-    emailAddress: "im.isaac.muniz@gmail.com",
+    emailAddress: "eai@isaacmuniz.pro",
     get whatsappLink() {
       return `https://wa.me/${this.phoneNumber.replace(/\D/g, "")}`;
     },
