@@ -52,10 +52,7 @@ export default function ContactForm() {
             type="text"
             required
             value={form.name}
-            onChange={(e) => {
-              const value = e.target.value;
-              setForm((prev) => ({ ...prev, name: value }));
-            }}
+            onChange={(e) => setForm({ ...form, name: e.target.value })}
             placeholder="Seu nome"
             className="input input-bordered bg-base-200 font-transducer text-sm w-full focus:outline-primary"
           />
@@ -70,10 +67,7 @@ export default function ContactForm() {
             type="email"
             required
             value={form.email}
-            onChange={(e) => {
-              const value = e.target.value;
-              setForm((prev) => ({ ...prev, email: value }));
-            }}
+            onChange={(e) => setForm({ ...form, email: e.target.value })}
             placeholder="seu@email.com"
             className="input input-bordered bg-base-200 font-transducer text-sm w-full focus:outline-primary"
           />
@@ -90,11 +84,8 @@ export default function ContactForm() {
           required
           rows={5}
           value={form.message}
-          onChange={(e) => {
-            const value = e.target.value;
-            setForm((prev) => ({ ...prev, message: value }));
-          }}
-          placeholder="Conte-me sobre o seu projeto..."
+          onChange={(e) => setForm({ ...form, message: e.target.value })}
+          placeholder="Conte-me como eu posso ajudar..."
           className="textarea textarea-bordered bg-base-200 font-transducer text-sm w-full resize-none focus:outline-primary"
         />
       </div>
