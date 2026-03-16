@@ -11,7 +11,7 @@ const buttonStyles = tv({
       secondary: "btn-secondary",
       accent: "btn-accent",
       ghost: "btn-ghost text-neutral",
-      outline: "btn-outline btn-primary bg-primary/10",
+      outline: "btn-outline btn-primary bg-primary/10 hover:text-neutral",
       soft: "btn-outline btn-primary bg-primary/10 border-none hover:text-neutral",
     },
     size: {
