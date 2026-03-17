@@ -7,6 +7,10 @@ import HomeProjects from "@/components/home/HomeProjects";
 import HomeBlog from "@/components/home/HomeBlog";
 import HomeContact from "@/components/home/HomeContact";
 import HomeShowcase from "@/components/home/HomeShowcase";
+import type { Metadata } from "next";
+import { homeMetadata } from "@/data/seo/home.metadata";
+
+export const metadata: Metadata = homeMetadata;
 
 const FEATURED_PROJECT_SLUGS = ["itver", "bettha", "mimo"];
 
