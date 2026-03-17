@@ -1,35 +1,41 @@
-// data/seo/portfolio.metadata.ts
-
 import { Metadata } from "next";
 import siteMetadata from "@/data/siteMetadata";
+import {
+  baseKeywords,
+  buildOgTitle,
+  buildCanonical,
+  buildTwitterMeta,
+  defaultOgImage,
+} from "@/data/seo/seo-defaults";
 
-const url = `${siteMetadata.siteUrl}/portfolio`;
+const path = "/portfolio";
+const title = "Portfolio";
+const description =
+  "Portfolio de Isaac Muniz — projetos de desenvolvimento web, mobile e sistemas construídos com React, Next.js, Flutter, Node.js e TypeScript.";
 
 export const portfolioMetadata: Metadata = {
-  title: "Portfolio",
-
-  description:
-    "Portfolio de projetos de Isaac Muniz — aplicativos web, sistemas, apps mobile e extensões para VS Code, desenvolvidos com React, Next.js, Flutter, Node.js e TypeScript.",
-
+  title,
+  description,
   keywords: [
+    ...baseKeywords,
     "portfolio desenvolvedor",
     "projetos react",
-    "projetos nextjs",
+    "projetos next.js",
     "projetos flutter",
-    "exemplos trabalhos web developer",
-    "projetos fullstack",
+    "projetos node.js",
     "projetos typescript",
+    "trabalhos desenvolvedor web",
+    "exemplos projetos fullstack",
+    "projetos mobile flutter",
+    "projetos open source",
   ],
-
-  alternates: {
-    canonical: url,
-  },
-
+  alternates: buildCanonical(path),
   openGraph: {
-    title: "Portfolio | Isaac Muniz",
-    description:
-      "Projetos de desenvolvimento web e mobile — React, Next.js, Flutter, Node.js e mais.",
-    url,
+    title: buildOgTitle(title),
+    description,
+    url: `${siteMetadata.siteUrl}${path}`,
     type: "website",
+    images: [defaultOgImage],
   },
+  twitter: buildTwitterMeta(buildOgTitle(title), description),
 };

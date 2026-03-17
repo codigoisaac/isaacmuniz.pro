@@ -1,33 +1,44 @@
 import { Metadata } from "next";
 import siteMetadata from "@/data/siteMetadata";
+import {
+  buildOgTitle,
+  buildCanonical,
+  buildTwitterMeta,
+  defaultOgImage,
+} from "@/data/seo/seo-defaults";
 
-const url = `${siteMetadata.siteUrl}/blog`;
+const path = "/blog";
+const title = "Blog";
+const description =
+  "Artigos técnicos sobre desenvolvimento web e mobile: React, Next.js, Node.js, TypeScript, PHP, Laravel, Angular, Flutter e boas práticas de programação.";
 
 export const blogMetadata: Metadata = {
-  title: "Blog",
-
-  description:
-    "Artigos técnicos sobre desenvolvimento web e mobile: React, Next.js, Node.js, TypeScript, PHP, Laravel, Angular, Flutter e boas práticas de programação.",
-
+  title,
+  description,
   keywords: [
-    "blog desenvolvimento web",
-    "artigos react",
-    "tutorial nextjs",
-    "programação javascript typescript",
-    "artigos php laravel",
+    "blog programação",
+    "artigos desenvolvimento web",
+    "tutoriais react",
+    "tutoriais next.js",
+    "tutoriais node.js",
+    "artigos typescript",
+    "artigos php",
+    "artigos laravel",
+    "artigos angular",
+    "artigos flutter",
     "dicas desenvolvedor",
-    "blog programação brasil",
+    "boas práticas programação",
+    "blog técnico brasil",
+    "aprender programação",
+    "desenvolvimento web brasil",
   ],
-
-  alternates: {
-    canonical: url,
-  },
-
+  alternates: buildCanonical(path),
   openGraph: {
-    title: "Blog | Isaac Muniz",
-    description:
-      "Artigos técnicos sobre React, Next.js, Node.js, TypeScript, PHP, Laravel, Angular e mais.",
-    url,
+    title: buildOgTitle(title),
+    description,
+    url: `${siteMetadata.siteUrl}${path}`,
     type: "website",
+    images: [defaultOgImage],
   },
+  twitter: buildTwitterMeta(buildOgTitle(title), description),
 };

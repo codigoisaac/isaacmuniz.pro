@@ -1,14 +1,23 @@
+// Responsabilidade: montar o objeto Metadata do Next.js para o layout raiz.
+// Usa siteMetadata (dados factuais) + seo-defaults (copy de SEO).
+
 import { Metadata } from "next";
 import siteMetadata from "@/data/siteMetadata";
+import {
+  seoTitle,
+  seoDescription,
+  baseKeywords,
+  defaultOgImage,
+} from "@/data/seo/seo-defaults";
 
 export const globalMetadata: Metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
   title: {
-    default: siteMetadata.title,
-    template: `%s | ${siteMetadata.headerTitle}`,
+    default: seoTitle,
+    template: `%s | ${siteMetadata.authorName}`,
   },
-  description: siteMetadata.description,
-  keywords: siteMetadata.keywords,
+  description: seoDescription,
+  keywords: baseKeywords,
   authors: [{ name: siteMetadata.authorName, url: siteMetadata.siteUrl }],
   creator: siteMetadata.authorName,
   robots: {
@@ -25,26 +34,21 @@ export const globalMetadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     url: siteMetadata.siteUrl,
-    siteName: siteMetadata.headerTitle,
-    title: siteMetadata.title,
-    description: siteMetadata.description,
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: `${siteMetadata.authorName} — Desenvolvedor de Software`,
-      },
-    ],
+    siteName: siteMetadata.authorName,
+    title: seoTitle,
+    description: seoDescription,
+    images: [defaultOgImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: siteMetadata.title,
-    description: siteMetadata.description,
-    images: ["/og-image.png"],
-    creator: siteMetadata.socials.twitterHandle,
+    title: seoTitle,
+    description: seoDescription,
+    images: [defaultOgImage.url],
+    creator: `@${siteMetadata.socials.twitterHandle}`,
   },
-  alternates: { canonical: siteMetadata.siteUrl },
+  alternates: {
+    canonical: siteMetadata.siteUrl,
+  },
   icons: {
     icon: "/favicon-dark.svg",
   },

@@ -1,42 +1,37 @@
 import { Metadata } from "next";
 import { BlogPost } from "@/interfaces/blog-post";
 import siteMetadata from "@/data/siteMetadata";
+import {
+  buildCanonical,
+  buildTwitterMeta,
+  authorKeywords,
+} from "@/data/seo/seo-defaults";
 
 export function buildBlogPostMetadata(post: BlogPost): Metadata {
-  const url = `${siteMetadata.siteUrl}/blog/${post.slug}`;
+  const path = `/blog/${post.slug}`;
 
   return {
     title: post.title,
     description: post.excerpt,
-
     keywords: [
       ...post.tags,
+      ...authorKeywords,
       "desenvolvimento web",
       "programação",
-      "Isaac Muniz",
-      "blog técnico",
+      "artigo técnico",
+      "blog programação",
     ],
-
     authors: [{ name: siteMetadata.authorName, url: siteMetadata.siteUrl }],
-
-    alternates: {
-      canonical: url,
-    },
-
+    alternates: buildCanonical(path),
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      url,
+      url: `${siteMetadata.siteUrl}${path}`,
       type: "article",
       publishedTime: post.date,
       authors: [siteMetadata.authorName],
       tags: post.tags,
     },
-
-    twitter: {
-      card: "summary_large_image",
-      title: post.title,
-      description: post.excerpt,
-    },
+    twitter: buildTwitterMeta(post.title, post.excerpt),
   };
 }
