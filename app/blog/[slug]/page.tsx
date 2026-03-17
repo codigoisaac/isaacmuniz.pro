@@ -1,6 +1,7 @@
 import BlogPost from "@/components/blog/BlogPost";
 import BlogPostHeader from "@/components/blog/BlogPostHeader";
 import ScrollToTop from "@/components/layout/ScrollToTop";
+import BlogPostSchema from "@/components/seo/BlogPostSchema";
 import { buildBlogPostMetadata } from "@/data/seo/blog-post.metadata";
 import { getBlogPostBySlug, getBlogPostSlugs } from "@/lib/api";
 import { Metadata } from "next";
@@ -40,6 +41,8 @@ export default async function BlogPostPage(props: PageProps) {
       <BlogPost post={post} />
 
       <ScrollToTop />
+
+      <BlogPostSchema post={post} />
     </>
   );
 }

@@ -3,6 +3,7 @@ import ProjectButtons from "@/components/portfolio/ProjectButtons";
 import ProjectPageBody from "@/components/portfolio/ProjectPageBody";
 import ProjectPageHeader from "@/components/portfolio/ProjectPageHeader";
 import ProjectSubjects from "@/components/portfolio/ProjectSubjects";
+import ProjectSchema from "@/components/seo/ProjectSchema";
 import { allProjects } from "@/data/portfolio";
 import { buildProjectMetadata } from "@/data/seo/project.metadata";
 import { Metadata } from "next";
@@ -46,6 +47,8 @@ export default async function ProjectPage(props: PageProps) {
       </div>
 
       <ScrollToTop />
+
+      <ProjectSchema project={project} />
     </>
   );
 }

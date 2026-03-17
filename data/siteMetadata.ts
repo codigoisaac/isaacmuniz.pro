@@ -9,6 +9,7 @@ const siteMetadata = {
     linkedinLink: "https://linkedin.com/in/isaac-muniz",
     substackLink: "https://substack.com/@imuniz",
     twitterHandle: "imunizpro",
+    twitterLink: "https://twitter.com/imunizpro",
     phoneNumber: "+55 (19) 98195-7816",
     emailAddress: "eai@isaacmuniz.pro",
     get whatsappLink() {
