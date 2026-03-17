@@ -4,6 +4,8 @@ import ProjectPageBody from "@/components/portfolio/ProjectPageBody";
 import ProjectPageHeader from "@/components/portfolio/ProjectPageHeader";
 import ProjectSubjects from "@/components/portfolio/ProjectSubjects";
 import { allProjects } from "@/data/portfolio";
+import { buildProjectMetadata } from "@/data/seo/project.metadata";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 type PageProps = {
@@ -11,6 +13,19 @@ type PageProps = {
     slug: string;
   }>;
 };
+
+export async function generateStaticParams() {
+  return allProjects.map((project) => ({ slug: project.slug }));
+}
+
+export async function generateMetadata(props: PageProps): Promise<Metadata> {
+  const params = await props.params;
+  const project = allProjects.find((project) => project.slug === params.slug);
+
+  if (!project) return {};
+
+  return buildProjectMetadata(project);
+}
 
 export default async function ProjectPage(props: PageProps) {
   const params = await props.params;
