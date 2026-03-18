@@ -4,13 +4,22 @@ import {
   buildOgTitle,
   buildCanonical,
   buildTwitterMeta,
-  defaultOgImage,
+  buildOgImageUrl,
 } from "@/data/seo/seo-defaults";
 
 const path = "/blog";
 const title = "Blog";
 const description =
-  "Artigos técnicos sobre desenvolvimento web e mobile: React, Next.js, Node.js, TypeScript, PHP, Laravel, Angular, Flutter e boas práticas de programação.";
+  "Artigos técnicos sobre desenvolvimento web e mobile: React, Next.js, Node.js, TypeScript e boas práticas de programação.";
+
+const ogTitle = buildOgTitle(title);
+const ogImageUrl = buildOgImageUrl({ page: "blog" });
+const ogImage = {
+  url: ogImageUrl,
+  width: 1200,
+  height: 630,
+  alt: "Blog — Isaac Muniz",
+};
 
 export const blogMetadata: Metadata = {
   title,
@@ -34,11 +43,14 @@ export const blogMetadata: Metadata = {
   ],
   alternates: buildCanonical(path),
   openGraph: {
-    title: buildOgTitle(title),
+    title: ogTitle,
     description,
     url: `${siteMetadata.siteUrl}${path}`,
     type: "website",
-    images: [defaultOgImage],
+    images: [ogImage],
   },
-  twitter: buildTwitterMeta(buildOgTitle(title), description),
+  twitter: {
+    ...buildTwitterMeta(ogTitle, description),
+    images: [ogImageUrl],
+  },
 };

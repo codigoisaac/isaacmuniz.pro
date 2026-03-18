@@ -103,7 +103,7 @@ export const baseKeywords: string[] = [
 // ─── Config da OG image padrão ────────────────────────────────────────────────
 
 export const defaultOgImage = {
-  url: "/og-image.png",
+  url: buildOgImageUrl({ page: "home" }),
   width: 1200,
   height: 630,
   alt: `${siteMetadata.authorName} — Desenvolvedor Web & Mobile`,
@@ -148,3 +148,10 @@ export const authorKeywords: string[] = [
   "isaacmuniz.pro",
   "portfolio desenvolvedor",
 ];
+
+export function buildOgImageUrl(
+  params: { page: string } | { post: string } | { project: string },
+): string {
+  const qs = new URLSearchParams(params);
+  return `${siteMetadata.siteUrl}/og?${qs.toString()}`;
+}

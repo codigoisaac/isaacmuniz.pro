@@ -3,12 +3,22 @@ import { BlogPost } from "@/interfaces/blog-post";
 import siteMetadata from "@/data/siteMetadata";
 import {
   buildCanonical,
+  buildOgTitle,
   buildTwitterMeta,
+  buildOgImageUrl,
   authorKeywords,
 } from "@/data/seo/seo-defaults";
 
 export function buildBlogPostMetadata(post: BlogPost): Metadata {
   const path = `/blog/${post.slug}`;
+  const ogTitle = buildOgTitle(post.title);
+  const ogImageUrl = buildOgImageUrl({ post: post.slug });
+  const ogImage = {
+    url: ogImageUrl,
+    width: 1200,
+    height: 630,
+    alt: post.title,
+  };
 
   return {
     title: post.title,
@@ -24,14 +34,18 @@ export function buildBlogPostMetadata(post: BlogPost): Metadata {
     authors: [{ name: siteMetadata.authorName, url: siteMetadata.siteUrl }],
     alternates: buildCanonical(path),
     openGraph: {
-      title: post.title,
+      title: ogTitle,
       description: post.excerpt,
       url: `${siteMetadata.siteUrl}${path}`,
       type: "article",
       publishedTime: post.date,
       authors: [siteMetadata.authorName],
       tags: post.tags,
+      images: [ogImage],
     },
-    twitter: buildTwitterMeta(post.title, post.excerpt),
+    twitter: {
+      ...buildTwitterMeta(ogTitle, post.excerpt),
+      images: [ogImageUrl],
+    },
   };
 }
