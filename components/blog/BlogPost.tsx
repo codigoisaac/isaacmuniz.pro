@@ -51,7 +51,7 @@ export default function BlogPost({ post }: Props) {
             if (typeof src !== "string") return null;
 
             return (
-              <span className="flex justify-center my-8 w-full">
+              <span className="flex justify-center my-8 w-full min-h-60 items-center">
                 <Image
                   src={src}
                   alt={alt || "Imagem do blog"}

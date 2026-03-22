@@ -4,13 +4,13 @@ import localFont from "next/font/local";
 // --- Local Fonts ---
 
 export const transducer = localFont({
-  src: "./transducer-regular.otf",
+  src: "./transducer-regular.woff2",
   variable: "--font-transducer",
   display: "swap",
 });
 
 export const transducerExtended = localFont({
-  src: "./transducer-extendedregular.otf",
+  src: "./transducer-extendedregular.woff2",
   variable: "--font-transducer-extended",
   display: "swap",
 });
