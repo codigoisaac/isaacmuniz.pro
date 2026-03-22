@@ -26,7 +26,7 @@ export default function ProjectsListComplete() {
         hoveredIndex={globalHoveredIndex}
         setHoveredIndex={setGlobalHoveredIndex}
         items={portfolioAuthorial.map((project, index) => (
-          <ProjectCard key={index} project={project} />
+          <ProjectCard key={index} project={project} priority={index === 0} />
         ))}
       />
 

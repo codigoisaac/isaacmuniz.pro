@@ -61,7 +61,7 @@ export default function HomeAbout() {
         >
           <div className="relative">
             <div className="aspect-4/5 rounded-xl overflow-hidden">
-              <Image src={myImage} alt="Foto de Isaac" />
+              <Image src={myImage} alt="Foto de Isaac" priority />
             </div>
 
             <div

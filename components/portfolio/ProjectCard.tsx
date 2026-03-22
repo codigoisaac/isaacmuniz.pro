@@ -8,9 +8,10 @@ import { cn } from "@/lib/utils";
 
 type Props = {
   project: Project;
+  priority?: boolean;
 };
 
-export default function ProjectCard({ project }: Props) {
+export default function ProjectCard({ project, priority }: Props) {
   return (
     <Link
       className="block bg-base-300 p-1 rounded-[14px] h-full"
@@ -32,6 +33,7 @@ export default function ProjectCard({ project }: Props) {
             alt={`Capa do projeto ${project.title}`}
             className="w-fit"
             containerClassname="w-fit rounded-lg overflow-hidden"
+            priority={priority}
           />
         </div>
 
