@@ -1,10 +1,10 @@
-import BlurImage from "@/components/BlurImage";
 import FeaturedProjectTag from "./FeaturedProjectTag";
 import Link from "next/link";
 import { Project } from "@/interfaces/portfolio";
 import TagsDisplay from "./TagsDisplay";
 import TechStackDisplay from "./TechStackDisplay";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 type Props = {
   project: Project;
@@ -28,13 +28,15 @@ export default function ProjectCard({ project, priority }: Props) {
         )}
 
         <div className="flex justify-center">
-          <BlurImage
-            src={project.image}
-            alt={`Capa do projeto ${project.title}`}
-            className="w-fit"
-            containerClassname="w-fit rounded-lg overflow-hidden"
-            priority={priority}
-          />
+          <div className="w-fit rounded-lg overflow-hidden">
+            <Image
+              src={project.image}
+              alt={`Capa do projeto ${project.title}`}
+              className="w-fit h-31"
+              placeholder="blur"
+              priority={priority}
+            />
+          </div>
         </div>
 
         <div className="text-xl font-geist-mono font-medium mb-1 mt-5">

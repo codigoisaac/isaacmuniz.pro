@@ -1,4 +1,3 @@
-import BlurImage from "@/components/BlurImage";
 import FeaturedProjectTag from "./FeaturedProjectTag";
 import Link from "next/link";
 import { Project } from "@/interfaces/portfolio";
@@ -6,6 +5,7 @@ import TagsDisplay from "./TagsDisplay";
 import TechStackDisplay from "./TechStackDisplay";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 type Props = {
   project: Project;
@@ -31,12 +31,13 @@ export default function ProjectCardCompact({
         <FeaturedProjectTag showOnCenterOnMobile />
       )}
 
-      <div className="shrink-0 w-32 h-32 rounded-lg overflow-hidden">
-        <BlurImage
+      <div className="shrink-0 w-32 h-32 rounded-lg overflow-hidden relative">
+        <Image
           src={project.image}
           alt={`Capa do projeto ${project.title}`}
-          containerClassname="h-full w-full flex items-center justify-center"
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
+          placeholder="blur"
         />
       </div>
 
