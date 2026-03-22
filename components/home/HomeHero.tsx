@@ -23,8 +23,8 @@ export default function HomeHero() {
       {/* ── Main headline ── */}
       <div className="overflow-hidden mb-5">
         <motion.h1
-          initial={{ y: "110%", opacity: 0 }}
-          animate={{ y: "0%", opacity: 1 }}
+          initial={{ y: "110%" }}
+          animate={{ y: "0%" }}
           transition={{ duration: 0.7, delay: 0.08, ease }}
           className="font-saira text-5xl sm:text-6xl xl:text-7xl font-semibold leading-[1.08] max-w-2xl"
         >

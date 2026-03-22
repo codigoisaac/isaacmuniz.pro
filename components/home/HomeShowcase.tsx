@@ -68,9 +68,11 @@ function NavArrow({
 function MediaItem({
   item,
   isPortrait,
+  priority = false,
 }: {
   item: SubjectItem;
   isPortrait: boolean;
+  priority?: boolean;
 }) {
   const aspectClass = isPortrait ? "aspect-[9/19]" : "aspect-video";
 
@@ -93,6 +95,7 @@ function MediaItem({
           alt={item.title}
           className="w-full h-full object-cover"
           placeholder="blur"
+          priority={priority}
         />
       ) : null}
     </div>
@@ -209,7 +212,12 @@ export default function HomeShowcase() {
             <div className="flex items-center order-1 md:order-2">
               <div className={`grid gap-3 w-full ${mediaGridCols}`}>
                 {displayItems.map((item, i) => (
-                  <MediaItem key={i} item={item} isPortrait={isPortrait} />
+                  <MediaItem
+                    key={i}
+                    item={item}
+                    isPortrait={isPortrait}
+                    priority={current === 0}
+                  />
                 ))}
               </div>
             </div>

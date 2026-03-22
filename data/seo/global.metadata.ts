@@ -50,6 +50,9 @@ export const globalMetadata: Metadata = {
     canonical: siteMetadata.siteUrl,
   },
   icons: {
-    icon: "/favicon-dark.svg",
+    icon: [
+      { url: "/favicon-light.svg", media: "(prefers-color-scheme: light)" },
+      { url: "/favicon-dark.svg", media: "(prefers-color-scheme: dark)" },
+    ],
   },
 };

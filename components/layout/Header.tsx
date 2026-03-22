@@ -2,10 +2,15 @@
 
 import Link from "next/link";
 import Logo from "@/components/layout/Logo";
-import ScrambledText from "@/components/ScrambledText";
 import dynamic from "next/dynamic";
 import headerNavLinks from "@/data/headerNavLinks";
 import siteMetadata from "@/data/siteMetadata";
+
+const ScrambledText = dynamic(() => import("@/components/ScrambledText"), {
+  ssr: false,
+  // shows normal text while loading
+  loading: () => <span>{siteMetadata.headerTitle}</span>,
+});
 
 const MobileNav = dynamic(() => import("@/components/layout/MobileNav"), {
   ssr: false,
