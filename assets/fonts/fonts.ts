@@ -17,28 +17,33 @@ export const transducerExtended = localFont({
 
 // --- Google Fonts ---
 
+// Apenas os pesos usados no projeto — evita baixar a variable font inteira
 export const saira = Saira({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
   variable: "--font-saira",
+  preload: true,
 });
 
 export const geist = Geist({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-geist",
+  preload: false,
 });
 
 export const geistMono = Geist_Mono({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-geist-mono",
+  preload: false,
 });
 
 // ---
 
 export const fontVariables = [
-  geist.className, // default font
+  geist.className, // default font do body
   geistMono.variable,
   saira.variable,
   transducer.variable,

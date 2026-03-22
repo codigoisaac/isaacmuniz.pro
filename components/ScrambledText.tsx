@@ -1,16 +1,9 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { SplitText } from "gsap/SplitText";
-import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
-
-gsap.registerPlugin(SplitText, ScrambleTextPlugin);
 
 export interface ScrambledTextProps {
   radius?: number;
-  duration?: number;
-  speed?: number;
   scrambleChars?: string;
   className?: string;
   style?: React.CSSProperties;
@@ -19,70 +12,80 @@ export interface ScrambledTextProps {
 
 const ScrambledText: React.FC<ScrambledTextProps> = ({
   radius = 100,
-  duration = 1.2,
-  speed = 0.5,
   scrambleChars = "▒░▓.:",
   className = "",
   style = {},
   children,
 }) => {
-  const rootRef = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    if (!rootRef.current) return;
+    const container = containerRef.current;
+    if (!container) return;
 
-    const split = SplitText.create(rootRef.current.querySelector("p"), {
-      type: "chars",
-      charsClass: "inline-block will-change-transform",
-    });
+    const originalText =
+      typeof children === "string" ? children : String(children);
+    const chars = scrambleChars.split("");
 
-    split.chars.forEach((el) => {
-      const c = el as HTMLElement;
-      gsap.set(c, { attr: { "data-content": c.innerHTML } });
-    });
+    container.innerHTML = originalText
+      .split("")
+      .map((char) =>
+        char === " "
+          ? `<span style="display:inline-block;white-space:pre"> </span>`
+          : `<span data-char="${char}" style="display:inline-block">${char}</span>`,
+      )
+      .join("");
 
-    let rafId: number;
+    const spans = Array.from(
+      container.querySelectorAll<HTMLSpanElement>("span[data-char]"),
+    );
 
-    const handleMove = (e: PointerEvent) => {
-      cancelAnimationFrame(rafId);
-      rafId = requestAnimationFrame(() => {
-        split.chars.forEach((el) => {
-          const c = el as HTMLElement;
-          const { left, top, width, height } = c.getBoundingClientRect();
-          const dx = e.clientX - (left + width / 2);
-          const dy = e.clientY - (top + height / 2);
-          const dist = Math.hypot(dx, dy);
+    const timers = new Map<number, ReturnType<typeof setInterval>>();
 
-          if (dist < radius) {
-            gsap.to(c, {
-              overwrite: true,
-              duration: duration * (1 - dist / radius),
-              scrambleText: {
-                text: c.dataset.content || "",
-                chars: scrambleChars,
-                speed,
-              },
-              ease: "none",
-            });
-          }
-        });
+    const scramble = (span: HTMLSpanElement, idx: number) => {
+      if (timers.has(idx)) return;
+      const original = span.dataset.char!;
+      let count = 0;
+      const id = setInterval(() => {
+        if (count >= 8) {
+          span.textContent = original;
+          clearInterval(id);
+          timers.delete(idx);
+        } else {
+          span.textContent = chars[Math.floor(Math.random() * chars.length)];
+          count++;
+        }
+      }, 40);
+      timers.set(idx, id);
+    };
+
+    const onMove = (e: PointerEvent) => {
+      spans.forEach((span, i) => {
+        const r = span.getBoundingClientRect();
+        const dist = Math.hypot(
+          e.clientX - (r.left + r.width / 2),
+          e.clientY - (r.top + r.height / 2),
+        );
+        if (dist < radius) scramble(span, i);
       });
     };
 
-    const el = rootRef.current;
-    el.addEventListener("pointermove", handleMove);
+    container.addEventListener("pointermove", onMove);
 
     return () => {
-      el.removeEventListener("pointermove", handleMove);
-      cancelAnimationFrame(rafId);
-      split.revert();
+      container.removeEventListener("pointermove", onMove);
+      timers.forEach(clearInterval);
+      timers.clear();
     };
-  }, [radius, duration, speed, scrambleChars]);
+  }, [children, radius, scrambleChars]);
 
   return (
-    <div ref={rootRef} className={className} style={style}>
-      <p>{children}</p>
-    </div>
+    <span
+      ref={containerRef}
+      className={className}
+      style={style}
+      aria-label={typeof children === "string" ? children : undefined}
+    />
   );
 };
 

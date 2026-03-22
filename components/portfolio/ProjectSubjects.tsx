@@ -91,6 +91,7 @@ export default function ProjectSubjects({ project }: Props) {
                             alt={item.title}
                             className={`w-full transition-transform duration-500 group-hover:scale-[1.015] ${item.containImageSize ? "h-full object-contain" : "h-auto object-cover"}`}
                             placeholder="blur"
+                            sizes="(max-width: 640px) calc(100vw - 3rem), (max-width: 1280px) calc(50vw - 4rem), 580px"
                           />
                           {/* Zoom icon overlay */}
                           <span className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/25 transition-colors duration-300">

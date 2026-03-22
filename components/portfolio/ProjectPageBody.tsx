@@ -18,6 +18,7 @@ export default function ProjectPageBody({ project }: Props) {
               className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.01]"
               placeholder="blur"
               priority
+              sizes="(max-width: 768px) calc(100vw - 3rem), (max-width: 1024px) 50vw, 33vw"
             />
           </div>
         </div>

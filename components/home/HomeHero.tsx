@@ -20,18 +20,15 @@ export default function HomeHero() {
     <section className="relative min-h-[78vh] flex flex-col justify-center pt-4 pb-20">
       <HeadingLabel text="Desenvolvimento Web &amp; Mobile" />
 
-      {/* ── Main headline ── */}
-      <div className="overflow-hidden mb-5">
-        <motion.h1
-          initial={{ y: "110%" }}
-          animate={{ y: "0%" }}
-          transition={{ duration: 0.7, delay: 0.08, ease }}
-          className="font-saira text-5xl sm:text-6xl xl:text-7xl font-semibold leading-[1.08] max-w-2xl"
-        >
-          <span className="text-primary">Tecnologia bem feita,</span> para você
-          parar de se preocupar com tecnologia.
-        </motion.h1>
-      </div>
+      <motion.h1
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.65, delay: 0.08, ease }}
+        className="font-saira text-5xl sm:text-6xl xl:text-7xl font-semibold leading-[1.08] max-w-2xl mb-5"
+      >
+        <span className="text-primary">Tecnologia bem feita,</span> para você
+        parar de se preocupar com tecnologia.
+      </motion.h1>
 
       {/* ── Subheading ── */}
       <motion.div
@@ -45,7 +42,6 @@ export default function HomeHero() {
           intent="muted"
           className="leading-relaxed font-transducer"
         >
-          {/* "5 anos de experiência" com efeito de marca-texto inclinado */}
           <span className="relative inline-block mr-1">
             <span
               aria-hidden

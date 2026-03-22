@@ -35,6 +35,7 @@ export default function ProjectCard({ project, priority }: Props) {
               className="w-fit h-31"
               placeholder="blur"
               priority={priority}
+              sizes="(max-width: 640px) calc(50vw - 2rem), (max-width: 1280px) calc(50vw - 3rem), 380px"
             />
           </div>
         </div>

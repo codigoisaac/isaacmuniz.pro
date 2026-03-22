@@ -38,6 +38,7 @@ export default function ProjectCardCompact({
           fill
           className="object-cover"
           placeholder="blur"
+          sizes="128px"
         />
       </div>
 

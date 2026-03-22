@@ -69,12 +69,20 @@ function MediaItem({
   item,
   isPortrait,
   priority = false,
+  gridCount,
 }: {
   item: SubjectItem;
   isPortrait: boolean;
   priority?: boolean;
+  gridCount: number;
 }) {
   const aspectClass = isPortrait ? "aspect-[9/19]" : "aspect-video";
+
+  // Portrait items are mobile screenshots shown in a multi-column grid within the right panel (~57% of max-w-5xl)
+  // Landscape items fill half the right panel on desktop, full width on mobile
+  const sizes = isPortrait
+    ? `(max-width: 768px) ${Math.round(100 / gridCount)}vw, ${Math.round(57 / gridCount)}vw`
+    : "(max-width: 768px) calc(100vw - 3rem), (max-width: 1280px) 45vw, 420px";
 
   return (
     <div
@@ -96,6 +104,7 @@ function MediaItem({
           className="w-full h-full object-cover"
           placeholder="blur"
           priority={priority}
+          sizes={sizes}
         />
       ) : null}
     </div>
@@ -217,6 +226,7 @@ export default function HomeShowcase() {
                     item={item}
                     isPortrait={isPortrait}
                     priority={current === 0}
+                    gridCount={displayItems.length}
                   />
                 ))}
               </div>

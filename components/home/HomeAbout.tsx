@@ -61,7 +61,12 @@ export default function HomeAbout() {
         >
           <div className="relative">
             <div className="aspect-4/5 rounded-xl overflow-hidden">
-              <Image src={myImage} alt="Foto de Isaac" priority />
+              <Image
+                src={myImage}
+                alt="Foto de Isaac"
+                priority
+                sizes="(max-width: 1280px) 38vw, 280px"
+              />
             </div>
 
             <div
@@ -96,7 +101,11 @@ export default function HomeAbout() {
         >
           <div className="relative">
             <div className="aspect-4/5 rounded-xl overflow-hidden bg-base-200">
-              <Image src={myImage} alt="Foto de Isaac" />
+              <Image
+                src={myImage}
+                alt="Foto de Isaac"
+                sizes="calc(100vw - 3rem)"
+              />
             </div>
 
             <div
