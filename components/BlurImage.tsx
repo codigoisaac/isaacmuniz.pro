@@ -35,7 +35,7 @@ export default function BlurImage({
   return (
     <div
       className={cn(
-        "relative overflow-hidden h-31 flex justify-center",
+        "relative overflow-hidden flex justify-center",
         containerClassname,
       )}
     >
