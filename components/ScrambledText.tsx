@@ -41,26 +41,31 @@ const ScrambledText: React.FC<ScrambledTextProps> = ({
       gsap.set(c, { attr: { "data-content": c.innerHTML } });
     });
 
-    const handleMove = (e: PointerEvent) => {
-      split.chars.forEach((el) => {
-        const c = el as HTMLElement;
-        const { left, top, width, height } = c.getBoundingClientRect();
-        const dx = e.clientX - (left + width / 2);
-        const dy = e.clientY - (top + height / 2);
-        const dist = Math.hypot(dx, dy);
+    let rafId: number;
 
-        if (dist < radius) {
-          gsap.to(c, {
-            overwrite: true,
-            duration: duration * (1 - dist / radius),
-            scrambleText: {
-              text: c.dataset.content || "",
-              chars: scrambleChars,
-              speed,
-            },
-            ease: "none",
-          });
-        }
+    const handleMove = (e: PointerEvent) => {
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        split.chars.forEach((el) => {
+          const c = el as HTMLElement;
+          const { left, top, width, height } = c.getBoundingClientRect();
+          const dx = e.clientX - (left + width / 2);
+          const dy = e.clientY - (top + height / 2);
+          const dist = Math.hypot(dx, dy);
+
+          if (dist < radius) {
+            gsap.to(c, {
+              overwrite: true,
+              duration: duration * (1 - dist / radius),
+              scrambleText: {
+                text: c.dataset.content || "",
+                chars: scrambleChars,
+                speed,
+              },
+              ease: "none",
+            });
+          }
+        });
       });
     };
 
@@ -69,6 +74,7 @@ const ScrambledText: React.FC<ScrambledTextProps> = ({
 
     return () => {
       el.removeEventListener("pointermove", handleMove);
+      cancelAnimationFrame(rafId);
       split.revert();
     };
   }, [radius, duration, speed, scrambleChars]);

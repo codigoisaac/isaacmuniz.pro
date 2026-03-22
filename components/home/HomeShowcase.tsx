@@ -173,7 +173,7 @@ export default function HomeShowcase() {
 
       {/* ── Slide area ───────────────────────────────────────────────────────── */}
       <div className="min-h-[52vh] md:min-h-[60vh] relative">
-        <AnimatePresence mode="wait" custom={dir}>
+        <AnimatePresence mode="wait" custom={dir} initial={false}>
           <motion.div
             key={`${project.slug}--${homeTitle}`}
             custom={dir}
@@ -224,7 +224,7 @@ export default function HomeShowcase() {
 
             {/* ── Bottom center: buttons spanning both columns ─────────────── */}
             <motion.div
-              initial={{ opacity: 0 }}
+              initial={{ opacity: 1 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ delay: 0.3, duration: 0.35, ease: "easeOut" }}
