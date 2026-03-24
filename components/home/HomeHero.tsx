@@ -21,8 +21,8 @@ export default function HomeHero() {
       <HeadingLabel text="Desenvolvimento Web &amp; Mobile" />
 
       <motion.h1
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ y: 32 }}
+        animate={{ y: 0 }}
         transition={{ duration: 0.65, delay: 0.08, ease }}
         className="font-saira text-5xl sm:text-6xl xl:text-7xl font-semibold leading-[1.08] max-w-2xl mb-5"
       >

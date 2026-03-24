@@ -1,7 +1,6 @@
-import { Saira, Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 
-// --- Local Fonts ---
+// --- Transducer ---
 
 export const transducer = localFont({
   src: "./transducer-regular.woff2",
@@ -15,28 +14,39 @@ export const transducerExtended = localFont({
   display: "swap",
 });
 
-// --- Google Fonts ---
+// --- Saira ---
 
-// Apenas os pesos usados no projeto — evita baixar a variable font inteira
-export const saira = Saira({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
+export const saira = localFont({
+  src: [
+    { path: "./saira-400.woff2", weight: "400", style: "normal" },
+    { path: "./saira-500.woff2", weight: "500", style: "normal" },
+    { path: "./saira-600.woff2", weight: "600", style: "normal" },
+  ],
   variable: "--font-saira",
+  display: "swap",
   preload: true,
 });
 
-export const geist = Geist({
-  subsets: ["latin"],
-  display: "swap",
+// --- Geist ---
+
+export const geist = localFont({
+  src: "./geist-400.woff2",
   variable: "--font-geist",
+  display: "swap",
   preload: false,
 });
 
-export const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  display: "swap",
+// --- Geist Mono ---
+
+export const geistMono = localFont({
+  src: [
+    { path: "./geist-mono-400.woff2", weight: "400", style: "normal" },
+    { path: "./geist-mono-500.woff2", weight: "500", style: "normal" },
+    { path: "./geist-mono-600.woff2", weight: "600", style: "normal" },
+    { path: "./geist-mono-700.woff2", weight: "700", style: "normal" },
+  ],
   variable: "--font-geist-mono",
+  display: "swap",
   preload: false,
 });
 
