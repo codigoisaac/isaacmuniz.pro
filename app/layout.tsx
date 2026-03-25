@@ -7,6 +7,7 @@ import ThemeProvider from "@/context/ThemeProvider";
 import clsx from "clsx";
 import { fontVariables } from "@/assets/fonts/fonts";
 import FaviconSwitcher from "@/components/layout/FaviconSwitcher";
+import FaviconScript from "@/components/layout/FaviconScript";
 import { globalMetadata } from "@/data/seo/global.metadata";
 
 export const metadata: Metadata = globalMetadata;
@@ -18,6 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      <head>
+        <FaviconScript />
+      </head>
       <ThemeProvider>
         <body
           className={clsx(

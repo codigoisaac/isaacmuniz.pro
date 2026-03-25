@@ -9,14 +9,9 @@ export default function ThemeProvider({
   children: React.ReactNode;
 }) {
   const [currentTheme, setCurrentTheme] = useState<ThemeName>(() => {
-    const defaultTheme = themes.light;
-
-    if (typeof window === "undefined") return defaultTheme;
-
+    if (typeof window === "undefined") return themes.light;
     const savedTheme = localStorage.getItem("theme") as ThemeName;
-
     if (Object.values(themes).includes(savedTheme)) return savedTheme;
-
     return window.matchMedia("(prefers-color-scheme: dark)").matches
       ? themes.dark
       : themes.light;
@@ -24,13 +19,14 @@ export default function ThemeProvider({
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", currentTheme);
-    localStorage.setItem("theme", currentTheme);
   }, [currentTheme]);
 
   const toggleTheme = () => {
-    setCurrentTheme((previousTheme) =>
-      previousTheme === themes.dark ? themes.light : themes.dark,
-    );
+    setCurrentTheme((previousTheme) => {
+      const next = previousTheme === themes.dark ? themes.light : themes.dark;
+      localStorage.setItem("theme", next);
+      return next;
+    });
   };
 
   return (
