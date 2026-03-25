@@ -19,7 +19,7 @@ export default function FaviconSwitcher() {
     link.rel = "icon";
     link.type = "image/svg+xml";
     link.href =
-      theme === themes.dark ? "/favicon-dark.svg" : "/favicon-light.svg";
+      theme === themes.dark ? "/favicons/favicon-dark.svg" : "/favicons/favicon-light.svg";
     document.head.appendChild(link);
   }, [theme]);
 
