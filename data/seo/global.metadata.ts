@@ -49,4 +49,7 @@ export const globalMetadata: Metadata = {
   alternates: {
     canonical: siteMetadata.siteUrl,
   },
+  icons: {
+    icon: "/favicons/favicon-dark.svg",
+  },
 };
