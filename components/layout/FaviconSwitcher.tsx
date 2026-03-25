@@ -13,7 +13,7 @@ export default function FaviconSwitcher() {
       return;
     }
 
-    document.querySelectorAll("link[rel~='icon']").forEach((el) => el.remove());
+    document.querySelectorAll("link[data-favicon='dynamic']").forEach((el) => el.remove());
 
     const link = document.createElement("link");
     link.rel = "icon";
