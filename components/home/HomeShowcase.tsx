@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
+import { CaretLeftIcon, CaretRightIcon } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import { Project, SubjectItem } from "@/interfaces/portfolio";
 import TagsDisplay from "@/components/portfolio/TagsDisplay";
@@ -42,9 +43,9 @@ const THROTTLE_MS = 650;
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const slideVariants = {
-  enter: (d: number) => ({ y: d > 0 ? 56 : -56, opacity: 0 }),
-  center: { y: 0, opacity: 1 },
-  exit: (d: number) => ({ y: d > 0 ? -56 : 56, opacity: 0 }),
+  enter: (d: number) => ({ x: d > 0 ? 56 : -56, opacity: 0 }),
+  center: { x: 0, opacity: 1 },
+  exit: (d: number) => ({ x: d > 0 ? -56 : 56, opacity: 0 }),
 };
 
 // ─── Nav arrow ────────────────────────────────────────────────────────────────
@@ -62,9 +63,11 @@ function NavArrow({
       aria-label={direction === "up" ? "Anterior" : "Próximo"}
       className="flex items-center justify-center w-8 h-8 rounded-full border border-primary/40 text-primary bg-primary/10 hover:bg-primary/20 hover:border-primary transition-colors cursor-pointer"
     >
-      <span className="text-sm leading-none">
-        {direction === "up" ? "↑" : "↓"}
-      </span>
+      {direction === "up" ? (
+        <CaretLeftIcon weight="bold" size={14} />
+      ) : (
+        <CaretRightIcon weight="bold" size={14} />
+      )}
     </button>
   );
 }
@@ -329,13 +332,9 @@ export default function HomeShowcase() {
         <div className="flex items-center gap-3 select-none">
           {/* Scroll hint — hidden on mobile */}
           <div className="hidden sm:flex items-center gap-2">
-            <div className="flex flex-col gap-0.5">
-              <div className="flex items-center justify-center w-5 h-5 rounded text-neutral-content text-[10px] leading-none font-geist-mono">
-                ↑
-              </div>
-              <div className="flex items-center justify-center w-5 h-5 rounded text-neutral-content text-[10px] leading-none font-geist-mono">
-                ↓
-              </div>
+            <div className="flex gap-0.5 text-neutral-content">
+              <CaretLeftIcon weight="bold" size={14} />
+              <CaretRightIcon weight="bold" size={14} />
             </div>
             <Text
               variant="caps"
