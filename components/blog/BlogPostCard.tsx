@@ -11,7 +11,7 @@ export default function BlogPostCard({ post }: Props) {
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="flex flex-col gap-1.5 group h-full p-3 rounded-2xl"
+      className="flex flex-col gap-1.5 group h-full p-3 rounded-2xl bg-base-200 border border-base-300"
     >
       {/* Date + tags */}
       <div className="flex flex-wrap items-center gap-3 mb-1.5">
@@ -23,12 +23,15 @@ export default function BlogPostCard({ post }: Props) {
         >
           {post.date}
         </Text>
-        {post.tags.length > 0 && <TagsDisplay tags={post.tags.slice(0, 2)} />}
+
+        <span>
+          {post.tags.length > 0 && <TagsDisplay tags={post.tags.slice(0, 2)} />}
+        </span>
       </div>
 
       {/* Title */}
       <div>
-        <span className="font-saira text-2xl font-medium text-pretty text-primary inline animated-underline group-animated-underline">
+        <span className="font-saira text-2xl font-medium text-pretty text-base-content inline animated-underline group-animated-underline">
           {post.title}
         </span>
       </div>

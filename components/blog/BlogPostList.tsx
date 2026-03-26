@@ -17,7 +17,7 @@ export default function BlogPostList({ posts, idPrefix = "blog" }: Props) {
     <HoverEffect
       idPrefix={idPrefix}
       className="grid-cols-1 sm:grid-cols-1 py-0"
-      hoverClassName="bg-base-200"
+      hoverClassName="bg-base-300"
       hoveredIndex={hoveredIndex}
       setHoveredIndex={setHoveredIndex}
       items={posts.map((post) => (
