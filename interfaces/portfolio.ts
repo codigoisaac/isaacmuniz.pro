@@ -58,6 +58,7 @@ type Subject = {
   items: SubjectItem[];
   showOnHome?: boolean;
   homeTitle?: string;
+  showcaseOrder?: number;
 };
 
 export interface Project {

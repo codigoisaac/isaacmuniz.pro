@@ -18,17 +18,21 @@ interface Slide {
   project: Project;
   homeTitle: string;
   items: SubjectItem[];
+  showcaseOrder?: number;
 }
 
-const slides: Slide[] = allProjects.flatMap((project) =>
-  (project.subjects ?? [])
-    .filter((s) => s.showOnHome)
-    .map((s) => ({
-      project,
-      homeTitle: s.homeTitle ?? s.title,
-      items: s.items,
-    })),
-);
+const slides: Slide[] = allProjects
+  .flatMap((project) =>
+    (project.subjects ?? [])
+      .filter((s) => s.showOnHome)
+      .map((s) => ({
+        project,
+        homeTitle: s.homeTitle ?? s.title,
+        items: s.items,
+        showcaseOrder: s.showcaseOrder,
+      })),
+  )
+  .sort((a, b) => (a.showcaseOrder ?? Infinity) - (b.showcaseOrder ?? Infinity));
 
 // ─── Constants ─────────────────────────────────────────────────────────────────
 

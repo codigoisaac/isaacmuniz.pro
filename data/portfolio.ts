@@ -122,6 +122,7 @@ export const portfolioColab: Project[] = [
       {
         title: "Plataforma de Candidatos",
         showOnHome: true,
+        showcaseOrder: 3,
         homeTitle: "Portal de candidatos de recrutamento em larga escala",
         items: [
           {
@@ -145,6 +146,7 @@ export const portfolioColab: Project[] = [
       {
         title: "Plataforma para Empresas",
         showOnHome: true,
+        showcaseOrder: 4,
         homeTitle: "ATS e plataforma de gestão de vagas para empresas",
         items: [
           {
@@ -230,6 +232,7 @@ export const portfolioColab: Project[] = [
       {
         title: "Um pouco sobre a Plataforma",
         showOnHome: true,
+        showcaseOrder: 2,
         homeTitle: "Plataforma de treinamento para vestibulares",
         items: [
           {
@@ -277,6 +280,7 @@ export const portfolioColab: Project[] = [
       {
         title: "Imagens ilustrativas do App",
         showOnHome: true,
+        showcaseOrder: 1,
         homeTitle: "App mobile de saúde e benefícios para Android e iOS",
         items: [
           {
