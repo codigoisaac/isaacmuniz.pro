@@ -5,6 +5,7 @@ import Logo from "@/components/layout/Logo";
 import dynamic from "next/dynamic";
 import headerNavLinks from "@/data/headerNavLinks";
 import siteMetadata from "@/data/siteMetadata";
+import { useEffect, useRef, useState } from "react";
 
 const ScrambledText = dynamic(() => import("@/components/ScrambledText"), {
   ssr: false,
@@ -25,8 +26,24 @@ const ThemeSwitcher = dynamic(
 );
 
 export default function AppHeader() {
+  const [visible, setVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      setVisible(currentY < lastScrollY.current || currentY < 10);
+      lastScrollY.current = currentY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 mb-10 w-full bg-base-100/70 backdrop-blur-xs">
+    <header
+      className={`sticky top-0 z-50 mb-10 w-full bg-base-100/70 backdrop-blur-xs transition-transform duration-500 ${visible ? "translate-y-0" : "-translate-y-full"}`}
+    >
       <div className="general-content-margins header-paddings flex items-center justify-between pt-4 pb-2 md:pt-5 md:pb-4">
         {/* Logo and title */}
         <Link href="/" aria-label={siteMetadata.headerTitle}>
