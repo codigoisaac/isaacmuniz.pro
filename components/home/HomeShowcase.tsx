@@ -36,6 +36,8 @@ const slides: Slide[] = allProjects
 
 // ─── Constants ─────────────────────────────────────────────────────────────────
 
+const AUTO_ADVANCE_MS = 6000;
+const TICK_MS = 50;
 const THROTTLE_MS = 650;
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -120,24 +122,56 @@ function MediaItem({
 export default function HomeShowcase() {
   const [current, setCurrent] = useState(0);
   const [dir, setDir] = useState<1 | -1>(1);
-  const isHoveredRef = useRef(false);
+  const [progress, setProgress] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isHoveringSlideArea, setIsHoveringSlideArea] = useState(false);
+
+  const isHoveringSlideAreaRef = useRef(false);
   const lastWheelRef = useRef(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  const progressRef = useRef(0);
 
-  const navigate = useCallback((delta: 1 | -1) => {
-    const now = Date.now();
-    if (now - lastWheelRef.current < THROTTLE_MS) return;
-    lastWheelRef.current = now;
-    setDir(delta);
-    // Infinite loop: wraps around at both ends
-    setCurrent((prev) => (prev + delta + slides.length) % slides.length);
+  const resetProgress = useCallback(() => {
+    progressRef.current = 0;
+    setProgress(0);
   }, []);
 
+  const navigate = useCallback(
+    (delta: 1 | -1) => {
+      const now = Date.now();
+      if (now - lastWheelRef.current < THROTTLE_MS) return;
+      lastWheelRef.current = now;
+      resetProgress();
+      setDir(delta);
+      // Infinite loop: wraps around at both ends
+      setCurrent((prev) => (prev + delta + slides.length) % slides.length);
+    },
+    [resetProgress],
+  );
+
+  // Auto-advance interval — ticks every TICK_MS, skips when slide area is hovered
+  useEffect(() => {
+    const id = setInterval(() => {
+      if (!isAutoPlaying || isHoveringSlideAreaRef.current) return;
+      progressRef.current += TICK_MS / AUTO_ADVANCE_MS;
+      if (progressRef.current >= 1) {
+        progressRef.current = 0;
+        setProgress(0);
+        setDir(1);
+        setCurrent((prev) => (prev + 1) % slides.length);
+      } else {
+        setProgress(progressRef.current);
+      }
+    }, TICK_MS);
+    return () => clearInterval(id);
+  }, [isAutoPlaying]);
+
+  // Wheel navigation — restricted to slide area
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
     const onWheel = (e: WheelEvent) => {
-      if (!isHoveredRef.current) return;
+      if (!isHoveringSlideAreaRef.current) return;
       e.preventDefault();
       navigate(e.deltaY > 0 ? 1 : -1);
     };
@@ -160,32 +194,35 @@ export default function HomeShowcase() {
       ? "grid-cols-1"
       : "grid-cols-2";
 
+  // True only when the timer is actually ticking forward
+  const isActuallyPlaying = isAutoPlaying && !isHoveringSlideArea;
+
   return (
     <section
       ref={containerRef}
       className="relative my-14 rounded-2xl bg-base-200 border border-base-300 overflow-hidden"
-      onMouseEnter={() => {
-        isHoveredRef.current = true;
-      }}
-      onMouseLeave={() => {
-        isHoveredRef.current = false;
-      }}
     >
       {/* ── Header bar ───────────────────────────────────────────────────────── */}
       <div className="px-6 sm:px-8 pt-5 pb-4 flex items-center justify-between border-b border-base-300">
         <HeadingLabel text="Trabalhos" className="mb-0" />
-
-        <div className="flex items-center gap-3">
-          <NavArrow direction="up" onClick={() => navigate(-1)} />
-          <Text variant="caps" intent="muted" className="text-xs tabular-nums">
-            {current + 1} / {slides.length}
-          </Text>
-          <NavArrow direction="down" onClick={() => navigate(1)} />
-        </div>
+        <Text variant="caps" intent="muted" className="text-xs tabular-nums">
+          {current + 1} / {slides.length}
+        </Text>
       </div>
 
       {/* ── Slide area ───────────────────────────────────────────────────────── */}
-      <div className="relative overflow-hidden">
+      {/* Auto-advance pauses and manual navigation activates only here */}
+      <div
+        className="relative overflow-hidden"
+        onMouseEnter={() => {
+          isHoveringSlideAreaRef.current = true;
+          setIsHoveringSlideArea(true);
+        }}
+        onMouseLeave={() => {
+          isHoveringSlideAreaRef.current = false;
+          setIsHoveringSlideArea(false);
+        }}
+      >
         <AnimatePresence mode="wait" custom={dir} initial={false}>
           <motion.div
             key={`${project.slug}--${homeTitle}`}
@@ -265,14 +302,17 @@ export default function HomeShowcase() {
         </AnimatePresence>
       </div>
 
-      {/* ── Footer: dots + scroll hint ───────────────────────────────────────── */}
+      {/* ── Footer: dots + controls ───────────────────────────────────────────── */}
       <div className="px-6 sm:px-8 py-4 border-t border-base-300 flex items-center justify-between">
+        {/* Dots */}
         <div className="flex items-center gap-2">
           {slides.map((_, i) => (
             <button
               key={i}
               onClick={() => {
-                setDir(i > current ? 1 : -1);
+                const delta = i > current ? 1 : -1;
+                resetProgress();
+                setDir(delta);
                 setCurrent(i);
               }}
               aria-label={`Ir para slide ${i + 1}`}
@@ -285,25 +325,65 @@ export default function HomeShowcase() {
           ))}
         </div>
 
-        {/* Scroll hint */}
-        <div className="hidden sm:flex items-center gap-2.5 select-none">
-          <div className="flex flex-col gap-0.5">
-            <div className="flex items-center justify-center w-5 h-5 rounded text-neutral-content text-[10px] leading-none font-geist-mono">
-              ↑
+        {/* Right controls: scroll hint + play/pause + progress bar + nav arrows */}
+        <div className="flex items-center gap-3 select-none">
+          {/* Scroll hint — hidden on mobile */}
+          <div className="hidden sm:flex items-center gap-2">
+            <div className="flex flex-col gap-0.5">
+              <div className="flex items-center justify-center w-5 h-5 rounded text-neutral-content text-[10px] leading-none font-geist-mono">
+                ↑
+              </div>
+              <div className="flex items-center justify-center w-5 h-5 rounded text-neutral-content text-[10px] leading-none font-geist-mono">
+                ↓
+              </div>
             </div>
-            <div className="flex items-center justify-center w-5 h-5 rounded text-neutral-content text-[10px] leading-none font-geist-mono">
-              ↓
-            </div>
+            <Text
+              variant="caps"
+              intent="muted"
+              className="normal-case tracking-normal text-[10px] leading-snug"
+            >
+              Scroll na área
+              <br />
+              para navegar
+            </Text>
           </div>
-          <Text
-            variant="caps"
-            intent="muted"
-            className="normal-case tracking-normal text-[10px] leading-snug"
+
+          {/* Divider */}
+          <div className="hidden sm:block w-px h-5 bg-base-300" />
+
+          {/* Play/pause toggle */}
+          <button
+            onClick={() => setIsAutoPlaying((p) => !p)}
+            aria-label={
+              isActuallyPlaying
+                ? "Pausar avanço automático"
+                : "Retomar avanço automático"
+            }
+            className="flex items-center justify-center w-6 h-6 rounded transition-colors cursor-pointer text-primary/50 hover:text-primary hover:bg-primary/10"
           >
-            Scroll ou botões
-            <br />
-            para navegar
-          </Text>
+            {isActuallyPlaying ? (
+              <svg width="10" height="12" viewBox="0 0 10 12" fill="currentColor" aria-hidden>
+                <rect x="0" y="0" width="3.5" height="12" rx="1" />
+                <rect x="6.5" y="0" width="3.5" height="12" rx="1" />
+              </svg>
+            ) : (
+              <svg width="10" height="12" viewBox="0 0 10 12" fill="currentColor" aria-hidden>
+                <path d="M0 0 L10 6 L0 12 Z" />
+              </svg>
+            )}
+          </button>
+
+          {/* Small progress bar */}
+          <div className="w-10 h-1 rounded-full bg-base-300 overflow-hidden">
+            <div
+              className="h-full bg-primary rounded-full"
+              style={{ width: `${progress * 100}%` }}
+            />
+          </div>
+
+          {/* Nav arrows */}
+          <NavArrow direction="up" onClick={() => navigate(-1)} />
+          <NavArrow direction="down" onClick={() => navigate(1)} />
         </div>
       </div>
     </section>
