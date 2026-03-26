@@ -71,7 +71,6 @@ export const portfolioAuthorial: Project[] = [
     tech: ["ts", "vscode", "babel"],
     tags: ["Extensão p/ VSCode", "Open Source"],
     date: "2026",
-    isFeaturedProject: true,
   },
 
   {
@@ -91,6 +90,7 @@ export const portfolioAuthorial: Project[] = [
     tech: ["nextjs", "react", "ts", "tailwindcss", "resend"],
     tags: ["Website"],
     date: "2026",
+    isFeaturedProject: true,
   },
 
   {
