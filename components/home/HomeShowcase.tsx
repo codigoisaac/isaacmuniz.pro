@@ -33,7 +33,9 @@ const slides: Slide[] = allProjects
         showcaseOrder: s.showcaseOrder,
       })),
   )
-  .sort((a, b) => (a.showcaseOrder ?? Infinity) - (b.showcaseOrder ?? Infinity));
+  .sort(
+    (a, b) => (a.showcaseOrder ?? Infinity) - (b.showcaseOrder ?? Infinity),
+  );
 
 // ─── Constants ─────────────────────────────────────────────────────────────────
 
@@ -206,11 +208,110 @@ export default function HomeShowcase() {
       className="relative my-14 rounded-2xl bg-base-200 border border-base-300 overflow-hidden"
     >
       {/* ── Header bar ───────────────────────────────────────────────────────── */}
-      <div className="px-6 sm:px-8 pt-5 pb-4 flex items-center justify-between border-b border-base-300">
+      <div className="px-6 sm:px-8 py-4 flex items-center justify-between border-b border-base-300">
         <HeadingLabel text="Trabalhos" className="mb-0" />
-        <Text variant="caps" intent="muted" className="text-xs tabular-nums">
-          {current + 1} / {slides.length}
-        </Text>
+
+        <div className="flex items-center gap-2 sm:gap-3 select-none">
+          {/* Scroll hint — lg+ only */}
+          <div className="hidden lg:flex items-center gap-1.5 text-neutral-content/70">
+            <CaretLeftIcon weight="bold" size={12} />
+            <CaretRightIcon weight="bold" size={12} />
+            <Text
+              variant="caps"
+              intent="muted"
+              className="normal-case tracking-normal text-[10px] leading-snug"
+            >
+              Scroll na área
+              <br />
+              para navegar
+            </Text>
+          </div>
+
+          {/* Divider — lg+ only */}
+          <div className="hidden lg:block w-px h-4 bg-base-300" />
+
+          {/* Play/pause toggle — sm+ only */}
+          <button
+            onClick={() => setIsAutoPlaying((p) => !p)}
+            aria-label={
+              isActuallyPlaying
+                ? "Pausar avanço automático"
+                : "Retomar avanço automático"
+            }
+            className="hidden sm:flex items-center justify-center w-6 h-6 rounded transition-colors cursor-pointer text-primary/50 hover:text-primary hover:bg-primary/10"
+          >
+            {isActuallyPlaying ? (
+              <svg
+                width="10"
+                height="12"
+                viewBox="0 0 10 12"
+                fill="currentColor"
+                aria-hidden
+              >
+                <rect x="0" y="0" width="3.5" height="12" rx="1" />
+                <rect x="6.5" y="0" width="3.5" height="12" rx="1" />
+              </svg>
+            ) : (
+              <svg
+                width="10"
+                height="12"
+                viewBox="0 0 10 12"
+                fill="currentColor"
+                aria-hidden
+              >
+                <path d="M0 0 L10 6 L0 12 Z" />
+              </svg>
+            )}
+          </button>
+
+          {/* Small progress bar — sm+ only */}
+          <div className="hidden sm:block w-10 h-1 rounded-full bg-base-300 overflow-hidden">
+            <div
+              className="h-full bg-primary rounded-full"
+              style={{ width: `${progress * 100}%` }}
+            />
+          </div>
+
+          {/* Divider — sm+ only */}
+          <div className="hidden sm:block w-px h-4 bg-base-300" />
+
+          {/* Dots — sm+ only */}
+          <div className="hidden sm:flex items-center gap-1.5">
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => {
+                  const delta = i > current ? 1 : -1;
+                  resetProgress();
+                  setDir(delta);
+                  setCurrent(i);
+                }}
+                aria-label={`Ir para slide ${i + 1}`}
+                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                  i === current
+                    ? "w-4 bg-primary"
+                    : "w-1.5 bg-base-300 hover:bg-neutral-content"
+                }`}
+              />
+            ))}
+          </div>
+
+          {/* Divider — sm+ only */}
+          <div className="hidden sm:block w-px h-4 bg-base-300" />
+
+          {/* Prev / counter / next — always visible */}
+          <div className="flex items-center gap-2">
+            <NavArrow direction="up" onClick={() => navigate(-1)} />
+            <Text
+              variant="caps"
+              intent="muted"
+              className="text-xs tabular-nums"
+            >
+              {current + 1} / {slides.length}
+            </Text>
+            <NavArrow direction="down" onClick={() => navigate(1)} />
+          </div>
+        </div>
       </div>
 
       {/* ── Slide area ───────────────────────────────────────────────────────── */}
@@ -235,7 +336,7 @@ export default function HomeShowcase() {
             animate="center"
             exit="exit"
             transition={{ duration: 0.38, ease }}
-            className="w-full p-6 sm:p-8 md:p-10 grid grid-cols-1 md:grid-cols-[1fr_1.4fr] grid-rows-[1fr_auto] gap-x-8 md:gap-x-12 gap-y-4 items-center"
+            className="w-full px-6 pt-5 pb-6 sm:px-8 sm:pt-7 sm:pb-7 md:px-10 md:pt-8 md:pb-5 grid grid-cols-1 md:grid-cols-[1fr_1.4fr] grid-rows-[1fr_auto] gap-x-8 md:gap-x-12 gap-y-4 items-center"
           >
             {/* ── Left: project info ──────────────────────────────────────── */}
             <div className="flex flex-col gap-4 order-2 md:order-1 self-center">
@@ -282,108 +383,27 @@ export default function HomeShowcase() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ delay: 0.3, duration: 0.35, ease: "easeOut" }}
-              className="col-span-1 md:col-span-2 row-start-2 flex gap-2 justify-center pb-2"
+              className="col-span-1 md:col-span-2 row-start-2 flex flex-col sm:flex-row gap-2 justify-center mt-4 pb-2"
             >
               <Button
                 internal
                 variant="soft"
-                size="sm"
+                size="lg"
                 text="Ver projeto completo →"
-                className="font-geist-mono"
+                className="font-geist-mono w-full sm:w-auto justify-center"
                 link={`/portfolio/${project.slug}`}
               />
               <Button
                 internal
                 variant="ghost"
-                size="sm"
+                size="lg"
                 text="Ver todos projetos"
-                className="font-geist-mono"
+                className="font-geist-mono w-full sm:w-auto justify-center"
                 link="/portfolio"
               />
             </motion.div>
           </motion.div>
         </AnimatePresence>
-      </div>
-
-      {/* ── Footer: dots + controls ───────────────────────────────────────────── */}
-      <div className="px-6 sm:px-8 py-4 border-t border-base-300 flex items-center justify-between">
-        {/* Dots */}
-        <div className="flex items-center gap-2">
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => {
-                const delta = i > current ? 1 : -1;
-                resetProgress();
-                setDir(delta);
-                setCurrent(i);
-              }}
-              aria-label={`Ir para slide ${i + 1}`}
-              className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                i === current
-                  ? "w-5 bg-primary"
-                  : "w-1.5 bg-base-300 hover:bg-neutral-content"
-              }`}
-            />
-          ))}
-        </div>
-
-        {/* Right controls: scroll hint + play/pause + progress bar + nav arrows */}
-        <div className="flex items-center gap-3 select-none">
-          {/* Scroll hint — hidden on mobile */}
-          <div className="hidden sm:flex items-center gap-2">
-            <div className="flex gap-0.5 text-neutral-content">
-              <CaretLeftIcon weight="bold" size={14} />
-              <CaretRightIcon weight="bold" size={14} />
-            </div>
-            <Text
-              variant="caps"
-              intent="muted"
-              className="normal-case tracking-normal text-[10px] leading-snug"
-            >
-              Scroll na área
-              <br />
-              para navegar
-            </Text>
-          </div>
-
-          {/* Divider */}
-          <div className="hidden sm:block w-px h-5 bg-base-300" />
-
-          {/* Play/pause toggle */}
-          <button
-            onClick={() => setIsAutoPlaying((p) => !p)}
-            aria-label={
-              isActuallyPlaying
-                ? "Pausar avanço automático"
-                : "Retomar avanço automático"
-            }
-            className="flex items-center justify-center w-6 h-6 rounded transition-colors cursor-pointer text-primary/50 hover:text-primary hover:bg-primary/10"
-          >
-            {isActuallyPlaying ? (
-              <svg width="10" height="12" viewBox="0 0 10 12" fill="currentColor" aria-hidden>
-                <rect x="0" y="0" width="3.5" height="12" rx="1" />
-                <rect x="6.5" y="0" width="3.5" height="12" rx="1" />
-              </svg>
-            ) : (
-              <svg width="10" height="12" viewBox="0 0 10 12" fill="currentColor" aria-hidden>
-                <path d="M0 0 L10 6 L0 12 Z" />
-              </svg>
-            )}
-          </button>
-
-          {/* Small progress bar */}
-          <div className="w-10 h-1 rounded-full bg-base-300 overflow-hidden">
-            <div
-              className="h-full bg-primary rounded-full"
-              style={{ width: `${progress * 100}%` }}
-            />
-          </div>
-
-          {/* Nav arrows */}
-          <NavArrow direction="up" onClick={() => navigate(-1)} />
-          <NavArrow direction="down" onClick={() => navigate(1)} />
-        </div>
       </div>
     </section>
   );

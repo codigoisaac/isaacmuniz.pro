@@ -17,7 +17,7 @@ const buttonStyles = tv({
     size: {
       sm: "btn-xs sm:btn-sm",
       md: "btn-xs sm:btn-sm md:btn-md",
-      lg: "btn-sm md:btn-md lg:btn-lg",
+      lg: "btn-sm md:btn-md",
     },
   },
   defaultVariants: {
