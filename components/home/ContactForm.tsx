@@ -73,6 +73,7 @@ export default function ContactForm() {
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-2">
             <span className="text-primary text-lg">✓</span>
+
             <Text as="h3" variant="h3" intent="primary">
               Mensagem recebida!
             </Text>
@@ -114,6 +115,7 @@ export default function ContactForm() {
           <Text variant="caps" intent="muted">
             Me encontre também em
           </Text>
+
           <SocialButtons size={26} className="text-neutral hover:text-accent" />
         </div>
       </div>
@@ -130,6 +132,7 @@ export default function ContactForm() {
           <label htmlFor="name" className={labelClass}>
             Nome
           </label>
+
           <input
             id="name"
             name="name"
@@ -146,6 +149,7 @@ export default function ContactForm() {
           <label htmlFor="email" className={labelClass}>
             E-mail
           </label>
+
           <input
             id="email"
             name="email"
@@ -164,6 +168,7 @@ export default function ContactForm() {
         <label htmlFor="message" className={labelClass}>
           Mensagem
         </label>
+
         <textarea
           id="message"
           name="message"
@@ -185,6 +190,7 @@ export default function ContactForm() {
               (opcional)
             </span>
           </label>
+
           <input
             id="whatsapp"
             name="whatsapp"
@@ -194,6 +200,7 @@ export default function ContactForm() {
             placeholder="(11) 99999-9999"
             className="input input-bordered bg-base-200 font-transducer text-sm w-full focus:outline-primary"
           />
+
           <span className="font-transducer text-xs text-neutral-content opacity-70 leading-snug">
             Preencha só se quiser que eu entre em contato por WhatsApp.
           </span>
@@ -206,6 +213,7 @@ export default function ContactForm() {
               (opcional)
             </span>
           </label>
+
           <input
             id="company"
             name="company"

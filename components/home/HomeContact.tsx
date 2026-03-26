@@ -64,10 +64,7 @@ export default function HomeContact() {
               Redes sociais
             </Text>
 
-            <SocialButtons
-              size={26}
-              className="text-neutral hover:text-accent"
-            />
+            <SocialButtons size={26} className="text-neutral" />
           </div>
 
           <div>
@@ -100,19 +97,17 @@ export default function HomeContact() {
             </a>
           </div>
 
-          <div className="mt-auto">
-            <div className="inline-flex items-center gap-2 px-3 py-2 bg-base-200 border border-base-300 rounded-selector">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3 py-2 bg-base-200 border border-base-300 rounded-selector w-fit">
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
 
-              <Text
-                as="span"
-                variant="caps"
-                intent="muted"
-                className="normal-case tracking-normal"
-              >
-                Disponível para novos projetos
-              </Text>
-            </div>
+            <Text
+              as="span"
+              variant="caps"
+              intent="muted"
+              className="normal-case tracking-normal"
+            >
+              Disponível para novos projetos
+            </Text>
           </div>
         </motion.div>
       </div>
