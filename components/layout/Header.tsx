@@ -35,7 +35,7 @@ export default function AppHeader() {
               <Logo className="text-base-content w-12.5" />
             </div>
 
-            <div className="font-transducer-extended hidden h-6 text-2xl sm:block">
+            <div className="font-transducer-extended hidden h-6 text-[28px] -mt-3 sm:block">
               <ScrambledText>{siteMetadata.headerTitle}</ScrambledText>
             </div>
           </div>
