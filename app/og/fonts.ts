@@ -2,7 +2,7 @@ import { readFile } from "fs/promises";
 import path from "path";
 
 async function loadFont(filename: string): Promise<ArrayBuffer> {
-  const fontPath = path.join(process.cwd(), "app/og/_fonts", filename);
+  const fontPath = path.join(process.cwd(), "assets/fonts", filename);
   const buffer = await readFile(fontPath);
   // Buffer do Node.js não é ArrayBuffer diretamente — essa conversão
   // extrai o ArrayBuffer subjacente com offset e tamanho corretos.
@@ -13,9 +13,10 @@ async function loadFont(filename: string): Promise<ArrayBuffer> {
 }
 
 export async function getOgFonts() {
-  const [regular, bold] = await Promise.all([
-    loadFont("Saira-Regular.ttf"),
-    loadFont("Saira-Bold.ttf"),
+  const [regular, bold, transducerExtended] = await Promise.all([
+    loadFont("saira-regular.ttf"),
+    loadFont("saira-bold.ttf"),
+    loadFont("transducer-extendedregular.ttf"),
   ]);
 
   return [
@@ -30,6 +31,12 @@ export async function getOgFonts() {
       data: bold,
       style: "normal" as const,
       weight: 700 as const,
+    },
+    {
+      name: "TransducerExtended",
+      data: transducerExtended,
+      style: "normal" as const,
+      weight: 400 as const,
     },
   ];
 }
