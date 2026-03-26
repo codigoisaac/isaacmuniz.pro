@@ -2,9 +2,9 @@
 @plugin "daisyui";
 
 :root {
-  --color-light-base: oklch(85.508% 0.00858 55.929);
-  --color-light-base-2: oklch(80.999% 0.01843 53.753);
-  --color-light-base-3: oklch(76.885% 0.04387 54.181);
+  --color-light-base: #d4ceca;
+  --color-light-base-2: #cbbeb6;
+  --color-light-base-3: #cbad9a;
   --color-light-smooth-content: #8d5d3f;
 
   --color-dark-base: #1a1817;
@@ -13,18 +13,18 @@
   --color-dark-smooth-content: #927665;
 
   --color-1: #007179;
-  --color-1-content: oklch(94% 0.028 342.258);
-  --color-1-smooth: oklch(49.647% 0.06211 199.806);
+  --color-1-content: #f9e4f0;
+  --color-1-smooth: #316d70;
 
   --color-2: #fd8540;
   --color-2-content: #3d200e;
   --color-2-smooth: #ebb392;
 
   --color-dark-accent: #883c04;
-  --color-dark-accent-content: oklch(96% 0.015 48);
+  --color-dark-accent-content: #fbefe9;
 
-  --color-light-accent: oklch(35.96% 0.05552 207.67);
-  --color-light-accent-content: oklch(95% 0.01 190);
+  --color-light-accent: #0e454c;
+  --color-light-accent-content: #e7f1f0;
 }
 
 @plugin "daisyui/theme" {
