@@ -11,7 +11,7 @@ const siteMetadata = {
     twitterHandle: "imunizpro",
     twitterLink: "https://twitter.com/imunizpro",
     phoneNumber: "+55 (19) 98195-7816",
-    emailAddress: "eai@isaacmuniz.pro",
+    emailAddress: "contato@isaacmuniz.pro",
     get whatsappLink() {
       return `https://wa.me/${this.phoneNumber.replace(/\D/g, "")}`;
     },
