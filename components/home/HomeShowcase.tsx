@@ -181,7 +181,7 @@ export default function HomeShowcase() {
       </div>
 
       {/* ── Slide area ───────────────────────────────────────────────────────── */}
-      <div className="min-h-[52vh] md:min-h-[60vh] relative">
+      <div className="relative overflow-hidden">
         <AnimatePresence mode="wait" custom={dir} initial={false}>
           <motion.div
             key={`${project.slug}--${homeTitle}`}
@@ -191,7 +191,7 @@ export default function HomeShowcase() {
             animate="center"
             exit="exit"
             transition={{ duration: 0.38, ease }}
-            className="absolute inset-0 p-6 sm:p-8 md:p-10 grid grid-cols-1 md:grid-cols-[1fr_1.4fr] grid-rows-[1fr_auto] gap-x-8 md:gap-x-12 gap-y-4 items-center"
+            className="w-full p-6 sm:p-8 md:p-10 grid grid-cols-1 md:grid-cols-[1fr_1.4fr] grid-rows-[1fr_auto] gap-x-8 md:gap-x-12 gap-y-4 items-center"
           >
             {/* ── Left: project info ──────────────────────────────────────── */}
             <div className="flex flex-col gap-4 order-2 md:order-1 self-center">
