@@ -8,9 +8,8 @@ import HeadingLabel from "./HeadingLabel";
 
 const services = [
   "Sites & Landing Pages",
-  "Aplicativos Web",
+  "Aplicativos Web & Mobile",
   "Sistemas sob medida",
-  "Apps Mobile",
 ];
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -26,8 +25,9 @@ export default function HomeHero() {
         transition={{ duration: 0.65, delay: 0.08, ease }}
         className="font-saira text-5xl sm:text-6xl xl:text-7xl font-semibold leading-[1.08] max-w-2xl mb-5"
       >
-        <span className="text-primary">Tecnologia bem feita,</span> para você
-        parar de se preocupar com tecnologia.
+        <span className="text-primary">Tecnologia bem feita</span> para
+        transformar sua visão de negócio em{" "}
+        <span className="cool-underline">realidade</span>.
       </motion.h1>
 
       {/* ── Subheading ── */}
@@ -48,7 +48,7 @@ export default function HomeHero() {
               className="absolute inset-0 bg-primary/20 rounded-sm scale-x-[1.04] scale-y-[1.1]"
             />
             <span className="relative text-primary font-medium">
-              {siteMetadata.yearsOfExperience} anos de experiência
+              {siteMetadata.yearsOfExperience}+ anos de experiência
             </span>
           </span>{" "}
           construindo{" "}
@@ -70,7 +70,7 @@ export default function HomeHero() {
             initial={{ opacity: 0, scale: 0.88, y: 6 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.35, delay: 0.46 + i * 0.07, ease }}
-            className="font-geist-mono text-xs px-3 py-1.5 rounded-selector border border-base-300 bg-base-200 text-neutral-content"
+            className="font-geist-mono text-sm px-3 py-1.5 rounded-selector border border-base-300 bg-base-200 text-neutral-content"
           >
             {service}
           </motion.span>
@@ -84,13 +84,14 @@ export default function HomeHero() {
         transition={{ duration: 0.5, delay: 0.68, ease }}
         className="flex flex-wrap gap-3"
       >
-        <Button internal text="Ver Projetos" link="/portfolio" />
+        <Button internal text="Ver Projetos" link="/portfolio" size="md" />
 
         <Button
           internal
           text="Falar Comigo →"
           link="#contato"
           variant="outline"
+          size="md"
         />
       </motion.div>
 
