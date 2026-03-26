@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { BlogPost } from "@/interfaces/blog-post";
 import Text from "@/components/Text";
+import Button from "@/components/Button";
 import BlogPostList from "@/components/blog/BlogPostList";
 import HeadingLabel from "./HeadingLabel";
 
@@ -23,32 +23,14 @@ export default function HomeBlog({ posts }: Props) {
           </Text>
         </div>
 
-        <Link href="/blog" className="animated-underline hidden sm:block">
-          <Text
-            as="span"
-            variant="caps"
-            intent="muted"
-            className="normal-case tracking-normal text-sm"
-          >
-            Ver todos →
-          </Text>
-        </Link>
+        <Button internal text="Ver todos artigos →" link="/blog" variant="outline" size="sm" />
       </div>
 
       <BlogPostList posts={posts} />
 
       {/* Mobile "ver todos" */}
       <div className="flex justify-center mt-8 sm:hidden">
-        <Link href="/blog" className="animated-underline">
-          <Text
-            as="span"
-            variant="caps"
-            intent="muted"
-            className="normal-case tracking-normal text-sm"
-          >
-            Ver todos os artigos →
-          </Text>
-        </Link>
+        <Button internal text="Ver todos artigos →" link="/blog" variant="outline" size="md" />
       </div>
     </section>
   );

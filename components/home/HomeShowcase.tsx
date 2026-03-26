@@ -388,7 +388,7 @@ export default function HomeShowcase() {
               <Button
                 internal
                 variant="soft"
-                size="lg"
+                size="md"
                 text="Ver projeto completo →"
                 className="font-geist-mono w-full sm:w-auto justify-center"
                 link={`/portfolio/${project.slug}`}
@@ -396,7 +396,7 @@ export default function HomeShowcase() {
               <Button
                 internal
                 variant="ghost"
-                size="lg"
+                size="md"
                 text="Ver todos projetos"
                 className="font-geist-mono w-full sm:w-auto justify-center"
                 link="/portfolio"

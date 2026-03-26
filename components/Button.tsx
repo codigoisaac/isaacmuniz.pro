@@ -16,8 +16,8 @@ const buttonStyles = tv({
     },
     size: {
       sm: "btn-xs sm:btn-sm",
-      md: "btn-xs sm:btn-sm md:btn-md",
-      lg: "btn-sm md:btn-md",
+      md: "btn-sm md:btn-md",
+      lg: "btn-md md:btn-lg",
       lg1: "btn-md",
     },
   },

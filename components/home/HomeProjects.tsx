@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import { motion } from "motion/react";
-import Link from "next/link";
 import { Project } from "@/interfaces/portfolio";
 import { HoverEffect } from "@/components/portfolio/HoverEffect";
 import Text from "@/components/Text";
+import Button from "@/components/Button";
 import ProjectCardCompact from "../portfolio/ProjectCardCompact";
 import HeadingLabel from "./HeadingLabel";
 
@@ -42,16 +42,13 @@ export default function HomeProjects({ projects }: Props) {
           transition={{ delay: 0.2 }}
           className="hidden sm:block"
         >
-          <Link href="/portfolio" className="animated-underline">
-            <Text
-              as="span"
-              variant="caps"
-              intent="muted"
-              className="normal-case tracking-normal text-sm"
-            >
-              Ver todos →
-            </Text>
-          </Link>
+          <Button
+            internal
+            text="Ver todos projetos →"
+            link="/portfolio"
+            variant="outline"
+            size="sm"
+          />
         </motion.div>
       </div>
 
@@ -84,16 +81,13 @@ export default function HomeProjects({ projects }: Props) {
 
       {/* Mobile "ver todos" */}
       <div className="flex justify-center mt-4 sm:hidden">
-        <Link href="/portfolio" className="animated-underline">
-          <Text
-            as="span"
-            variant="caps"
-            intent="muted"
-            className="normal-case tracking-normal text-sm"
-          >
-            Ver todos os projetos →
-          </Text>
-        </Link>
+        <Button
+          internal
+          text="Ver todos projetos →"
+          link="/portfolio"
+          variant="outline"
+          size="md"
+        />
       </div>
     </section>
   );
