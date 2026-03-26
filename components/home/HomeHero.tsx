@@ -84,14 +84,14 @@ export default function HomeHero() {
         transition={{ duration: 0.5, delay: 0.68, ease }}
         className="flex flex-wrap gap-3"
       >
-        <Button internal text="Ver Projetos" link="/portfolio" size="md" />
+        <Button internal text="Ver Projetos" link="/portfolio" size="lg" />
 
         <Button
           internal
           text="Falar Comigo →"
           link="#contato"
           variant="outline"
-          size="md"
+          size="lg"
         />
       </motion.div>
 
