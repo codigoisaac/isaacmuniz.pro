@@ -334,7 +334,6 @@ export const portfolioOthers: Project[] = [
     tech: ["nextjs", "react", "tailwindcss", "ts", "notion"],
     tags: ["Website"],
     date: "2023",
-    isFeaturedProject: true,
   },
 
   {
