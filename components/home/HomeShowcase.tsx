@@ -279,19 +279,12 @@ export default function HomeShowcase() {
           {/* Dots — sm+ only */}
           <div className="hidden sm:flex items-center gap-1.5">
             {slides.map((_, i) => (
-              <button
+              <div
                 key={i}
-                onClick={() => {
-                  const delta = i > current ? 1 : -1;
-                  resetProgress();
-                  setDir(delta);
-                  setCurrent(i);
-                }}
-                aria-label={`Ir para slide ${i + 1}`}
-                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                className={`h-1.5 rounded-full transition-all duration-300 ${
                   i === current
                     ? "w-4 bg-primary"
-                    : "w-1.5 bg-base-300 hover:bg-neutral-content"
+                    : "w-1.5 bg-base-300"
                 }`}
               />
             ))}
