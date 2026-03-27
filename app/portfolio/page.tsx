@@ -1,3 +1,4 @@
+import ScrollToTop from "@/components/layout/ScrollToTop";
 import PageHeader from "@/components/PageHeader";
 import ProjectsListComplete from "@/components/portfolio/ProjectsListComplete";
 import { portfolioMetadata } from "@/data/seo/portfolio.metadata";
@@ -11,6 +12,8 @@ export default function PortfolioPage() {
       <PageHeader text="/portfolio" />
 
       <ProjectsListComplete />
+
+      <ScrollToTop />
     </>
   );
 }

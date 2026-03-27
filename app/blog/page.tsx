@@ -3,6 +3,7 @@ import { getAllBlogPosts } from "@/lib/api";
 import BlogPostList from "@/components/blog/BlogPostList";
 import { Metadata } from "next";
 import { blogMetadata } from "@/data/seo/blog.metadata";
+import ScrollToTop from "@/components/layout/ScrollToTop";
 
 export const metadata: Metadata = blogMetadata;
 
@@ -14,6 +15,8 @@ export default function BlogPage() {
       <PageHeader text="/blog" />
 
       <BlogPostList posts={allBlogPosts} />
+
+      <ScrollToTop />
     </>
   );
 }

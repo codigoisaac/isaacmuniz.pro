@@ -10,6 +10,7 @@ import HomeShowcase from "@/components/home/HomeShowcase";
 import type { Metadata } from "next";
 import { homeMetadata } from "@/data/seo/home.metadata";
 import PersonSchema from "@/components/seo/PersonSchema";
+import ScrollToTop from "@/components/layout/ScrollToTop";
 
 export const metadata: Metadata = homeMetadata;
 
@@ -63,6 +64,8 @@ export default function HomePage() {
       <HomeContact />
 
       <PersonSchema />
+
+      <ScrollToTop />
     </>
   );
 }
