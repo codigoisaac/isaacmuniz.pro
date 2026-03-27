@@ -79,7 +79,7 @@ export const portfolioAuthorial: Project[] = [
       "Site institucional para uma empresa industrial brasileira com 30 anos de mercado, desenvolvido com foco em apresentar um catálogo técnico complexo com alta qualidade de UI/UX.",
     slug: "itver",
     image: imgItver,
-    link: "https://itver.com.br/",
+    link: "https://itver.vercel.app/",
     description: [
       "A ITVER é uma empresa brasileira com três décadas de atuação no desenvolvimento de soluções de alta performance para manutenção mecânica industrial, atendendo gigantes como Klabin, Suzano, Bracell e Stora Enso. O desafio era claro: substituir um site desatualizado por uma presença digital que estivesse à altura da seriedade técnica da marca.",
       "O site foi desenvolvido com Next.js 16, React 19 e TailwindCSS 4, priorizando performance, SEO e responsividade total. A arquitetura foi pensada para longevidade — com foco em velocidade de carregamento, especialmente em dispositivos móveis.",
