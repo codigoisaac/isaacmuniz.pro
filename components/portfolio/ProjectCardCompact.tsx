@@ -23,7 +23,7 @@ export default function ProjectCardCompact({
     <Link
       className={cn(
         "relative flex gap-4 bg-base-200 p-3 rounded-xl w-full group h-full items-center",
-        { "pt-8 sm:pt-3": project.isFeaturedProject },
+        { "pt-8 sm:pt-3": project.isFeaturedProject && !isOnHome },
       )}
       href={`/portfolio/${project.slug}`}
     >
