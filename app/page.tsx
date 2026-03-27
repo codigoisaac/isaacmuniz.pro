@@ -44,7 +44,9 @@ export default function HomePage() {
     <>
       <HomeHero />
 
-      <HomeShowcase />
+      <div className="min-h-screen">
+        <HomeShowcase />
+      </div>
 
       <HomeAbout />
 
