@@ -23,14 +23,27 @@ export default function HomeBlog({ posts }: Props) {
           </Text>
         </div>
 
-        <Button internal text="Ver todos artigos →" link="/blog" variant="outline" size="sm" />
+        <Button
+          className="hidden sm:block"
+          internal
+          text="Ver todos artigos →"
+          link="/blog"
+          variant="outline"
+          size="sm"
+        />
       </div>
 
       <BlogPostList posts={posts} />
 
       {/* Mobile "ver todos" */}
       <div className="flex justify-center mt-8 sm:hidden">
-        <Button internal text="Ver todos artigos →" link="/blog" variant="outline" size="md" />
+        <Button
+          internal
+          text="Ver todos artigos →"
+          link="/blog"
+          variant="outline"
+          size="md"
+        />
       </div>
     </section>
   );
