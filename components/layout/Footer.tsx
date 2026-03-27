@@ -1,51 +1,101 @@
 import siteMetadata from "@/data/siteMetadata";
-import SocialButtons from "../SocialButtons";
+import headerNavLinks from "@/data/headerNavLinks";
+import Link from "next/link";
+
+const socials = [
+  { href: siteMetadata.socials.whatsappLink, label: "WhatsApp" },
+  { href: siteMetadata.socials.emailLink, label: "E-mail" },
+  { href: siteMetadata.socials.linkedinLink, label: "LinkedIn" },
+  { href: siteMetadata.socials.githubLink, label: "GitHub" },
+];
 
 export default function Footer() {
   return (
     <footer className="general-content-margins footer-paddings mt-22 w-full">
-      <div className="footer-inside-paddings border-t w-full pt-6 pb-9 flex flex-col-reverse gap-4 sm:flex-row sm:justify-between sm:place-items-center">
-        {/* Text */}
-        <div className="flex flex-col gap-0.5 text-xs">
-          <div>
-            &copy; {siteMetadata.authorName}. Feito com{" "}
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://nextjs.org"
-            >
-              Next.js
-            </a>{" "}
-            &{" "}
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://tailwindcss.com"
-            >
-              TailwindCSS
-            </a>
-            .
+      <div className="footer-inside-paddings border-t w-full pt-8 pb-10">
+        <div className="flex flex-col sm:flex-row sm:justify-between gap-10">
+          {/* Brand */}
+          <div className="flex flex-col gap-3 max-w-52">
+            <span className="font-transducer-extended text-sm uppercase tracking-wide text-base-content flex items-center gap-2.5">
+              {/* <Logo height="20" /> */}
+
+              <span>{siteMetadata.authorName}</span>
+            </span>
+
+            <p className="text-xs font-geist-mono text-base-content/40 leading-relaxed">
+              Desenvolvendo soluções digitais modernas com foco em performance e
+              experiência do usuário.
+            </p>
+
+            <p className="text-xs font-geist-mono text-base-content/30 leading-relaxed">
+              Website feito com amor usando{" "}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://nextjs.org"
+                className="hover:text-primary transition-colors duration-200"
+              >
+                Next.js
+              </a>{" "}
+              &{" "}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://tailwindcss.com"
+                className="hover:text-primary transition-colors duration-200"
+              >
+                TailwindCSS
+              </a>
+              . Esse projeto é{" "}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={siteMetadata.repoLink}
+                className="hover:text-primary transition-colors duration-200"
+              >
+                Open Source
+              </a>
+              .
+            </p>
           </div>
 
-          <div>
-            {siteMetadata.socials.emailAddress} |{" "}
-            {siteMetadata.socials.phoneNumber}
-          </div>
+          {/* Links */}
+          <div className="flex gap-12 sm:gap-16">
+            {/* Navigation */}
+            <div className="flex flex-col gap-2.5">
+              <span className="text-[10px] font-geist-mono uppercase tracking-widest text-base-content/30 mb-0.5">
+                Páginas
+              </span>
+              {headerNavLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-xs font-geist-mono text-base-content/55 hover:text-primary transition-colors duration-200"
+                >
+                  {link.title}
+                </Link>
+              ))}
+            </div>
 
-          <div>
-            Esse projeto é{" "}
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href={siteMetadata.repoLink}
-            >
-              Open Source
-            </a>
-            .
+            {/* Socials & Contact */}
+            <div className="flex flex-col gap-2.5">
+              <span className="text-[10px] font-geist-mono uppercase tracking-widest text-base-content/30 mb-0.5">
+                Redes e Contato
+              </span>
+              {socials.map(({ href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-geist-mono text-base-content/55 hover:text-primary transition-colors duration-200"
+                >
+                  {label}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
-
-        <SocialButtons />
       </div>
     </footer>
   );
