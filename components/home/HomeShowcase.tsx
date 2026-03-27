@@ -177,6 +177,7 @@ export default function HomeShowcase() {
     if (!el) return;
     const onWheel = (e: WheelEvent) => {
       if (!isHoveringSlideAreaRef.current) return;
+      if (window.innerWidth < 1024) return;
       e.preventDefault();
       navigate(e.deltaY > 0 ? 1 : -1);
     };
