@@ -28,16 +28,62 @@ const ThemeSwitcher = dynamic(
 export default function AppHeader() {
   const [visible, setVisible] = useState(true);
   const lastScrollY = useRef(0);
+  const isAtTop = useRef(true);
+  const isUserScrolling = useRef(false);
+  const userScrollTimer = useRef<ReturnType<typeof setTimeout>>();
 
   useEffect(() => {
+    // Mark scroll as intentional only when triggered by actual user input.
+    // Layout-shift-induced scrolls (e.g. HomeShowcase slide change) never
+    // fire wheel/touchmove/key events, so they won't toggle the header.
+    const markIntentional = () => {
+      isUserScrolling.current = true;
+      clearTimeout(userScrollTimer.current);
+      userScrollTimer.current = setTimeout(() => {
+        isUserScrolling.current = false;
+      }, 300);
+    };
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ([" ", "ArrowUp", "ArrowDown", "PageUp", "PageDown"].includes(e.key))
+        markIntentional();
+    };
+
     const handleScroll = () => {
+      if (!isUserScrolling.current || isAtTop.current) return;
       const currentY = window.scrollY;
-      setVisible(currentY < lastScrollY.current || currentY < 10);
+      const delta = currentY - lastScrollY.current;
+      if (Math.abs(delta) < 8) return;
+      setVisible(delta < 0);
       lastScrollY.current = currentY;
     };
 
+    const sentinel = document.getElementById("scroll-sentinel");
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isAtTop.current = entry.isIntersecting;
+        if (entry.isIntersecting) {
+          setVisible(true);
+          lastScrollY.current = window.scrollY;
+        }
+      },
+      { threshold: 0 },
+    );
+    if (sentinel) observer.observe(sentinel);
+
+    window.addEventListener("wheel", markIntentional, { passive: true });
+    window.addEventListener("touchmove", markIntentional, { passive: true });
+    window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(userScrollTimer.current);
+      window.removeEventListener("wheel", markIntentional);
+      window.removeEventListener("touchmove", markIntentional);
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (

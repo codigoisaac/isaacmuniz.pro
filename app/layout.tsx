@@ -33,6 +33,7 @@ export default function RootLayout({
           <FaviconSwitcher />
 
           <AppHeader />
+          <div id="scroll-sentinel" aria-hidden="true" />
 
           <main className="general-content-margins body-content-paddings w-full grow">
             {children}
