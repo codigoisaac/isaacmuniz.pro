@@ -76,7 +76,7 @@ export const portfolioAuthorial: Project[] = [
   {
     title: "ITVER",
     excerpt:
-      "Site institucional para uma empresa industrial brasileira com 30 anos de mercado, desenvolvido com foco em apresentar um catálogo técnico complexo com alta qualidade de UI/UX.",
+      "Site institucional para empresa industrial brasileira com 30 anos de mercado, desenvolvido com foco em apresentar um catálogo técnico complexo com alta qualidade de UI/UX.",
     slug: "itver",
     image: imgItver,
     link: "https://itver.vercel.app/",
