@@ -5,6 +5,7 @@ import HomeHero from "@/components/home/HomeHero";
 import HomeAbout from "@/components/home/HomeAbout";
 import HomeProjects from "@/components/home/HomeProjects";
 import HomeBlog from "@/components/home/HomeBlog";
+import HomeTechStack from "@/components/home/HomeTechStack";
 import HomeContact from "@/components/home/HomeContact";
 import HomeShowcase from "@/components/home/HomeShowcase";
 import HomeShowcaseWrapper from "@/components/home/HomeShowcaseWrapper";
@@ -62,6 +63,10 @@ export default function HomePage() {
       <SeparatorDots />
 
       <HomeBlog posts={featuredPosts} />
+
+      <SeparatorDots />
+
+      <HomeTechStack />
 
       <SeparatorDots />
 
