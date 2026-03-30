@@ -7,6 +7,8 @@ import HomeProjects from "@/components/home/HomeProjects";
 import HomeBlog from "@/components/home/HomeBlog";
 import HomeContact from "@/components/home/HomeContact";
 import HomeShowcase from "@/components/home/HomeShowcase";
+import HomeShowcaseWrapper from "@/components/home/HomeShowcaseWrapper";
+import HomeBelief from "@/components/home/HomeBelief";
 import type { Metadata } from "next";
 import { homeMetadata } from "@/data/seo/home.metadata";
 import PersonSchema from "@/components/seo/PersonSchema";
@@ -45,9 +47,11 @@ export default function HomePage() {
     <>
       <HomeHero />
 
-      <div className="min-h-screen">
+      <HomeShowcaseWrapper>
         <HomeShowcase />
-      </div>
+      </HomeShowcaseWrapper>
+
+      <HomeBelief />
 
       <HomeAbout />
 
