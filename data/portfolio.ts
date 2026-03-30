@@ -13,7 +13,7 @@ import imgBetthaCompanies5 from "@/assets/images/portfolio/bettha/companies/5.pn
 import imgBetthaGames1 from "@/assets/images/portfolio/bettha/games/esg.png";
 import imgBetthaGames2 from "@/assets/images/portfolio/bettha/games/security.png";
 import imgBinaryShift from "@/assets/images/portfolio/binaryShift.png";
-import imgDesgruda from "@/assets/images/portfolio/desgruda.png";
+import imgSiblingSeparator from "@/assets/images/portfolio/siblingSeparator.png";
 import imgItver from "@/assets/images/portfolio/itver/main.png";
 import imgMimo from "@/assets/images/portfolio/mimo/main.png";
 import imgMimo1 from "@/assets/images/portfolio/mimo/1.png";
@@ -56,15 +56,15 @@ export const portfolioAuthorial: Project[] = [
   },
 
   {
-    title: "Desgruda",
+    title: "Sibling Separator",
     excerpt:
       "Extensão para VS Code que automatiza a organização visual de arquivos JSX/TSX, inserindo espaçamentos inteligentes entre elementos irmãos.",
     slug: "desgruda",
-    image: imgDesgruda,
+    image: imgSiblingSeparator,
     link: "https://marketplace.visualstudio.com/items?itemName=IsaacMuniz.desgruda",
-    repoLink: "https://github.com/codigoisaac/desgruda/",
+    repoLink: "https://github.com/codigoisaac/Sibling-Separator/",
     description: [
-      "O Desgruda é uma ferramenta de Developer Experience (DX) projetada para resolver o amontoamento visual em arquivos React, automatizando a separação de componentes com linhas em branco.",
+      "O Sibling Separator é uma ferramenta de Developer Experience (DX) projetada para resolver o amontoamento visual em arquivos React, automatizando a separação de componentes com linhas em branco.",
       "A solução utiliza o @babel/parser para percorrer a Abstract Syntax Tree (AST) do código, identificando com precisão os elementos JSX irmãos e calculando as posições de inserção sem corromper a estrutura do arquivo.",
       "Para garantir edições performáticas e seguras, implementei a biblioteca MagicString, permitindo a manipulação inteligente de strings e a preservação da indentação original do desenvolvedor.",
     ],
