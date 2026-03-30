@@ -6,6 +6,7 @@ import Image from "next/image";
 import myImage from "@/assets/images/home/me.jpg";
 import siteMetadata from "@/data/siteMetadata";
 import HeadingLabel from "./HeadingLabel";
+import Button from "../Button";
 
 function Highlight({
   children,
@@ -142,9 +143,9 @@ export default function HomeAbout() {
             era adolescente, e não parei mais.
           </AnimatedParagraph>
           <AnimatedParagraph delay={0.1}>
-            Hoje tenho mais de{" "}
+            Comecei minha carreira profissional em 2021 e hoje acumulo mais de{" "}
             <Highlight delay={0.2}>
-              {siteMetadata.yearsOfExperience} anos de experiência profissional
+              {siteMetadata.yearsOfExperience} anos de experiência
             </Highlight>{" "}
             construindo software para startups nas áreas de{" "}
             <Highlight delay={0.27}>
@@ -152,7 +153,7 @@ export default function HomeAbout() {
             </Highlight>
             . Sou casado, pai de dois filhos e três cachorros (o que significa
             que gerenciar projetos de software é, disparado, a parte mais
-            tranquila do meu dia rs).
+            tranquila do meu dia).
           </AnimatedParagraph>
           <AnimatedParagraph delay={0.15}>
             Minha obsessão é{" "}
@@ -163,23 +164,22 @@ export default function HomeAbout() {
             performance e um design que guia o usuário.
           </AnimatedParagraph>
           <AnimatedParagraph delay={0.2}>
-            <Highlight delay={0.3}>
-              Processo claro desde o primeiro contato
-            </Highlight>
-            : briefing estruturado,{" "}
-            <Highlight delay={0.35}>etapas definidas</Highlight>, sem ruído na
-            comunicação — e um compromisso de ser o{" "}
+            Trabalho com{" "}
+            <Highlight delay={0.3}>processo claro desde o início</Highlight>:
+            escopo bem definido,{" "}
+            <Highlight delay={0.35}>etapas organizadas</Highlight>, comunicação
+            sem ruído — com o compromisso de ser o{" "}
             <Highlight delay={0.4}>
               profissional mais fácil de trabalhar
             </Highlight>{" "}
-            que você já contratou.
+            com quem você já colaborou.
           </AnimatedParagraph>
           <AnimatedParagraph delay={0.25}>
             Se você está procurando alguém que{" "}
             <Highlight delay={0.35}>
               não precisa ser cobrado pra entregar
             </Highlight>{" "}
-            — e que torna o processo leve no caminho — vamos conversar.
+            — e que torna o processo leve no caminho — fico à disposição.
           </AnimatedParagraph>
         </div>
 
@@ -190,16 +190,12 @@ export default function HomeAbout() {
           transition={{ delay: 0.45, duration: 0.4 }}
           className="mt-8 clear-both"
         >
-          <a href="#contato" className="text-primary animated-underline">
-            <Text
-              as="span"
-              variant="caps"
-              intent="primary"
-              className="normal-case tracking-normal text-sm"
-            >
-              Entre em contato →
-            </Text>
-          </a>
+          <Button
+            text="Entre em contato →"
+            link="#contato"
+            internal
+            variant="outline"
+          />
         </motion.div>
       </div>
     </section>
