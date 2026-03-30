@@ -30,7 +30,7 @@ export default function AppHeader() {
   const lastScrollY = useRef(0);
   const isAtTop = useRef(true);
   const isUserScrolling = useRef(false);
-  const userScrollTimer = useRef<ReturnType<typeof setTimeout>>();
+  const userScrollTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   useEffect(() => {
     // Mark scroll as intentional only when triggered by actual user input.

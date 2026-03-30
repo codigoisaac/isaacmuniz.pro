@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "motion/react";
-import Text from "@/components/Text";
 import Image from "next/image";
 import myImage from "@/assets/images/home/me.jpg";
 import siteMetadata from "@/data/siteMetadata";
