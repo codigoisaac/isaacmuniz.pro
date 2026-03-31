@@ -133,49 +133,41 @@ export default function HomeAbout() {
 
         <div className="font-transducer text-[1.05rem] leading-[1.85] space-y-5 text-pretty">
           <AnimatedParagraph delay={0.05}>
-            Nasci no dia{" "}
-            <Highlight delay={0.15}>
-              13 de setembro — o Dia do Programador
-            </Highlight>
-            . Nunca sei se isso foi coincidência ou destino, mas desde criança
-            eu já sabia o que queria ser. Comecei a programar por hobby quando
-            era adolescente, e não parei mais.
-          </AnimatedParagraph>
-          <AnimatedParagraph delay={0.1}>
             Comecei minha carreira profissional em 2021 e hoje acumulo mais de{" "}
-            <Highlight delay={0.2}>
+            <Highlight delay={0.15}>
               {siteMetadata.yearsOfExperience} anos de experiência
             </Highlight>{" "}
             construindo software para startups nas áreas de{" "}
-            <Highlight delay={0.27}>
-              saúde, educação, RH, marketing e tecnologia
+            <Highlight delay={0.22}>
+              indústria, saúde, educação, RH, marketing e tecnologia
             </Highlight>
             . Sou casado, pai de dois filhos e três cachorros (o que significa
             que gerenciar projetos de software é, disparado, a parte mais
             tranquila do meu dia).
           </AnimatedParagraph>
-          <AnimatedParagraph delay={0.15}>
+          <AnimatedParagraph delay={0.1}>
             Minha obsessão é{" "}
-            <Highlight delay={0.25}>qualidade — em dois sentidos</Highlight>. No
-            processo: sem enrolação, sem sumir, sem ficar pedindo mil
-            informações que poderiam ter sido resolvidas com um bom briefing lá
-            no começo. No produto: experiência de uso bem cuidada, boa
-            performance e um design que guia o usuário.
+            <Highlight delay={0.2}>qualidade — em dois sentidos</Highlight>.{" "}
+            <span className="underline">No processo</span>: sem enrolação, sem
+            sumir, sem ficar pedindo mil informações que poderiam ter sido
+            resolvidas com um bom briefing lá no começo.{" "}
+            <span className="underline">No produto</span>: experiência de uso
+            bem cuidada, boa performance e um design que guia o usuário.
           </AnimatedParagraph>
-          <AnimatedParagraph delay={0.2}>
+          <AnimatedParagraph delay={0.15}>
             Trabalho com{" "}
-            <Highlight delay={0.3}>processo claro desde o início</Highlight>:
+            <Highlight delay={0.25}>processo claro desde o início</Highlight>:
             escopo bem definido,{" "}
-            <Highlight delay={0.35}>etapas organizadas</Highlight>, comunicação
+            <Highlight delay={0.3}>etapas organizadas</Highlight>, comunicação
             sem ruído — com o compromisso de ser o{" "}
-            <Highlight delay={0.4}>
+            <Highlight delay={0.35}>
               profissional mais fácil de trabalhar
             </Highlight>{" "}
             com quem você já colaborou.
           </AnimatedParagraph>
-          <AnimatedParagraph delay={0.25}>
+          <AnimatedParagraph delay={0.2}>
             Se você está procurando alguém que{" "}
-            <Highlight delay={0.35}>
+            <Highlight delay={0.3}>
               não precisa ser cobrado pra entregar
             </Highlight>{" "}
             — e que torna o processo leve no caminho — fico à disposição.
