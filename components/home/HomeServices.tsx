@@ -124,7 +124,7 @@ export default function HomeServices() {
                 {service.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="font-geist-mono text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-md text-primary border border-primary-content hover:border-primary cursor-default"
+                    className="font-geist-mono text-[10px] uppercase tracking-wider font-medium px-2.5 py-1 rounded-md bg-base-200 text-primary border border-base-300 hover:border-primary cursor-default"
                   >
                     {tag}
                   </span>
