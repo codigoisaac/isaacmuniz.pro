@@ -6,12 +6,14 @@ export const transducer = localFont({
   src: "./transducer-regular.woff2",
   variable: "--font-transducer",
   display: "swap",
+  preload: false,
 });
 
 export const transducerExtended = localFont({
   src: "./transducer-extendedregular.woff2",
   variable: "--font-transducer-extended",
   display: "swap",
+  preload: false,
 });
 
 // --- Saira ---
@@ -24,7 +26,7 @@ export const saira = localFont({
   ],
   variable: "--font-saira",
   display: "swap",
-  preload: true,
+  preload: false,
 });
 
 // --- Geist ---

@@ -87,12 +87,15 @@ export default function HomeTechStack() {
               className="flex flex-col items-center gap-2"
             >
               <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-base-200 border border-base-300 hover:border-primary/40 transition-colors">
-                <Image
-                  src={tech.image}
-                  alt={tech.name}
-                  width={32}
-                  height={32}
-                />
+                <div className="relative w-8 h-8">
+                  <Image
+                    src={tech.image}
+                    alt={tech.name}
+                    fill
+                    sizes="32px"
+                    className="object-contain"
+                  />
+                </div>
               </div>
               <Text
                 as="span"
@@ -142,12 +145,15 @@ export default function HomeTechStack() {
             >
               <Tooltip content={tech.name}>
                 <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-base-200 border border-base-300 hover:border-primary/40 transition-colors cursor-default">
-                  <Image
-                    src={tech.image}
-                    alt={tech.name}
-                    width={20}
-                    height={20}
-                  />
+                  <div className="relative w-5 h-5">
+                    <Image
+                      src={tech.image}
+                      alt={tech.name}
+                      fill
+                      sizes="20px"
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
               </Tooltip>
             </motion.div>

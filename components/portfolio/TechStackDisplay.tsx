@@ -8,8 +8,6 @@ type Props = {
   shouldDisplayTitle?: boolean;
 };
 
-const icon = { size: 14 };
-
 export default function TechStackDisplay({
   project,
   shouldDisplayTitle,
@@ -23,12 +21,15 @@ export default function TechStackDisplay({
 
         return (
           <Tooltip key={id} content={tech.name}>
-            <Image
-              src={tech.image}
-              alt={tech.name}
-              width={icon.size}
-              height={icon.size}
-            />
+            <div className="relative w-3.5 h-3.5">
+              <Image
+                src={tech.image}
+                alt={tech.name}
+                fill
+                sizes="14px"
+                className="object-contain"
+              />
+            </div>
           </Tooltip>
         );
       })}

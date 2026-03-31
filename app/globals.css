@@ -117,9 +117,6 @@
   --radius-box: var(--rounded-box, 0.5rem);
 }
 
-html {
-  scroll-behavior: smooth;
-}
 
 a[href^="http"]:not(.unstiled-link),
 a[href^="mailto"]:not(.unstiled-link) {
