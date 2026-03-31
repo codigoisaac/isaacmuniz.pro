@@ -2,7 +2,7 @@ const siteMetadata = {
   siteUrl: "https://isaacmuniz.pro",
   headerTitle: "isaacmuniz.pro",
   authorName: "Isaac Muniz",
-  repoLink: "https://github.com/codigoisaac/my-app",
+  repoLink: "https://github.com/codigoisaac/isaacmuniz.pro",
   yearsOfExperience: 5,
   socials: {
     githubLink: "https://github.com/codigoisaac",
