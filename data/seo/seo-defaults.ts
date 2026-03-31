@@ -6,7 +6,7 @@ import siteMetadata from "@/data/siteMetadata";
 
 // ─── Conteúdo global ──────────────────────────────────────────────────────────
 
-export const seoTitle = "Isaac Muniz — Desenvolvedor Web & Mobile";
+export const seoTitle = "Isaac Muniz | Desenvolvedor Web & Mobile";
 
 export const seoDescription =
   "Desenvolvedor com 5 anos de experiência construindo sites, apps e sistemas que resolvem problemas reais e são um prazer de usar.";
@@ -106,7 +106,7 @@ export const defaultOgImage = {
   url: buildOgImageUrl({ page: "home" }),
   width: 1200,
   height: 630,
-  alt: `${siteMetadata.authorName} — Desenvolvedor Web & Mobile`,
+  alt: `${siteMetadata.authorName} | Desenvolvedor Web & Mobile`,
 };
 
 // ─── Utilitários ─────────────────────────────────────────────────────────────
