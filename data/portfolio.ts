@@ -56,7 +56,7 @@ export const portfolioAuthorial: Project[] = [
   },
 
   {
-    title: "Sibling Separator",
+    title: "Code Breathe: Sibling Separator",
     excerpt:
       "Extensão para VS Code que automatiza a organização visual de arquivos JSX/TSX, inserindo espaçamentos inteligentes entre elementos irmãos.",
     slug: "desgruda",
@@ -64,7 +64,7 @@ export const portfolioAuthorial: Project[] = [
     link: "https://marketplace.visualstudio.com/items?itemName=IsaacMuniz.desgruda",
     repoLink: "https://github.com/codigoisaac/Sibling-Separator/",
     description: [
-      "O Sibling Separator é uma ferramenta de Developer Experience (DX) projetada para resolver o amontoamento visual em arquivos React, automatizando a separação de componentes com linhas em branco.",
+      "O Code Breathe é uma ferramenta de Developer Experience (DX) projetada para resolver o amontoamento visual em arquivos React, automatizando a separação de componentes com linhas em branco.",
       "A solução utiliza o @babel/parser para percorrer a Abstract Syntax Tree (AST) do código, identificando com precisão os elementos JSX irmãos e calculando as posições de inserção sem corromper a estrutura do arquivo.",
       "Para garantir edições performáticas e seguras, implementei a biblioteca MagicString, permitindo a manipulação inteligente de strings e a preservação da indentação original do desenvolvedor.",
     ],
