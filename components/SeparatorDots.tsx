@@ -1,5 +1,7 @@
 export default function SeparatorDots() {
   return (
-    <div className="text-center font-bold tracking-widest">. . . . . .</div>
+    <div className="text-center font-bold tracking-widest py-10">
+      . . . . . .
+    </div>
   );
 }

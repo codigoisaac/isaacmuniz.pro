@@ -10,6 +10,7 @@ import HomeContact from "@/components/home/HomeContact";
 import HomeShowcase from "@/components/home/HomeShowcase";
 import HomeShowcaseWrapper from "@/components/home/HomeShowcaseWrapper";
 import HomeBelief from "@/components/home/HomeBelief";
+import HomeStats from "@/components/home/HomeStats";
 import type { Metadata } from "next";
 import { homeMetadata } from "@/data/seo/home.metadata";
 import PersonSchema from "@/components/seo/PersonSchema";
@@ -55,6 +56,8 @@ export default function HomePage() {
       <HomeBelief />
 
       <HomeAbout />
+
+      <HomeStats />
 
       <SeparatorDots />
 
