@@ -23,6 +23,8 @@ import imgMyOldSite from "@/assets/images/portfolio/myOldSite.png";
 import imgMySite from "@/assets/images/portfolio/mySite.png";
 import imgSofista from "@/assets/images/portfolio/sofista/main.png";
 import imgSofista1 from "@/assets/images/portfolio/sofista/home.png";
+import imgItver1 from "@/assets/images/portfolio/itver/1.png";
+import imgItver2 from "@/assets/images/portfolio/itver/2.png";
 
 export const portfolioAuthorial: Project[] = [
   {
@@ -56,6 +58,44 @@ export const portfolioAuthorial: Project[] = [
   },
 
   {
+    title: "ITVER",
+    excerpt:
+      "Site institucional para empresa industrial brasileira com 30 anos de mercado, desenvolvido com foco em apresentar um catálogo técnico complexo com alta qualidade de UI/UX.",
+    slug: "itver",
+    image: imgItver,
+    link: "https://itver.vercel.app/",
+    description: [
+      "A ITVER é uma empresa brasileira com três décadas de atuação no desenvolvimento de soluções de alta performance para manutenção mecânica industrial, atendendo gigantes como Klabin, Suzano, Bracell e Stora Enso. O desafio era claro: substituir um site desatualizado por uma presença digital que estivesse à altura da seriedade técnica da marca.",
+      "O site foi desenvolvido com Next.js 16, React 19 e TailwindCSS 4, priorizando performance, SEO e responsividade total. A arquitetura foi pensada para longevidade — com foco em velocidade de carregamento, especialmente em dispositivos móveis.",
+      "O ponto central do projeto é a seção de produtos: um catálogo técnico com múltiplos produtos distribuídos por categorias, com um sistema de filtragem e modais detalhados para cada item. A navegação foi estruturada em página única para evitar carregamentos desnecessários e maximizar a retenção do usuário, o que é crítico para um público B2B altamente técnico.",
+      "Todo o conteúdo descritivo dos produtos é renderizado via Markdown com react-markdown, permitindo formatação rica — listas, destaques e fórmulas químicas — sem abrir mão da clareza visual. A integração com WhatsApp foi implementada diretamente nos cards e modais dos produtos, reduzindo o atrito entre o interesse do cliente e o contato comercial. O formulário de contato utiliza Resend para envio de e-mails direto do site.",
+      "A identidade visual do site foi construída com foco no equilíbrio entre autoridade industrial e modernidade: tipografia sólida, sistema de dark mode via next-themes, micro-interações sutis e uma paleta que transmite confiabilidade técnica.",
+    ],
+    subjects: [
+      {
+        title: "Um pouco do site",
+        showOnHome: true,
+        showcaseOrder: 2,
+        homeTitle: "Site institucional com portfólio de produtos",
+        items: [
+          {
+            title: "Uma ótima primeira impressão da empresa",
+            image: imgItver1,
+          },
+          {
+            title: "Jeito fácil de conhecer todo o catálogo de produtos",
+            image: imgItver2,
+          },
+        ],
+      },
+    ],
+    tech: ["nextjs", "react", "ts", "tailwindcss", "resend"],
+    tags: ["Website"],
+    date: "2026",
+    isFeaturedProject: true,
+  },
+
+  {
     title: "Code Breathe: Sibling Separator",
     excerpt:
       "Extensão para VS Code que automatiza a organização visual de arquivos JSX/TSX, inserindo espaçamentos inteligentes entre elementos irmãos.",
@@ -71,26 +111,6 @@ export const portfolioAuthorial: Project[] = [
     tech: ["ts", "vscode", "babel"],
     tags: ["Extensão p/ VSCode", "Open Source"],
     date: "2026",
-  },
-
-  {
-    title: "ITVER",
-    excerpt:
-      "Site institucional para empresa industrial brasileira com 30 anos de mercado, desenvolvido com foco em apresentar um catálogo técnico complexo com alta qualidade de UI/UX.",
-    slug: "itver",
-    image: imgItver,
-    link: "https://itver.vercel.app/",
-    description: [
-      "A ITVER é uma empresa brasileira com três décadas de atuação no desenvolvimento de soluções de alta performance para manutenção mecânica industrial, atendendo gigantes como Klabin, Suzano, Bracell e Stora Enso. O desafio era claro: substituir um site desatualizado por uma presença digital que estivesse à altura da seriedade técnica da marca.",
-      "O site foi desenvolvido com Next.js 16, React 19 e TailwindCSS 4, priorizando performance, SEO e responsividade total. A arquitetura foi pensada para longevidade — com foco em velocidade de carregamento, especialmente em dispositivos móveis.",
-      "O ponto central do projeto é a seção de produtos: um catálogo técnico com múltiplos produtos distribuídos por categorias, com um sistema de filtragem e modais detalhados para cada item. A navegação foi estruturada em página única para evitar carregamentos desnecessários e maximizar a retenção do usuário, o que é crítico para um público B2B altamente técnico.",
-      "Todo o conteúdo descritivo dos produtos é renderizado via Markdown com react-markdown, permitindo formatação rica — listas, destaques e fórmulas químicas — sem abrir mão da clareza visual. A integração com WhatsApp foi implementada diretamente nos cards e modais dos produtos, reduzindo o atrito entre o interesse do cliente e o contato comercial. O formulário de contato utiliza Resend para envio de e-mails direto do site.",
-      "A identidade visual do site foi construída com foco no equilíbrio entre autoridade industrial e modernidade: tipografia sólida, sistema de dark mode via next-themes, micro-interações sutis e uma paleta que transmite confiabilidade técnica.",
-    ],
-    tech: ["nextjs", "react", "ts", "tailwindcss", "resend"],
-    tags: ["Website"],
-    date: "2026",
-    isFeaturedProject: true,
   },
 
   {
