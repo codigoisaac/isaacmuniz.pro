@@ -38,7 +38,7 @@ const allUrls = [
 const payload = {
   host: HOST,
   key: KEY,
-  keyLocation: `${BASE_URL}/indexnow/${KEY}.txt`,
+  keyLocation: `${BASE_URL}/${KEY}.txt`,
   urlList: allUrls,
 };
 
