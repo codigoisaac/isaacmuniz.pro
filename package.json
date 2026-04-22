@@ -12,6 +12,7 @@
     "@headlessui/react": "^2.2.9",
     "@phosphor-icons/react": "^2.1.10",
     "@radix-ui/react-tooltip": "^1.2.8",
+    "@vercel/analytics": "^2.0.1",
     "body-scroll-lock": "4.0.0-beta.0",
     "clsx": "^2.1.1",
     "gray-matter": "^4.0.3",

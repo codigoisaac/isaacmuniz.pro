@@ -9,6 +9,7 @@ import { fontVariables } from "@/assets/fonts/fonts";
 import FaviconSwitcher from "@/components/layout/FaviconSwitcher";
 import FaviconScript from "@/components/layout/FaviconScript";
 import { globalMetadata } from "@/data/seo/global.metadata";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = globalMetadata;
 
@@ -20,16 +21,22 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" data-scroll-behavior="smooth">
       <head>
-        <link rel="icon" type="image/svg+xml" href="/favicons/favicon-dark.svg" />
+        <link
+          rel="icon"
+          type="image/svg+xml"
+          href="/favicons/favicon-dark.svg"
+        />
+
         <FaviconScript />
       </head>
-      <ThemeProvider>
-        <body
-          className={clsx(
-            fontVariables,
-            "antialiased flex flex-col min-h-screen",
-          )}
-        >
+
+      <body
+        className={clsx(
+          fontVariables,
+          "antialiased flex flex-col min-h-screen",
+        )}
+      >
+        <ThemeProvider>
           <FaviconSwitcher />
 
           <AppHeader />
@@ -40,8 +47,10 @@ export default function RootLayout({
           </main>
 
           <Footer />
-        </body>
-      </ThemeProvider>
+
+          <Analytics />
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
