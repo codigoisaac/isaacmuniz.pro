@@ -9,8 +9,13 @@ const HOST = "isaacmuniz.pro";
 const BASE_URL = `https://${HOST}`;
 
 // Lê slugs de blog a partir dos arquivos .md
-const blogSlugs = readdirSync(join(process.cwd(), "data", "blog-posts"))
+const blogPostsDir = join(process.cwd(), "data", "blog-posts");
+const blogSlugs = readdirSync(blogPostsDir)
   .filter((f) => f.endsWith(".md"))
+  .filter((f) => {
+    const content = readFileSync(join(blogPostsDir, f), "utf-8");
+    return !content.includes("isDraft: true");
+  })
   .map((f) => f.replace(/\.md$/, ""));
 
 // Lê slugs de projetos a partir do arquivo portfolio.ts via regex
