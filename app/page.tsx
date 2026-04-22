@@ -15,6 +15,7 @@ import HomeServices from "@/components/home/HomeServices";
 import type { Metadata } from "next";
 import { homeMetadata } from "@/data/seo/home.metadata";
 import PersonSchema from "@/components/seo/PersonSchema";
+import ProfessionalServiceSchema from "@/components/seo/ProfessionalServiceSchema";
 import ScrollToTop from "@/components/layout/ScrollToTop";
 
 export const metadata: Metadata = homeMetadata;
@@ -79,6 +80,7 @@ export default function HomePage() {
       <HomeContact />
 
       <PersonSchema />
+      <ProfessionalServiceSchema />
 
       <ScrollToTop />
     </>
