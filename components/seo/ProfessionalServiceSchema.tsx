@@ -31,14 +31,51 @@ export default function ProfessionalServiceSchema() {
       { "@type": "City", name: "São Paulo" },
       { "@type": "Country", name: "Brasil" },
     ],
-    serviceType: [
-      "Desenvolvimento de sites",
-      "Desenvolvimento de landing pages",
-      "Desenvolvimento de aplicativos web",
-      "Desenvolvimento de aplicativos mobile",
-      "Desenvolvimento de sistemas sob medida",
-      "Desenvolvimento fullstack",
-    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Serviços de desenvolvimento",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name: "Desenvolvimento de sites" },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Desenvolvimento de landing pages",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Desenvolvimento de aplicativos web",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Desenvolvimento de aplicativos mobile",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Desenvolvimento de sistemas sob medida",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Desenvolvimento fullstack",
+          },
+        },
+      ],
+    },
     knowsAbout: [
       "Desenvolvimento Mobile",
       "Desenvolvimento Web",
@@ -56,7 +93,7 @@ export default function ProfessionalServiceSchema() {
       "Desenvolvimento Backend",
       "Desenvolvimento Fullstack",
     ],
-    provider: { "@id": `${siteMetadata.siteUrl}/#person` },
+    founder: { "@id": `${siteMetadata.siteUrl}/#person` },
   };
 
   return (
