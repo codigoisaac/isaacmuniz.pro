@@ -3,7 +3,6 @@ export interface BlogPost {
   excerpt: string;
   date: string;
   tags: string[];
-
   slug: string;
   content: string;
   isDraft: boolean;

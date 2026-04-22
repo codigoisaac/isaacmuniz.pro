@@ -17,7 +17,7 @@ export function getBlogPostBySlug(slug: string): BlogPost {
 
   return {
     ...data,
-    date: formatDate(data.date),
+    date: toIsoDate(data.date, cleanSlug),
     slug: cleanSlug,
     content,
   } as BlogPost;
@@ -33,19 +33,24 @@ export function getAllBlogPosts(): BlogPost[] {
   return blogPosts;
 }
 
-function formatDate(dateObj: Date): string {
-  const date = dateObj;
+function toIsoDate(rawDate: unknown, slug: string): string {
+  let isoString: string;
 
-  const rawMonthName = new Intl.DateTimeFormat("pt-Br", {
-    month: "long",
-  }).format(date);
+  if (rawDate instanceof Date) {
+    isoString = rawDate.toISOString().split("T")[0];
+  } else if (typeof rawDate === "string") {
+    isoString = rawDate;
+  } else {
+    throw new Error(
+      `[${slug}] campo "date" ausente ou com tipo inválido no frontmatter`,
+    );
+  }
 
-  const capitalizedMonthName =
-    rawMonthName.charAt(0).toUpperCase() + rawMonthName.slice(1);
+  if (!/^\d{4}-\d{2}-\d{2}/.test(isoString)) {
+    throw new Error(
+      `[${slug}] campo "date" inválido: "${isoString}". Use formato ISO 8601 (ex: "2023-09-01")`,
+    );
+  }
 
-  const year = date.getFullYear();
-
-  const result = `${year} - ${capitalizedMonthName}`;
-
-  return result;
+  return isoString;
 }

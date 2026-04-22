@@ -2,6 +2,7 @@ import Link from "next/link";
 import { BlogPost } from "@/interfaces/blog-post";
 import Text from "@/components/Text";
 import TagsDisplay from "@/components/portfolio/TagsDisplay";
+import { formatBlogDate } from "@/lib/utils";
 
 interface Props {
   post: BlogPost;
@@ -21,7 +22,7 @@ export default function BlogPostCard({ post }: Props) {
           intent="muted"
           className="normal-case tracking-wider text-xs"
         >
-          {post.date}
+          {formatBlogDate(post.date)}
         </Text>
 
         <span>

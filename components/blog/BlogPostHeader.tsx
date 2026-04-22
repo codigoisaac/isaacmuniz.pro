@@ -1,6 +1,7 @@
 import { BlogPost as BlogPostInterface } from "@/interfaces/blog-post";
 import CustomBadge from "../CustomBadge";
 import ItemHeadlines from "../ItemHeadlines";
+import { formatBlogDate } from "@/lib/utils";
 
 type Props = {
   post: BlogPostInterface;
@@ -16,7 +17,7 @@ export default function BlogPostHeader({ post }: Props) {
       {/* Post Metadata */}
       <div className="font-geist-mono text-sm text-neutral-content flex-col py-2 px-4 border-l-2 border-base-300">
         <div className="tracking-wider text-xs mb-2 underline decoration-dashed decoration-base-300 decoration-0 underline-offset-7">
-          {post.date}
+          {formatBlogDate(post.date)}
         </div>
 
         {post.tags.map((tag, index) => (
