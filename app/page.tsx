@@ -22,11 +22,7 @@ export const metadata: Metadata = homeMetadata;
 
 const FEATURED_PROJECT_SLUGS = ["itver", "bettha", "mimo"];
 
-const FEATURED_POST_SLUGS = [
-  "angular-bindings",
-  "bits",
-  "laravel-primeiras-impressoes",
-];
+const FEATURED_POST_SLUGS = ["sistemas-de-tipos", "angular-bindings", "bits"];
 
 export default function HomePage() {
   const allPosts = getAllBlogPosts().filter((p) => !p.isDraft);
