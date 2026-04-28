@@ -1,13 +1,7 @@
 import siteMetadata from "@/data/siteMetadata";
 import headerNavLinks from "@/data/headerNavLinks";
+import socials from "@/data/socials";
 import Link from "next/link";
-
-const socials = [
-  { href: siteMetadata.socials.whatsappLink, label: "WhatsApp" },
-  { href: siteMetadata.socials.emailLink, label: "E-mail" },
-  { href: siteMetadata.socials.linkedinLink, label: "LinkedIn" },
-  { href: siteMetadata.socials.githubLink, label: "GitHub" },
-];
 
 export default function Footer() {
   return (

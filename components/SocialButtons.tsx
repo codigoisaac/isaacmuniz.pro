@@ -1,10 +1,4 @@
-import siteMetadata from "@/data/siteMetadata";
-import {
-  GithubLogoIcon,
-  LinkedinLogoIcon,
-  EnvelopeIcon,
-  WhatsappLogoIcon,
-} from "@phosphor-icons/react/dist/ssr";
+import socials from "@/data/socials";
 import { IconWeight } from "@phosphor-icons/react";
 import { cn } from "@/lib/utils";
 
@@ -44,25 +38,3 @@ export default function SocialButtons({
   );
 }
 
-const socials = [
-  {
-    href: siteMetadata.socials.githubLink,
-    label: "GitHub",
-    Icon: GithubLogoIcon,
-  },
-  {
-    href: siteMetadata.socials.linkedinLink,
-    label: "LinkedIn",
-    Icon: LinkedinLogoIcon,
-  },
-  {
-    href: siteMetadata.socials.emailLink,
-    label: "E-mail",
-    Icon: EnvelopeIcon,
-  },
-  {
-    href: siteMetadata.socials.whatsappLink,
-    label: "WhatsApp",
-    Icon: WhatsappLogoIcon,
-  },
-];

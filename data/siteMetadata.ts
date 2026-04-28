@@ -8,6 +8,7 @@ const siteMetadata = {
     githubLink: "https://github.com/codigoisaac",
     linkedinLink: "https://linkedin.com/in/isaac-muniz",
     substackLink: "https://substack.com/@imuniz",
+    instagramLink: "https://instagram.com/isaacmuniz.pro",
     twitterHandle: "imunizpro",
     twitterLink: "https://twitter.com/imunizpro",
     phoneNumber: "+55 (19) 98195-7816",
