@@ -102,6 +102,30 @@ export default function BlogPost({ post }: Props) {
               {children}
             </a>
           ),
+          table: ({ children }) => (
+            <div className="overflow-x-auto my-6 border border-base-300">
+              <table className="w-full border-collapse text-sm">
+                {children}
+              </table>
+            </div>
+          ),
+          thead: ({ children }) => (
+            <thead className="bg-base-200">{children}</thead>
+          ),
+          tbody: ({ children }) => (
+            <tbody className="divide-y divide-base-300">{children}</tbody>
+          ),
+          tr: ({ children }) => (
+            <tr className="divide-x divide-base-300">{children}</tr>
+          ),
+          th: ({ children }) => (
+            <th className="px-4 py-2 text-left font-semibold whitespace-nowrap">
+              {children}
+            </th>
+          ),
+          td: ({ children }) => (
+            <td className="px-4 py-2 align-top">{children}</td>
+          ),
         }}
       >
         {post.content}
