@@ -1,5 +1,6 @@
 export interface BlogPost {
   title: string;
+  subtitle?: string;
   excerpt: string;
   date: string;
   tags: string[];

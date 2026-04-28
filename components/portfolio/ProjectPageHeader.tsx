@@ -16,7 +16,7 @@ export default function ProjectPageHeader({ project }: Props) {
       <ItemHeadlines item={project} shouldShowExcerpt={false} />
 
       {/* Project Metadata */}
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center mt-6">
         <div className="font-geist-mono text-sm text-neutral-content flex flex-wrap gap-4 py-2 px-4 border-l-2 border-base-300 items-center">
           <div className="tracking-wider text-xs">{project.date}</div>
 

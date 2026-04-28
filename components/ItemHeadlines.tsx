@@ -13,13 +13,20 @@ export default function ItemHeadlines({
   return (
     <>
       {/* Item Title */}
-      <div className="font-saira my-4 text-5xl text-primary leading-14">
+      <div className="font-saira mt-4 text-5xl text-primary leading-14">
         {item.title}
       </div>
 
+      {/* Item Subtitle */}
+      {"subtitle" in item && item.subtitle && (
+        <div className="font-saira my-6 text-3xl text-neutral-content">
+          {item.subtitle}
+        </div>
+      )}
+
       {/* Item Excerpt */}
       {shouldShowExcerpt && (
-        <div className="font-transducer mb-5">{item.excerpt}</div>
+        <div className="font-transducer mt-4 mb-6">{item.excerpt}</div>
       )}
     </>
   );

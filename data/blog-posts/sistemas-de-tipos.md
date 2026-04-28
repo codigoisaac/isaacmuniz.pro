@@ -1,5 +1,6 @@
 ---
-title: "Sistemas de Tipos: os três eixos que definem como uma linguagem se comporta - com exemplos em TypeScript, Python, Go e mais"
+title: "Sistemas de Tipos: os três eixos que definem como uma linguagem se comporta"
+subtitle: "Com exemplos em TypeScript, Python, Go e mais"
 excerpt: Forte ou fraca, estática ou dinâmica, nominal ou estrutural - entenda os três eixos que definem o sistema de tipos de qualquer linguagem de programação.
 date: 2026-05-01
 tags:

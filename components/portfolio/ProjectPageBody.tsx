@@ -8,7 +8,7 @@ interface Props {
 export default function ProjectPageBody({ project }: Props) {
   return (
     <>
-      <section className="block">
+      <section className="block mt-12">
         {/* Project Image Floated Left */}
         <div className="float-left mr-8 mb-6 w-full md:w-1/2 lg:w-1/3">
           <div className="relative overflow-hidden rounded-xl group">
