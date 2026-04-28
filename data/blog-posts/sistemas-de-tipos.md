@@ -18,15 +18,15 @@ Mas o que acontece quando você tenta somar um número com um texto? Ou usar um 
 
 Para entender essas diferenças, precisamos primeiro responder uma pergunta mais fundamental: o que é exatamente um tipo?
 
-## Mas afinal, o que é um tipo?
+# Mas afinal, o que é um tipo?
 
 Um tipo define duas coisas: quais valores são válidos e quais operações podem ser realizadas sobre eles. Quando você cria uma variável do tipo `number`, a linguagem entende que você pode fazer contas com ela. Quando cria uma do tipo `string`, a linguagem sabe que você pode concatenar, dividir em partes, converter para maiúsculas.
 
-### Tipos Primitivos e Tipos Compostos
+## Tipos Primitivos e Tipos Compostos
 
 Existem dois grandes grupos de tipos: os primitivos e os compostos.
 
-#### Tipos Primitivos
+### Tipos Primitivos
 
 Tipos primitivos são os blocos de construção elementares. Toda linguagem tem algo parecido com isto:
 
@@ -53,7 +53,7 @@ var ativo bool = true
 
 São valores simples, indivisíveis. Um número é um número. Uma string é uma sequência de caracteres. Um booleano é verdadeiro ou falso.
 
-#### Tipos compostos
+### Tipos compostos
 
 Tipos compostos são construídos a partir de outros tipos - sejam primitivos ou outros compostos. Eles agrupam dados relacionados em uma estrutura única. Aqui é onde as diferenças entre linguagens começam a aparecer:
 
@@ -94,7 +94,7 @@ A ideia é a mesma em todas: agrupar dados relacionados sob um único tipo. Mas 
 
 Porque assim a linguagem consegue garantir certos comportamentos. Se você tem uma função que espera receber uma `Pessoa`, a linguagem pode verificar que você está passando realmente uma `Pessoa` - não uma string confundida por acaso. E é aqui que as linguagens começam a divergir: cada uma tem regras diferentes sobre o que é ou não permitido. Vamos começar pela diferença mais intuitiva.
 
-## Como diferentes linguagens tratam a tipagem
+# Como diferentes linguagens tratam a tipagem
 
 Agora que sabemos o que é um tipo, podemos explorar como as linguagens diferem na forma de lidar com eles. Essa diferença aparece em situações concretas do dia a dia: o que acontece quando você passa um valor do tipo errado para uma função? Quando a linguagem detecta o problema? Ela avisa ou simplesmente segue em frente? As respostas variam bastante, e entendê-las ajuda a tomar decisões mais conscientes, tanto na escolha de uma linguagem quanto no uso dela. Vamos aos exemplos.
 
@@ -157,7 +157,7 @@ var x int = "cinco" // cannot use "cinco" (type string) as type int
 
 > **Resumindo:** forte/fraco mede a **tolerância da linguagem à ambiguidade de tipos**. Linguagens fracas tentam resolver a situação sozinhas, linguagens fortes exigem que você resolva.
 
-## Type hints e verificação em cada linguagem
+# Type hints e verificação em cada linguagem
 
 Type hints existem em várias linguagens, mas como cada uma as usa na prática? As diferenças são grandes - vão desde linguagens que verificam tudo antes de executar até linguagens que tratam type hints como puros comentários decorativos.
 
@@ -167,7 +167,7 @@ Nas linguagens que verificam tipos em compilação, como TypeScript, Go e Java, 
 
 Nas linguagens que verificam em runtime, como PHP, o erro aparece durante a execução. Se não for tratado pelo código, o servidor retorna uma tela de erro para o usuário. Mas o PHP faz isso de duas formas diferentes, dependendo da configuração do arquivo.
 
-### Type hints em PHP, e modo padrão vs modo estrito
+## Type hints em PHP, e modo padrão vs modo estrito
 
 No modo padrão, o PHP tenta ser prestativo: antes de reclamar de um tipo errado, ele tenta converter o valor para o tipo esperado. Se conseguir, segue em frente silenciosamente. Só lança um erro quando a conversão é realmente impossível:
 
@@ -186,17 +186,17 @@ declare(strict_types=1);
 dobrar("5"); // TypeError - mesmo sendo conversível
 ```
 
-### JavaScript
+## JavaScript
 
 Em JavaScript, o comportamento é o mais permissivo de todos: erros de tipo raramente interrompem o programa. A linguagem tenta resolver a situação por conta própria com coerções, e o que sobra vai para o console do navegador - invisível para o usuário, silencioso para o desenvolvedor desatento.
 
-### Type hints em Python
+## Type hints em Python
 
 Python fica num meio-termo curioso: a linguagem tem tipagem forte - não faz coerções - mas as type hints não causam nenhum erro por si só. Se um valor do tipo errado entrar numa função, Python não vai reclamar das anotações. Vai reclamar somente quando a operação em si falhar, como tentar multiplicar uma string por outra. Nesse caso, lança uma exceção que, se não tratada, retorna um erro 500 para o usuário.
 
 Para verificação antecipada em Python, existem ferramentas externas que leem as type hints e apontam inconsistências antes da execução. As mais usadas são **mypy**, a mais tradicional da comunidade, e **pyright**, criada pela Microsoft. Já o **Pylance** é uma extensão do VS Code que usa o pyright por baixo dos panos para mostrar os erros diretamente no editor enquanto você digita.
 
-### JSDoc em JavaScript
+## JSDoc em JavaScript
 
 JavaScript também tem uma solução para verificação antecipada sem abrir mão de ser JavaScript: o **JSDoc** combinado com a diretiva `// @ts-check`. JSDoc é um padrão de comentários estruturados que permite anotar tipos diretamente em arquivos `.js`:
 
@@ -217,7 +217,7 @@ dobrar("cinco"); // o editor sublinha o erro
 
 A diretiva `// @ts-check` no topo do arquivo instrui o VS Code a verificar o arquivo usando o mesmo mecanismo do TypeScript por baixo dos panos. Você continua escrevendo JavaScript puro, sem mudar a extensão do arquivo, sem compilar nada. Em execução, os comentários são ignorados e nenhuma verificação acontece - só o editor lê e interpreta as anotações.
 
-## Tabela: Tipagem em diferentes linguagens
+# Tabela: Tipagem em diferentes linguagens
 
 Com isso em mente, a tabela abaixo resume como cada linguagem se comporta:
 
@@ -231,7 +231,7 @@ Com isso em mente, a tabela abaixo resume como cada linguagem se comporta:
 | Go                 | Em compilação                 | O compilador `go`                                         | Impossível: o código não compila e nunca chega ao usuário                                         |
 | Java               | Em compilação                 | O compilador `javac`                                      | Impossível: o código não compila e nunca chega ao usuário                                         |
 
-## Os três eixos dos sistemas de tipos
+# Os três eixos dos sistemas de tipos
 
 Forte e fraca, como falamos acima, é apenas uma das formas de classificar o sistema de tipos de uma linguagem. Existem três eixos independentes, e confundir um com o outro é muito comum:
 
@@ -243,11 +243,11 @@ Forte e fraca, como falamos acima, é apenas uma das formas de classificar o sis
 
 Já vimos o primeiro eixo em detalhes. Vamos relembrá-lo e explorar os outros dois.
 
-### Forte vs. Fraca: o quanto a linguagem tolera operações entre tipos incompatíveis?
+## Forte vs. Fraca: o quanto a linguagem tolera operações entre tipos incompatíveis?
 
 Linguagens com tipagem fraca, como JavaScript e PHP, fazem coerções implícitas para tentar fazer a operação funcionar. Linguagens com tipagem forte, como Python, TypeScript e Go, se recusam e exigem que o código seja explícito.
 
-### Estática vs. Dinâmica: quando os tipos são verificados?
+## Estática vs. Dinâmica: quando os tipos são verificados?
 
 Linguagens como Go compilam o código antes de rodar: um programa chamado compilador lê o código inteiro, verifica os tipos e só então gera o executável. Se houver um erro de tipo, o programa nem começa a rodar. Isso é **tipagem estática**.
 
@@ -273,11 +273,11 @@ var x int = 5
 x = "hello" // ❌ cannot use "hello" (type string) as type int
 ```
 
-#### A escolha entre tipagem estática vs. dinâmica
+### A escolha entre tipagem estática vs. dinâmica
 
 A escolha entre estática e dinâmica envolve uma troca. Tipagem estática oferece segurança antecipada: erros são detectados antes de o programa rodar, o que é especialmente valioso em projetos grandes. Tipagem dinâmica oferece flexibilidade e agilidade: o código tende a ser mais enxuto e não exige declarações de tipo em todo lugar, o que pode acelerar o desenvolvimento em projetos menores ou exploratórios. Não há uma escolha universalmente certa - depende do contexto.
 
-### Nominal vs. Estrutural: o que torna dois tipos compatíveis?
+## Nominal vs. Estrutural: o que torna dois tipos compatíveis?
 
 Esse eixo responde a uma pergunta mais sutil: para a linguagem aceitar que um tipo `B` seja usado onde se espera um tipo `A`, o que precisa ser verdade?
 
@@ -328,11 +328,11 @@ Isso tem um nome: **duck typing estático**. A expressão vem de um ditado em in
 
 Python também é estrutural, mas sem checagem antecipada - qualquer objeto que tenha os métodos certos é aceito, e a linguagem só descobre incompatibilidades em execução. Go mistura as duas abordagens: tipos concretos são nominais, mas interfaces são estruturais, o que significa que uma struct satisfaz uma interface automaticamente, sem precisar declará-la explicitamente.
 
-#### A escolha entre tipagem nominal vs. estrutural
+### A escolha entre tipagem nominal vs. estrutural
 
 Tipagem nominal exige mais cerimônia no código - você precisa declarar explicitamente as relações entre tipos - mas em troca oferece contratos mais claros e verificáveis. É mais fácil saber exatamente o que uma função aceita e o que ela rejeita. Tipagem estrutural é mais flexível e menos verbosa, mas exige mais atenção do desenvolvedor: dois tipos podem ser compatíveis por acidente, simplesmente por terem os mesmos métodos, mesmo que representem conceitos completamente diferentes.
 
-## Onde cada linguagem se encaixa
+# Onde cada linguagem se encaixa
 
 Com os três eixos em mente, fica mais fácil comparar as linguagens de forma objetiva. A tabela abaixo mostra como cada uma se posiciona nesses eixos de tipagem:
 
@@ -349,7 +349,7 @@ Com os três eixos em mente, fica mais fácil comparar as linguagens de forma ob
 
 Nenhuma combinação é universalmente melhor. Cada uma reflete escolhas de design que priorizam coisas diferentes: segurança, flexibilidade, produtividade ou clareza de contrato.
 
-#### Do sistema de tipos mais rígido para o mais permissivo
+### Do sistema de tipos mais rígido para o mais permissivo
 
 Considerando os três eixos juntos - onde forte é mais rígido que fraco, estática mais rígida que dinâmica, e nominal mais rígida que estrutural - é possível ordenar as linguagens do sistema de tipos mais restritivo para o mais permissivo:
 
@@ -362,6 +362,6 @@ Considerando os três eixos juntos - onde forte é mais rígido que fraco, está
 
 Vale lembrar que essa ordenação é uma simplificação. Na prática, a rigidez de um sistema de tipos depende também de como o desenvolvedor usa a linguagem - PHP com `strict_types` e mypy no Python, por exemplo, podem se comportar de forma bem mais rígida do que a posição deles na lista sugere.
 
-## Conclusão
+# Conclusão
 
 Tipos são um daqueles assuntos que parecem simples até você começar a comparar como linguagens diferentes os tratam. Um mesmo erro pode travar o programa antes de rodar, explodir em produção, ou passar completamente despercebido, dependendo das escolhas que a linguagem faz. Conhecer essas diferenças muda a forma como você lê erros, escolhe ferramentas e escreve código.

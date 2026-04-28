@@ -28,7 +28,7 @@ type Props = {
 
 export default function BlogPost({ post }: Props) {
   return (
-    <>
+    <div className="max-w-prose mx-auto mt-20">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
@@ -70,13 +70,15 @@ export default function BlogPost({ post }: Props) {
             );
           },
           h1: ({ children }) => (
-            <h1 className="text-3xl font-bold mt-6 mb-4">{children}</h1>
+            <h1 className="text-3xl font-bold mt-12 mb-4 border-b pb-1">
+              {children}
+            </h1>
           ),
           h2: ({ children }) => (
-            <h2 className="text-xl font-bold mt-6 mb-4">{children}</h2>
+            <h2 className="text-2xl font-bold mt-6 mb-4">{children}</h2>
           ),
           h3: ({ children }) => (
-            <h3 className="text-lg font-bold">{children}</h3>
+            <h3 className="text-xl font-bold mt-6 mb-4">{children}</h3>
           ),
           p: ({ children }) => <p className="mb-3">{children}</p>,
           hr: ({ children }) => <hr className="my-3">{children}</hr>,
@@ -132,6 +134,6 @@ export default function BlogPost({ post }: Props) {
       </ReactMarkdown>
 
       <SeparatorDots />
-    </>
+    </div>
   );
 }
