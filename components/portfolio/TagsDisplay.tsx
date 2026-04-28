@@ -3,9 +3,10 @@ import clsx from "clsx";
 type Props = {
   tags: string[];
   className?: string;
+  tagClassName?: string;
 };
 
-export default function TagsDisplay({ tags, className }: Props) {
+export default function TagsDisplay({ tags, className, tagClassName }: Props) {
   return (
     <div
       className={clsx(
@@ -15,7 +16,10 @@ export default function TagsDisplay({ tags, className }: Props) {
     >
       {tags.map((tag) => {
         return (
-          <div key={tag} className="p-1 bg-base-300 rounded-selector">
+          <div
+            key={tag}
+            className={clsx("p-1 bg-base-300 rounded-selector", tagClassName)}
+          >
             {tag}
           </div>
         );

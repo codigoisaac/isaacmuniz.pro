@@ -24,10 +24,6 @@ export default function BlogPostCard({ post }: Props) {
         >
           {formatBlogDate(post.date)}
         </Text>
-
-        <span>
-          {post.tags.length > 0 && <TagsDisplay tags={post.tags.slice(0, 2)} />}
-        </span>
       </div>
 
       {/* Title */}
@@ -49,6 +45,15 @@ export default function BlogPostCard({ post }: Props) {
       >
         {post.excerpt}
       </Text>
+
+      {post.tags.length > 0 && (
+        <span className="mt-3">
+          <TagsDisplay
+            tags={post.tags}
+            tagClassName="bg-transparent border border-base-300"
+          />
+        </span>
+      )}
     </Link>
   );
 }
