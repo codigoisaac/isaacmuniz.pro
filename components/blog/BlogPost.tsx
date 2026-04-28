@@ -9,12 +9,18 @@ import markup from "react-syntax-highlighter/dist/esm/languages/prism/markup";
 import php from "react-syntax-highlighter/dist/esm/languages/prism/php";
 import remarkGfm from "remark-gfm";
 import tsx from "react-syntax-highlighter/dist/esm/languages/prism/tsx";
+import go from "react-syntax-highlighter/dist/esm/languages/prism/go";
+import python from "react-syntax-highlighter/dist/esm/languages/prism/python";
+import java from "react-syntax-highlighter/dist/esm/languages/prism/java";
 
 // Register only used languages, to reduce bundle size
 SyntaxHighlighter.registerLanguage("tsx", tsx);
 SyntaxHighlighter.registerLanguage("jsx", jsx);
 SyntaxHighlighter.registerLanguage("html", markup);
 SyntaxHighlighter.registerLanguage("php", php);
+SyntaxHighlighter.registerLanguage("go", go);
+SyntaxHighlighter.registerLanguage("python", python);
+SyntaxHighlighter.registerLanguage("java", java);
 
 type Props = {
   post: BlogPostInterface;
