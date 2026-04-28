@@ -76,14 +76,15 @@ export default function Footer() {
               <span className="text-[10px] font-geist-mono uppercase tracking-widest text-base-content/30 mb-0.5">
                 Redes e Contato
               </span>
-              {socials.map(({ href, label }) => (
+              {socials.map(({ href, label, Icon }) => (
                 <a
                   key={label}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs font-geist-mono text-base-content/55 hover:text-primary transition-colors duration-200"
+                  className="flex items-center gap-2 text-xs font-geist-mono text-base-content/55 hover:text-primary transition-colors duration-200"
                 >
+                  <Icon size={18} />
                   {label}
                 </a>
               ))}
