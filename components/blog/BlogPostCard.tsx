@@ -35,6 +35,10 @@ export default function BlogPostCard({ post }: Props) {
         <span className="font-saira text-2xl font-medium text-pretty text-base-content inline animated-underline group-animated-underline">
           {post.title}
         </span>
+
+        {post.subtitle && (
+          <div className="font-saira text-base mt-2">{post.subtitle}</div>
+        )}
       </div>
 
       {/* Excerpt */}
