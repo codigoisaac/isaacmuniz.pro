@@ -3,6 +3,7 @@ import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import SeparatorDots from "../SeparatorDots";
 import GoBackButton from "../GoBackButton";
+import CopyButton from "./CopyButton";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import { xonokai as codeTheme } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import jsx from "react-syntax-highlighter/dist/esm/languages/prism/jsx";
@@ -35,16 +36,20 @@ export default function BlogPost({ post }: Props) {
         components={{
           code: ({ className, children, ...props }) => {
             const codeLanguage = /language-(\w+)/.exec(className || "");
+            const code = String(children).replace(/\n$/, "");
 
             return codeLanguage ? (
-              <SyntaxHighlighter
-                style={codeTheme}
-                language={codeLanguage[1]}
-                PreTag="div"
-                className="my-5"
-              >
-                {String(children).replace(/\n$/, "")}
-              </SyntaxHighlighter>
+              <div className="relative my-5 group/code">
+                <CopyButton code={code} />
+
+                <SyntaxHighlighter
+                  style={codeTheme}
+                  language={codeLanguage[1]}
+                  PreTag="div"
+                >
+                  {code}
+                </SyntaxHighlighter>
+              </div>
             ) : (
               <code
                 {...props}
