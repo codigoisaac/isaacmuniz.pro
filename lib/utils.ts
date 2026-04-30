@@ -9,6 +9,12 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+/** Estima o tempo de leitura em minutos (200 wpm). Retorna no mínimo 1 min. */
+export function getReadingTime(content: string): number {
+  const words = content.trim().split(/\s+/).length;
+  return Math.max(1, Math.round(words / 200));
+}
+
 /**
  * Formata uma data ISO 8601 para o formato de exibição do blog: "YYYY - Mês - DD".
  * Ex: "2023-09-01" → "2023 - Setembro - 01"

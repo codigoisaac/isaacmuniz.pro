@@ -2,7 +2,7 @@ import Link from "next/link";
 import { BlogPost } from "@/interfaces/blog-post";
 import Text from "@/components/Text";
 import TagsDisplay from "@/components/portfolio/TagsDisplay";
-import { formatBlogDate } from "@/lib/utils";
+import { formatBlogDate, getReadingTime } from "@/lib/utils";
 
 interface Props {
   post: BlogPost;
@@ -23,6 +23,17 @@ export default function BlogPostCard({ post }: Props) {
           className="normal-case tracking-wider text-xs"
         >
           {formatBlogDate(post.date)}
+        </Text>
+
+        <span className="text-neutral-content mx-2 text-[7px]">▪</span>
+
+        <Text
+          as="span"
+          variant="caps"
+          intent="muted"
+          className="normal-case tracking-wider text-xs"
+        >
+          {getReadingTime(post.content)} min de leitura
         </Text>
       </div>
 
