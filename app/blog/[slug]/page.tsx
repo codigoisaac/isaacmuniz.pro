@@ -1,5 +1,6 @@
 import BlogPost from "@/components/blog/BlogPost";
 import BlogPostHeader from "@/components/blog/BlogPostHeader";
+import ReadingProgressBar from "@/components/blog/ReadingProgressBar";
 import ScrollToTop from "@/components/layout/ScrollToTop";
 import BlogPostSchema from "@/components/seo/BlogPostSchema";
 import { buildBlogPostMetadata } from "@/data/seo/blog-post.metadata";
@@ -36,6 +37,8 @@ export default async function BlogPostPage(props: PageProps) {
 
   return (
     <>
+      <ReadingProgressBar />
+
       <BlogPostHeader post={post} />
 
       <BlogPost post={post} />
