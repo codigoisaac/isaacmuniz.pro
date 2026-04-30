@@ -4,6 +4,9 @@ import ReactMarkdown from "react-markdown";
 import SeparatorDots from "../SeparatorDots";
 import GoBackButton from "../GoBackButton";
 import CopyButton from "./CopyButton";
+import { HashIcon } from "@phosphor-icons/react/dist/ssr";
+import { slugifyHeading } from "@/lib/utils";
+import type { ReactNode } from "react";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import { xonokai as codeTheme } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import jsx from "react-syntax-highlighter/dist/esm/languages/prism/jsx";
@@ -23,6 +26,36 @@ SyntaxHighlighter.registerLanguage("php", php);
 SyntaxHighlighter.registerLanguage("go", go);
 SyntaxHighlighter.registerLanguage("python", python);
 SyntaxHighlighter.registerLanguage("java", java);
+
+function childrenToText(children: ReactNode): string {
+  if (typeof children === "string") return children;
+  if (Array.isArray(children)) return children.map(childrenToText).join("");
+  if (children !== null && typeof children === "object" && "props" in children)
+    return childrenToText(
+      (children.props as { children?: ReactNode }).children,
+    );
+  return "";
+}
+
+const headingStyles = {
+  h1: { tag: "h1" as const, className: "text-3xl font-bold mt-12 mb-4 border-b pb-1", iconSize: 18 },
+  h2: { tag: "h2" as const, className: "text-2xl font-bold mt-6 mb-4", iconSize: 16 },
+  h3: { tag: "h3" as const, className: "text-xl font-bold mt-6 mb-4", iconSize: 14 },
+};
+
+function AnchoredHeading({ level, children }: { level: keyof typeof headingStyles; children: ReactNode }) {
+  const { tag: Tag, className, iconSize } = headingStyles[level];
+  const id = slugifyHeading(childrenToText(children));
+
+  return (
+    <Tag id={id} className={`group/heading flex items-center gap-4 ${className}`}>
+      {children}
+      <a href={`#${id}`} className="opacity-0 group-hover/heading:opacity-100 transition-opacity text-neutral-content">
+        <HashIcon size={iconSize} />
+      </a>
+    </Tag>
+  );
+}
 
 type Props = {
   post: BlogPostInterface;
@@ -75,17 +108,9 @@ export default function BlogPost({ post }: Props) {
               </span>
             );
           },
-          h1: ({ children }) => (
-            <h1 className="text-3xl font-bold mt-12 mb-4 border-b pb-1">
-              {children}
-            </h1>
-          ),
-          h2: ({ children }) => (
-            <h2 className="text-2xl font-bold mt-6 mb-4">{children}</h2>
-          ),
-          h3: ({ children }) => (
-            <h3 className="text-xl font-bold mt-6 mb-4">{children}</h3>
-          ),
+          h1: ({ children }) => <AnchoredHeading level="h1">{children}</AnchoredHeading>,
+          h2: ({ children }) => <AnchoredHeading level="h2">{children}</AnchoredHeading>,
+          h3: ({ children }) => <AnchoredHeading level="h3">{children}</AnchoredHeading>,
           p: ({ children }) => <p className="mb-3">{children}</p>,
           hr: ({ children }) => <hr className="my-3">{children}</hr>,
           ul: ({ children }) => (

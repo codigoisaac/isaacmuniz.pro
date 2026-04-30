@@ -9,6 +9,16 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+export function slugifyHeading(text: string): string {
+  return text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/[^\w\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .trim();
+}
+
 /** Estima o tempo de leitura em minutos (200 wpm). Retorna no mínimo 1 min. */
 export function getReadingTime(content: string): number {
   const words = content.trim().split(/\s+/).length;
