@@ -3,6 +3,12 @@ import { TechID, TechItem } from "@/interfaces/portfolio";
 import babel from "@/assets/images/techStack/babel.png";
 // Tech icons
 import bootstrap from "@/assets/images/techStack/bootstrap.webp";
+import django from "@/assets/images/techStack/django.svg";
+import php from "@/assets/images/techStack/php.svg";
+import expo from "@/assets/images/techStack/expo.svg";
+import golang from "@/assets/images/techStack/golang.svg";
+import python from "@/assets/images/techStack/python.svg";
+import reactnative from "@/assets/images/techStack/reactnative.svg";
 import bun from "@/assets/images/techStack/bun.png";
 import css from "@/assets/images/techStack/css.webp";
 import daisyui from "@/assets/images/techStack/daisyui.png";
@@ -73,6 +79,12 @@ const techStack: Record<TechID, TechItem> = {
   openapi: { name: "OpenAPI", image: openapi },
   swagger: { name: "Swagger", image: swagger },
   resend: { name: "Resend", image: resend },
+  python: { name: "Python", image: python },
+  django: { name: "Django", image: django },
+  golang: { name: "Go", image: golang },
+  reactnative: { name: "React Native", image: reactnative },
+  expo: { name: "Expo", image: expo },
+  php: { name: "PHP", image: php },
 };
 
 export default techStack;

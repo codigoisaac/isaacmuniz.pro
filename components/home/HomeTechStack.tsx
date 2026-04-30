@@ -8,41 +8,59 @@ import techStack from "@/data/techStack";
 import { TechID } from "@/interfaces/portfolio";
 import HeadingLabel from "./HeadingLabel";
 
-const CORE_TECHS: TechID[] = ["nextjs", "ts", "react", "tailwindcss", "node"];
+const CORE_TECHS: TechID[] = [
+  "ts",
+  "nextjs",
+  "nest",
+  "reactnative",
+  "python",
+  "django",
+  "golang",
+];
 
 const OTHER_TECHS: TechID[] = [
-  // 2 projects each
+  // Linguagens
   "js",
-  "redux",
-  "reacthookform",
-  "resend",
+  "php",
+  "html",
   "css",
-  // 1 project each
-  "docker",
+  // Mobile
+  "expo",
+  "flutter",
+  // Backend
+  "node",
   "express",
+  "graphql",
+  "docker",
+  // Bancos de dados
+  "postgresql",
   "mysql",
   "sequelize",
-  "postgresql",
-  "nest",
-  "graphql",
-  "flutter",
+  // Estado e validação
+  "redux",
   "zustand",
   "zod",
+  "reacthookform",
+  // APIs e integrações
+  "openapi",
+  "swagger",
+  "resend",
+  "pagarme",
+  "vindi",
+  // UI e animação
+  "react",
+  "tailwindcss",
   "bootstrap",
   "daisyui",
   "motion",
   "gsap",
-  "markdown",
-  "notion",
-  "vscode",
-  "babel",
+  // Ferramentas
   "bun",
   "npmpackages",
-  "openapi",
-  "swagger",
-  "pagarme",
-  "vindi",
-  "html",
+  "babel",
+  "vscode",
+  "notion",
+  "markdown",
 ];
 
 export default function HomeTechStack() {
@@ -132,7 +150,7 @@ export default function HomeTechStack() {
         </Text>
       </motion.div>
 
-      <div className="grid grid-cols-5 sm:grid-cols-6 lg:grid-cols-10 justify-items-center gap-3 lg:px-16 xl:px-32">
+      <div className="flex flex-wrap justify-center gap-x-5 gap-y-4 lg:px-16 xl:px-32">
         {OTHER_TECHS.map((id, i) => {
           const tech = techStack[id];
           return (

@@ -35,7 +35,13 @@ export type TechID =
   | "vindi"
   | "openapi"
   | "swagger"
-  | "resend";
+  | "resend"
+  | "python"
+  | "django"
+  | "golang"
+  | "reactnative"
+  | "expo"
+  | "php";
 
 type Tag =
   | "Aplicativo Web"
