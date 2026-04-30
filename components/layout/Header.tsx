@@ -6,6 +6,8 @@ import dynamic from "next/dynamic";
 import headerNavLinks from "@/data/headerNavLinks";
 import siteMetadata from "@/data/siteMetadata";
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 const ScrambledText = dynamic(() => import("@/components/ScrambledText"), {
   ssr: false,
@@ -26,6 +28,7 @@ const ThemeSwitcher = dynamic(
 );
 
 export default function AppHeader() {
+  const pathname = usePathname();
   const [visible, setVisible] = useState(true);
   const lastScrollY = useRef(0);
   const isAtTop = useRef(true);
@@ -109,15 +112,21 @@ export default function AppHeader() {
           <div className="no-scrollbar hidden max-w-40 items-center gap-x-4 overflow-x-auto md:flex md:max-w-72 lg:max-w-96">
             {headerNavLinks
               .filter((link) => link.href !== "/")
-              .map((link) => (
-                <Link
-                  key={link.title}
-                  href={link.href}
-                  className="m-1 font-medium animated-underline"
-                >
-                  {link.title}
-                </Link>
-              ))}
+              .map((link) => {
+                const isActive = pathname.startsWith(link.href);
+                return (
+                  <Link
+                    key={link.title}
+                    href={link.href}
+                    className={cn(
+                      "m-1 font-medium animated-underline",
+                      isActive && "text-primary",
+                    )}
+                  >
+                    {link.title}
+                  </Link>
+                );
+              })}
           </div>
 
           {/* Others */}

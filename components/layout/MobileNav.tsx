@@ -14,8 +14,11 @@ import {
 import { Fragment, useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import headerNavLinks from "@/data/headerNavLinks";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 export default function MobileNav() {
+  const pathname = usePathname();
   const [navShow, setNavShow] = useState(false);
   const navRef = useRef<HTMLElement>(null);
 
@@ -74,16 +77,22 @@ export default function MobileNav() {
                 ref={navRef}
                 className="mt-8 flex h-full basis-0 flex-col items-start overflow-y-auto pt-2 pl-12 text-left"
               >
-                {headerNavLinks.map((link) => (
-                  <Link
-                    key={link.title}
-                    href={link.href}
-                    className="hover:text-primary mb-4 py-2 pr-4 text-2xl font-bold tracking-widest outline-0 hover:underline text-base-content"
-                    onClick={onToggleNav}
-                  >
-                    {link.title}
-                  </Link>
-                ))}
+                {headerNavLinks.map((link) => {
+                  const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
+                  return (
+                    <Link
+                      key={link.title}
+                      href={link.href}
+                      className={cn(
+                        "mb-4 py-2 pr-4 text-2xl font-bold tracking-widest outline-0 hover:underline",
+                        isActive ? "text-primary" : "text-base-content hover:text-primary",
+                      )}
+                      onClick={onToggleNav}
+                    >
+                      {link.title}
+                    </Link>
+                  );
+                })}
               </nav>
 
               {/* Close Button */}
