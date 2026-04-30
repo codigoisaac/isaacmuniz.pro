@@ -84,7 +84,7 @@ export default function ContactForm() {
             intent="muted"
             className="font-transducer leading-relaxed text-sm"
           >
-            Obrigado pelo contato — sua mensagem chegou certinho pra mim. Vou
+            Obrigado pelo contato. Sua mensagem chegou certinho pra mim. Vou
             ler com atenção e te respondo assim que possível.
           </Text>
 
@@ -106,7 +106,7 @@ export default function ContactForm() {
               intent="muted"
               className="font-transducer leading-relaxed text-sm"
             >
-              Fique de olho no seu e-mail — é por lá que vou te responder.
+              Fique de olho no seu e-mail: é por lá que vou te responder.
             </Text>
           )}
         </div>

@@ -38,7 +38,7 @@ export async function sendContactEmail(
     from: "Site <website@isaacmuniz.pro>",
     to: siteMetadata.socials.emailAddress,
     replyTo: email,
-    subject: `Contato através do Site — ${name}`,
+    subject: `Contato através do Site: ${name}`,
     html: `
       <p><strong>Nome:</strong> ${name}</p>
       <p><strong>E-mail:</strong> <a href="mailto:${email}">${email}</a></p>

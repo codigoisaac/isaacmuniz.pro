@@ -159,7 +159,7 @@ export default function HomeAbout() {
             <Highlight delay={0.25}>processo claro desde o início</Highlight>:
             escopo bem definido,{" "}
             <Highlight delay={0.3}>etapas organizadas</Highlight>, comunicação
-            sem ruído — com o compromisso de ser o{" "}
+            sem ruído, com o compromisso de ser o{" "}
             <Highlight delay={0.35}>
               profissional mais fácil de trabalhar
             </Highlight>{" "}

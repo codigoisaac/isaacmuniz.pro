@@ -11,7 +11,7 @@ import {
 const path = "/portfolio";
 const title = "Portfolio";
 const description =
-  "Portfolio de Isaac Muniz — projetos de desenvolvimento web, mobile e sistemas construídos com React, Next.js, Node.js e TypeScript.";
+  "Portfolio de Isaac Muniz: projetos de desenvolvimento web, mobile e sistemas construídos com React, Next.js, Node.js e TypeScript.";
 
 const ogTitle = buildOgTitle(title);
 const ogImageUrl = buildOgImageUrl({ page: "portfolio" });
@@ -19,7 +19,7 @@ const ogImage = {
   url: ogImageUrl,
   width: 1200,
   height: 630,
-  alt: "Portfólio — Isaac Muniz",
+  alt: "Portfólio | Isaac Muniz",
 };
 
 export const portfolioMetadata: Metadata = {

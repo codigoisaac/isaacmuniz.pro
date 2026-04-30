@@ -18,7 +18,7 @@ const ogImage = {
   url: ogImageUrl,
   width: 1200,
   height: 630,
-  alt: "Blog — Isaac Muniz",
+  alt: "Blog | Isaac Muniz",
 };
 
 export const blogMetadata: Metadata = {

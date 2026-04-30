@@ -39,7 +39,7 @@ export default function PersonSchema() {
         url: siteMetadata.siteUrl,
         name: siteMetadata.authorName,
         description:
-          "Portfólio e blog de Isaac Muniz — desenvolvedor fullstack brasileiro.",
+          "Portfólio e blog de Isaac Muniz, desenvolvedor fullstack brasileiro.",
         publisher: {
           "@id": `${siteMetadata.siteUrl}/#person`,
         },

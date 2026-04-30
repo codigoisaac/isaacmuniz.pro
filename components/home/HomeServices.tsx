@@ -69,8 +69,8 @@ export default function HomeServices() {
           O que eu entrego
         </h2>
         <p className="font-transducer text-[0.95rem] text-neutral-content mt-3 leading-relaxed max-w-xl">
-          Do primeiro rascunho ao produto em produção — com processo claro,
-          comunicação direta e entrega que você se orgulha de mostrar.
+          Do rascunho ao produto no ar. Com processo claro, comunicação direta
+          e código fácil de escalar.
         </p>
       </motion.div>
 

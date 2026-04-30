@@ -66,9 +66,9 @@ export const portfolioAuthorial: Project[] = [
     link: "https://itver.vercel.app/",
     description: [
       "A ITVER é uma empresa brasileira com três décadas de atuação no desenvolvimento de soluções de alta performance para manutenção mecânica industrial, atendendo gigantes como Klabin, Suzano, Bracell e Stora Enso. O desafio era claro: substituir um site desatualizado por uma presença digital que estivesse à altura da seriedade técnica da marca.",
-      "O site foi desenvolvido com Next.js 16, React 19 e TailwindCSS 4, priorizando performance, SEO e responsividade total. A arquitetura foi pensada para longevidade — com foco em velocidade de carregamento, especialmente em dispositivos móveis.",
+      "O site foi desenvolvido com Next.js 16, React 19 e TailwindCSS 4, priorizando performance, SEO e responsividade total. A arquitetura foi pensada para longevidade, com foco em velocidade de carregamento, especialmente em dispositivos móveis.",
       "O ponto central do projeto é a seção de produtos: um catálogo técnico com múltiplos produtos distribuídos por categorias, com um sistema de filtragem e modais detalhados para cada item. A navegação foi estruturada em página única para evitar carregamentos desnecessários e maximizar a retenção do usuário, o que é crítico para um público B2B altamente técnico.",
-      "Todo o conteúdo descritivo dos produtos é renderizado via Markdown com react-markdown, permitindo formatação rica — listas, destaques e fórmulas químicas — sem abrir mão da clareza visual. A integração com WhatsApp foi implementada diretamente nos cards e modais dos produtos, reduzindo o atrito entre o interesse do cliente e o contato comercial. O formulário de contato utiliza Resend para envio de e-mails direto do site.",
+      "Todo o conteúdo descritivo dos produtos é renderizado via Markdown com react-markdown, permitindo formatação rica: listas, destaques e fórmulas químicas, sem abrir mão da clareza visual. A integração com WhatsApp foi implementada diretamente nos cards e modais dos produtos, reduzindo o atrito entre o interesse do cliente e o contato comercial. O formulário de contato utiliza Resend para envio de e-mails direto do site.",
       "A identidade visual do site foi construída com foco no equilíbrio entre autoridade industrial e modernidade: tipografia sólida, sistema de dark mode via next-themes, micro-interações sutis e uma paleta que transmite confiabilidade técnica.",
     ],
     subjects: [
@@ -365,7 +365,7 @@ export const portfolioOthers: Project[] = [
     link: "https://codigoisaac.github.io/Abyss/",
     repoLink: "https://github.com/codigoisaac/abyss",
     description: [
-      "O Abyss é uma aplicação de desenho criativo que roda inteiramente no navegador, construída com HTML Canvas, JavaScript e CSS puro — sem frameworks ou dependências externas.",
+      "O Abyss é uma aplicação de desenho criativo que roda inteiramente no navegador, construída com HTML Canvas, JavaScript e CSS puro, sem frameworks ou dependências externas.",
       "O projeto oferece um conjunto rico de controles para a experiência de desenho: transições automáticas de cor pelo espectro HSL ou ajuste manual de matiz, saturação e luminosidade; largura de linha dinâmica ou fixa; modo de pontos conectados para traçados retos entre cliques; e um efeito de sombra com blend mode multiply para criar profundidade nas sobreposições.",
       "A interface de controles pode ser ocultada com a barra de espaço, permitindo uma experiência de desenho sem distrações com tela cheia.",
       "Um detalhe que me deixa feliz: apresentei o app pro meu filho, e de vez em quando ele pede para abrí-lo para desenhar. Ver uma criança se divertir com algo que você construiu do zero é uma das melhores recompensas que um projeto pode dar.",
