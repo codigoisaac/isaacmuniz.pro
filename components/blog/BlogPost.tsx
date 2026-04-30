@@ -2,6 +2,7 @@ import { BlogPost as BlogPostInterface } from "@/interfaces/blog-post";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import SeparatorDots from "../SeparatorDots";
+import GoBackButton from "../GoBackButton";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import { xonokai as codeTheme } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import jsx from "react-syntax-highlighter/dist/esm/languages/prism/jsx";
@@ -134,6 +135,10 @@ export default function BlogPost({ post }: Props) {
       </ReactMarkdown>
 
       <SeparatorDots />
+
+      <div className="flex justify-center mt-6">
+        <GoBackButton destination="/blog" label="Voltar ao Blog" />
+      </div>
     </div>
   );
 }
