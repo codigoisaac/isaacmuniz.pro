@@ -131,7 +131,7 @@ export default function BlogPost({ post }: Props) {
             <summary className="font-bold">{children}</summary>
           ),
           a: ({ children, href }) => (
-            <a href={href} target="_blank">
+            <a href={href} target="_blank" rel="noopener noreferrer">
               {children}
             </a>
           ),
