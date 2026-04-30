@@ -16,6 +16,8 @@ import Link from "next/link";
 import headerNavLinks from "@/data/headerNavLinks";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import SocialButtons from "@/components/SocialButtons";
+import Logo from "@/components/layout/Logo";
 
 export default function MobileNav() {
   const pathname = usePathname();
@@ -75,24 +77,34 @@ export default function MobileNav() {
             <DialogPanel className="font-transducer fixed top-0 left-0 z-70 h-full w-full duration-300 bg-base-100">
               <nav
                 ref={navRef}
-                className="mt-8 flex h-full basis-0 flex-col items-start overflow-y-auto pt-2 pl-12 text-left"
+                className="flex h-full flex-col items-center justify-center overflow-y-auto text-center"
               >
-                {headerNavLinks.map((link) => {
-                  const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
-                  return (
-                    <Link
-                      key={link.title}
-                      href={link.href}
-                      className={cn(
-                        "mb-4 py-2 pr-4 text-2xl font-bold tracking-widest outline-0 hover:underline",
-                        isActive ? "text-primary" : "text-base-content hover:text-primary",
-                      )}
-                      onClick={onToggleNav}
-                    >
-                      {link.title}
-                    </Link>
-                  );
-                })}
+                <Link href="/" onClick={onToggleNav}>
+                  <Logo className="text-primary mb-10 w-12 h-auto" />
+                </Link>
+                <div className="flex flex-col items-center">
+                  {headerNavLinks.map((link) => {
+                    const isActive =
+                      pathname === link.href ||
+                      (link.href !== "/" && pathname.startsWith(link.href));
+                    return (
+                      <Link
+                        key={link.title}
+                        href={link.href}
+                        className={cn(
+                          "mb-4 py-2 text-2xl font-bold tracking-widest outline-0 hover:underline",
+                          isActive
+                            ? "text-primary"
+                            : "text-base-content hover:text-primary",
+                        )}
+                        onClick={onToggleNav}
+                      >
+                        {link.title}
+                      </Link>
+                    );
+                  })}
+                  <SocialButtons className="mt-6" />
+                </div>
               </nav>
 
               {/* Close Button */}
