@@ -5,8 +5,6 @@ import {
   BrowserIcon,
   DeviceMobileCameraIcon,
   StackIcon,
-  RobotIcon,
-  MagnifyingGlassIcon,
   PencilRulerIcon,
 } from "@phosphor-icons/react/dist/ssr";
 import type { Icon } from "@phosphor-icons/react";
@@ -24,49 +22,33 @@ const SERVICES: Service[] = [
   {
     id: "websites",
     icon: BrowserIcon,
-    title: "Websites",
+    title: "Websites & Landing-pages (com SEO)",
     description:
-      "Sites modernos, rápidos e que vendem. Cada detalhe pensado para transmitir credibilidade, guiar o visitante e converter — respeitando a identidade da sua marca e provendo uma ótima experiência para seu público.",
-    tags: ["Sites institucionais", "Landing pages", "Lojas virtuais"],
+      "Sites modernos, rápidos e que vendem. Cada detalhe pensado para transmitir credibilidade, guiar o visitante e converter, com SEO técnico e otimização para os primeiros resultados do Google.",
+    tags: ["Sites institucionais", "Landing pages", "SEO", "Core Web Vitals"],
   },
   {
     id: "apps",
     icon: DeviceMobileCameraIcon,
-    title: "Aplicativos",
+    title: "Aplicativos Mobile (Android e iOS)",
     description:
-      "Apps para Android, iOS e Web com experiência nativa e fluida. Do design ao MVP e ao produto maduro — com foco em usabilidade e performance que faz o usuário voltar.",
-    tags: ["Android", "iOS", "Web", "Desktop"],
+      "Apps para Android e iOS com experiência nativa e fluida. Do design ao MVP e ao produto maduro, com foco em usabilidade e performance que faz o usuário voltar.",
+    tags: ["Android", "iOS"],
   },
   {
     id: "platforms",
     icon: StackIcon,
-    title: "Plataformas e Sistemas",
+    title: "Plataformas, Portais, Ecommerces e Sistemas",
     description:
       "Soluções sob medida para operações internas, gestão e processos que precisam escalar. Dashboards, painéis e sistemas que substituem planilhas e eliminam retrabalho e decisões mal tomadas.",
-    tags: ["Dashboards", "Admin panels", "ERPs", "CRMs"],
-  },
-  {
-    id: "automations",
-    icon: RobotIcon,
-    title: "Automações e Integrações",
-    description:
-      "Conecte ferramentas, elimine trabalho manual e deixe a máquina trabalhar por você. Fluxos automatizados e integrações entre sistemas que economizam horas toda semana.",
-    tags: ["n8n", "APIs", "Webhooks"],
-  },
-  {
-    id: "seo",
-    icon: MagnifyingGlassIcon,
-    title: "SEO",
-    description:
-      "Otimização técnica e estratégica para o seu site aparecer onde importa — nas primeiras posições do Google. Mais visibilidade orgânica, mais visitantes qualificados, sem depender só de anúncios.",
-    tags: ["SEO técnico", "On-page", "Core Web Vitals"],
+    tags: ["Dashboards", "Admin panels", "ERPs", "CRMs", "Ecommerces"],
   },
   {
     id: "design",
     icon: PencilRulerIcon,
     title: "Projeto & Design",
     description:
-      "Antes de escrever uma linha de código, tudo fica claro no papel. Briefing detalhado, levantamento de requisitos, documentação de especificação, wireframes e UI no Figma — para que o que for desenvolvido seja exatamente o que você tinha em mente.",
+      "Antes de escrever uma linha de código, tudo fica claro no papel. Briefing detalhado, levantamento de requisitos, documentação de especificação, wireframes e UI no Figma, para que o que for desenvolvido seja exatamente o que você tinha em mente.",
     tags: ["Briefing", "Especificação", "Wireframe", "UI Design"],
   },
 ];

@@ -53,11 +53,15 @@ export default function HomePage() {
 
       <HomeBelief />
 
-      <HomeAbout />
-
       <HomeServices />
 
       <HomeStats />
+
+      <HomeAbout />
+
+      <SeparatorDots />
+
+      <HomeTechStack />
 
       <SeparatorDots />
 
@@ -69,13 +73,10 @@ export default function HomePage() {
 
       <SeparatorDots />
 
-      <HomeTechStack />
-
-      <SeparatorDots />
-
       <HomeContact />
 
       <PersonSchema />
+
       <ProfessionalServiceSchema />
 
       <ScrollToTop />

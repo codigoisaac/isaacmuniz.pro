@@ -147,7 +147,7 @@ export default function HomeAbout() {
           </AnimatedParagraph>
           <AnimatedParagraph delay={0.1}>
             Minha obsessão é{" "}
-            <Highlight delay={0.2}>qualidade — em dois sentidos</Highlight>.{" "}
+            <Highlight delay={0.2}>qualidade, em dois sentidos</Highlight>.{" "}
             <span className="underline">No processo</span>: sem enrolação, sem
             sumir, sem ficar pedindo mil informações que poderiam ter sido
             resolvidas com um bom briefing lá no começo.{" "}
@@ -170,7 +170,7 @@ export default function HomeAbout() {
             <Highlight delay={0.3}>
               não precisa ser cobrado pra entregar
             </Highlight>{" "}
-            — e que torna o processo leve no caminho — fico à disposição.
+            e que torna o processo leve no caminho, estou à disposição.
           </AnimatedParagraph>
         </div>
 
@@ -179,13 +179,14 @@ export default function HomeAbout() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.45, duration: 0.4 }}
-          className="mt-8 clear-both"
+          className="mt-16 clear-both flex justify-center"
         >
           <Button
             text="Entre em contato →"
             link="#contato"
             internal
             variant="outline"
+            size="lg"
           />
         </motion.div>
       </div>

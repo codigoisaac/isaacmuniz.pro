@@ -102,7 +102,7 @@ export default function HomeStats() {
               />
             </div>
 
-            <div className="font-geist-mono text-[11px] uppercase tracking-widest text-neutral-content mt-1">
+            <div className="font-geist-mono text-sm uppercase tracking-widest text-base-content font-medium mt-1">
               {stat.label}
             </div>
 
