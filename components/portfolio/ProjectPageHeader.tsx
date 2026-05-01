@@ -16,12 +16,14 @@ export default function ProjectPageHeader({ project }: Props) {
       <ItemHeadlines item={project} shouldShowExcerpt={false} />
 
       {/* Project Metadata */}
-      <div className="flex justify-between items-center mt-6">
-        <div className="font-geist-mono text-sm text-neutral-content flex flex-wrap gap-4 py-2 px-4 border-l-2 border-base-300 items-center">
+      <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mt-6">
+        <div className="font-geist-mono text-sm text-neutral-content flex flex-wrap gap-4 py-2 px-4 border-l-2 border-base-300 items-center flex-1 min-w-0">
+          {/* date */}
           <div className="tracking-wider text-xs">{project.date}</div>
 
           <span>/</span>
 
+          {/* tags */}
           {project.tags.map((tag, index) => (
             <span key={index}>
               <span>{tag}</span>
@@ -34,10 +36,13 @@ export default function ProjectPageHeader({ project }: Props) {
 
           <span>/</span>
 
+          {/* stack */}
           <TechStackDisplay project={project} shouldDisplayTitle />
         </div>
 
-        <ProjectButtons project={project} />
+        <div className="shrink-0">
+          <ProjectButtons project={project} />
+        </div>
       </div>
     </div>
   );
