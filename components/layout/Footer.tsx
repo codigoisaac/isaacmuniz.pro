@@ -2,6 +2,7 @@ import siteMetadata from "@/data/siteMetadata";
 import headerNavLinks from "@/data/headerNavLinks";
 import socials from "@/data/socials";
 import Link from "next/link";
+import Logo from "@/components/layout/Logo";
 
 export default function Footer() {
   return (
@@ -10,10 +11,10 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row sm:justify-between gap-10">
           {/* Brand */}
           <div className="flex flex-col gap-3 sm:max-w-52">
-            <span className="font-transducer-extended text-sm uppercase tracking-wide text-base-content flex items-center gap-2.5">
-              {/* <Logo height="20" /> */}
+            <span className="font-transducer-extended text-sm tracking-wide text-base-content flex items-center gap-2.5">
+              <Logo height="20" />
 
-              <span>{siteMetadata.authorName}</span>
+              <span>{siteMetadata.headerTitle}</span>
             </span>
 
             <p className="text-xs font-geist-mono text-base-content/40 leading-relaxed">
@@ -60,6 +61,13 @@ export default function Footer() {
               <span className="text-[10px] font-geist-mono uppercase tracking-widest text-base-content/30 mb-0.5">
                 Páginas
               </span>
+
+              <Link
+                href="/"
+                className="text-xs font-geist-mono text-base-content/55 hover:text-primary transition-colors duration-200"
+              >
+                /home
+              </Link>
               {headerNavLinks.map((link) => (
                 <Link
                   key={link.href}
