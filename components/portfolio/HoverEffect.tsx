@@ -39,7 +39,7 @@ export const HoverEffect = ({
               {hoveredIndex === itemId && (
                 <motion.span
                   className={cn(
-                    "absolute inset-0 h-full w-full bg-neutral block rounded-2xl",
+                    "absolute inset-0 h-full w-full bg-neutral hidden sm:block rounded-2xl",
                     hoverClassName,
                   )}
                   layoutId="hoverBackground"
