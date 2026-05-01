@@ -80,8 +80,16 @@ export default function MobileNav() {
                 className="flex h-full flex-col items-center justify-center overflow-y-auto text-center"
               >
                 <Link href="/" onClick={onToggleNav}>
-                  <Logo className="text-primary mb-10 w-12 h-auto" />
+                  <Logo
+                    className={cn(
+                      "text-primary mb-10 w-12 h-auto",
+                      pathname === "/"
+                        ? "text-primary"
+                        : "text-base-content hover:text-primary",
+                    )}
+                  />
                 </Link>
+
                 <div className="flex flex-col items-center">
                   {headerNavLinks.map((link) => {
                     const isActive =
@@ -92,7 +100,7 @@ export default function MobileNav() {
                         key={link.title}
                         href={link.href}
                         className={cn(
-                          "mb-4 py-2 text-2xl font-bold tracking-widest outline-0 hover:underline",
+                          "mb-4 py-2 text-2xl font-bold tracking-widest outline-0",
                           isActive
                             ? "text-primary"
                             : "text-base-content hover:text-primary",
