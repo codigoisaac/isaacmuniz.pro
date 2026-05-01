@@ -27,6 +27,14 @@ const ThemeSwitcher = dynamic(
   },
 );
 
+const SocialDropdown = dynamic(
+  () => import("@/components/layout/SocialDropdown"),
+  {
+    ssr: false,
+    loading: () => <div className="hidden h-8 w-8 md:block" />,
+  },
+);
+
 export default function AppHeader() {
   const pathname = usePathname();
   const [visible, setVisible] = useState(true);
@@ -108,7 +116,7 @@ export default function AppHeader() {
         </Link>
 
         {/* Links */}
-        <div className="font-geist-mono flex items-center gap-4 leading-5 md:gap-6 mt-2">
+        <div className="font-geist-mono flex items-center gap-4 leading-5 md:gap-10 mt-2">
           <div className="no-scrollbar hidden max-w-40 items-center gap-x-4 overflow-x-auto md:flex md:max-w-72 lg:max-w-96">
             {headerNavLinks
               .filter((link) => link.href !== "/")
@@ -131,7 +139,11 @@ export default function AppHeader() {
 
           {/* Others */}
 
-          <ThemeSwitcher />
+          <div className="flex items-center gap-3">
+            <ThemeSwitcher />
+
+            <SocialDropdown />
+          </div>
 
           <MobileNav />
         </div>
