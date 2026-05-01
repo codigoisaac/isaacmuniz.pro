@@ -116,7 +116,7 @@ export default function AppHeader() {
         </Link>
 
         {/* Links */}
-        <div className="font-geist-mono flex items-center gap-4 leading-5 md:gap-10 mt-2">
+        <div className="font-geist-mono flex items-center gap-4 leading-5 md:gap-10 md:mt-2">
           <div className="no-scrollbar hidden max-w-40 items-center gap-x-4 overflow-x-auto md:flex md:max-w-72 lg:max-w-96">
             {headerNavLinks
               .filter((link) => link.href !== "/")
