@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="footer-inside-paddings border-t w-full pt-8 pb-10">
         <div className="flex flex-col sm:flex-row sm:justify-between gap-10">
           {/* Brand */}
-          <div className="flex flex-col gap-3 max-w-52">
+          <div className="flex flex-col gap-3 sm:max-w-52">
             <span className="font-transducer-extended text-sm uppercase tracking-wide text-base-content flex items-center gap-2.5">
               {/* <Logo height="20" /> */}
 
@@ -54,7 +54,7 @@ export default function Footer() {
           </div>
 
           {/* Links */}
-          <div className="flex gap-12 sm:gap-16">
+          <div className="flex justify-evenly sm:justify-start sm:gap-16">
             {/* Navigation */}
             <div className="flex flex-col gap-2.5">
               <span className="text-[10px] font-geist-mono uppercase tracking-widest text-base-content/30 mb-0.5">
