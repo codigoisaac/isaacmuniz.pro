@@ -2,6 +2,7 @@ import Link from "next/link";
 import { BlogPost } from "@/interfaces/blog-post";
 import Text from "@/components/Text";
 import TagsDisplay from "@/components/portfolio/TagsDisplay";
+import PublicationPlatforms from "@/components/blog/PublicationPlatforms";
 import { formatBlogDate, getReadingTime } from "@/lib/utils";
 
 interface Props {
@@ -57,13 +58,18 @@ export default function BlogPostCard({ post }: Props) {
         {post.excerpt}
       </Text>
 
-      {post.tags.length > 0 && (
-        <span className="mt-3">
-          <TagsDisplay
-            tags={post.tags}
-            tagClassName="bg-transparent border border-base-300"
-          />
-        </span>
+      {(post.tags.length > 0 || post.publishedOn) && (
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-2 mt-3">
+          {post.tags.length > 0 && (
+            <TagsDisplay
+              tags={post.tags}
+              tagClassName="bg-transparent border border-base-300"
+            />
+          )}
+          {post.publishedOn && (
+            <PublicationPlatforms publishedOn={post.publishedOn} />
+          )}
+        </div>
       )}
     </Link>
   );

@@ -1,6 +1,7 @@
 import { BlogPost as BlogPostInterface } from "@/interfaces/blog-post";
 import CustomBadge from "../CustomBadge";
 import ItemHeadlines from "../ItemHeadlines";
+import PublicationPlatforms from "./PublicationPlatforms";
 import { formatBlogDate, getReadingTime } from "@/lib/utils";
 
 type Props = {
@@ -22,13 +23,21 @@ export default function BlogPostHeader({ post }: Props) {
           {getReadingTime(post.content)} min de leitura
         </div>
 
-        {post.tags.map((tag, index) => (
-          <span key={index}>
-            <span className="mr-3">{tag}</span>
-
-            <span className="mr-3">{index < post.tags.length - 1 && "|"}</span>
-          </span>
-        ))}
+        <div className="flex flex-wrap items-center justify-between gap-y-2">
+          <div>
+            {post.tags.map((tag, index) => (
+              <span key={index}>
+                <span className="mr-3">{tag}</span>
+                <span className="mr-3">
+                  {index < post.tags.length - 1 && "|"}
+                </span>
+              </span>
+            ))}
+          </div>
+          {post.publishedOn && (
+            <PublicationPlatforms publishedOn={post.publishedOn} />
+          )}
+        </div>
       </div>
     </div>
   );

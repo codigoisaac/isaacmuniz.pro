@@ -3,6 +3,9 @@ title: "Sistemas de Tipos: os três eixos que definem como uma linguagem se comp
 subtitle: "Com exemplos em TypeScript, Python, Go e mais"
 excerpt: Forte ou fraca, estática ou dinâmica, nominal ou estrutural - entenda os três eixos que definem o sistema de tipos de qualquer linguagem de programação.
 date: 2026-05-01
+publishedOn:
+  hashnode: https://imuniz.hashnode.dev/sistemas-de-tipos
+  devto: https://dev.to/imuniz/sistemas-de-tipos-os-tres-eixos-que-definem-como-uma-linguagem-se-comporta-1na6
 tags:
   - Tipagem
   - Programação
