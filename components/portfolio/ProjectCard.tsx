@@ -1,4 +1,4 @@
-import InDevelopmentTag from "./InDevelopmentTag";
+import ProjectTag from "./ProjectTag";
 import Link from "next/link";
 import { Project } from "@/interfaces/portfolio";
 import TagsDisplay from "./TagsDisplay";
@@ -24,7 +24,7 @@ export default function ProjectCard({ project, priority }: Props) {
         )}
       >
         {project.isInDevelopment && (
-          <InDevelopmentTag showOnCenterOnMobile />
+          <ProjectTag text="Em Desenvolvimento" showOnCenterOnMobile />
         )}
 
         <div className="flex justify-center">

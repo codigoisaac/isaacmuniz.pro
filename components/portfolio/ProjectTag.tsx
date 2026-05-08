@@ -1,12 +1,16 @@
 import { cn } from "@/lib/utils";
 
 interface Props {
+  text: string;
+  className?: string;
   showOnCenterOnMobile?: boolean;
   showOnCenterAllways?: boolean;
   showOnLeft?: boolean;
 }
 
-export default function FeaturedProjectTag({
+export default function ProjectTag({
+  text,
+  className,
   showOnCenterOnMobile,
   showOnCenterAllways,
   showOnLeft,
@@ -14,28 +18,25 @@ export default function FeaturedProjectTag({
   return (
     <div
       className={cn(
-        "absolute top-0 flex items-center justify-center text-xs font-geist-mono font-bold py-1 px-2 bg-neutral text-base-100 shadow-xl tracking-wider text-nowrap",
+        "absolute top-0 flex items-center justify-center text-xs font-geist-mono font-bold py-1 px-2 bg-base-300 text-neutral shadow-xl tracking-wider text-nowrap",
+        className,
         {
-          // Show on center only in mobile
           "right-1/2 translate-x-1/2 rounded-b-xl sm:right-0 sm:translate-x-0 sm:rounded-b-none sm:rounded-bl-xl sm:rounded-tr-[0.66rem]":
             showOnCenterOnMobile && !showOnCenterAllways && !showOnLeft,
         },
         {
-          // Never show on center
           "right-0 rounded-bl-xl rounded-tr-[0.66rem]":
             !showOnCenterOnMobile && !showOnCenterAllways && !showOnLeft,
         },
         {
-          // Allays show on Center
           "right-1/2 translate-x-1/2 rounded-b-xl": showOnCenterAllways,
         },
         {
-          // Show on the Left
           "left-0 w-fit rounded-tl-[0.66rem] rounded-br-xl": showOnLeft,
         },
       )}
     >
-      Projeto em Destaque
+      {text}
     </div>
   );
 }

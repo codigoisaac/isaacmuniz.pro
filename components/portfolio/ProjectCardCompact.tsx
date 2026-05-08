@@ -1,4 +1,4 @@
-import InDevelopmentTag from "./InDevelopmentTag";
+import ProjectTag from "./ProjectTag";
 import Link from "next/link";
 import { Project } from "@/interfaces/portfolio";
 import TagsDisplay from "./TagsDisplay";
@@ -28,7 +28,7 @@ export default function ProjectCardCompact({
       href={`/portfolio/${project.slug}`}
     >
       {project.isInDevelopment && !isOnHome && (
-        <InDevelopmentTag showOnCenterOnMobile />
+        <ProjectTag text="Em Desenvolvimento" showOnCenterOnMobile />
       )}
 
       <div className="shrink-0 w-32 h-32 rounded-lg overflow-hidden relative">
