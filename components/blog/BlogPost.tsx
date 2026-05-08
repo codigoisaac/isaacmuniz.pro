@@ -38,9 +38,10 @@ function childrenToText(children: ReactNode): string {
 }
 
 const headingStyles = {
-  h1: { tag: "h1" as const, className: "text-3xl font-bold mt-12 mb-4 border-b pb-1", iconSize: 18 },
-  h2: { tag: "h2" as const, className: "text-2xl font-bold mt-6 mb-4", iconSize: 16 },
-  h3: { tag: "h3" as const, className: "text-xl font-bold mt-6 mb-4", iconSize: 14 },
+  h1: { tag: "h1" as const, className: "text-4xl font-bold mt-12 mb-4 border-b pb-1", iconSize: 20 },
+  h2: { tag: "h2" as const, className: "text-3xl font-bold mt-12 mb-4 border-b pb-1", iconSize: 18 },
+  h3: { tag: "h3" as const, className: "text-2xl font-bold mt-6 mb-4", iconSize: 16 },
+  h4: { tag: "h4" as const, className: "text-xl font-bold mt-6 mb-4", iconSize: 14 },
 };
 
 function AnchoredHeading({ level, children }: { level: keyof typeof headingStyles; children: ReactNode }) {
@@ -111,6 +112,7 @@ export default function BlogPost({ post }: Props) {
           h1: ({ children }) => <AnchoredHeading level="h1">{children}</AnchoredHeading>,
           h2: ({ children }) => <AnchoredHeading level="h2">{children}</AnchoredHeading>,
           h3: ({ children }) => <AnchoredHeading level="h3">{children}</AnchoredHeading>,
+          h4: ({ children }) => <AnchoredHeading level="h4">{children}</AnchoredHeading>,
           p: ({ children }) => <p className="mb-3">{children}</p>,
           hr: ({ children }) => <hr className="my-3">{children}</hr>,
           ul: ({ children }) => (

@@ -7,7 +7,7 @@ tags: [Programação, Memória, Ciência da Computação]
 
 Tudo que produzimos com nosso código é, no final, bits. Nós escrevemos código em uma linguagem de programação, mas o computador sabe ler apenas bits. Para organizar esses bits de uma forma que faça sentido para nós, nós criamos valores em nossa linguagem de programação. Nesse artigo nós vamos falar um pouco sobre o que são bits e como eles representam valores.
 
-# Bits
+## Bits
 
 Computadores não são inteligentes, eles só podem entender duas coisas: zero e um. Ele não sabe o que é dois ou três. E quando escrevemos números, o que nosso computador entende é a sequência de zeros e uns que representa aquele número. Nesse sentido, zeros e uns são pedaços de informação, e nós chamamos esses zeros e uns de bits.
 

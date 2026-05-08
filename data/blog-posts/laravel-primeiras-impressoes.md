@@ -22,7 +22,7 @@ Aqui estão minhas percepções iniciais, e minha resposta para pergunta acima:
 
 ---
 
-# Estrutura de pastas
+## Estrutura de pastas
 
 Primeira coisa para notar é a estrutura de pastas do framework - é bem organizada, e é bem grande. Realmente o Laravel te entrega muita coisa. Você não vai precisar buscar ferramentas de terceiros para fazer coisas que praticamente toda aplicação web precisa, como enviar emails, autenticação de usuário, validação de inputs, testes, etc.
 
@@ -38,7 +38,7 @@ Estrutura de pastas da aplicação super simples que eu estou construindo.
 
 ---
 
-# Estrutura MVC
+## Estrutura MVC
 
 O segundo ponto que eu quero tocar é a estrutura MVC do framework, e mostrar um pouco como ela funciona.
 
@@ -156,7 +156,7 @@ Mas é interessante saber que o framework cuida desses detalhes de linguagem tam
 
 ---
 
-# Views e Blade Templates
+## Views e Blade Templates
 
 Agora vamos falar das views.
 
@@ -194,7 +194,7 @@ Considerando que estamos usando os dados que vimos lá em cima em app/Models/Job
 
 ---
 
-# É realmente um framework elegante e pensado para produtividade?
+## É realmente um framework elegante e pensado para produtividade?
 
 SIM! O Laravel é um framework “elegante”, pelo menos eu achei ele muito elegante, por já entregar tudo que eu preciso para fazer aplicações complexas, e por entregar isso numa estrutura super bem projetada e organizada.
 

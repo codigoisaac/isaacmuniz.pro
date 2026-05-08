@@ -17,7 +17,7 @@ Mas o que é relevante para a gente aqui e agora são apenas duas partes: **a cl
 
 Essas duas partes do nosso componente lidam com dados, e existem formas de _vincular_ esses dados entre as duas.
 
-# Os dois tipos de vinculação de dados
+## Os dois tipos de vinculação de dados
 
 Para começar, há dois tipos de vinculação:
 
@@ -25,7 +25,7 @@ Para começar, há dois tipos de vinculação:
 
 2. **Vinculação bidirecional** ⇒ quando uma informação vai tanto da classe para a template quanto da template para a classe. Ela vai e volta, logo, bidirecional.
 
-# Vinculação unidirecional
+## Vinculação unidirecional
 
 Falando sobre vinculação unidirecional, existem dois tipos dela:
 
@@ -36,7 +36,7 @@ Perceba que: no _property binding_ a informação vai da classe para a template,
 
 Ou seja, ambos são _vinculações unidirecionais_.
 
-## Exemplo de vinculação de propriedade
+### Exemplo de vinculação de propriedade
 
 ```html
 <input [value]="userName" />
@@ -44,7 +44,7 @@ Ou seja, ambos são _vinculações unidirecionais_.
 
 Nesse exemplo, o valor do input [value] vai ser igual ao valor da propriedade userName, que está definida na classe. Quando o valor da propriedade for alterado, o valor do input refletirá, mas quando o valor do input for alterado, não acontecerá o inverso.
 
-## Exemplo de vinculação de evento
+### Exemplo de vinculação de evento
 
 ```html
 <input (input)="userName = $event.target.value" />
@@ -52,7 +52,7 @@ Nesse exemplo, o valor do input [value] vai ser igual ao valor da propriedade us
 
 Já aqui, temos uma vinculação de evento, onde a informação vai fluir da template para a classe: quando o usuário digitar no input, a propriedade userName irá receber o valor que está digitado no input, mas o input não recebe o valor da propriedade caso ela seja alterada em outro lugar.
 
-# Vinculação bidirecional
+## Vinculação bidirecional
 
 No Inglês, vinculação bidirecional é “two-way binding”.
 
@@ -62,7 +62,7 @@ Usando os dois juntos você tem uma vinculação bidirecional, já que um manda 
 
 Inclusive a sintaxe usada para fazer uma vinculação bidirecional é literalmente a sintaxe das duas acima, unidas: enquanto no _property binding_ nós usamos colchetes `[ ]` e no _event binding_ nós usamos parênteses `( )`, no _two-way binding_ nós usamos ambos juntos: `[( )]`.
 
-## Exemplo “sujo” de vinculação bidirecional
+### Exemplo “sujo” de vinculação bidirecional
 
 Podemos fazer uma vinculação bidirecional usando vinculação de propriedade e vinculação de evento no mesmo elemento:
 
@@ -72,7 +72,7 @@ Podemos fazer uma vinculação bidirecional usando vinculação de propriedade e
 
 No exemplo acima, o valor do input recebe o valor da propriedade userName, e a propriedade userName por sua vez recebe o valor que é digitado no input, fazendo com que tenhamos uma vinculação bidirecional. Mas essa não é a forma inteligente de escrever uma.
 
-## Exemplo “limpo” de vinculação bidirecional
+### Exemplo “limpo” de vinculação bidirecional
 
 Há um jeito mais limpo de fazer a vinculação bidirecional:
 
@@ -84,7 +84,7 @@ Elegante, não?!
 
 Essa sintaxe, de colocar os parênteses dentro dos colchetes, é informalmente chamada de **_banana-in-a-box_** pela comunidade Angular, que significa “banana em uma caixa”, e dá para perceber por quê: `[()]`.
 
-### ngModel
+#### ngModel
 
 O ngModel é uma **diretiva** do Angular, usada para implementar vinculações bidirecionais. É usada principalmente em elementos de formulário, como inputs, mas pode, com uma customização extra, ser usada em qualquer elemento.
 
