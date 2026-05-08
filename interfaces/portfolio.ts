@@ -42,7 +42,8 @@ export type TechID =
   | "golang"
   | "reactnative"
   | "expo"
-  | "php";
+  | "php"
+  | "linux";
 
 type Tag =
   | "Aplicativo Web"

@@ -8,6 +8,7 @@ import drf from "@/assets/images/techStack/drf.png";
 import php from "@/assets/images/techStack/php.svg";
 import expo from "@/assets/images/techStack/expo.svg";
 import golang from "@/assets/images/techStack/golang.svg";
+import linux from "@/assets/images/techStack/linux.svg";
 import python from "@/assets/images/techStack/python.svg";
 import reactnative from "@/assets/images/techStack/reactnative.svg";
 import bun from "@/assets/images/techStack/bun.png";
@@ -87,6 +88,7 @@ const techStack: Record<TechID, TechItem> = {
   reactnative: { name: "React Native", image: reactnative },
   expo: { name: "Expo", image: expo },
   php: { name: "PHP", image: php },
+  linux: { name: "Linux", image: linux },
 };
 
 export default techStack;

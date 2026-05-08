@@ -62,6 +62,7 @@ const OTHER_TECHS: TechID[] = [
   "vscode",
   "notion",
   "markdown",
+  "linux",
 ];
 
 export default function HomeTechStack() {
