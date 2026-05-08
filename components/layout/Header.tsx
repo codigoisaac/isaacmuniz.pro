@@ -27,13 +27,6 @@ const ThemeSwitcher = dynamic(
   },
 );
 
-const SocialDropdown = dynamic(
-  () => import("@/components/layout/SocialDropdown"),
-  {
-    ssr: false,
-    loading: () => <div className="hidden h-8 w-8 md:block" />,
-  },
-);
 
 export default function AppHeader() {
   const pathname = usePathname();
@@ -139,11 +132,7 @@ export default function AppHeader() {
 
           {/* Others */}
 
-          <div className="flex items-center gap-3">
-            <ThemeSwitcher />
-
-            <SocialDropdown />
-          </div>
+          <ThemeSwitcher />
 
           <MobileNav />
         </div>
