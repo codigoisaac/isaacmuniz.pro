@@ -26,6 +26,7 @@ import imgSofista1 from "@/assets/images/portfolio/sofista/home.png";
 import imgItver1 from "@/assets/images/portfolio/itver/1.png";
 import imgItver2 from "@/assets/images/portfolio/itver/2.png";
 import imgApliquente from "@/assets/images/portfolio/apliquente/main.png";
+import imgNuvemJti from "@/assets/images/portfolio/nuvemJti.png";
 
 export const portfolioAuthorial: Project[] = [
   {
@@ -348,6 +349,33 @@ export const portfolioColab: Project[] = [
     ],
     tags: ["Aplicativo Mobile", "Aplicativo Web", "Colaboração"],
     date: "2024 - 2025",
+  },
+
+  {
+    title: "Nuvem JTi",
+    excerpt:
+      "Modernização e manutenção de sistema ERP legado em PHP/MySQL e Bootstrap, com refatoração de código legado, e modernização de UI e UX.",
+    slug: "nuvem-jti",
+    image: imgNuvemJti,
+    link: "https://nuvemjti.com.br",
+    description: [
+      "Na Nuvem JTi, fui responsável pela modernização e manutenção de um sistema ERP legado construído em PHP e MySQL. O maior desafio técnico era lidar com uma base de código monolítica densa, que acumulava anos de crescimento orgânico sem refatoração sistemática.",
+      "Além de implementar novas funcionalidades, expandir o sistema e consertar bugs, trabalhei na refatoração incremental do código legado, separando responsabilidades e melhorando a manutenibilidade e a Experiência do Desenvolvedor (DevX), sem interromper as operações do sistema em produção.",
+      "Também desenvolvi sites para clientes da empresa utilizando React e TailwindCSS, com foco em design responsivo e arquitetura de frontend moderna.",
+      "Realizei otimizações em esquemas de bancos de dados relacionais MySQL, incluindo manutenção rotineira e refatoração de consultas, para garantir a estabilidade do sistema sob cargas crescentes de dados.",
+    ],
+    tech: [
+      "php",
+      "mysql",
+      "bootstrap",
+      "react",
+      "tailwindcss",
+      "js",
+      "html",
+      "css",
+    ],
+    tags: ["Aplicativo Web", "Colaboração"],
+    date: "2021 - 2022",
   },
 ];
 
