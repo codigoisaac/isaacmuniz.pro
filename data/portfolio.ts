@@ -121,9 +121,9 @@ export const portfolioAuthorial: Project[] = [
     image: imgApliquente,
     link: "https://www.linkedin.com/posts/isaac-muniz_estou-criando-uma-aplica%C3%A7%C3%A3o-para-ajudar-pessoas-activity-7458140344992403456-Raue",
     description: [
-      "O PluriCV resolve um problema real e recorrente no processo de candidatura a vagas: enviar sempre o mesmo currículo genérico para vagas com perfis distintos. A ferramenta permite gerar um currículo personalizado para cada vaga com um clique, diretamente da página da vaga, sem sair do navegador.",
+      "O Apliquente resolve um problema real e recorrente no processo de candidatura a vagas: enviar sempre o mesmo currículo genérico para vagas com perfis distintos. A ferramenta permite gerar um currículo personalizado para cada vaga com um clique, diretamente da página da vaga, sem sair do navegador.",
       "O fluxo acontece por uma extensão de navegador (Manifest V3, compatível com Firefox e Chrome) que captura o texto completo da página da vaga aberta. O usuário pode gerar o PDF imediatamente ou usar o modo de análise, que exibe uma prévia do texto capturado com contagem de caracteres e palavras antes de confirmar.",
-      "A extensão envia o texto capturado para uma API REST construída com Django 6 e Django REST Framework. O backend usa o Gemini 2.5 Flash para realizar duas operações em uma única chamada: analisar o fit entre o currículo e a vaga, gerando um score de 0 a 100 com as keywords presentes e ausentes, e reescrever os campos relevantes do currículo (sumário, título profissional e descrições de experiência) incorporando naturalmente os termos da vaga.",
+      "A extensão envia o texto capturado para uma API REST construída com Django 6 e Django REST Framework. O backend usa AI para realizar as operações: analisar o fit entre o currículo e a vaga e reescrever os campos relevantes do currículo (sumário, título profissional e descrições de experiência) incorporando naturalmente os termos da vaga.",
       "A otimização para ATS segue regras rigorosas: uso dos termos exatos da vaga sem sinônimos, inserção de siglas com sua forma completa, densidade de keywords entre 2% e 4%, e proibição absoluta de fabricar experiências ou datas. Apenas o que o candidato realmente fez pode ser reescrito ou reemoldurado.",
       "O PDF final é gerado no servidor com WeasyPrint, a partir de templates HTML renderizados pelo Django, garantindo controle total sobre tipografia, layout e identidade visual. O arquivo é retornado diretamente como download pelo próprio popup da extensão.",
     ],
@@ -132,7 +132,8 @@ export const portfolioAuthorial: Project[] = [
         title: "O projeto em ação",
         items: [
           {
-            title: "Demonstração do Apliquente",
+            title:
+              "Demonstração do Apliquente - ainda um protótipo (quando se chamava PluriCV)",
             video: "/videos/apliquente.mp4",
           },
         ],
