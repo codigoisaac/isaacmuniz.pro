@@ -38,6 +38,7 @@ export type TechID =
   | "resend"
   | "python"
   | "django"
+  | "drf"
   | "golang"
   | "reactnative"
   | "expo"
@@ -48,6 +49,8 @@ type Tag =
   | "Aplicativo Mobile"
   | "Website"
   | "Extensão p/ VSCode"
+  | "Extensão p/ Navegador"
+  | "API"
   | "Open Source"
   | "Colaboração";
 
@@ -80,7 +83,7 @@ export interface Project {
   tech: TechID[];
   tags: Tag[];
   date: string;
-  isFeaturedProject?: boolean;
+  isInDevelopment?: boolean;
 }
 
 export interface TechItem {

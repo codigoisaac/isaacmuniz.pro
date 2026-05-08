@@ -4,6 +4,7 @@ import babel from "@/assets/images/techStack/babel.png";
 // Tech icons
 import bootstrap from "@/assets/images/techStack/bootstrap.webp";
 import django from "@/assets/images/techStack/django.svg";
+import drf from "@/assets/images/techStack/drf.png";
 import php from "@/assets/images/techStack/php.svg";
 import expo from "@/assets/images/techStack/expo.svg";
 import golang from "@/assets/images/techStack/golang.svg";
@@ -81,6 +82,7 @@ const techStack: Record<TechID, TechItem> = {
   resend: { name: "Resend", image: resend },
   python: { name: "Python", image: python },
   django: { name: "Django", image: django },
+  drf: { name: "Django REST Framework", image: drf },
   golang: { name: "Go", image: golang },
   reactnative: { name: "React Native", image: reactnative },
   expo: { name: "Expo", image: expo },

@@ -30,6 +30,7 @@ const OTHER_TECHS: TechID[] = [
   // Backend
   "node",
   "express",
+  "drf",
   "graphql",
   "docker",
   // Bancos de dados

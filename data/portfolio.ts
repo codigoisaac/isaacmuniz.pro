@@ -25,6 +25,7 @@ import imgSofista from "@/assets/images/portfolio/sofista/main.png";
 import imgSofista1 from "@/assets/images/portfolio/sofista/home.png";
 import imgItver1 from "@/assets/images/portfolio/itver/1.png";
 import imgItver2 from "@/assets/images/portfolio/itver/2.png";
+import imgApliquente from "@/assets/images/portfolio/apliquente/main.png";
 
 export const portfolioAuthorial: Project[] = [
   {
@@ -114,20 +115,33 @@ export const portfolioAuthorial: Project[] = [
   },
 
   {
-    title: "BinaryShift",
+    title: "Apliquente",
     excerpt:
-      "Uma ferramenta utilitária minimalista para tradução instantânea entre texto e binário, com interface reativa e lógica de estado centralizada.",
-    slug: "binary-shift",
-    image: imgBinaryShift,
-    link: "https://binaryshift.netlify.app/",
+      "Gerador de currículos personalizados por vaga com otimização para ATS, tradução automática e exportação em PDF, operado por uma extensão de navegador.",
+    slug: "apliquente",
+    image: imgApliquente,
+    link: "https://www.linkedin.com/posts/isaac-muniz_estou-criando-uma-aplica%C3%A7%C3%A3o-para-ajudar-pessoas-activity-7458140344992403456-Raue",
     description: [
-      "O BinaryShift é uma ferramenta utilitária desenvolvida para realizar a conversão bidirecional entre texto plano e código binário de forma instantânea.",
-      "O projeto foi concebido como um estudo de caso para gerenciamento de estado complexo, utilizando Redux para garantir um fluxo de dados previsível e uma interface reativa.",
-      "A interface foi construída com React e Tailwind CSS, priorizando a experiência do usuário (UX) com um design minimalista, responsivo e focado na legibilidade dos dados.",
+      "O PluriCV resolve um problema real e recorrente no processo de candidatura a vagas: enviar sempre o mesmo currículo genérico para vagas com perfis distintos. A ferramenta permite gerar um currículo personalizado para cada vaga com um clique, diretamente da página da vaga, sem sair do navegador.",
+      "O fluxo acontece por uma extensão de navegador (Manifest V3, compatível com Firefox e Chrome) que captura o texto completo da página da vaga aberta. O usuário pode gerar o PDF imediatamente ou usar o modo de análise, que exibe uma prévia do texto capturado com contagem de caracteres e palavras antes de confirmar.",
+      "A extensão envia o texto capturado para uma API REST construída com Django 6 e Django REST Framework. O backend usa o Gemini 2.5 Flash para realizar duas operações em uma única chamada: analisar o fit entre o currículo e a vaga, gerando um score de 0 a 100 com as keywords presentes e ausentes, e reescrever os campos relevantes do currículo (sumário, título profissional e descrições de experiência) incorporando naturalmente os termos da vaga.",
+      "A otimização para ATS segue regras rigorosas: uso dos termos exatos da vaga sem sinônimos, inserção de siglas com sua forma completa, densidade de keywords entre 2% e 4%, e proibição absoluta de fabricar experiências ou datas. Apenas o que o candidato realmente fez pode ser reescrito ou reemoldurado.",
+      "O PDF final é gerado no servidor com WeasyPrint, a partir de templates HTML renderizados pelo Django, garantindo controle total sobre tipografia, layout e identidade visual. O arquivo é retornado diretamente como download pelo próprio popup da extensão.",
     ],
-    tech: ["js", "react", "redux", "tailwindcss"],
-    tags: ["Aplicativo Web"],
-    date: "2022",
+    subjects: [
+      {
+        title: "O projeto em ação",
+        items: [
+          {
+            title: "Demonstração do Apliquente",
+            video: "/videos/apliquente.mp4",
+          },
+        ],
+      },
+    ],
+    tech: ["python", "django", "drf", "js", "html", "css"],
+    tags: ["Extensão p/ Navegador", "API"],
+    date: "2026",
   },
 ];
 
@@ -354,6 +368,23 @@ export const portfolioOthers: Project[] = [
     tech: ["nextjs", "react", "tailwindcss", "ts", "notion"],
     tags: ["Website"],
     date: "2023",
+  },
+
+  {
+    title: "BinaryShift",
+    excerpt:
+      "Uma ferramenta utilitária minimalista para tradução instantânea entre texto e binário, com interface reativa e lógica de estado centralizada.",
+    slug: "binary-shift",
+    image: imgBinaryShift,
+    link: "https://binaryshift.netlify.app/",
+    description: [
+      "O BinaryShift é uma ferramenta utilitária desenvolvida para realizar a conversão bidirecional entre texto plano e código binário de forma instantânea.",
+      "O projeto foi concebido como um estudo de caso para gerenciamento de estado complexo, utilizando Redux para garantir um fluxo de dados previsível e uma interface reativa.",
+      "A interface foi construída com React e Tailwind CSS, priorizando a experiência do usuário (UX) com um design minimalista, responsivo e focado na legibilidade dos dados.",
+    ],
+    tech: ["js", "react", "redux", "tailwindcss"],
+    tags: ["Aplicativo Web"],
+    date: "2022",
   },
 
   {
