@@ -1,4 +1,4 @@
-import FeaturedProjectTag from "./FeaturedProjectTag";
+import InDevelopmentTag from "./InDevelopmentTag";
 import Link from "next/link";
 import { Project } from "@/interfaces/portfolio";
 import TagsDisplay from "./TagsDisplay";
@@ -20,11 +20,11 @@ export default function ProjectCard({ project, priority }: Props) {
       <div
         className={cn(
           "flex flex-col justify-between bg-base-200 p-4 rounded-xl cursor-pointer relative h-full",
-          { "pt-8": project.isFeaturedProject },
+          { "pt-8": project.isInDevelopment },
         )}
       >
-        {project.isFeaturedProject && (
-          <FeaturedProjectTag showOnCenterOnMobile />
+        {project.isInDevelopment && (
+          <InDevelopmentTag showOnCenterOnMobile />
         )}
 
         <div className="flex justify-center">

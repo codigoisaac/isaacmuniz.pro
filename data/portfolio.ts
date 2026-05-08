@@ -93,7 +93,6 @@ export const portfolioAuthorial: Project[] = [
     tech: ["nextjs", "react", "ts", "tailwindcss", "resend"],
     tags: ["Website"],
     date: "2026",
-    isFeaturedProject: true,
   },
 
   {
@@ -142,6 +141,7 @@ export const portfolioAuthorial: Project[] = [
     tech: ["python", "django", "drf", "js", "html", "css"],
     tags: ["Extensão p/ Navegador", "API"],
     date: "2026",
+    isInDevelopment: true,
   },
 ];
 
@@ -246,7 +246,6 @@ export const portfolioColab: Project[] = [
     ],
     tags: ["Aplicativo Web", "Colaboração"],
     date: "2023 - 2024",
-    isFeaturedProject: true,
   },
 
   {

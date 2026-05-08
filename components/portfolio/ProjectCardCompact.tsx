@@ -1,4 +1,4 @@
-import FeaturedProjectTag from "./FeaturedProjectTag";
+import InDevelopmentTag from "./InDevelopmentTag";
 import Link from "next/link";
 import { Project } from "@/interfaces/portfolio";
 import TagsDisplay from "./TagsDisplay";
@@ -23,12 +23,12 @@ export default function ProjectCardCompact({
     <Link
       className={cn(
         "relative flex gap-4 bg-base-200 p-3 rounded-xl w-full group h-full items-center",
-        { "pt-8 sm:pt-3": project.isFeaturedProject && !isOnHome },
+        { "pt-8 sm:pt-3": project.isInDevelopment && !isOnHome },
       )}
       href={`/portfolio/${project.slug}`}
     >
-      {project.isFeaturedProject && !isOnHome && (
-        <FeaturedProjectTag showOnCenterOnMobile />
+      {project.isInDevelopment && !isOnHome && (
+        <InDevelopmentTag showOnCenterOnMobile />
       )}
 
       <div className="shrink-0 w-32 h-32 rounded-lg overflow-hidden relative">
@@ -50,7 +50,7 @@ export default function ProjectCardCompact({
               "text-lg font-geist-mono font-medium tracking-wide leading-tight mb-1",
               {
                 "mt-3.5":
-                  project.isFeaturedProject && variant === "smallCompact",
+                  project.isInDevelopment && variant === "smallCompact",
               },
             )}
           >
