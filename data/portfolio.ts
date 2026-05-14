@@ -13,7 +13,9 @@ import imgBetthaCompanies5 from "@/assets/images/portfolio/bettha/companies/5.pn
 import imgBetthaGames1 from "@/assets/images/portfolio/bettha/games/esg.png";
 import imgBetthaGames2 from "@/assets/images/portfolio/bettha/games/security.png";
 import imgBinaryShift from "@/assets/images/portfolio/binaryShift.png";
-import imgSiblingSeparator from "@/assets/images/portfolio/siblingSeparator.png";
+import imgCodeBreath from "@/assets/images/portfolio/codeBreath/main.png";
+import imgCodeBreath1 from "@/assets/images/portfolio/codeBreath/vscode.png";
+import imgCodeBreath2 from "@/assets/images/portfolio/codeBreath/code.png";
 import imgItver from "@/assets/images/portfolio/itver/main.png";
 import imgMimo from "@/assets/images/portfolio/mimo/main.png";
 import imgMimo1 from "@/assets/images/portfolio/mimo/1.png";
@@ -97,17 +99,37 @@ export const portfolioAuthorial: Project[] = [
   },
 
   {
-    title: "Code Breathe: Sibling Separator",
+    title: "Code Breath: Sibling Separator",
     excerpt:
-      "Extensão para VS Code que automatiza a organização visual de arquivos JSX/TSX, inserindo espaçamentos inteligentes entre elementos irmãos.",
-    slug: "desgruda",
-    image: imgSiblingSeparator,
+      "Extensão para VS Code que organiza automaticamente seu código React para ficar mais legível e fácil de navegar.",
+    slug: "code-breath",
+    image: imgCodeBreath,
     link: "https://marketplace.visualstudio.com/items?itemName=IsaacMuniz.desgruda",
-    repoLink: "https://github.com/codigoisaac/Sibling-Separator/",
+    repoLink: "https://github.com/codigoisaac/Code-Breath/",
     description: [
-      "O Code Breathe é uma ferramenta de Developer Experience (DX) projetada para resolver o amontoamento visual em arquivos React, automatizando a separação de componentes com linhas em branco.",
-      "A solução utiliza o @babel/parser para percorrer a Abstract Syntax Tree (AST) do código, identificando com precisão os elementos JSX irmãos e calculando as posições de inserção sem corromper a estrutura do arquivo.",
-      "Para garantir edições performáticas e seguras, implementei a biblioteca MagicString, permitindo a manipulação inteligente de strings e a preservação da indentação original do desenvolvedor.",
+      "Code Breath resolve um problema silencioso porém irritante no dia a dia com React: componentes e elementos amontoados sem espaçamento visual, tornando a leitura do código desnecessariamente difícil.",
+
+      "A extensão analisa o arquivo via AST (Abstract Syntax Tree) usando o @babel/parser, percorre os nós JSX e identifica pares de elementos irmãos adjacentes. A inserção das linhas em branco respeita a indentação original e nunca duplica espaçamentos já existentes. Apenas o necessário é adicionado.",
+
+      "Para as edições no texto, usei a biblioteca MagicString, que opera sobre o source original com offsets em vez de recriar a string, garantindo performance e preservação fiel da formatação do desenvolvedor.",
+
+      "Para usar, basta apertar Ctrl+K Space no Windows e Linux, ou Cmd+K Space no macOS, e a formatação acontece instantaneamente.",
+    ],
+    subjects: [
+      {
+        title: "A Extensão",
+        items: [
+          {
+            title: "Dentro do VSCode",
+            image: imgCodeBreath1,
+          },
+          {
+            title:
+              "A diferença que faz na legibilidade e organização do código",
+            image: imgCodeBreath2,
+          },
+        ],
+      },
     ],
     tech: ["ts", "vscode", "babel"],
     tags: ["Extensão p/ VSCode", "Open Source"],
